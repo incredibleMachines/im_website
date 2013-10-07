@@ -1,4 +1,5 @@
 Getting Started:
+---------------
 
 	$ npm install
 	
@@ -6,6 +7,7 @@ Getting Started:
 
 
 Notes:
+---------------
 
 	Beta Beta Beta
 
