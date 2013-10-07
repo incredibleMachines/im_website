@@ -1,0 +1,98 @@
+        <h2>Current Projects</h2>
+    <p> List of Current Projects Coming Soon </p>
+    <h2>Add Project</h2>
+    <form class="new_project" enctype="multipart/form-data" action="/projects" method="post">
+
+    	<section id="main">
+    		<p><input type="text" name="project_title" placeholder="Project Title"/></p>
+    		<p><input type="text" name="project_slug" placeholder="Project Slug"/></p>
+    		<p><input type="text" name="project_video" placeholder="Project Video"/></p>
+    	</section>
+
+    	<section id="text">
+    		<h3>Project Text</h3>
+	    	<section class="text-blocks">
+	     		<article class="project-text-block text-block-0">
+			   		<p><input class="title" type="text" name="project_text_title[]" placeholder="Project Text Title"></p>
+		    		<p><textarea class="copy" name="project_text[]" placeholder="Project Text"></textarea></p>
+	    		</article>
+    		</section>
+    		<button type="button" class="more-text" name="more_text">Add Another Text Field</button>
+    		<button type="button" class="less-text" name="less_text">Remove Text Field</button>
+    	</section>
+
+    	 <section id="images">
+    		<h3>Project Image Block</h3>
+    		<section class="image-blocks">
+	    		<article class="project-image-block image-block-0">
+		    		<p>
+			    		<select class="num-images">
+			    			<option selected="selected">Images in Block</option>
+			    			<option value="1">1</option>
+			    			<option value="2">2</option>
+			    			<option value="3">3</option>
+			    			<option value="4">4</option>
+			    		</select>
+		    		</p>
+		    		<input type="file" name="project_image_block_0[]" class="project-image-0" placeholder="Project Text Title">
+	    		</article>
+    		</section>
+    		<button type="button" class="more-images" name="more_images">Add Another Image Block</button>
+    		<button type="button" class="less-images" name="less_images">Remove Image Block</button>
+    	</section>
+
+    	<section id="technology">
+    		<h3>Technology</h3>
+    		<p><input type="checkbox" name="technology[]" value="Technology Name 1"> Technology Name</p>
+    		<p><input type="checkbox" name="technology[]" value="Technology Name 1"> Technology Name</p>
+    		<p><input type="checkbox" name="technology[]" value="Technology Name 1"> Technology Name</p>
+    		<p><input type="text" name="technology_string" placeholder="Enter comma seperated additional technologies"/></p>
+
+    	</section>
+
+    	<section id="clients">
+    		<h3><a href="/clients/edit">Clients</a></h3>
+    		<p><input type="checkbox" name="clients[]" value="Client Name 1"> Client Name</p>
+    		<p><input type="checkbox" name="clients[]" value="Client Name 1"> Client Name</p>
+    		<p><input type="checkbox" name="clients[]" value="Client Name 1"> Client Name</p>
+    		<p><input type="text" name="clients_string" placeholder="Enter comma seperated additional clients"/></p>
+
+    	</section>
+    	<section id="capabilities">
+    		<h3><a href="/capabilities/edit">Capabilities</a></h3>
+    		<p><input type="checkbox" name="capabilities[]" value="Service Name 1"> Service Name</p>
+    		<p><input type="checkbox" name="capabilities[]" value="Service Name 2"> Service Name</p>
+    		<p><input type="checkbox" name="capabilities[]" value="Service Name 3"> Service Name</p>
+    		<p><input type="text" name="capabilities_string" placeholder="Enter comma seperated additional capabilities"/></p>
+    	</section>
+
+    	<section id="more-info">
+    		<h3>More Info</h3>
+    		<section class="info-blocks">
+	     		<article class="project-info-block info-block-0">
+			   		<p><input class="title" type="text" name="project_info_title[]" placeholder="More Info Title"></p>
+		    		<p><input class="copy" type="text" name="project_info[]" placeholder="More Info Link"></p>
+	    		</article>
+    		</section>
+    		<button type="button" class="more-info" name="more_info">Add Another Info Block</button>
+    		<button type="button" class="less-info" name="less_info">Remove Info Block</button>
+    	</section>
+
+    	<section id="privacy">
+    		<h3>Featured</h3>
+    		<p>Select if this project shows up on the featured page</p>
+    		<p>
+    			<input type="checkbox" name="project_featured" value="true" checked/> Yes
+    			<input type="checkbox" name="project_featured" value="false"/> No
+    		</p>
+    		<h3>Password</h3>
+    		<p>Add a password and confirm if you'd like to password protect this page</p>
+    		<p>
+    			<input type="text" name="project_password" placeholder="Enter Password"/>
+    			<input type="text" name="project_password_confirm" placeholder="Confirm Password"/>
+    		</p>
+    	</section>
+
+    	<button type="submit">Add New Project</button>
+    </form>
+<% include includes/footer %>
