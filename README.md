@@ -1,7 +1,8 @@
 Getting Started:
 
-$ npm install
-$ node app.js
+	$ npm install
+	
+	$ node app.js
 
 
 Notes:
