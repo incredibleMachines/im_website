@@ -10,7 +10,7 @@ var fs = require('fs');
  *
  */ 
 
-exports.images = function(files, callback){ //requires callback with imageBlocks Clean Object passed in
+exports.projectImages = function(files, callback){ //requires callback with imageBlocks Clean Object passed in
 		//console.log("--FILES--");
 		//console.log(files);
 
@@ -90,4 +90,17 @@ exports.images = function(files, callback){ //requires callback with imageBlocks
 			 	imageIndex++; //keep track of our array index for imageBlocks[key][imageIndex]
 			}); //end imageBlocks[key].forEach(function(image){});
 		} //end (var key in imageBlocks)
+}
+
+
+
+/* 
+ *
+ *		Upload Client Images
+ *
+ *
+ */
+
+exports.clientImage = function(files, callback){
+	
 }
