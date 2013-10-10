@@ -49,7 +49,32 @@ exports.action = function(db) {
 
 exports.edit = function(db){
 	return function(req, res){
-  		res.render('projects_edit', { title: 'Edit Projects', slug: 'edit-projects'});
+		var data = {};
+
+		var clientsDB = db.get('clients'); 
+		var partnersDB = db.get('partners');
+		var capabilitiesDB = db.get('capabilities');
+		var techologiesDB = db.get('techologies');
+
+		//find all the data we need - asynch and then render the page when its all ready.
+		clientsDB.find({},function(err,clients_docs){
+
+			data.clients = clients_docs;
+			partnersDB.find({},function(err,partners_docs){
+				data.partners = partners_docs;
+				capabilitiesDB.find({},function(err,capabilities_docs){
+					data.capabilities = capabilities_docs;
+					techologiesDB.find({},function(err,technology_docs){
+						data.technology = technology_docs;
+
+						res.render('projects_edit', { title: 'Edit Projects', slug: 'edit-projects', data: data});
+
+					});
+				});
+			});
+
+		})
+
 	}
 };
 
@@ -70,7 +95,10 @@ exports.store = function(db){
 
 		var projectsDB = db.get('projects');
 		var clientsDB = db.get('clients'); 
-		var partnerDB = db.get('partners');
+		var partnersDB = db.get('partners');
+		var capabilitiesDB = db.get('capabilities');
+		var techologiesDB = db.get('techologies');
+
 
 		var storedClients = []; //holding the data to our operations
 
@@ -87,8 +115,9 @@ exports.store = function(db){
 						password: (post.project_password) ? post.project_password : null,
 						capabilities:(post.capabilities)?post.capabilities : [],
 						clients:(post.clients)? post.clients: [],
-						techologies: (post.technology)? post.technology : [],
-						partners: (post.partners) ? post.partners : []
+						technologies: (post.technology)? post.technology : [],
+						partners: (post.partners) ? post.partners : [],
+						timestamp: new Date()
 				};
 
 		projectsDB.insert(project_obj, function(err,doc){
@@ -96,7 +125,8 @@ exports.store = function(db){
 			if(err) throw err;
 			console.log(project_obj); //doc id automatically inserted into the obj
 			//create process function which adds all the information into our project 
-
+			//console.log(project_obj._id);
+			console.log(project_obj._id.toString());
 		});
 
 		if(post.new_client_name && files.new_client_image){
@@ -127,15 +157,20 @@ exports.store = function(db){
 			 		delete image.headers;
 			 		delete image.ws;
 
-			 		var client_obj = {name: client, image: image, projects: [project_obj._id], capabilities:[] };
+			 		var client_obj = {name: client, image: image, projects: [project_obj._id.toString() ], capabilities:[] };
 
 					clientsDB.insert(client_obj, function(err,doc){
 
 						if(err) throw err;
 						//console.log(client_obj); //doc id automatically inserted into the obj
-						storedClients.push(client_obj);
+						//storedClients.push(client_obj);
 
 						//place callback here for function to store information back into the project
+
+						var update_obj = {$push: {clients: client_obj._id.toString() }};
+						projectsDB.update(project_obj._id, update_obj,function(err,doc){
+							if(err) throw err;
+						});
 					});
 
 				});//fs.rename end
@@ -149,48 +184,67 @@ exports.store = function(db){
 
 			//partnersDB = 
 
+			post.new_partner_name.forEach(function(val,i){
+
+				var partner_obj = {name: val, projects:[project_obj._id.toString()]};
+				partnersDB.insert(partner_obj,function(err,doc){
+					if(err) throw err;
+					var update_obj = {$push: {partners: partner_obj._id.toString()}};
+					projectsDB.update(project_obj._id,update_obj,function(err,doc){
+						if(err) throw err;
+					})
+
+				});
+
+
+			});
 
 		}
 
-		if(post.new_capabilities_name){
+		if(post.new_capabilities){
 			//
+
+			post.new_capabilities.forEach(function(v,i){
+				var capability_obj = v;
+				capability_obj.projects = [project_obj._id.toString()];
+
+				capabilitiesDB.insert(capability_obj,function(err,doc){
+					if(err) throw err;
+					var update_obj = {$push:{capabilities: capability_obj._id.toString()}};
+					projectsDB.update(project_obj._id,update_obj,function(err,doc){
+						if(err) throw err;
+					});
+				});
+
+			});
 		}
 
 		if(post.new_technology_name){
 			//
+			post.new_technology_name.forEach(function(v,i){
+				
+				var technology_obj = {name:v, projects:[project_obj._id.toString()]};
+				techologiesDB.insert(technology_obj,function(err,doc){
+					if(err) throw err;
+					var update_obj = {$push:{technologies: technology_obj._id.toString()}}
+					projectsDB.update(project_obj._id,update_obj,function(err,doc){
+						if(err) throw err;
+					});
+
+				});
+			});
+
 		}
 
-
-		//check for new clients &technology & capabilities & partners 
-
-		//DEPRECATED 
-		// if(post.technology_string)console.log('New Technology!');
-		// if(post.clients_string)console.log('New Clients!');
-		// if(post.capabilities_string)console.log('New Services!');
-		// if(post.project_featured === 'true') console.log('Project Featured');
-		// else console.log('Project Hidden');
-		// if(post.project_password && post.project_password_confirm){
-		// 	if(post.project_featured === 'true'){
-		// 		//featured projects cannot be passworded - they are featured
-		// 		//ignore password make project featured!
-		// 		console.log('Project is featured, ignoring password');
-		// 	}else{
-		// 		console.log('Password');
-		// 	}
-			
-		// }
-		//collect or data from the files, make the technology, clients and partners necessary
-		//process project text arrays 
-
-
-		var images;
-		//NEEDS TO BE FIXED
 		//custom image uploader 
-		// upload.projectImages(files, function(imageBlocks){
-		// 	images = imageBlocks;
-		// 	console.log(images);
+		upload.projectImages(files, function(images){
+			//console.log(images);
+			var update_obj = {$set: {imageBlocks: images}};
+						projectsDB.update(project_obj._id, update_obj,function(err,doc){
+							if(err) throw err;
+						});
 
-		// });
+		});
 
 		//store the images and the rest of the object in the db
 		//res.redirect('/projects/'+post.project_slug+'/edit');

@@ -44,9 +44,11 @@
 
     	<section id="technology">
     		<h3>Technology</h3>
-    		<p><input type="checkbox" name="technology[0]" value="Technology Name 1"> Technology Name</p>
-    		<p><input type="checkbox" name="technology[1]" value="Technology Name 1"> Technology Name</p>
-    		<p><input type="checkbox" name="technology[2]" value="Technology Name 1"> Technology Name</p>
+            <% for(var i =0; i< data.technology.length; i++){ %>
+    		  <p><input type="checkbox" name="technology[<%= i %>]" value="<%= data.technology[i]._id %>"> 
+              <%= data.technology[i].name %>
+              </p>
+            <% } %>
     		<p id="new-technology"></p>
             <button type="button" class="new-technology" >Add a New Technology</button>
 
@@ -54,27 +56,27 @@
 
     	<section id="clients">
     		<h3><a href="/clients/edit">Clients</a></h3>
-    		<p><input type="checkbox" name="clients[0]" value="Client Name 1"> Client Name</p>
-    		<p><input type="checkbox" name="clients[1]" value="Client Name 1"> Client Name</p>
-    		<p><input type="checkbox" name="clients[2]" value="Client Name 1"> Client Name</p>
+            <% for(var i =0; i< data.clients.length; i++){ %>
+    		  <p><input type="checkbox" name="clients[<%= i %>]" value="<%= data.clients[i]._id %>"> <%= data.clients[i].name %></p>
+            <% } %>
             <p id="new-clients"></p>
             <button type="button" class="new-clients" >Add a New Client</button>
     	</section>
 
         <section id="partners">
             <h3><a href="/partners/edit">Partners</a></h3>
-            <p><input type="checkbox" name="partners[0]" value="Partners Name 1"> Partners Name</p>
-            <p><input type="checkbox" name="partners[1]" value="Partners Name 2"> Partners Name</p>
-            <p><input type="checkbox" name="partners[2]" value="Partners Name 3"> Partners Name</p>
+            <% for(var i =0; i< data.partners.length; i++){ %>
+                <p><input type="checkbox" name="partners[<%= i %>]" value="<%= data.partners[i]._id %>"> <%= data.partners[i].name %></p>
+            <% } %>
             <p id="new-partners"></p>
             <button type="button" class="new-partners" >Add a New Partner</button>
         </section>
 
     	<section id="capabilities">
     		<h3><a href="/capabilities/edit">Capabilities</a></h3>
-    		<p><input type="checkbox" name="capabilities[0]" value="Service Name 1"> Service Name</p>
-    		<p><input type="checkbox" name="capabilities[1]" value="Service Name 2"> Service Name</p>
-    		<p><input type="checkbox" name="capabilities[2]" value="Service Name 3"> Service Name</p>
+            <% for(var i =0; i< data.capabilities.length; i++){ %>
+    		<p><input type="checkbox" name="capabilities[<%=  i %>]" value="<%= data.capabilities[i]._id %>"><%= data.capabilities[i].name %></p>
+            <% } %>
             <p id="new-capabilities"></p>
             <button type="button" class="new-capabilities" >Add a New Capabilities</button>
     	</section>

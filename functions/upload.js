@@ -14,39 +14,20 @@ exports.projectImages = function(files, callback){ //requires callback with imag
 		//console.log("--FILES--");
 		//console.log(files);
 
-		var imageBlocks = {},//formatting them images nicely
-		totalImages=0,
-		numBlocks = 0;;//images uploading
-		for(var key in files){
-			if(files.hasOwnProperty(key)) {
-				numBlocks++;
-				if(files[key][0].length>0){ //multiple array elements
-
-					//this is a hack - the dom returns files[0] when we have more than one 
-					//element in our array not really sure how else to handle this.. have fun
-   					//can't say files[key].length because in both cases they equal 1
-
-
-   					console.log(key+' has '+files[key][0].length+' images'); //log them
-   					totalImages+=files[key][0].length;
-   					imageBlocks[key] = files[key][0]; //populate json array with correct key
- 		 			
- 		 		}else{ //only one array element
-
- 		 			console.log(key+' has '+files[key].length+' images'); //log them
-   					totalImages+=files[key].length;
-   					imageBlocks[key] = files[key]; //populate json array with correct key
- 		 		}
- 		 	}
-		}
-		console.log('Total Number of Images Uploaded: '+totalImages);
-		console.log('Total Number of Image Blocks: '+numBlocks);
 		//process and upload the images.
 		var imageCount= 0;
-		for(var key in imageBlocks){
+		var imageBlocks = files.project_image_block;
+		var totalImages = 0;
+
+		imageBlocks.forEach(function(imageBlock){
+			totalImages += imageBlock.length;
+		});
+		//console.log("Total Images: "+totalImages);
+		imageBlocks.forEach(function(imageBlock,blockIndex){
+		//for(var key in imageBlocks){
 			//imageBlockIndex++; //keep track of our array index for imageBlocks[key]
 			var imageIndex = 0;
-			imageBlocks[key].forEach(function(image){
+			imageBlock.forEach(function(image,imageIndex){
 
 				if(image.headers['content-type'].indexOf('image')>-1){
 					//check if its an image
@@ -89,7 +70,7 @@ exports.projectImages = function(files, callback){ //requires callback with imag
 
 			 	imageIndex++; //keep track of our array index for imageBlocks[key][imageIndex]
 			}); //end imageBlocks[key].forEach(function(image){});
-		} //end (var key in imageBlocks)
+		}); //files.project_image_block.forEach
 }
 
 

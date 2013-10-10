@@ -148,10 +148,7 @@ $(document).ready(function(){
 				counter++;
 			}
 		}else if(numImages < 0){
-			//NEED TO FIX!!
-			// console.log(len);
-			// console.log(Math.abs(numImages));
-			//num image 
+
 			for(var i=len; i >= len+numImages; i--){
 				$(inputs[i]).remove();
 			}
