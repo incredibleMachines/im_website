@@ -2,7 +2,10 @@ Getting Started:
 ---------------
 
 	# Make sure you have mongodb installed 
+		
 		-if not install using homebrew
+		
+		$ brew install mongodb
 
 	# Make sure mongod is running	
 	
