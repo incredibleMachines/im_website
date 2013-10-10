@@ -1,4 +1,6 @@
 var upload = require('../functions/upload'); //back a folder
+var fs = require('fs');
+
 /*
  * GET projects
  */
@@ -68,66 +70,86 @@ exports.store = function(db){
 
 		var projectsDB = db.get('projects');
 		var clientsDB = db.get('clients'); 
+		var partnerDB = db.get('partners');
+
+		var storedClients = []; //holding the data to our operations
 
 
-		var obj = {
+
+		var project_obj = {
 						title: post.project_title,
 						slug: post.project_slug,
 						video_url: post.project_video,
-						imageBlocks: {},
-						textBlocks: {},
-						infoBlocks: {},
+						imageBlocks: [],
+						textBlocks: (post.project_text)? post.project_text : {},
+						infoBlocks: (post.project_info)? post.project_info : {},
 						featured: (post.project_featured === 'true') ? true : false,
 						password: (post.project_password) ? post.project_password : null,
-						capabilities:[],
-						clients:[],
-						techologies:[],
-						partners:[]
+						capabilities:(post.capabilities)?post.capabilities : [],
+						clients:(post.clients)? post.clients: [],
+						techologies: (post.technology)? post.technology : [],
+						partners: (post.partners) ? post.partners : []
 				};
 
-		projectsDB.insert(obj, function(err,doc){
+		projectsDB.insert(project_obj, function(err,doc){
 
 			if(err) throw err;
-
-			//console.log(doc._id); //
-			//console.log(obj); //doc id automatically inserted into the obj
+			console.log(project_obj); //doc id automatically inserted into the obj
+			//create process function which adds all the information into our project 
 
 		});
 
-		if(post.new_client_name){
+		if(post.new_client_name && files.new_client_image){
 
 			//process new clients
 			//get and upload image
 			//remove from file obj
-			var client_image_array;
-			if(files.new_client_image){
-				client_image_array = files.new_client_image; //store the info
-				delete files.new_client_image; //remove the files from our array and pass it along 
-				
-				if(post.new_client_name[0].length>0){ //multiple array elements
-					//assume the image # is correct - do this on the front end
-					//upload image
-					console.log('stuff');
+			var client_images = files.new_client_image; //store the info
+			delete files.new_client_image; //remove the files from our array and pass it along 
+			var client_count = 0;
 
+			//for(var i =0; i<client_images.length; i++){
+			client_images.forEach(function(image,i){
+				//var image = client_images[i];
+				//console.log(image);
+				var client = post.new_client_name[i];
+				var path = "./public/uploads/clients/"+image.originalFilename;
+				fs.rename("./"+image.path, path, function(err){
+					if(err) throw err;
+					console.log(' moved : %s to %s',image.path, path);
+					//console.log(image);
+					image.path = path;	//reset our path to root of server
+			 		image.type = image.headers['content-type']; //pull out content-type for mime data
+			 		image.name = image.originalFilename; //generally the same - but ensure they are
 
-				}else{
-					//only one new client
-					console.log('+++++++++HERE+++++++++');
-					var image = files.new_client_image[0];
-					var client = post.new_client_name[0];
-				 	var path = "./public/uploads/clients/"+image.originalFilename;
-				 	fs.rename("./"+image.path, path, function(err){
-				 		console.log(' moved : %s to %s',image.path, path);
+			 		//remove the stuff we don't need any more
+			 		delete image.originalFilename;
+			 		delete image.headers;
+			 		delete image.ws;
 
-				 	});					
-				}
-			}
+			 		var client_obj = {name: client, image: image, projects: [project_obj._id], capabilities:[] };
+
+					clientsDB.insert(client_obj, function(err,doc){
+
+						if(err) throw err;
+						//console.log(client_obj); //doc id automatically inserted into the obj
+						storedClients.push(client_obj);
+
+						//place callback here for function to store information back into the project
+					});
+
+				});//fs.rename end
+			});//each
 
 		}
 
 		if(post.new_partner_name){
 			
 			//process partners
+
+			//partnersDB = 
+
+
 		}
 
 		if(post.new_capabilities_name){
@@ -162,6 +184,7 @@ exports.store = function(db){
 
 
 		var images;
+		//NEEDS TO BE FIXED
 		//custom image uploader 
 		// upload.projectImages(files, function(imageBlocks){
 		// 	images = imageBlocks;

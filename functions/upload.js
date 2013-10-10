@@ -5,8 +5,8 @@ var fs = require('fs');
  *	from tmp/ folder to update/ folder. labels and cleans up accordingly.
  *
  *	NOTE:
- *			There is a little bit of oddness with the file arrays created in the DOM, well call 
- *			this code BETA still, any input is appreciated greatly. Thanks.
+ *			Needs Updates for form handling from the front end HTML Form structure change
+ *			
  *
  */ 
 
