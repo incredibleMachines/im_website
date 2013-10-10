@@ -1,6 +1,11 @@
 Getting Started:
 ---------------
 
+	# Make sure you have mongodb installed 
+		-if not install using homebrew
+
+	# Make sure mongod is running	
+	
 	$ cd /path/to/your/folder
 
 	$ npm install
@@ -19,6 +24,6 @@ Getting Started:
 Notes:
 ---------------
 
-	Beta Beta Beta
+	Beta Beta
 
 
