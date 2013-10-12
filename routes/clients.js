@@ -1,3 +1,5 @@
+var upload = require('../functions/upload'); //back a folder
+
 /*
  * GET projects
  */
@@ -10,12 +12,85 @@ exports.view = function(db){
 
 exports.edit = function(db){
 	return function(req, res){
-  		res.render('clients', { title: 'Edit Clients',slug: 'edit-clients' });
+
+		var clients = db.get('clients');
+		clients.find({}, function(err,docs){
+				console.log(docs)
+		  		res.render('clients_edit', { title: 'Edit Clients',slug: 'edit-clients', clients: docs });
+
+	  	});
 	}
-};
+}
+
+exports.action = function(db){
+	return function(req, res){
+
+		var action = req.params.action;
+		var post = req.body;
+
+		console.log(action);
+		console.log(post);
+
+		var clients = db.get('clients');
+
+		if(action === 'update'){
+
+
+
+		}else if(action === 'delete'){
+
+			clients.remove({_id:post._id},function(err,doc){
+
+				clients.find({}, function(err,docs){
+					//console.log(docs)
+					res.render('clients_edit', { title: 'Client Deleted',slug: 'edit-clients', clients: docs });
+
+				});
+
+			});
+
+
+		}else if(action === 'submit'){
+
+			var files = req.files;
+
+			upload.clientImage(files,function(image){
+				console.log(image);
+
+				post.image = image;
+
+				clients.insert(post, function(err,doc){
+
+					//console.log(post);
+
+					clients.find({}, function(err,docs){
+						//console.log(docs)
+						res.render('clients_edit', { title: 'Client Added',slug: 'edit-clients', clients: docs });
+
+					});
+				});
+
+			});
+
+		}
+
+
+	}
+}
+
 
 exports.store = function(db){
 	return function(req, res){
+
+
+		var clients = db.get('clients');
+
+		var action = req.params.action;
+		var post = req.body;
+
+		console.log(action);
+		console.log(post);
+
   		res.render('clients', { title: 'Store Clients', slug: 'store-clients' });
 	}
 };

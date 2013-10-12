@@ -156,6 +156,24 @@ $(document).ready(function(){
 
 	});
 
+	//delete capabilities
+
+	$('.edit-capabilities .delete').click(function(e){
+
+		var form = $(this).parent();//get the form which is the parent
+		form.attr('action', '/capabilities/delete');
+		$(form).submit();
+		//alert('yes');
+	});
+
+	$('.edit-clients .delete').click(function(e){
+
+		var form = $(this).parent();//get the form which is the parent
+		form.attr('action', '/clients/delete');
+		$(form).submit();
+		//alert('yes');
+	});
+
 
 
 });

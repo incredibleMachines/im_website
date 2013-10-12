@@ -1,0 +1,54 @@
+ <% include includes/header %>   
+
+ <%= project._id %>
+ <%= project.title %>
+ 	
+ 	<form class="edit_project" enctype="multipart/form-data" action="/projects/name/update" method="post">
+
+ 		<input type="hidden" val="<%= project._id %>" name="project[id]">
+ 		<section id="main">
+    		<p><input type="text" name="project_title" class="project_title" placeholder="Project Title" value=" <%= project.title %>"/></p>
+    		<p><input type="text" name="project_slug" class="project_slug" value=" <%= project.slug %>"/></p>
+    		<p><input type="text" name="project_video" value=" <%= project.video_url %>"/></p>
+    	</section>
+    	<section id="text">
+    		<h3>Project Text</h3>
+	    	<section class="text-blocks">
+	    	<% for (var i = 0; i<project.textBlocks.length; i++){ %>
+	     		<article class="project-text-block text-block-0">
+			   		<p><input class="title" type="text" name="project_text[<%= i %>][title]" placeholder="Project Text Title" value="<%= project.textBlocks[i].title %>"></p>
+		    		<p><textarea class="copy" name="project_text[<%= i %>][text]" placeholder="Project Text"><%= project.textBlocks[i].text %></textarea></p>
+	    		</article>
+	    	<% } %>
+    		</section>
+    		<button type="button" class="more-text" name="more_text">Add Another Text Field</button>
+    		<button type="button" class="less-text" name="less_text">Remove Text Field</button>
+    	</section>
+    	<section id="images">
+    		<h3>Project Image Block</h3>
+    		<section class="image-blocks">
+    		<% for (var i = 0; i<project.imageBlocks.length; i++){ %>
+	    		<article class="project-image-block image-block-<%=i%>">
+		    		<p>
+			    		<select class="num-images">
+			    			<option selected="selected">Images in Block</option>
+			    			<option value="1" <% if(project.imageBlocks[i].length===1){%> selected="selected" <%} %> >1</option>
+			    			<option value="2" <% if(project.imageBlocks[i].length===2){%> selected="selected" <%} %> >2</option>
+			    			<option value="3" <% if(project.imageBlocks[i].length===3){%> selected="selected" <%} %> >3</option>
+			    			<option value="4" <% if(project.imageBlocks[i].length===4){%> selected="selected" <%} %> >4</option>
+			    		</select>
+		    		</p>
+		    		<% for(var j= 0; j<project.imageBlocks[i].length; j++){ %>
+		    			<img src="<%= project.imageBlocks[i][j].path.substring(8)  %>">
+		    			<input type="file" name="project_image_block[<%=i%>][<%=j%>]" class="project-image-<%=i%>" placeholder="Project Text Title">
+	    			<% } %>
+	    		</article>
+    		</section>
+    		<% } %>
+    		<button type="button" class="more-images" name="more_images">Add Another Image Block</button>
+    		<button type="button" class="less-images" name="less_images">Remove Image Block</button>
+    	</section>
+
+	</form>
+
+ <% include includes/footer %>   

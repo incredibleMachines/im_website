@@ -39,7 +39,7 @@ exports.projectImages = function(files, callback){ //requires callback with imag
 				 		imageCount++;
 				 		console.log(' moved : %s to %s',image.path, path);
 
-				 		image.path = path;	//reset our path to root of server
+				 		image.path = path.substring(8);	//reset our path to root of server
 				 		image.type = image.headers['content-type']; //pull out content-type for mime data
 				 		image.name = image.originalFilename; //generally the same - but ensure they are
 
@@ -83,5 +83,22 @@ exports.projectImages = function(files, callback){ //requires callback with imag
  */
 
 exports.clientImage = function(files, callback){
+	var image = files.image;
+	var path = "./public/uploads/clients/"+image.originalFilename;
+
+	fs.rename("./"+image.path, path, function(err){
+
+			image.path = path.substring(8);
+			image.type = image.headers['content-type'];
+			image.name = image.originalFilename;
+
+			delete image.ws;
+			delete image.headers;
+			delete image.originalFilename;
+
+			callback(image);
+
+
+	});
 	
 }

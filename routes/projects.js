@@ -38,8 +38,17 @@ exports.action = function(db) {
 
 	return function(req,res) {
 		var action = req.params.action;
+		var name = req.params.name;
+		console.log(name);
+		var projects = db.get('projects');
 
-		res.render('project', {title: 'Project Action', slug: 'project-'+action});
+		projects.find({ slug: name}, function(err,docs){
+			console.log(docs[0])
+			res.render('project_'+action, {title: 'Project Action', slug: 'project-'+action, project: docs[0]});
+
+		});
+
+
 	}
 }
 
@@ -157,7 +166,7 @@ exports.store = function(db){
 			 		delete image.headers;
 			 		delete image.ws;
 
-			 		var client_obj = {name: client, image: image, projects: [project_obj._id.toString() ], capabilities:[] };
+			 		var client_obj = {name: client, image: image, projects: [{_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }], capabilities:[] };
 
 					clientsDB.insert(client_obj, function(err,doc){
 
@@ -167,7 +176,7 @@ exports.store = function(db){
 
 						//place callback here for function to store information back into the project
 
-						var update_obj = {$push: {clients: client_obj._id.toString() }};
+						var update_obj = {$push: {clients: {_id: client_obj._id.toString(), name: client_obj.name } }};
 						projectsDB.update(project_obj._id, update_obj,function(err,doc){
 							if(err) throw err;
 						});
@@ -186,10 +195,10 @@ exports.store = function(db){
 
 			post.new_partner_name.forEach(function(val,i){
 
-				var partner_obj = {name: val, projects:[project_obj._id.toString()]};
+				var partner_obj = {name: val, projects:[{_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }]};
 				partnersDB.insert(partner_obj,function(err,doc){
 					if(err) throw err;
-					var update_obj = {$push: {partners: partner_obj._id.toString()}};
+					var update_obj = {$push: {partners: {_id:partner_obj._id.toString(), name: partner_obj.name  } } };
 					projectsDB.update(project_obj._id,update_obj,function(err,doc){
 						if(err) throw err;
 					})
@@ -206,11 +215,11 @@ exports.store = function(db){
 
 			post.new_capabilities.forEach(function(v,i){
 				var capability_obj = v;
-				capability_obj.projects = [project_obj._id.toString()];
+				capability_obj.projects = [{_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }];
 
 				capabilitiesDB.insert(capability_obj,function(err,doc){
 					if(err) throw err;
-					var update_obj = {$push:{capabilities: capability_obj._id.toString()}};
+					var update_obj = {$push:{capabilities: {_id:capability_obj._id.toString(), name: capability_obj.name, text: capability_obj.text } } };
 					projectsDB.update(project_obj._id,update_obj,function(err,doc){
 						if(err) throw err;
 					});
@@ -223,10 +232,10 @@ exports.store = function(db){
 			//
 			post.new_technology_name.forEach(function(v,i){
 				
-				var technology_obj = {name:v, projects:[project_obj._id.toString()]};
+				var technology_obj = {name:v, projects:[{_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }]};
 				techologiesDB.insert(technology_obj,function(err,doc){
 					if(err) throw err;
-					var update_obj = {$push:{technologies: technology_obj._id.toString()}}
+					var update_obj = {$push:{technologies: {_id:technology_obj._id.toString(), name: technology_obj.name } }}
 					projectsDB.update(project_obj._id,update_obj,function(err,doc){
 						if(err) throw err;
 					});
@@ -247,9 +256,9 @@ exports.store = function(db){
 		});
 
 		//store the images and the rest of the object in the db
-		//res.redirect('/projects/'+post.project_slug+'/edit');
- 		//res.location('/projects/'+post.project_slug+'/edit');
+		res.redirect('/projects/'+post.project_slug+'/edit');
+ 		res.location('/projects/'+post.project_slug+'/edit');
 
-  		res.render('project', { title: 'Store Projects', slug: 'store-projects' });
+  		//res.render('project', { title: 'Store Projects', slug: 'store-projects' });
 	}
 };

@@ -10,6 +10,8 @@ var user = require('./routes/user');
 var projects = require('./routes/projects');
 var capabilities = require('./routes/capabilities');
 var clients = require('./routes/clients');
+var partners = require('./routes/partners');
+var technologies = require('./routes/technologies');
 
 var http = require('http');
 var path = require('path');
@@ -18,6 +20,9 @@ var path = require('path');
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('localhost:27017/im_site');
+
+//less 
+var less= require('less-middleware');
 
 var app = express();
 
@@ -32,6 +37,7 @@ app.use(express.methodOverride());
 app.use(express.cookieParser('th3m4ch1n3s'));//cookies!
 app.use(express.session());//sessions!
 app.use(app.router);
+app.use( less( {src: __dirname+ '/public', force: true } ) );
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -41,7 +47,6 @@ if ('development' == app.get('env')) {
 }
 
 //our pages
-
 app.get('/', routes.index);
 
 app.get('/projects', projects.featured(db));
@@ -56,9 +61,16 @@ app.get('/capabilities/edit', capabilities.edit(db) );
 app.get('/clients', clients.view(db));
 app.get('/clients/edit', clients.edit(db));
 
+app.get('/partners/edit',partners.edit(db));
+app.get('/technologies/edit',technologies.edit(db));
+
 app.post('/projects', projects.store(db));
-app.post('/capabilities', capabilities.store(db));
-app.post('/clients',clients.edit(db));
+
+app.post('/projects/:action', projects.store(db));
+app.post('/capabilities/:action', capabilities.store(db));
+app.post('/clients/:action',clients.action(db));
+app.post('/partners/:action',partners.edit(db));
+app.post('/technologies/:action',technologies.edit(db));
 
 
 http.createServer(app).listen(app.get('port'), function(){
