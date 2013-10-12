@@ -35,6 +35,42 @@ exports.action = function(db){
 
 		if(action === 'update'){
 
+			//console.log(req.files);
+
+			if(req.files.image.name===''){
+
+				console.log('no files');
+				var update_obj = { $set: { name: post.name, caption: post.caption}}
+				clients.update({_id:post._id},update_obj,function(err,doc){
+	
+					clients.find({}, function(err,docs){
+						//console.log(docs)
+						res.render('clients_edit', { title: 'Client Updated',slug: 'edit-clients', clients: docs });
+
+					});
+
+				});
+			}else{
+				console.log('files');
+				upload.clientImage(req.files,function(image){
+					console.log(image);
+
+					post.image = image;
+					var update_obj = { $set: { name: post.name, caption: post.caption, image: post.image}}
+
+					clients.update({_id:post._id}, update_obj , function(err,doc){
+
+						//console.log(post);
+
+						clients.find({}, function(err,docs){
+							//console.log(docs)
+							res.render('clients_edit', { title: 'Client Updated',slug: 'edit-clients', clients: docs });
+
+						});
+					});
+
+				});
+			}
 
 
 		}else if(action === 'delete'){
