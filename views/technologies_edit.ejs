@@ -1,0 +1,25 @@
+<% include includes/header %>
+	
+	<h1><%= title %></h1>
+
+	<section>
+    	<form enctype="multipart/form-data" action="/technologies/submit" method="post">
+	    	<h2>Add New Technology</h2>
+	    	<input name="name" placeholder="Enter Title">
+	    	<button type="submit">Submit</button>
+	    </form>
+    </section>
+    <section>
+    	<h2>Current Technologies</h2>
+    	<% for(var i =0; i<technologies.length; i++){ %>
+    		<form enctype="multipart/form-data" action="/technologies/update" method="post" >
+    			<input type="text" value="<%= technologies[i].name %>"/>
+    			<input type="hidden" value="<%= technologies[i]._id %>"/>
+    			<button type="submit">Update</button>
+    			<button type="button" class="delete">Delete</button>
+    		</form>
+    	<% } %>
+    </section>
+
+
+<% include includes/footer %>

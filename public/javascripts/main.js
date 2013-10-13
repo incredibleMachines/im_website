@@ -156,7 +156,7 @@ $(document).ready(function(){
 
 	});
 
-	//delete capabilities
+	//delete item from row of items
 
 	$('.edit-capabilities .delete').click(function(e){
 
@@ -174,6 +174,14 @@ $(document).ready(function(){
 		//alert('yes');
 	});
 
+	$('.edit-technologies .delete').click(function(e){
+
+
+		var form = $(this).parent();//get the form which is the parent
+		form.attr('action', '/technologies/delete');
+		$(form).submit();
+		//alert('yes');
+	});
 
 
 });

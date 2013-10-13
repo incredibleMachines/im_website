@@ -67,10 +67,10 @@ app.get('/technologies/edit',technologies.edit(db));
 app.post('/projects', projects.store(db));
 
 app.post('/projects/:action', projects.store(db));
-app.post('/capabilities/:action', capabilities.store(db));
+app.post('/capabilities/:action', capabilities.action(db));
 app.post('/clients/:action',clients.action(db));
-app.post('/partners/:action',partners.edit(db));
-app.post('/technologies/:action',technologies.edit(db));
+app.post('/partners/:action',partners.action(db));
+app.post('/technologies/:action',technologies.action(db));
 
 
 http.createServer(app).listen(app.get('port'), function(){

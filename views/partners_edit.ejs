@@ -1,0 +1,23 @@
+<% include includes/header %>
+
+	<section>
+    	<form enctype="multipart/form-data" action="/partners/submit" method="post">
+	    	<h2>Add New Partner</h2>
+	    	<input name="name" placeholder="Enter Title">
+	    	<button type="submit">Submit</button>
+	    </form>
+    </section>
+    <section>
+    	<h2>Current Partners</h2>
+    	<% for(var i =0; i<partners.length; i++){ %>
+    		<form>
+    			<input type="text" value="<%= partners[i].name %>"/>
+    			<input type="hidden" value="<%= partners[i]._id %>"/>
+    			<button type="submit">Update</button>
+    			<button type="button">Delete</button>
+    		</form>
+    	<% } %>
+    </section>
+
+
+<% include includes/footer %>

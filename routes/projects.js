@@ -63,9 +63,9 @@ exports.edit = function(db){
 		var clientsDB = db.get('clients'); 
 		var partnersDB = db.get('partners');
 		var capabilitiesDB = db.get('capabilities');
-		var techologiesDB = db.get('techologies');
+		var techologiesDB = db.get('technologies');
 
-		//find all the data we need - asynch and then render the page when its all ready.
+		//find all the data we need - async and then render the page when its all ready.
 		clientsDB.find({},function(err,clients_docs){
 
 			data.clients = clients_docs;

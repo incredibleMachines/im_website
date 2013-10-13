@@ -19,7 +19,7 @@ exports.edit = function(db){
 	}
 };
 
-exports.store = function(db){
+exports.action = function(db){
 	return function(req, res){
 
 		var capabilities = db.get('capabilities');
