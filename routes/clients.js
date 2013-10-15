@@ -94,6 +94,8 @@ exports.action = function(db){
 				console.log(image);
 
 				post.image = image;
+				post.projects =[];
+				post.capabilities = [];
 
 				clients.insert(post, function(err,doc){
 

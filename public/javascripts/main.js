@@ -183,5 +183,12 @@ $(document).ready(function(){
 		//alert('yes');
 	});
 
+	$('.edit-partners .delete').click(function(e){
+
+		var form = $(this).parent();
+		form.attr('action','/partners/delete');
+		$(form).submit();
+	})
+
 
 });

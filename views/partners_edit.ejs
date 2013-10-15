@@ -1,4 +1,6 @@
 <% include includes/header %>
+    
+    <h1><%= title %></h1>
 
 	<section>
     	<form enctype="multipart/form-data" action="/partners/submit" method="post">
@@ -10,11 +12,11 @@
     <section>
     	<h2>Current Partners</h2>
     	<% for(var i =0; i<partners.length; i++){ %>
-    		<form>
-    			<input type="text" value="<%= partners[i].name %>"/>
-    			<input type="hidden" value="<%= partners[i]._id %>"/>
+    		<form enctype="multipart/form-data" action="/partners/update" method="post">
+    			<input type="text" name="name" value="<%= partners[i].name %>"/>
+    			<input type="hidden" name="_id" value="<%= partners[i]._id %>"/>
     			<button type="submit">Update</button>
-    			<button type="button">Delete</button>
+    			<button type="button" class="delete">Delete</button>
     		</form>
     	<% } %>
     </section>

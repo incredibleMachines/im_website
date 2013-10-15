@@ -39,7 +39,7 @@
 			    		</select>
 		    		</p>
 		    		<% for(var j= 0; j<project.imageBlocks[i].length; j++){ %>
-		    			<img src="<%= project.imageBlocks[i][j].path.substring(8)  %>">
+		    			<img src="<%= project.imageBlocks[i][j].path  %>">
 		    			<input type="file" name="project_image_block[<%=i%>][<%=j%>]" class="project-image-<%=i%>" placeholder="Project Text Title">
 	    			<% } %>
 	    		</article>

@@ -4,7 +4,10 @@
 
 exports.view = function(db){
 	return function(req, res){
-  		res.render('capabilities', { title: 'Capabilities', slug: 'capabilities' });
+		var capabilities = db.get('capabilities');
+		capabilities.find({}, function(err,docs){
+  			res.render('capabilities', { title: 'Capabilities', slug: 'capabilities', capabilities:docs });
+  		});
 	}
 };
 
@@ -13,7 +16,7 @@ exports.edit = function(db){
 
 		var capabilities = db.get('capabilities');
 		capabilities.find({}, function(err,docs){
-			console.log(docs)
+			//console.log(docs)
   			res.render('capabilities_edit', { title: 'Edit Capabilities', slug: 'edit-capabilities', capabilities: docs });
   		});
 	}
@@ -33,7 +36,7 @@ exports.action = function(db){
 		if(action == 'update'){
 			capabilities.update({_id:post._id},post, function(err, doc){
 				if(err) throw err;
-				console.log(doc);
+				//console.log(doc);
 				capabilities.find({}, function(err,docs){
 					//console.log(docs)
 		  			res.render('capabilities_edit', { title: 'Capabilities Updated', slug: 'edit-capabilities', capabilities: docs });
@@ -57,7 +60,9 @@ exports.action = function(db){
 			});
 
 		}else if(action == 'submit'){
-
+			post.slug = post.name.toLowerCase().replace(/ /g,'-');
+			post.projects = [];
+			post.clients = [];
 			capabilities.insert(post, function(err,doc){
 
 				if(err) throw err;

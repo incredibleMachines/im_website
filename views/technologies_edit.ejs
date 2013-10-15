@@ -13,8 +13,8 @@
     	<h2>Current Technologies</h2>
     	<% for(var i =0; i<technologies.length; i++){ %>
     		<form enctype="multipart/form-data" action="/technologies/update" method="post" >
-    			<input type="text" value="<%= technologies[i].name %>"/>
-    			<input type="hidden" value="<%= technologies[i]._id %>"/>
+    			<input type="text" name="name" value="<%= technologies[i].name %>"/>
+    			<input type="hidden" name="_id" value="<%= technologies[i]._id %>"/>
     			<button type="submit">Update</button>
     			<button type="button" class="delete">Delete</button>
     		</form>

@@ -23,6 +23,7 @@ exports.action = function(db){
 		console.log(post);
 
 		if(action === 'submit'){
+			post.projects = [];
 			technologies.insert(post, function(err,doc){
 
 					//console.log(post);
@@ -36,6 +37,13 @@ exports.action = function(db){
 
 		}else if(action ==='update'){
 
+			var update_obj = {$set: { name: post.name}};
+
+			technologies.update({_id: post._id}, update_obj, function(err,doc){
+				technologies.find({},function(err,docs){
+					res.render('technologies_edit', {title: 'Technology Updated', slug: 'edit-technologies', technologies:docs});
+				});
+			});
 
 		}else if(action ==='delete'){
 

@@ -25,8 +25,18 @@ exports.single = function(db) {
 	return function(req,res) {
 		var name = req.params.name;
 		//query the database and load all the info
+		var projects = db.get('projects');
 
-		res.render('project', {title: 'Project Title', slug: 'single-project '+name });
+		projects.findOne({slug:name},function(err,doc){
+
+			console.log(doc);
+			if(!doc){
+				res.render('404', {title: 'Project Not Found', slug:'project-not-found'});
+			}else{
+				res.render('project', {title: 'Project Title', slug: 'single-project '+name, project: doc });
+			}
+		});
+
 	}
 }
 
@@ -42,8 +52,8 @@ exports.action = function(db) {
 		console.log(name);
 		var projects = db.get('projects');
 
-		projects.find({ slug: name}, function(err,docs){
-			console.log(docs[0])
+		projects.findOne({ slug: name}, function(err,doc){
+			console.log(doc)
 			res.render('project_'+action, {title: 'Project Action', slug: 'project-'+action, project: docs[0]});
 
 		});
@@ -64,6 +74,7 @@ exports.edit = function(db){
 		var partnersDB = db.get('partners');
 		var capabilitiesDB = db.get('capabilities');
 		var techologiesDB = db.get('technologies');
+		var projectsDB = db.get('projects');
 
 		//find all the data we need - async and then render the page when its all ready.
 		clientsDB.find({},function(err,clients_docs){
@@ -76,8 +87,10 @@ exports.edit = function(db){
 					techologiesDB.find({},function(err,technology_docs){
 						data.technology = technology_docs;
 
-						res.render('projects_edit', { title: 'Edit Projects', slug: 'edit-projects', data: data});
-
+						projectsDB.find({},function(err, project_docs){
+							data.projects = project_docs;
+							res.render('projects_edit', { title: 'Edit Projects', slug: 'edit-projects', data: data});
+						})
 					});
 				});
 			});
@@ -106,7 +119,7 @@ exports.store = function(db){
 		var clientsDB = db.get('clients'); 
 		var partnersDB = db.get('partners');
 		var capabilitiesDB = db.get('capabilities');
-		var techologiesDB = db.get('techologies');
+		var techologiesDB = db.get('technologies');
 
 
 		var storedClients = []; //holding the data to our operations
@@ -117,15 +130,16 @@ exports.store = function(db){
 						title: post.project_title,
 						slug: post.project_slug,
 						video_url: post.project_video,
+						video_backup: post.project_video_backup,
 						imageBlocks: [],
 						textBlocks: (post.project_text)? post.project_text : {},
 						infoBlocks: (post.project_info)? post.project_info : {},
 						featured: (post.project_featured === 'true') ? true : false,
 						password: (post.project_password) ? post.project_password : null,
-						capabilities:(post.capabilities)?post.capabilities : [],
-						clients:(post.clients)? post.clients: [],
-						technologies: (post.technology)? post.technology : [],
-						partners: (post.partners) ? post.partners : [],
+						capabilities: [],
+						clients: [],
+						technologies: [],
+						partners: [],
 						timestamp: new Date()
 				};
 
@@ -138,6 +152,7 @@ exports.store = function(db){
 			console.log(project_obj._id.toString());
 		});
 
+		//process new clients
 		if(post.new_client_name && files.new_client_image){
 
 			//process new clients
@@ -187,11 +202,9 @@ exports.store = function(db){
 
 		}
 
+		//process new partners
 		if(post.new_partner_name){
 			
-			//process partners
-
-			//partnersDB = 
 
 			post.new_partner_name.forEach(function(val,i){
 
@@ -209,12 +222,12 @@ exports.store = function(db){
 			});
 
 		}
-
+		//process new capabilities
 		if(post.new_capabilities){
-			//
 
 			post.new_capabilities.forEach(function(v,i){
 				var capability_obj = v;
+				capability_obj.slug = v.name.toLowerCase().replace(/ /g,'-');
 				capability_obj.projects = [{_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }];
 
 				capabilitiesDB.insert(capability_obj,function(err,doc){
@@ -227,7 +240,7 @@ exports.store = function(db){
 
 			});
 		}
-
+		//process new technologies
 		if(post.new_technology_name){
 			//
 			post.new_technology_name.forEach(function(v,i){
@@ -240,6 +253,91 @@ exports.store = function(db){
 						if(err) throw err;
 					});
 
+				});
+			});
+
+		}	
+		//update each capability with project and vice versa
+		if(post.capabilities){
+			//console.log('capabilities');
+			post.capabilities.forEach(function(v,i){
+				console.log('capabilities: '+v);
+
+				capabilitiesDB.findOne({_id:v},function(err,capability_obj){
+					if(err)throw err;
+					var update_obj = {$push:{capabilities: {_id:capability_obj._id.toString(), name: capability_obj.name, text: capability_obj.text } } };
+					projectsDB.update(project_obj._id,update_obj,function(err,doc){
+						if(err) throw err;
+					});
+				});
+				var update_obj = {$push: {projects: {_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }}};
+				capabilitiesDB.update({_id:v},update_obj,function(err){
+					if(err) throw err;
+				});
+
+			});
+		}
+		//update each technology with project and vice versa
+		if(post.technology){
+			console.log(post.technology);
+			post.technology.forEach(function(v,i){
+
+				techologiesDB.findOne({_id:v},function(err,technology_obj){
+					if(err)throw err;
+					var update_obj = {$push:{technologies: {_id:technology_obj._id.toString(), name: technology_obj.name } }};
+					projectsDB.update(project_obj._id,update_obj,function(err,doc){
+						if(err) throw err;
+					});
+				});
+				var update_obj = {$push: {projects: {_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }}};
+				techologiesDB.update({_id:v},update_obj,function(err){
+					if(err) throw err;
+				});
+
+
+			});
+
+		}
+		//update each partner with project and vice versa
+		if(post.partners){
+
+			post.partners.forEach(function(v,i){
+
+				partnersDB.findOne({_id:v},function(err,partner_obj){
+					if(err)throw err;
+					var update_obj = {$push: {partners: {_id:partner_obj._id.toString(), name: partner_obj.name  } } };
+					projectsDB.update(project_obj._id,update_obj,function(err,doc){
+						if(err) throw err;
+					});
+				});
+
+				var update_obj = {$push: {projects: {_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }}};
+				partnersDB.update({_id:v},update_obj,function(err){
+					if(err) throw err;
+				});
+
+			});
+
+		}
+		//update each client with project and vice versa
+		if(post.clients){
+
+			post.clients.forEach(function(v,i){
+
+				clientsDB.findOne({_id:v},function(err,client_obj){
+
+					if(err) throw err;
+					var update_obj = {$push: {clients: {_id: client_obj._id.toString(), name: client_obj.name } }};
+						projectsDB.update(project_obj._id, update_obj,function(err,doc){
+							if(err) throw err;
+					});
+
+
+				});
+
+				var update_obj = {$push: {projects: {_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }}}
+				clientsDB.update({_id:v},update_obj,function(err){
+					if(err) throw err;
 				});
 			});
 

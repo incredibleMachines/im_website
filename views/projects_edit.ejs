@@ -1,6 +1,12 @@
  <% include includes/header %>   
     <h2>Current Projects</h2>
-    <p> List of Current Projects Coming Soon </p>
+    <ul>
+        <%for(var i = 0; i<data.projects.length; i++){ %>
+
+            <li><a href="/projects/<%= data.projects[i].slug %>/edit"><%= data.projects[i].title %></a></li>
+
+        <% } %>
+    </ul>
     <h2>Add Project</h2>
     <form class="new_project" enctype="multipart/form-data" action="/projects" method="post">
 
@@ -8,6 +14,7 @@
     		<p><input type="text" name="project_title" class="project_title" placeholder="Project Title"/></p>
     		<p><input type="text" name="project_slug" class="project_slug" placeholder="Project Slug"/></p>
     		<p><input type="text" name="project_video" placeholder="Project Video"/></p>
+            <p><input type="text" name="project_video_backup" placeholder="Project Backup Video"/></p>
     	</section>
 
     	<section id="text">
@@ -43,7 +50,7 @@
     	</section>
 
     	<section id="technology">
-    		<h3>Technology</h3>
+    		<h3><a href="/technologies/edit">Technologies</a></h3>
             <% for(var i =0; i< data.technology.length; i++){ %>
     		  <p><input type="checkbox" name="technology[<%= i %>]" value="<%= data.technology[i]._id %>"> 
               <%= data.technology[i].name %>
