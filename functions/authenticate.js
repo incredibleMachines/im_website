@@ -2,7 +2,7 @@ exports.admin = function(req, res, next){
 	if(!req.session.admin_user && !req.session.key){
 		//check that date and key match up
 		console.log('page-access-denied');
-		console.log(req);
+		//console.log(req);
 		res.render('admin-login', {title:'You must login to access.', slug:'admin-login', path:req.path});
 
 	}else{

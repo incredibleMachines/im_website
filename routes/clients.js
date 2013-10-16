@@ -6,7 +6,12 @@ var upload = require('../functions/upload'); //back a folder
 
 exports.view = function(db){
 	return function(req, res){
-  		res.render('clients', { title: 'Clients', slug: 'clients' });
+		var clients = db.get('clients');
+		clients.find({},function(err,docs){
+			console.log(docs);
+			 res.render('clients', { title: 'Clients', slug: 'clients', clients: docs });
+
+		});
 	}
 };
 
