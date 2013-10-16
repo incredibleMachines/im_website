@@ -73,7 +73,7 @@ app.get('/admin/index',authenticate.admin,admin.index); //index??
 
 //post routes
 app.post('/projects', projects.store(db));
-
+app.post('/projects/login', projects.login(db));
 app.post('/projects/:action', projects.store(db));
 app.post('/capabilities/:action', capabilities.action(db));
 app.post('/clients/:action',clients.action(db));

@@ -2,7 +2,8 @@ exports.admin = function(req, res, next){
 	if(!req.session.admin_user && !req.session.key){
 		//check that date and key match up
 		console.log('page-access-denied');
-		res.render('admin-login', {title:'You must login to access.', slug:'admin-login'});
+		//console.log(req);
+		res.render('admin-login', {title:'You must login to access.', slug:'admin-login', path:req.path});
 
 	}else{
 		console.log(req.session.admin_user);
@@ -25,7 +26,16 @@ exports.project = function(db){
 			if(doc.password===null) next();
 
 			//we have a password situation here..
-			console.log(doc.password);
+			if(!req.session.project){
+				//console.log(req);
+				res.render('project-login',{title:'This Project Requires Login', slug: 'project-login', project_slug: name });
+				console.log(doc.password);
+			}else{
+				if(req.session.project === name) next();	
+				else res.render('project-login',{title:'This Project Requires Login', slug: 'project-login', project_slug: name });
+
+			}
+			
 		});
 
 	}

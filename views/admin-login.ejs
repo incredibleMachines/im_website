@@ -3,6 +3,9 @@
 <form method="post" action="/login">
 	<input type="text" placeholder="Enter Username" name="user"/>
 	<input type="password" placeholder="Enter Password" name="pw"/>
+	<% if(path){ %>
+	<input type="hidden" name="path" value="<%= path%>">
+	<% } %>
 	<button type="submit">Login</button>
 </form>
 <% include includes/footer %>

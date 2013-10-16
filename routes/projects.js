@@ -6,6 +6,7 @@ var fs = require('fs');
  *
  */
 
+
 /*
  * GET projects
  */
@@ -13,12 +14,15 @@ var fs = require('fs');
 exports.featured = function(db){
 	return function(req, res){
 		//db query for all featured projects
-		var projects = [];
 
-		//query 
+		var projects = db.get('projects');
 
+		projects.find({featured: true},function(err,docs){
+			console.log(docs);
+			res.render('projects', { title: 'Featured Projects' , slug: 'projects', projects: docs});
+
+		});
 		//array push each project 
-  		res.render('projects', { title: 'Featured Projects' , slug: 'projects', projects: projects});
 	}
 };
 
@@ -104,6 +108,36 @@ exports.edit = function(db){
 
 	}
 };
+
+
+/*
+ *
+ * POST projects/login
+ *
+ */
+
+ exports.login = function(db){
+ 	return function(req,res){
+ 		
+ 		var projects = db.get('projects');
+
+ 		var post = req.body;
+ 		console.log(post)
+ 		projects.findOne({slug:post.project_slug}, 'password', function(err,doc){
+ 			if(err) throw err;
+ 			//console.log(doc);
+ 			if(doc.password === post.pw){
+
+ 				req.session.project = post.project_slug;
+ 				res.redirect('/projects/'+post.project_slug);
+ 				res.location('/projects/'+post.project_slug);
+
+ 			}else{
+ 				res.render('404',{ title: 'Not Authorized',slug: 'project-not-authorized'});
+ 			}
+ 		});
+ 	}
+ }
 
 
 /*
