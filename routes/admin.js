@@ -22,8 +22,9 @@ exports.auth = function(db){
 			if(post.user == "admin" && post.pw == "user"){
 				req.session.admin_user = new Date();//get date
 				req.session.key = '1231231'; //generate number
-				res.render('admin-index',{title:'Welcome Back.', slug:'admin-index'});
-				res.location('/admin/index');
+				//res.render('admin-index',{title:'Welcome Back.', slug:'admin-index'});
+				res.redirect(post.path);
+				res.location(post.path);
 			}
 		}
 } 
