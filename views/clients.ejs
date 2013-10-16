@@ -5,40 +5,43 @@
 		
 			<h1>Clients</h1>
 			
-			<section class="client-detail" id="twitter">
-				<div class="corner close">
-					<button><p>+</p></button>
-				</div>
-				<article class="client-img">
-					<img src="images/client_detail_img.png" alt="alt text" />
-					<p>Letterpress High Life ethnic squid hoodie typewriter craft beer cardigan, stumptown Cosby sweater nihil minim Truffaut. Cillum YOLO ennui Williamsburg, sustainable organic Bushwick VHS est Terry Richardson nesciunt id four loko before they sold out.</p>
-				</article>
-				<article class="detail-col">
-					<div class="title">
-						<h3>Services</h3>
+				<section class="client-detail" id="twitter">
+					<div class="corner close">
+						<button><p>+</p></button>
 					</div>
-					<div class="detail-list">
-						<ul>
-							<li><a href="#">Capability ›</a></li>
-							<li><a href="#">Another Capability ›</a></li>
-							<li><a href="#">Capability ›</a></li>
-						</ul>
-					</div>
-				</article>
-				<article class="detail-col">
-					<div class="title">
-						<h3>Projects</h3>
-					</div>
-					<div class="detail-list">
-						<ul>
-							<li><a href="#">Project Title ›</a></li>
-							<li><a href="#">Another Project ›</a></li>
-							<li><a href="#">Project Title ›</a></li>
-						</ul>
-					</div>
-				</article>
-			</section>	
-
+					<article class="client-img">
+						<% for(var i = 0; i< clients.length; i++){ %>
+							<img src="<%= clients[i].image.path %>" alt="need an image" />
+							<p><%= clients[i].caption %></p>
+						<% } %>
+					</article>
+					<article class="detail-col">
+						<div class="title">
+							<h3>Capabilities</h3>
+						</div>
+						<div class="detail-list">
+							<ul>
+								<!-- this is not working -->
+								<% for(var i = 0; i< capabilities.length; i++){ %>
+									<li><a href="#<%= capabilities[i].slug %>"><%= capabilities[i].name %> ›</a></li>
+								<% } %>
+							</ul>
+						</div>
+					</article>
+					<article class="detail-col">
+						<div class="title">
+							<h3>Projects</h3>
+						</div>
+						<div class="detail-list">
+							<ul>
+								<% for(var i = 0; i< clients.length; i++){ %>
+									<li><a href="#"><%= clients[i].projects.title %> ›</a></li>
+								<% } %>
+							</ul>
+						</div>
+					</article>
+				</section>	
+			
 			<section class="client-detail" id="lincoln-motor-company">
 				<div class="corner close">
 					<button><p>+</p></button>

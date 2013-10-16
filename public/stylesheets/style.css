@@ -936,6 +936,7 @@ header nav a.active {
 .capabilities #skills-section {
   position: absolute;
   background-color: #ffffff;
+  width: inherit;
   /* ---end skills--- */
 
   /* --- end about-skills div --- */
