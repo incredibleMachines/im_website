@@ -4,7 +4,8 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
+var routes = require('./routes')
+var admin = require('./routes/admin');
 
 var user = require('./routes/user');
 var projects = require('./routes/projects');
@@ -12,6 +13,7 @@ var capabilities = require('./routes/capabilities');
 var clients = require('./routes/clients');
 var partners = require('./routes/partners');
 var technologies = require('./routes/technologies');
+var authenticate = require('./functions/authenticate');
 
 var http = require('http');
 var path = require('path');
@@ -47,23 +49,29 @@ if ('development' == app.get('env')) {
 }
 
 //our pages
+//get routes
 app.get('/', routes.index);
+app.get('/projects', projects.featured(db)); //get all featured projects
 
-app.get('/projects', projects.featured(db));
-app.get('/projects/edit',projects.edit(db)); //must place this above :name route to ensure it doesn't match :name
-
-app.get('/projects/:name', projects.single(db));
-app.get('/projects/:name/:action', projects.action(db));
+//authenticated project pages
+app.get('/projects/edit', authenticate.admin, projects.edit(db)); //must place this above :name route to ensure it doesn't match :name
+app.get('/projects/:name',authenticate.project(db), projects.single(db)); //will need custom authentication
+app.get('/projects/:name/:action', authenticate.admin, projects.action(db));
 
 app.get('/capabilities', capabilities.view(db) );
-app.get('/capabilities/edit', capabilities.edit(db) );
-
 app.get('/clients', clients.view(db));
-app.get('/clients/edit', clients.edit(db));
+app.get('/admin/login', admin.login); //admin login view
 
-app.get('/partners/edit',partners.edit(db));
-app.get('/technologies/edit',technologies.edit(db));
 
+//authenticated other pages pages
+
+app.get('/capabilities/edit', authenticate.admin, capabilities.edit(db) );
+app.get('/clients/edit',authenticate.admin, clients.edit(db));
+app.get('/partners/edit',authenticate.admin, partners.edit(db));
+app.get('/technologies/edit',authenticate.admin, technologies.edit(db));
+app.get('/admin/index',authenticate.admin,admin.index); //index??
+
+//post routes
 app.post('/projects', projects.store(db));
 
 app.post('/projects/:action', projects.store(db));
@@ -72,6 +80,7 @@ app.post('/clients/:action',clients.action(db));
 app.post('/partners/:action',partners.action(db));
 app.post('/technologies/:action',technologies.action(db));
 
+app.post('/login', admin.auth(db));
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -2,6 +2,11 @@ var upload = require('../functions/upload'); //back a folder
 var fs = require('fs');
 
 /*
+ *
+ *
+ */
+
+/*
  * GET projects
  */
 
@@ -33,7 +38,7 @@ exports.single = function(db) {
 			if(!doc){
 				res.render('404', {title: 'Project Not Found', slug:'project-not-found'});
 			}else{
-				res.render('project', {title: 'Project Title', slug: 'single-project '+name, project: doc });
+				res.render('project', {title: doc.title , slug: 'single-project '+doc.slug, project: doc });
 			}
 		});
 
@@ -53,8 +58,8 @@ exports.action = function(db) {
 		var projects = db.get('projects');
 
 		projects.findOne({ slug: name}, function(err,doc){
-			console.log(doc)
-			res.render('project_'+action, {title: 'Project Action', slug: 'project-'+action, project: docs[0]});
+			console.log(doc);
+			res.render('project_'+action, {title: 'Project Action', slug: 'project-'+action, project: doc});
 
 		});
 
@@ -104,6 +109,10 @@ exports.edit = function(db){
 /*
  * POST project/:name/:action
  */
+
+ /*
+  * Notes: In need of major clean-up most stuff should go to upload
+  */
 exports.store = function(db){
 	return function(req, res){
 		console.log("+++++++++++POST+++++++++++++");
