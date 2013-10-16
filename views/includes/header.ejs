@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+    <link rel="stylesheet/less" type="text/css" href="../../stylesheets/style.less" />
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/style.css" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../stylesheets/video-js.css">
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="/javascripts/main.js"> </script>
+    <!-- Less -->
+    <script src="../../javascripts/less.js" type="text/javascript"></script>
+    <!-- Typekit -->
+    <script type="text/javascripts" src="//use.typekit.net/dty1unx.js"></script>
+    <script type="text/javascripts">try{Typekit.load();}catch(e){}</script>
+    <!-- Big Video -->
+    <script src="../../javascripts/jquery.min.js"></script>
+    <script src="../../javascripts/video.js"></script>
   </head>
+
   <body class="<%= slug %>">
-  	<header> 
-  		<ul> 
-  		<li><a href="/">Home</a></li>
-  		<li><a href="/projects">Featured Work</a></li>
-  		<li><a href="/capabilities">Capabilities</a></li>
-  		<li><a href="/clients">Clients</a></li>
-  		<li><a href="#contact">Contact</a></li>
-  		</ul>
-  	</header>
+
+    <header class="home">
+      <div class="logoHome">
+        <a href="im_projects.html">
+          <img src="../../images/im_logo.png" alt="Incredible Machines"/>
+        </a>
+      </div>
+      <nav id="home">
+        <a href="#portfolio">Featured Work</a>  
+        <a href="/capabilities">Capabilities</a> 
+        <a href="/clients">Clients</a> 
+        <a href="#contact">Contact</a>  
+      </nav>
+    </header>
+    

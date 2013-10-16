@@ -1,4 +1,52 @@
 <% include includes/header %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-<% include includes/footer %>
+	<!-- PORTFOLIO WRAP -->
+	<div id="portfolio-wrap">
+	
+		<!-- INTRO VIDEO -->
+		<section class="intro-vid">
+			<video id="intro-video-1" class="video-js vjs-project-page" autoplay="autoplay" loop="true" muted>
+            	<source src="http://player.vimeo.com/external/55448150.sd.mp4?s=acf0b9a82773e0ae95f7a0357b08d860" type="video/mp4">
+                       Your browser does not support the video tag. </video>
+			<div class="introLogo">
+				<a href="im_projects.html">
+					<img src="images/im_logo.png" alt="Incredible Machines"/>
+				</a>
+			</div>
+		</section> <!-- end "video" -->
+		
+		<!-- PORTFOLIO -->
+		<section id="portfolio">
+			<article class="port-item">
+				<div class="poster-image">	
+					<img src="images/project_thumb.png" alt="project title" />
+				</div>
+				<h2><a href="#">Project Title</a></h2>
+				<p>Client Name</p>
+			</article>
+			<article class="port-item">
+				<div class="poster-image">	
+					<img src="images/project_thumb.png" alt="project title" />
+				</div>
+				<h2><a href="#">Project Title</a></h2>
+				<p>Client Name</p>
+			</article>
+			<article class="port-item">
+				<div class="poster-image">	
+					<img src="images/project_thumb.png" alt="project title" />
+				</div>
+				<h2><a href="#">Project Title</a></h2>
+				<p>Client Name</p>
+			</article>
+			<article class="port-item">
+				<div class="poster-image">	
+					<img src="images/project_thumb.png" alt="project title" />
+				</div>
+				<h2><a href="#">Project Title</a></h2>
+				<p>Client Name</p>
+			</article>
+		</section> <!-- end "portfolio" -->
+	</div> <!-- end "portfolio wrap" -->
+	<% include includes/footer %>
+	<script src="../../javascripts/projects.js"></script>
+</body>
+</html>

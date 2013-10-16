@@ -1,3 +1,1456 @@
-body{
-	background: white;
+/*************************** RESET ***************************/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
 }
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button {
+	border: none;
+	padding: 0;
+	}
+
+button:hover {
+	cursor: pointer;
+}
+
+/*************************** COLORS ***************************/
+
+@black: #000;
+@two: #222;
+@three: #333;
+@six: #666;
+@nine: #999;
+@c: #ccc;
+@white: #fff;
+@yellow: #ffd24f;
+
+.yellow {
+	color: @yellow;
+}
+
+/*************************** FONTS ***************************/
+
+@museo:  "museo-slab", courier, serif;
+@proxima: "proxima-nova-sc-osf-ext-cond", "Arial narrow", arial, sans-serif;
+@jaf: "jaf-facitweb", arial, sans-serif;
+
+
+/*************************** TYPE STYLES ***************************/
+
+h1 {
+	font-family: @museo;
+	font-size: 46px;
+	line-height: 0px;
+	font-weight: 100;
+	font-style: italic;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+h2 {
+	font-family: @proxima;
+	font-size: 46px;
+	line-height: 46px;
+	font-weight: 100;
+	color: @three;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-family: @museo;
+	font-size: 20px;
+	line-height: 22px;
+	font-weight: 100;
+	font-style: italic;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+p {
+	font-family: @jaf;
+	font-size: 18px;
+	line-height: 28px;
+	font-weight: 100;
+	color: @three;
+	letter-spacing: 1px;
+}
+
+a {
+	font-family: @jaf;
+	font-size: 18px;
+	font-style: oblique;
+	/*line-height: 28px;*/
+	font-weight: 200;
+	color: @three;
+	text-decoration: none;
+}
+
+a:hover {
+	font-style: normal;
+	font-weight: 300;
+}
+
+ul li {
+	font-family: @jaf;
+	font-size: 18px;
+	line-height: 38px;
+	font-weight: 100;
+	color: @three;
+}
+
+/*************************** Global Header ***************************/
+
+	header {
+		height: 70px;
+		padding: 0 35px;
+		background-color: @black;
+		position: fixed;
+		left: 0;
+		right: 0;
+		z-index: 999;
+	
+		.logo {
+			margin: 5px 0 0 0;
+			float: left;
+				img {
+					width: 250px;
+					height: 60px;
+				}
+		}
+	
+		nav {
+			float: right;
+			margin: 20px 0 0 0;
+			a {
+				font-family: @museo;
+				font-size: 14px;
+				text-transform: uppercase;
+				color: @c;
+				font-style: normal;
+				font-weight: 100;
+				margin: 0 0 0 25px;
+				letter-spacing: 1px;
+			}
+			a:hover {
+				border-top: 1px solid @yellow;
+				color: @white;
+				font-weight: 100;
+				padding-top: 5px;
+			}
+
+			a.active {
+				border-top: 1px solid @yellow;
+				color: @white;
+				font-weight: 100;
+				padding-top: 5px;
+			}
+		}
+	} /* --- end header --- */
+
+/*************************** Sub-Section Titles ***************************/
+	
+	.title {
+			border-top: 3px solid @three;
+			width: 165px;
+			height: auto;
+			float: left;
+			margin: 50px 0 40px 35px;
+			padding-top: 8px;
+		}
+
+/*--------------------------- PROJECTS (Featured Work) ---------------------------*/
+
+.projects {
+	width: 100%;
+	
+	
+/*************************** Projects-Specific Header ***************************/
+
+	header.home {
+		height: 70px;
+		padding: 0 35px;
+		background: transparent;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 9;
+	
+		.logoHome {
+			margin: 5px 0 0 0;
+			float: left;
+				img {
+					width: 250px;
+					height: 60px;
+				}
+		}
+	
+		nav {
+			float: right;
+			margin: 20px 0 0 0;
+			a {
+				font-family: @museo;
+				font-size: 14px;
+				text-transform: uppercase;
+				color: @c;
+				font-style: normal;
+				font-weight: 100;
+				margin: 0 0 0 25px;
+				letter-spacing: 1px;
+			}
+			a:hover {
+				border-top: 1px solid @yellow;
+				color: @white;
+				font-weight: 100;
+				padding-top: 5px;
+			}
+		}
+	
+		.logoHome {
+			display: none;
+				}
+
+	} /* --- end header --- */
+
+	/*************************** Portfolio ***************************/
+
+	#portfolio-wrap {
+		width: 100%;
+		float: left;
+		clear: both;
+		
+		#intro {
+			position: relative;
+			width: 100%;
+			height: 2000px;
+			background: black;
+			overflow: hidden;
+		}
+		
+		#introVideo {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+				
+		.introLogo {
+			position: absolute;
+			padding: 20px 35px;
+		}
+
+		#portfolio {
+			clear: both;
+			margin: 30px 0;
+			height: auto;
+			float: left;
+			@media screen and (max-width: 700px) {
+				width: 100%;
+			}
+
+			.port-item {
+				margin: 0 0 30px 0;
+				padding-left: 3%;
+				max-width: 45%;
+				float: left;
+		@media screen and (max-width: 1720px) {
+			width: 75%;
+		}
+		@media screen and (max-width: 700px) {
+			padding: 0;
+			min-width: 100%;
+			float: none;
+		}
+		
+				img {
+					width: 100%;
+				}
+				h2 {
+					clear: both;
+					
+					a {
+						font-family: @proxima;
+						font-size: 46px;
+						line-height: 0;
+						font-weight: 100;
+						color: @three;
+						text-transform: uppercase;
+						font-style: normal;
+					}
+					
+					a:hover {
+						font-style: italic;
+					}
+
+					@media screen and (max-width: 700px) {
+						text-align: center;
+						margin: 0 10px;
+					}
+					
+				}
+				p {
+					clear: both;
+					line-height: 20px;
+
+					@media screen and (max-width: 700px) {
+						text-align: center;
+						margin: 0 10px;
+					}
+				}
+			}
+	
+			.work-thumb:first-child {
+				/*margin-left: 0px;*/
+				border: 1px solid blue;
+			}
+		} /* ---end portfolio --- */
+	} /* ---end portfolio-wrap --- */
+} /* --- end projects --- */
+
+/*--------------------------- PROJECTS- SINGLE (Featured Work Detail Page) ---------------------------*/
+
+.projects-single {
+	width: 100%;
+	
+	/*************************** Single Project Specific Header ***************************/
+
+	header {
+		background-color: rgb(0,0,0);
+	}
+	
+	/*************************** Video ***************************/
+	
+	.project-vid {
+		width: 100%;
+		height: 100px;
+		background-color: @black;
+		float: left;
+		
+		.play-btn {
+			position: relative;
+			z-index: 100;
+			margin: 270px auto;
+			width: 120px;
+			height: 135px;
+			
+			button {
+				background:url('../images/play_btn_sprite.png') 0 0;
+				width: 120px;
+				height: 135px;
+			}
+			button:hover {
+			background:url('../images/play_btn_sprite.png') -120px 0;
+			}
+		}
+	}  /* --- end project-vid --- */
+		
+	/*************************** Project Title and Pagination ***************************/
+	
+	.title-nav {
+		border-bottom: 1px solid @nine;
+		width: 100%;
+		height: 148px;
+		float: left;
+		clear: both;
+		
+		.previous-proj {
+			width: 25%;
+			height: 100%;
+			float: left;
+
+			@media screen and (max-width: 700px) {
+				width: 9%;
+			}
+			
+			.nav-label-prev {
+				margin: 60px 0 0 10px;
+				float: left;
+				text-align: left;
+				font-size: 16px;
+
+				@media screen and (max-width: 700px) {
+					display: none;
+				}
+			}
+
+			button.left {
+				padding: 0;
+				background: url('../images/L_arrow_sprite.png') 0 0;
+				width: 36px;
+				height: 148px;
+				float: left;
+			}
+			
+			button.left:hover {
+				background: url('../images/L_arrow_sprite.png') -36px 0;
+			}		
+		}  /* --- end previous-proj --- */
+
+		.project-meta {
+			margin: 0px auto;
+			text-align: center;
+			float: left;
+			padding: 28px 0;
+			width: 50%;
+
+			@media screen and (max-width: 700px) {
+				width: 80%;
+				height: 60%;
+			}
+
+			h1 {
+				line-height: 54px;
+				border-bottom: 3px solid @yellow;
+				margin: 0 auto;
+				display: table;
+
+				@media screen and (max-width: 700px) {
+					font-size: 30px;
+					line-height: 40px;
+				}
+			}
+			
+			p {
+				letter-spacing: 0;
+				font-weight: 300;
+				margin-top: 5px;
+			}
+			
+		}  /* --- end project-meta --- */
+		
+		.next-proj {
+			width: 25%;
+			height: 100%;
+			float: right;
+
+			@media screen and (max-width: 700px) {
+				width: 9%;
+			}
+			
+			.nav-label-next {
+				margin: 60px 10px 0 0;
+				float: right;
+				text-align: right;
+				font-size: 16px;
+
+				@media screen and (max-width: 700px) {
+					display: none;
+				}
+			}
+			
+			button.right {
+				background: url('../images/R_arrow_sprite.png') 36px 0;
+				float: right;
+				width: 36px;
+				height: 148px;
+			}
+			
+			button.right:hover {
+				background: url('../images/R_arrow_sprite.png') 0 0;
+			}			
+		}	 /* --- end next-proj --- */
+	}  /* --- end title-nav --- */
+
+	/*************************** Project Text: First Chunk ***************************/
+
+	.project-text-first {
+		clear: both;
+		padding: 50px 35px 70px 35px;
+		float: left;
+		.left-col {
+			width: 45%;
+			float: left;
+			@media screen and (max-width: 900px) {
+				width: 100%;
+			}
+		}
+		.right-col {
+			width: 45%;
+			float: right;
+			@media screen and (max-width: 900px) {
+				float: left;
+				width: 100%;
+				margin-top: 20px;
+			}
+		}	
+	}
+
+
+	
+	/*************************** Photo Block: Multi-Size ***************************/
+
+	.photo-block-multi {
+		float: left;
+		clear: both;
+		width: 100%;
+
+		.img-wrap {
+			/* width: 25%; */
+			float: left;	
+/*
+			margin-left: -2px;
+			border-left: 2px solid @white;
+*/
+		
+			img {
+				width: 100%;
+			}
+		}
+		
+	}  /* --- end photo-block-multi --- */
+
+	/*************************** Photo Block: Full Width ***************************/
+	
+	.photo-block-big {
+		height: auto;
+		width: 100%;
+		float: left;
+		clear: both;
+		
+		.big-pic {
+			width: 100%;
+			float: left;
+		}
+	}
+	
+	/*************************** Project Text: Text With Title ***************************/
+
+	.project-text-titled {
+		clear: both;
+		padding: 0 35px 100px 35px;
+		float: left;
+		border-top: 2px solid @white;
+		border-bottom: 2px solid @white;
+		
+		.title {
+			margin-left: 0;
+		}
+		
+		.left-col {
+			width: 45%;
+			float: left;
+			clear: both;
+			@media screen and (max-width: 900px) {
+				width: 100%;
+			}
+		}
+		.right-col {
+			width: 45%;
+			float: right;
+			@media screen and (max-width: 900px) {
+				float: left;
+				width: 100%;
+				margin-top: 20px;
+			}
+		}	
+	}  /* --- end project-text-titled --- */
+	
+
+	/***************************General for blocks with lists (Capabilities/Tech+Tools/Partners/More Info) ***************************/
+
+	.list-block {
+			clear: both;
+			float: left;
+			border-bottom: 1px solid @white;
+			width: 100%;
+			padding-bottom: 50px;
+			
+			.title {
+				padding-top: 8px;
+				margin: 0 0 40px 0;
+			}
+			.column-left {
+				float: left;
+				width: 30%;
+				padding: 50px 0 0 35px;
+
+				@media screen and (max-width: 700px) {
+					width: 90%;
+				}
+			}
+
+			.column-right {
+				float: left;
+				width: 55%;
+				padding: 50px 0 0 35px;
+
+				@media screen and (max-width: 700px) {
+					width: 100%;
+				}
+			}
+
+			.list { 
+				float: left;
+				margin-left: 8%;
+
+				@media screen and (max-width: 1350px) {
+					margin: 0;
+				}
+
+				ul {
+					width: 100%;
+					float: left;
+
+					li {
+						margin-right: 30px;
+					@media screen and (max-width: 1350px) {
+						float: left;
+					}
+
+						a {
+						}
+					}
+				}
+			}
+		}  /* --- end list-block --- */
+
+
+	/*************************** Capabilities, Tech + Tools Block ***************************/
+
+	.cap-tech {
+		background-color: @three;
+	}
+		
+	.yellow-header {
+		border-top: 3px solid @yellow;
+		color: @yellow;
+	}
+
+	.light { 
+		ul {
+			
+			li {
+				color: @c;
+				a {
+					color: @c;
+				}
+			}
+		}
+	}
+
+	/*************************** Partners/More Info Block ***************************/
+
+	.partner-info {
+		background:url('../images/yellow_pattern.png');
+		background-color: @yellow;
+	}
+
+
+	
+	
+/*************************** Single Project Footer ***************************/
+	.footer-bg-wrap {
+		clear: both;
+		height: 274px;
+		background: #222222; /* Old browsers */
+		background: -moz-linear-gradient(top,  #222222 0%, #000000 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#222222), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #222222 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #222222 0%,#000000 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #222222 0%,#000000 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #222222 0%,#000000 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+		.footer-pg-wrap {
+			height: 349px;
+			clear: both;
+			float: left;
+			width: 100%;
+			margin-top: -75px;
+
+			.pagination {
+					background-color: @yellow;
+					opacity: 0.85;
+					width: 155px;
+					height: 75px;
+					float: right;
+				
+					.top-btn {
+						width: 100%;
+						float: left;
+					
+						button {
+							background:url('../images/top_pg_sprite.png') 0 0;
+							width: 86px;
+							height: 27px;
+							margin-left: 34px;
+						}			
+						button:hover {
+							background:url('../images/top_pg_sprite.png') -86px 0;
+						}
+					}  /* --- end top-btn --- */
+				
+					.other-btns {
+						width: 100%;
+						float: left;
+						clear: both;
+					
+						button.prev-btn {
+							float: left;
+							background:url('../images/L_pg_sprite.png') 0 0;
+							width: 34px;
+							height: 48px;
+						}
+						button.prev-btn:hover {
+							background:url('../images/L_pg_sprite.png') -34px 0;
+						}				
+						h3 {
+							float: left;
+							text-align: center;
+							line-height: 33px;
+							height: 30px;
+							font-size: 14px;
+							width: 85px;
+							letter-spacing: 0;
+							font-style: normal;
+							font-weight: 300;
+						}				
+						button.next-btn {
+							float: right;
+							background:url('../images/R_pg_sprite.png') 34px 0;
+							width: 34px;
+							height: 48px;
+						}
+						button.next-btn:hover {
+							background:url('../images/R_pg_sprite.png') 0 0;
+						}	
+					}  /* --- end other-btns --- */	
+				}  /* --- end pagination --- */
+		
+			footer {
+				clear: both;
+				height: 274px;
+				background:url('../images/footer_pattern.png');
+
+				#contact {
+					height: 160px;
+					padding: 55px 0 30px 0px;	
+					text-align: center;	
+
+					h1 {
+						color: @yellow;
+						text-align: center;
+						margin-bottom: 40px;
+					}
+					#email-phone {
+						margin: 0 0 20px 0;
+					
+						a {
+							font-weight: 300;
+							font-style: normal;
+						}
+					
+						a p:hover {
+							color: @yellow;
+						}
+					
+						p {
+							color: @white;
+							line-height: 36px;
+							letter-spacing: 0;
+						}
+					}	/* --- end email-phone ---- */
+			
+					#address {
+						width: 340px;
+						border-top: 1px solid #666;
+						padding: 2px 0 0 0;
+						margin: 0px auto;
+			
+						p {
+							font-size: 14px;
+							color: @nine;
+							letter-spacing: 0;
+						}
+					} /* --- end address ---- */
+				} /* ---end contact--- */
+	
+				#strip {
+					height: 30px;
+					background-color: @two;
+					padding: 0 35px;
+				
+					#copyright {
+						width: 200px;
+						float: left;
+						margin: 2px 0 0 0;
+					
+						p {
+							font-size: 12px;
+							color:@nine;
+							letter-spacing: 0;
+							@media screen and (max-width: 700px) {
+								font-size: 10px;
+							}
+						} 
+					}/* ---end copyright--- */
+				
+					#social-btns {
+						float: right;
+						padding-top: 1px;
+						
+						i {
+							margin-left: 10px;
+							@media screen and (max-width: 700px) {
+								font-size: 14px;
+							}
+						}
+						i:hover {
+							color: @white;
+						}
+					} /* ---end social-btns --- */
+				} /* ---end strip--- */	
+			} /* ---end footer--- */
+		} /*---end footer-pg-wrap --- */	
+	} /*---end footer-bg-wrap --- */	
+} /* --- end projects-single --- */
+
+/*--------------------------- CAPABILITIES ---------------------------*/
+
+.capabilities {
+	width: 100%;
+	
+	/*************************** About Us ***************************/
+	
+	#about {
+		height: auto;
+		padding: 200px 0 100px 0;
+		background:url('../images/yellow_pattern.png');
+		background-color: @yellow;
+		position:fixed;
+		top:100;
+		z-index:-100;
+		
+		.about-text {
+			width: 50%;
+			margin: 0px auto;
+
+			@media screen and (max-width: 1375px) {
+				width: 60%;
+			}
+
+			@media screen and (max-width: 1175px) {
+				width: 70%;
+			}
+
+			@media screen and (max-width: 1000px) {
+				width: 80%;
+			}
+			
+			.bold {
+				font-weight: 500;
+				margin-bottom: 20px;
+			}
+			p {
+				font-size: 28px;
+				line-height: 40px;
+
+				@media screen and (max-width: 900px) {
+					font-size: 22px;
+					line-height: 34px;
+				}
+
+				@media screen and (max-width: 530px) {
+					font-size: 18px;
+					line-height: 28px;
+				}
+
+			}
+		} /* ---end about-text--- */
+	} /* ---end about--- */
+	
+	
+	#skills-section{
+		position:absolute;
+		background-color:@white;
+	#skills {
+		padding-left: 35px;
+		width: 45%;
+		float: left;
+		clear: both;
+
+		@media screen and (max-width: 900px) {
+			width: 26%;
+			margin-top: 50px;
+		}
+
+		@media screen and (max-width: 800px) {
+			width: 84%;
+			margin-top: 35px;
+		}
+		
+		ul {
+			float: left;
+			width: 100%;
+
+			li {
+				height: 80px;
+				border-bottom: 1px solid @nine;
+
+				@media screen and (max-width: 900px) {
+					height: auto;
+					width: 100%;
+					float: left;
+					clear: both;
+					line-height: 22px;
+					margin-bottom: 20px;
+				}
+
+				@media screen and (max-width: 800px) {
+					margin-bottom: 10px;
+					text-align: center;
+				}
+				a {
+					font-family: @proxima;
+					font-size: 46px;
+					line-height: 106px;
+					font-weight: 100;
+					color: @nine;
+					text-transform: uppercase;
+					font-style: normal;
+
+					@media screen and (max-width: 900px) {
+						font-size: 24px;
+						line-height: 18px;
+					}
+				}
+				a:hover {
+					font-style: italic;
+					color: @three;
+				}
+			}
+
+			li.active {
+				border-bottom: 3px solid @yellow;
+				a {
+					font-style: italic;
+					color: @three;
+					}
+			}
+		} /* ---end ul--- */
+	} /* ---end skills--- */
+	
+	#about-skills {
+		width: 45%;
+		float: right;
+		padding-right: 35px;
+		margin: 50px 0 60px 0;
+
+		@media screen and (max-width: 900px) {
+			width: 60%;
+			float: right;
+			margin: 50px 0 60px 0;
+		}
+
+		@media screen and (max-width: 800px) {
+			clear: both;
+			float: left;
+			padding-left: 35px;
+			width: auto;
+			margin-top: 10px;
+		}
+		
+		.about-skill{
+		padding-top:100px;
+		margin-top:-100px;
+		float:right;
+		height:auto;
+
+		.skill-blurb {
+			p {
+				margin-bottom: 30px;
+			}
+		}
+		
+		.related-work {
+			width: 100%;
+			float: right;
+			clear: both;
+
+			@media screen and (max-width: 900px) {
+				width: 53%;
+				float: left;
+			}
+			
+			.title {
+				margin-left: 0;
+				margin-bottom: 20px;
+			}
+
+			.work-thumbs {
+				float: left;
+				clear: both;
+				
+				.project {
+					float: left;
+					margin: 0 20px 20px 0;
+										
+					img {
+						display: block;
+						margin-bottom: 5px;
+					}
+					
+					a {
+						font-size: 14px;
+					}
+				} /* ---end project--- */
+			} /* ---end work-thumbs--- */
+		} /* ---end related-work--- */
+		
+		.related-clients {
+			width: 100%;
+			float: right;
+			clear: both;
+			
+			@media screen and (max-width: 900px) {
+				width: 38%;
+				clear: none;
+			}
+
+			@media screen and (max-width: 800px) {
+				float: left;
+				clear: both;
+				width: auto;
+			}
+
+			.title {
+				margin-left: 0;
+				margin-bottom: 20px;
+			}
+
+			.client-list {
+				width: 100%;
+				float: left;
+				clear: both;
+				
+				a {
+						font-size: 14px;
+					}
+			}	
+		} /* ---end related-clients--- */
+	} /* ---end about-skill--- */
+	} /* --- end about-skills div --- */
+	}/* ---end skills section--- */
+} /* --- end capabilities ---*/
+
+/*--------------------------- CLIENTS ---------------------------*/
+
+.clients {
+	width: 100%;
+	background-color: @three;
+	
+	/*************************** Grid ***************************/
+	
+	#client-wrap {
+		width: 100%;
+		float: left;
+	
+		#client-grid {
+			padding: 0 35px;
+		
+			h1 {
+				text-align: center;
+				color: @yellow;
+				margin: 130px 0 30px 0;
+				line-height: 30px;
+			}
+			
+			#client-list{
+			float:left;
+			height:auto;
+		
+			#grid-row {			
+				margin-bottom: 2px;
+				height: auto;
+				width: 100%;
+				float: left;
+
+				@media screen and (max-width: 720px) {
+					margin-bottom: 0;
+				}
+
+				.client {
+					background-color: @white;
+					width: 33%;
+					height: auto;
+					display: block;
+					float: left;
+					padding-bottom: 34px;
+					border-right: 2px solid @three;
+
+					@media screen and (max-width: 720px) {
+						width: 100%;
+						margin-bottom: 2px;
+						border-right: none;
+					}
+					
+						h2 {
+							text-align: center;
+							font-size: 42px;
+							clear: both;
+							padding-top: 8px;
+							margin: 0 10px;
+						}
+				
+					.corner {
+						width: 30px;
+						height: 30px;
+						float: right;
+						border: 1px solid @nine;
+						
+						button {
+							width: 30px;
+							height: 30px;
+							background-color: @nine;
+							
+							p {
+								font-size: 33px;
+								font-weight: 500;
+								margin: -4px 0 0 2px;
+								color: @white;
+							}
+						}		
+					} /*--- end corner ---*/
+				} /* ---end client--- */
+				
+				.client:hover {
+					background-color: @yellow;
+					
+					h2 {
+						font-style: italic;
+					}
+						
+					.corner {
+						button {
+							background-color: @six;
+						}	
+					border: 1px solid @six;
+					}
+				}
+				}
+			} /* ---end grid-row--- */
+		} /* ---end client-grid--- */
+
+	
+	/*************************** Client Detail Overlay ***************************/
+	
+		.client-detail {
+			padding: 40px 0 40px 35px;
+			background-color: @yellow;
+			overflow: hidden;
+			height: auto;
+			position:absolute;
+			
+			.client-img {
+				float: left;
+				width: 42%;
+
+				@media screen and (max-width: 850px) {
+					width: 95%
+				}
+
+				@media screen and (max-width: 600px) {
+					width: 87%;
+				}
+			
+				img {
+					width: 100%;
+					height: auto;
+					background-color: @c;
+				}
+				
+				p {
+					font-size: 14px;
+					line-height: 22px;
+					margin-top: 10px;
+				}
+			}
+			
+			.detail-col {
+				float: left;
+				width: 25%;
+
+				@media screen and (max-width: 850px) {
+					margin: 50px 50px 0 0;
+					width: 40%;
+				}
+				
+				.title {
+					margin-top: 0;
+					margin-left: 20%;
+
+					@media screen and (max-width: 850px) {
+						margin-left: 0;
+					}
+
+					@media screen and (max-width: 600px) {
+						margin-bottom: 20px;
+					}
+				}
+					
+				.detail-list {
+					clear: both;
+					margin-left: 20%;
+
+					@media screen and (max-width: 850px) {
+						margin-left: 0;
+					}
+				}
+			}
+
+			
+			.corner {
+						width: 30px;
+						height: 30px;
+						float: right;
+						border: 1px solid @yellow;
+						margin-top: -40px;
+						
+						button {
+							width: 30px;
+							height: 30px;
+							background-color: @yellow;
+							transform:rotate(45deg);
+							-ms-transform:rotate(45deg); /* IE 9 */
+							-webkit-transform:rotate(45deg); /* Safari and Chrome */
+							
+							p {
+								font-size: 33px;
+								font-weight: 500;
+								margin: -4px 0 0 2px;
+								color: @three;
+							}
+						}		
+					} /*--- end corner ---*/
+		} /* ---end client-detail--- */
+	} /* --- end client-wrap ---*/
+
+		.list-block {
+			clear: both;
+			float: left;
+			border-bottom: 1px solid @white;
+			width: 100%;
+			padding-bottom: 50px;
+			margin-top: 50px;
+		
+			.title {
+				padding-top: 8px;
+				margin: 0 0 40px 0;
+			}
+
+			.column {
+				float: left;
+				width: inherit;
+				padding: 0 0 0 35px;
+
+				
+			}
+
+			.list { 
+				float: left;
+				margin-left: 8%;
+
+				@media screen and (max-width: 1125px) {
+					margin-left: 3%;
+				}
+
+				@media screen and (max-width: 850px) {
+					margin: 0;
+				}
+
+				ul {
+					width: 100%;
+					float: left;
+
+					li {
+						margin-right: 30px;
+
+					@media screen and (max-width: 850px) {
+						float: left;
+					}
+
+					@media screen and (max-width: 720px) {
+
+					}
+
+						a {
+						}
+					}
+				}
+			}
+		}  /* --- end list-block --- */
+
+
+	/*************************** Capabilities, Tech + Tools Block ***************************/
+
+	.cap-tech {
+		background-color: @three;
+	}
+		
+	.yellow-header {
+		border-top: 3px solid @yellow;
+		color: @yellow;
+	}
+
+	.light { 
+		ul {
+			
+			li {
+				color: @c;
+				a {
+					color: @c;
+				}
+			}
+		}
+	}
+} /* --- end clients --- */
+
+
+
+
+/*************************** (Global) Footer ***************************/
+.footer-bg-wrap {
+		clear: both;
+		height: 274px;
+		background: #222222; /* Old browsers */
+		background: -moz-linear-gradient(top,  #222222 0%, #000000 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#222222), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #222222 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #222222 0%,#000000 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #222222 0%,#000000 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #222222 0%,#000000 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+		
+	footer {
+		clear: both;
+		height: 274px;
+		background:url('../images/footer_pattern.png');
+	
+		#contact {
+			height: 160px;
+			padding: 55px 0 30px 0px;	
+			text-align: center;	
+
+			h1 {
+				color: @yellow;
+				text-align: center;
+				margin-bottom: 40px;
+			}
+			#email-phone {
+				margin: 0 0 20px 0;
+
+				a {
+					font-weight: 300;
+					font-style: normal;
+				}
+					
+				a p:hover {
+					color: @yellow;
+				}
+				
+				p {
+					color: @white;
+					line-height: 36px;
+					letter-spacing: 0;
+				}
+			}	/* --- end email-phone ---- */
+			
+			#address {
+				width: 340px;
+				border-top: 1px solid #666;
+				padding: 2px 0 0 0;
+				margin: 0px auto;
+			
+				p {
+					font-size: 14px;
+					color: @nine;
+					letter-spacing: 0;
+				}
+			} /* --- end address ---- */
+		} /* ---end contact--- */
+	
+		#strip {
+				height: 30px;
+				background-color: @two;
+				padding: 0 35px;
+				
+				#copyright {
+					width: 200px;
+					float: left;
+					margin: 2px 0 0 0;
+					
+					p {
+						font-size: 12px;
+						color:@nine;
+						letter-spacing: 0;
+					} 
+				}/* ---end copyright--- */
+				
+				#social-btns {
+						float: right;
+						padding-top: 1px;
+						
+						i {
+							margin-left: 10px;
+						}
+						
+						i:hover {
+							color: @white;
+						}
+					} /* ---end social-btns --- */
+			} /* ---end strip--- */	
+		} /* ---end footer--- */
+	} /*--- end footer-bg-wrap---*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
