@@ -14,12 +14,15 @@ var fs = require('fs');
 exports.featured = function(db){
 	return function(req, res){
 		//db query for all featured projects
-		var projects = [];
 
-		//query 
+		var projects = db.get('projects');
 
+		projects.find({featured: true},function(err,docs){
+			console.log(docs);
+			res.render('projects', { title: 'Featured Projects' , slug: 'projects', projects: docs});
+
+		});
 		//array push each project 
-  		res.render('projects', { title: 'Featured Projects' , slug: 'projects', projects: projects});
 	}
 };
 
