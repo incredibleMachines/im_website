@@ -12,15 +12,13 @@
 		<section class="title-nav">
 			<div class="previous-proj">
 				<button class="left"></button>
-			
-					<p class="nav-label-prev">Prev Project</p>
+				<p class="nav-label-prev">Prev Project</p>
 			</div>
 			<article class="project-meta">
 				<h1><%= project.title %></h1>
 				<% for(var i = 0; i< project.clients.length; i++){ %>
-					<p><%= project.clients[i].name %></p>
+					<p><%= project.clients[i].name %>   ::  City, State</p>
 				<% } %>
-				</p>  ::  City, State</p>
 			</article>
 			<div class="next-proj">
 				<button class="right"></button>
@@ -31,7 +29,12 @@
 <!-- TEXT BLOCK: FIRST WHITE -->
 	<% for(var i = 0; i< project.textBlocks.length; i++){ %>
 		<section class="project-text-titled">
+			<article class="left-col">
 				<p><%= project.textBlocks[i].text %></p>
+			</article>
+			<article class="right-col">
+				<p>Need to, with JS, break text into 2 columns and have 2nd column populate here.</p>
+			</article>
 		</section>
 	<% } %>
 		
@@ -48,20 +51,18 @@
 	
 <!-- CAPABILITIES, TOOLS + TECH BLOCK -->
 	<section class="list-block cap-tech">
-		
-			<article class="column-left">
-				<article class="title yellow-header">
-<!-- MAKE THIS DYNAMIC??? -->
-					<h3>Capabilities</h3>
-				</article>
-				<article class="list light">
-					<ul>
-						<% for(var i = 0; i< project.capabilities.length; i++){ %>
-							<li><a href="#"><%= project.capabilities[i].name%> ›</a></li>
-						<% } %>
-					</ul>
-				</article>
+		<article class="column-left">
+			<article class="title yellow-header">
+				<h3>Capabilities</h3>
 			</article>
+			<article class="list light">
+				<ul>
+					<% for(var i = 0; i< project.capabilities.length; i++){ %>
+						<li><a href="#"><%= project.capabilities[i].name%> ›</a></li>
+					<% } %>
+				</ul>
+			</article>
+		</article>
 		<article class="column-right">
 			<article class="title yellow-header">
 				<h3>Tech + Tools</h3>
@@ -72,7 +73,7 @@
 						<li><%= project.technologies[i].name%></li>
 					<% } %>
 				</ul>
-			</article>										
+			</article>
 		</article>
 	</section>
 		
@@ -80,35 +81,33 @@
 <!-- PARTNERS, MORE INFO -->
 	
 	<section class="list-block partner-info">
-			<article class="column-left">
-				<article class="title">
-					<h3>Partners</h3>
-				</article>
-				<article class="list">
-					<ul>
-						<% for(var i = 0; i< project.partners.length; i++){ %>
-							<li><%= project.partners[i].name%></li>
-						<% } %>
-					</ul>
-				</article>
+		<article class="column-left">
+			<article class="title">
+				<h3>Partners</h3>
 			</article>
-			<article class="column-right">
-				<article class="title">
-					<h3>More Info</h3>
-				</article>
-				<article class="list">
-					<ul>
-						<% for(var i = 0; i< project.infoBlocks.length; i++){ %>
-							<li><a href="<%= project.infoBlocks[i].text%>"><%= project.infoBlocks[i].title%></a></li>
-						<% } %>
-					</ul>
-				</article>								
+			<article class="list">
+				<ul>
+					<% for(var i = 0; i< project.partners.length; i++){ %>
+						<li><%= project.partners[i].name%></li>
+					<% } %>
+				</ul>
 			</article>
-		</section>
-	
-
-<% include includes/footer-project %>
+		</article>
+		<article class="column-right">
+			<article class="title">
+				<h3>More Info</h3>
+			</article>
+			<article class="list">
+				<ul>
+					<% for(var i = 0; i< project.infoBlocks.length; i++){ %>
+						<li><a href="<%= project.infoBlocks[i].text%>"><%= project.infoBlocks[i].title%></a></li>
+					<% } %>
+				</ul>
+			</article>								
+		</article>
+	</section>
+	<% include includes/footer-project %>
+	<script src="../../javascripts/project-single.js"></script>
 </body>
-    <script src="../../javascripts/project-single.js"></script>
 </html>
 
