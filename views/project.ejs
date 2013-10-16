@@ -1,3 +1,11 @@
 <% include includes/header %>
     <h1><%= title %></h1>
+
+    <% for(var i = 0; i< project.textBlocks.length; i++){ %>
+    <section class="project-text">
+	<h2><%= project.textBlocks[i].title %></h2>
+    	<p><%= project.textBlocks[i].text %></p>
+    </section>
+    <% } %>
+
 <% include includes/footer %>

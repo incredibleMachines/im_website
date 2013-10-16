@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Welcome to incredible Machines', slug: 'index' });
+  res.render('index', { title: 'Welcome to Incredible Machines', slug: 'index' });
 };

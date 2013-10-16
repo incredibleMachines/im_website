@@ -13,7 +13,7 @@
     
     <section>
 	    <h2>Current Capabilities</h2>
-
+	    
 	    <% for(var i=0; i< capabilities.length; i++){ %>
 	    	<form enctype="multipart/form-data" action="/capabilities/update" method="post">
 	    		<input type="text" name="name" value="<%= capabilities[i].name %>">
