@@ -1,11 +1,13 @@
-<% include includes/header %>
+
+<body>
 <h1><%= title %></h1>
 <form method="post" action="/login">
 	<input type="text" placeholder="Enter Username" name="user"/>
 	<input type="password" placeholder="Enter Password" name="pw"/>
 	<% if(path){ %>
-	<input type="hidden" name="path" value="<%= path%>">
+	<input type="hidden" name="path" value="<%= path %>">
 	<% } %>
 	<button type="submit">Login</button>
 </form>
+</body>
 <% include includes/footer %>
