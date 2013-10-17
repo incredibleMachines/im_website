@@ -16,34 +16,19 @@
 		
 		<!-- PORTFOLIO -->
 		<section id="portfolio">
+			<% for (var i=0; i<projects.length; i++){ %>
 			<article class="port-item">
+				<a href="/projects/<%= projects[i].slug %>">
 				<div class="poster-image">	
 					<img src="images/project_thumb.png" alt="project title" />
 				</div>
-				<h2><a href="#">Project Title</a></h2>
-				<p>Client Name</p>
+				<h2><%= projects[i].title %></h2></a>
+				<p><% for (var j=0; j<projects[i].clients.length; j++){ %>
+					<%= projects[i].clients[j].name %><% if (j<projects[i].clients.length-1) { %>, <% } %>
+					<% } %>
+					</p>
 			</article>
-			<article class="port-item">
-				<div class="poster-image">	
-					<img src="images/project_thumb.png" alt="project title" />
-				</div>
-				<h2><a href="#">Project Title</a></h2>
-				<p>Client Name</p>
-			</article>
-			<article class="port-item">
-				<div class="poster-image">	
-					<img src="images/project_thumb.png" alt="project title" />
-				</div>
-				<h2><a href="#">Project Title</a></h2>
-				<p>Client Name</p>
-			</article>
-			<article class="port-item">
-				<div class="poster-image">	
-					<img src="images/project_thumb.png" alt="project title" />
-				</div>
-				<h2><a href="#">Project Title</a></h2>
-				<p>Client Name</p>
-			</article>
+			<% } %>
 		</section> <!-- end "portfolio" -->
 	</div> <!-- end "portfolio wrap" -->
 	<% include includes/footer %>
