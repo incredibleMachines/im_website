@@ -13,29 +13,37 @@
 	<section id="skills">
 			<ul>
 				<% for(var i = 0; i< capabilities.length; i++){ %>
-					<li><a href="#<%= capabilities[i].slug %>"><%= capabilities[i].name %></a></li>
+					<li><a href="#<%=makeSlug(capabilities[i].name)%>"> <%= capabilities[i].name %></a></li>
 				<% } %>
 			</ul>
 	</section>
 	
 	<div id="about-skills">	
-		<section class="about-skill" id="technology-development">
-			<% for(var i = 0; i< capabilities.length; i++){ %>
+
+		<% for(var i = 0; i< capabilities.length; i++){ %>
+		<section class="about-skill" id="<%=makeSlug(capabilities[i].name)%>">
 				<article class="skill-blurb">
 					<p><%= capabilities[i].text %></p>
 				</article>
-			<% } %>
+
+<!---  MAKE DYNAMIC ONCE PROJECT INFO IS LOADED HERE -->
 			<article class="related-work">
 				<div class="title">
 					<h3>Projects</h3>
 				</div>
 				<div class="work-thumbs">
-					<% for(var i = 0; i< capabilities.length; i++){ %>
-						<div class="project">
-							<img src="images/related_work_thumb.png" alt="Project Name" />
-							<a><%= capabilities[i].projects.title %> ›</a>
-						</div>
-					<% } %>
+					<div class="project">
+						<img src="images/related_work_thumb.png" alt="Project Name" />
+						<a>Project Title ›</a>
+					</div>
+					<div class="project">
+						<img src="images/related_work_thumb.png" alt="Project Name" />
+						<a>Project Title ›</a>
+					</div>
+					<div class="project">
+						<img src="images/related_work_thumb.png" alt="Project Name" />
+						<a>Project Title ›</a>
+					</div>
 				</div>
 			</article>
 			<article class="related-clients">
@@ -44,16 +52,26 @@
 				</div>
 				<div class="client-list">
 					<ul>
-						<% for(var i = 0; i< capabilities.length; i++){ %>
-							<li><a href="#"><%= capabilities[i].projects.clients %>  ›</a></li>
-						<% } %>
+						<li><a href="#">Client Name  ›</a></li>
+						<li><a href="#">Another Client ›</a></li>
+						<li><a href="#">Client McClientson ›</a></li>
 					</ul>
 				</div>
 			</article>
 		</section>
+		<% } %>
 	</div>
+
+
+
 	<% include includes/footer %>
 	</div>
+		
+	<% function makeSlug(Text)
+{
+    return Text.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
+}
+%>
 
     <script src="../../javascripts/capabilities.js"></script>
 

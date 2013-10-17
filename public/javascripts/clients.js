@@ -5,7 +5,7 @@ $(document).ready(function(){
 	$('.client-detail').hide();
 	$('.client').click(function(){
 		var clientName=$(this).find('h2').text();
-		var clientSlug=$(this).attr('name');
+		var clientSlug=$(this).attr('id');
 		var gridHeight=$('#client-list').height()-2*parseInt($('.cap-tech').css('margin-top'));
 		$("#"+clientSlug).show(600,function(){
 			$('.cap-tech').animate({'padding-top': $('.client-detail').height()-gridHeight},500);

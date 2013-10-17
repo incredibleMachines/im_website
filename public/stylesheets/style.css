@@ -181,11 +181,11 @@ header {
   right: 0;
   z-index: 999;
 }
-header .logo {
+header .logoHome {
   margin: 5px 0 0 0;
   float: left;
 }
-header .logo img {
+header .logoHome img {
   width: 250px;
   height: 60px;
 }
@@ -1138,9 +1138,7 @@ header nav a.active {
 
 }
 .clients #client-wrap #client-grid {
-  padding: 0 35px;
-  /* ---end grid-row--- */
-
+  padding-left: 2.5%;
 }
 .clients #client-wrap #client-grid h1 {
   text-align: center;
@@ -1149,23 +1147,19 @@ header nav a.active {
   line-height: 30px;
 }
 .clients #client-wrap #client-grid #client-list {
-  float: left;
-  height: auto;
-}
-.clients #client-wrap #client-grid #client-list #grid-row {
   margin-bottom: 2px;
   height: auto;
-  width: 100%;
+  width: 95%;
   float: left;
   /* ---end client--- */
 
 }
 @media screen and (max-width: 720px) {
-  .clients #client-wrap #client-grid #client-list #grid-row {
+  .clients #client-wrap #client-grid #client-list {
     margin-bottom: 0;
   }
 }
-.clients #client-wrap #client-grid #client-list #grid-row .client {
+.clients #client-wrap #client-grid #client-list .client {
   background-color: #ffffff;
   width: 33%;
   height: auto;
@@ -1177,54 +1171,55 @@ header nav a.active {
 
 }
 @media screen and (max-width: 720px) {
-  .clients #client-wrap #client-grid #client-list #grid-row .client {
+  .clients #client-wrap #client-grid #client-list .client {
     width: 100%;
     margin-bottom: 2px;
     border-right: none;
   }
 }
-.clients #client-wrap #client-grid #client-list #grid-row .client h2 {
+.clients #client-wrap #client-grid #client-list .client h2 {
   text-align: center;
   font-size: 42px;
   clear: both;
   padding-top: 8px;
   margin: 0 10px;
 }
-.clients #client-wrap #client-grid #client-list #grid-row .client .corner {
+.clients #client-wrap #client-grid #client-list .client .corner {
   width: 30px;
   height: 30px;
   float: right;
   border: 1px solid #999999;
 }
-.clients #client-wrap #client-grid #client-list #grid-row .client .corner button {
+.clients #client-wrap #client-grid #client-list .client .corner button {
   width: 30px;
   height: 30px;
   background-color: #999999;
 }
-.clients #client-wrap #client-grid #client-list #grid-row .client .corner button p {
+.clients #client-wrap #client-grid #client-list .client .corner button p {
   font-size: 33px;
   font-weight: 500;
   margin: -4px 0 0 2px;
   color: #ffffff;
 }
-.clients #client-wrap #client-grid #client-list #grid-row .client:hover {
+.clients #client-wrap #client-grid #client-list .client:hover {
   background-color: #ffd24f;
 }
-.clients #client-wrap #client-grid #client-list #grid-row .client:hover h2 {
+.clients #client-wrap #client-grid #client-list .client:hover h2 {
   font-style: italic;
 }
-.clients #client-wrap #client-grid #client-list #grid-row .client:hover .corner {
+.clients #client-wrap #client-grid #client-list .client:hover .corner {
   border: 1px solid #666666;
 }
-.clients #client-wrap #client-grid #client-list #grid-row .client:hover .corner button {
+.clients #client-wrap #client-grid #client-list .client:hover .corner button {
   background-color: #666666;
 }
 .clients #client-wrap .client-detail {
-  padding: 40px 0 40px 35px;
   background-color: #ffd24f;
   overflow: hidden;
   height: auto;
   position: absolute;
+  width: 92.5%;
+  padding: 40px 0 40px 2.5%;
   /*--- end corner ---*/
 
 }
@@ -1314,9 +1309,10 @@ header nav a.active {
   clear: both;
   float: left;
   border-bottom: 1px solid #ffffff;
-  width: 100%;
+  width: 95%%;
   padding-bottom: 50px;
   margin-top: 50px;
+  padding-left: 5%;
 }
 .clients .list-block .title {
   padding-top: 8px;
@@ -1325,7 +1321,6 @@ header nav a.active {
 .clients .list-block .column {
   float: left;
   width: inherit;
-  padding: 0 0 0 35px;
 }
 .clients .list-block .list {
   float: left;

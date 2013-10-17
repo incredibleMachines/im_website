@@ -5,121 +5,59 @@
 		
 			<h1>Clients</h1>
 			
-				<section class="client-detail" id="twitter">
+			<% for(var i = 0; i< clients.length; i++){ %>
+				<section class="client-detail" id="<%= makeSlug(clients[i].name) %>">
+					
 					<div class="corner close">
 						<button><p>+</p></button>
 					</div>
 					<article class="client-img">
-						<% for(var i = 0; i< clients.length; i++){ %>
 							<img src="<%= clients[i].image.path %>" alt="need an image" />
 							<p><%= clients[i].caption %></p>
-						<% } %>
 					</article>
+
 					<article class="detail-col">
 						<div class="title">
 							<h3>Capabilities</h3>
 						</div>
+
+						<!---  MAKE DYNAMIC ONCE PROJECT INFO IS LOADED HERE -->
 						<div class="detail-list">
 							<ul>
 								<!-- this is not working -->
-								<% for(var i = 0; i< capabilities.length; i++){ %>
-									<li><a href="#<%= capabilities[i].slug %>"><%= capabilities[i].name %> ›</a></li>
-								<% } %>
 							</ul>
 						</div>
 					</article>
+
 					<article class="detail-col">
 						<div class="title">
 							<h3>Projects</h3>
 						</div>
 						<div class="detail-list">
 							<ul>
-								<% for(var i = 0; i< clients.length; i++){ %>
-									<li><a href="#"><%= clients[i].projects.title %> ›</a></li>
+								<% for(var j = 0; j< clients[i].projects.length; j++){ %>
+									<li><a href="/projects/<%= makeSlug(clients[i].projects[j].title)%>"><%= clients[i].projects[j].title %> ›</a></li>
 								<% } %>
 							</ul>
 						</div>
 					</article>
-				</section>	
-			
-			<section class="client-detail" id="lincoln-motor-company">
-				<div class="corner close">
-					<button><p>+</p></button>
-				</div>
-				<article class="client-img">
-					<img src="images/client_detail_img.png" alt="alt text" />
-					<p>Letterpress High Life ethnic squid hoodie typewriter craft beer cardigan, stumptown Cosby sweater nihil minim Truffaut. Cillum YOLO ennui Williamsburg, sustainable organic Bushwick VHS est Terry Richardson nesciunt id four loko before they sold out.</p>
-				</article>
-				<article class="detail-col">
-					<div class="title">
-						<h3>Services</h3>
-					</div>
-					<div class="detail-list">
-						<ul>
-							<li><a href="#">Capability ›</a></li>
-							<li><a href="#">Another Capability ›</a></li>
-							<li><a href="#">Capability ›</a></li>
-						</ul>
-					</div>
-				</article>
-				<article class="detail-col">
-					<div class="title">
-						<h3>Projects</h3>
-					</div>
-					<div class="detail-list">
-						<ul>
-							<li><a href="#">Project Title ›</a></li>
-							<li><a href="#">Another Project ›</a></li>
-							<li><a href="#">Project Title ›</a></li>
-						</ul>
-					</div>
-				</article>
-			</section>
 
-			
+				</section>	
+
+										<% } %>
+
 			<div id="client-list">		
-			<section id="grid-row">
-					<article class="client" name="twitter">
+				<% for(var i = 0; i< clients.length; i++){ %>
+
+					<article class="client" id="<%= makeSlug(clients[i].name) %>">
 						<div class="corner">
 							<button><p>+</p></button>
 						</div>
-						<h2>Twitter</h2>
+						<h2><%=clients[i].name%></h2>
 					</article>
-					<article class="client"  name="lincoln-motor-company">
-						<div class="corner">
-							<button><p>+</p></button>
-						</div>
-						<h2>Lincoln Motor Company</h2>
-					</article>
-					<article class="client">
-						<div class="corner">
-							<button><p>+</p></button>
-						</div>
-						<h2>Client Name</h2>
-					</article>
-			</section>
-			<section id="grid-row">
-					<article class="client">
-						<div class="corner">
-							<button><p>+</p></button>
-						</div>
-						<h2>Client Name</h2>
-					</article>
-					<article class="client">
-						<div class="corner">
-							<button><p>+</p></button>
-						</div>
-						<h2>Client Name</h2>
-					</article>
-					<article class="client">
-						<div class="corner">
-							<button><p>+</p></button>
-						</div>
-						<h2>Client Name</h2>
-					</article>
-			</section>	
-			</div> <!-- end grid -->
-		</section>	
+
+		<% } %>
+	</section>
 	</div> <!-- end client-wrap -->
 	
 <!-- PARTNERS -->
@@ -168,6 +106,12 @@
 
 		</article>
 	</section>
+
+		<% function makeSlug(Text)
+			{
+			    return Text.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
+			}
+		%>
 
 	<% include includes/footer %>
 

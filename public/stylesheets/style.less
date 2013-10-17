@@ -139,16 +139,16 @@ ul li {
 
 /*************************** Global Header ***************************/
 
-	header {
-		height: 70px;
-		padding: 0 35px;
-		background-color: @black;
-		position: fixed;
-		left: 0;
-		right: 0;
-		z-index: 999;
-	
-		.logo {
+header {
+	height: 70px;
+	padding: 0 35px;
+	background-color: @black;
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 999;
+
+	.logoHome {
 			margin: 5px 0 0 0;
 			float: left;
 				img {
@@ -156,46 +156,46 @@ ul li {
 					height: 60px;
 				}
 		}
-	
-		nav {
-			float: right;
-			margin: 20px 0 0 0;
-			a {
-				font-family: @museo;
-				font-size: 14px;
-				text-transform: uppercase;
-				color: @c;
-				font-style: normal;
-				font-weight: 100;
-				margin: 0 0 0 25px;
-				letter-spacing: 1px;
-			}
-			a:hover {
-				border-top: 1px solid @yellow;
-				color: @white;
-				font-weight: 100;
-				padding-top: 5px;
-			}
 
-			a.active {
-				border-top: 1px solid @yellow;
-				color: @white;
-				font-weight: 100;
-				padding-top: 5px;
-			}
+	nav {
+		float: right;
+		margin: 20px 0 0 0;
+		a {
+			font-family: @museo;
+			font-size: 14px;
+			text-transform: uppercase;
+			color: @c;
+			font-style: normal;
+			font-weight: 100;
+			margin: 0 0 0 25px;
+			letter-spacing: 1px;
 		}
-	} /* --- end header --- */
+		a:hover {
+			border-top: 1px solid @yellow;
+			color: @white;
+			font-weight: 100;
+			padding-top: 5px;
+		}
+
+		a.active {
+			border-top: 1px solid @yellow;
+			color: @white;
+			font-weight: 100;
+			padding-top: 5px;
+		}
+	}
+} /* --- end header --- */
 
 /*************************** Sub-Section Titles ***************************/
 	
-	.title {
-			border-top: 3px solid @three;
-			width: 165px;
-			height: auto;
-			float: left;
-			margin: 50px 0 40px 35px;
-			padding-top: 8px;
-		}
+.title {
+	border-top: 3px solid @three;
+	width: 165px;
+	height: auto;
+	float: left;
+	margin: 50px 0 40px 35px;
+	padding-top: 8px;
+}
 
 /*--------------------------- PROJECTS (Featured Work) ---------------------------*/
 
@@ -1084,7 +1084,7 @@ ul li {
 		float: left;
 	
 		#client-grid {
-			padding: 0 35px;
+			padding-left: 2.5%;
 		
 			h1 {
 				text-align: center;
@@ -1097,10 +1097,9 @@ ul li {
 			float:left;
 			height:auto;
 		
-			#grid-row {			
 				margin-bottom: 2px;
 				height: auto;
-				width: 100%;
+				width: 95%;
 				float: left;
 
 				@media screen and (max-width: 720px) {
@@ -1166,18 +1165,19 @@ ul li {
 					}
 				}
 				}
-			} /* ---end grid-row--- */
 		} /* ---end client-grid--- */
 
 	
 	/*************************** Client Detail Overlay ***************************/
 	
 		.client-detail {
-			padding: 40px 0 40px 35px;
+		
 			background-color: @yellow;
 			overflow: hidden;
 			height: auto;
 			position:absolute;
+			width:92.5%;
+			padding:40px 0 40px 2.5%;
 			
 			.client-img {
 				float: left;
@@ -1267,9 +1267,10 @@ ul li {
 			clear: both;
 			float: left;
 			border-bottom: 1px solid @white;
-			width: 100%;
+			width: 95%%;
 			padding-bottom: 50px;
 			margin-top: 50px;
+			padding-left:5%;
 		
 			.title {
 				padding-top: 8px;
@@ -1279,7 +1280,6 @@ ul li {
 			.column {
 				float: left;
 				width: inherit;
-				padding: 0 0 0 35px;
 
 				
 			}
