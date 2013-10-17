@@ -27,29 +27,29 @@
 		</section>
 		
 <!-- TEXT BLOCK: FIRST WHITE -->
-	<% for(var i = 0; i< project.textBlocks.length; i++){ %>
-		<section class="project-text-titled">
+	<% 
+		var cap=false;
+		var partners=false;
+		var textCount=0;
+		
+	for(var i = 0; i< project.imageBlocks.length; i++){ 
+		if(textCount<project.textBlocks.length){%>
+			<section class="project-text-titled">
 			<article class="left-col">
-				<p><%= project.textBlocks[i].text %></p>
+			<p><%= project.textBlocks[textCount].text %></p>
 			</article>
 			<article class="right-col">
-				<p>Need to, with JS, break text into 2 columns and have 2nd column populate here.</p>
+			<p>Need to, with JS, break text into 2 columns and have 2nd column populate here.</p>
 			</article>
-		</section>
-	<% } %>
+			</section>
+			
+		<%
+		textCount++;
+		}	 
 		
-<!-- PHOTO BLOCK-->
-<% for(var i= 0; i<project.imageBlocks.length; i++){ %>
-	<section class="photo-block-multi">
-		<div class="img-wrap">
-			<% for(var j= 0; j<project.imageBlocks[i].length; j++){ %>
-				<img src="<%= project.imageBlocks[i][j].path  %>" alt="alt text" />
-			<% } %>
-		</div>
-	</section>
-	<% } %>
-	
-<!-- CAPABILITIES, TOOLS + TECH BLOCK -->
+		else if(cap==false){%>
+		
+		<!-- CAPABILITIES, TOOLS + TECH BLOCK -->
 	<section class="list-block cap-tech">
 		<article class="column-left">
 			<article class="title yellow-header">
@@ -57,8 +57,8 @@
 			</article>
 			<article class="list light">
 				<ul>
-					<% for(var i = 0; i< project.capabilities.length; i++){ %>
-						<li><a href="#"><%= project.capabilities[i].name%> ›</a></li>
+					<% for(var j = 0; j< project.capabilities.length; j++){ %>
+						<li><a href="#"><%= project.capabilities[j].name%> ›</a></li>
 					<% } %>
 				</ul>
 			</article>
@@ -69,16 +69,34 @@
 			</article>
 			<article class="list light">
 				<ul>
-					<% for(var i = 0; i< project.technologies.length; i++){ %>
-						<li><%= project.technologies[i].name%></li>
+					<% for(var j = 0; j< project.technologies.length; j++){ %>
+						<li><%= project.technologies[j].name%></li>
 					<% } %>
 				</ul>
 			</article>
 		</article>
 	</section>
-		
 
-<!-- PARTNERS, MORE INFO -->
+		
+		<% 
+		cap=true;
+		
+		}
+		
+		%>		
+		
+	<!-- PHOTO BLOCK-->
+	<section class="photo-block-multi">
+	<% for(var j= 0; j<project.imageBlocks[i].length; j++){ %>
+		<div class="img-wrap">
+				<img src="<%= project.imageBlocks[i][j].path  %>" alt="alt text" />
+		</div>
+	<% } %>
+	</section>
+	<%if(cap==true&&partners==false){ 
+		%>
+		
+		<!-- PARTNERS, MORE INFO -->
 	
 	<section class="list-block partner-info">
 		<article class="column-left">
@@ -87,8 +105,8 @@
 			</article>
 			<article class="list">
 				<ul>
-					<% for(var i = 0; i< project.partners.length; i++){ %>
-						<li><%= project.partners[i].name%></li>
+					<% for(var j = 0; j< project.partners.length; j++){ %>
+						<li><%= project.partners[j].name%></li>
 					<% } %>
 				</ul>
 			</article>
@@ -99,13 +117,22 @@
 			</article>
 			<article class="list">
 				<ul>
-					<% for(var i = 0; i< project.infoBlocks.length; i++){ %>
-						<li><a href="<%= project.infoBlocks[i].text%>"><%= project.infoBlocks[i].title%></a></li>
+					<% for(var j = 0; j< project.infoBlocks.length; j++){ %>
+						<li><a href="<%= project.infoBlocks[j].text%>"><%= project.infoBlocks[j].title%></a></li>
 					<% } %>
 				</ul>
 			</article>								
 		</article>
 	</section>
+
+		
+		<%partners=true;} %>
+	
+<% 
+} %>
+		
+	
+		
 	<% include includes/footer-project %>
 	<script src="../../javascripts/project-single.js"></script>
 </body>

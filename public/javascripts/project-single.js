@@ -7,13 +7,24 @@ $('header').css("-webkit-transition", "all 0.75s ease-in").css("-moz-transition"
 
 /* 	setup photo zone borders - dynamic based on number of images in block */
 $('.photo-block-multi').each(function(){
+
+	if($(this).find('.img-wrap').length==1){
+		$(this).find('.img-wrap').width( '100%');
+		$(this).find('.img-wrap').css('padding', '0');
+	}
 	if($(this).find('.img-wrap').length==2){
 		$(this).find('.img-wrap').width( '49.75%');
 		$(this).find('.img-wrap:first-child').css('padding-right', '.5%');
 	}
 	else if($(this).find('.img-wrap').length==3){
-		$(this).find('.sm').width( '24.66%');
-		$(this).find('.med').width( '49.66%');
+	  $(this).find('.img-wrap').each(function(){
+			if($(this).width()<$(this).height()){
+				$(this).width( '24.66%');
+			}
+			else{
+				$(this).width( '49.66%');
+			}
+		});
 		$(this).find('.img-wrap:first-child').css('padding-right', '.5%');
 		$(this).find('.img-wrap:last-child').css('padding-left', '.5%');	
 	}
