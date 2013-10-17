@@ -21,8 +21,8 @@ The control icons are from a custom font. Each icon corresponds to a character
 */
 @font-face {
   font-family: 'VideoJS';
-  src: url('font/vjs.eot');
-  src: url('font/vjs.eot?#iefix') format('embedded-opentype'), url('font/vjs.woff') format('woff'), url('font/vjs.ttf') format('truetype');
+  src: url('/font-awesome/vjs/vjs.eot');
+  src: url('/font-awesome/vjs/vjs.eot?#iefix') format('embedded-opentype'), url('/font-awesome/vjs/vjs.woff') format('woff'), url('/font-awesome/vjs/vjs.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -375,7 +375,8 @@ easily in the skin designer. http://designer.videojs.com/
   cursor: pointer;
   /* Need a slightly gray bg so it can be seen on black backgrounds */
   /* background-color-with-alpha */
-  background: url('../images/play_btn_sprite.png') 0 0;
+  background: url('../images/play_btn_sprite.png') 0 0 no-repeat;
+  background-size:100%;
   }
 /* Hide if controls are disabled */
 .vjs-project-page.vjs-controls-disabled .vjs-big-play-button {

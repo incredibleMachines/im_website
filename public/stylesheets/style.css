@@ -1078,6 +1078,7 @@ header nav a.active {
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project img {
   display: block;
   margin-bottom: 5px;
+  width: 50%;
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project a {
   font-size: 14px;
