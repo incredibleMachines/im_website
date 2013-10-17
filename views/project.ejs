@@ -2,7 +2,7 @@
 
     <!-- VIDEO -->
 		<section class="project-vid">
-			<video id="project-video-1" class="video-js vjs-project-page" controls>
+			<video id="project-video-1" class="video-js vjs-project-page" poster="<%= project.poster.path %>" controls>
 				  <source src="<%= project.video_url%>" type='video/mp4' />
 				  <source src="<%= project.video_backup%>" type='video/ogg' />
 			</video> 
@@ -11,13 +11,13 @@
 <!-- TITLE / PAGINATION -->
 		<section class="title-nav">
 			<div class="previous-proj">
-				<a href=""><button class="left"></button></a>
+				<a><button class="left"></button></a>
 				<p class="nav-label-prev">Prev Project</p>
 			</div>
 			<article class="project-meta">
 				<h1><%= project.title %></h1>
 				<% for(var i = 0; i< project.clients.length; i++){ %>
-					<p><%= project.clients[i].name %>   ::  City, State</p>
+					<p><%= project.clients[i].name %>   ::  <%= project.location %></p>
 				<% } %>
 			</article>
 			<div class="next-proj">
@@ -26,7 +26,7 @@
 			</div>
 		</section>
 		
-<!-- TEXT BLOCK: FIRST WHITE -->
+<!-- TEXT BLOCKS-->
 	<% 
 		var cap=false;
 		var partners=false;
