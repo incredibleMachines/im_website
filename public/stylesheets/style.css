@@ -1480,8 +1480,8 @@ header nav a.active {
 .edit-projects .project-form-wrap {
   border: 6px solid #e7e7e7;
   width: 70%;
-  height: 4000px;
-  margin: 0px auto;
+  height: 100%;
+  float: left;
 }
 .edit-projects .project-form-wrap h1 {
   line-height: 50px;
@@ -1534,10 +1534,11 @@ header nav a.active {
   margin-bottom: 30px;
   float: left;
   clear: both;
+  width: 90%;
 }
 .edit-projects .project-form-wrap .add-proj #text {
   margin-bottom: 30px;
-  height: 620px;
+  height: auto;
   float: left;
   clear: both;
   width: 90%;
@@ -1559,6 +1560,11 @@ header nav a.active {
   clear: both;
   padding: 5px;
 }
+.edit-projects .project-form-wrap .add-proj #text .btns {
+  float: left;
+  clear: both;
+  margin-top: 20px;
+}
 .edit-projects .project-form-wrap .add-proj #images {
   float: left;
   clear: both;
@@ -1569,7 +1575,9 @@ header nav a.active {
   margin-bottom: 30px;
 }
 .edit-projects .project-form-wrap .add-proj #images .project-image-block {
-  height: 210px;
+  height: auto;
+  float: left;
+  clear: both;
 }
 .edit-projects .project-form-wrap .add-proj #images .project-image-block select {
   margin-bottom: 20px;
@@ -1578,6 +1586,11 @@ header nav a.active {
   float: left;
   clear: both;
   margin-bottom: 20px;
+}
+.edit-projects .project-form-wrap .add-proj #images .btns {
+  float: left;
+  clear: both;
+  margin-top: 20px;
 }
 .edit-projects .project-form-wrap .add-proj #technology {
   float: left;

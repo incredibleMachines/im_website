@@ -1448,8 +1448,8 @@ header {
 	.project-form-wrap {
 		border: 6px solid #e7e7e7;
 		width: 70%;
-		height: 4000px;
-		margin: 0px auto;
+		height: 100%;
+		float: left;
 
 		h1 {
 			line-height: 50px;
@@ -1513,11 +1513,13 @@ header {
 				margin-bottom: 30px;
 				float: left;
 				clear: both;
+				width: 90%;
+
 			}
 
 			#text {
 				margin-bottom: 30px;
-				height: 620px;
+				height: auto;
 				float: left;
 				clear: both;
 				width: 90%;
@@ -1542,19 +1544,27 @@ header {
 						}
 					}
 				}
+
+			.btns {
+					float: left;
+					clear: both;
+					margin-top: 20px;
+				}
 			}
 
 			#images {
 				float: left;
 				clear: both;
 				width: 90%;
-				height: 300px;
+				height: auto;
 				background-color: #e7e7e7;
 				padding: 30px;
 				margin-bottom: 30px;
 
 				.project-image-block {
-					height: 210px;
+					height: auto;
+					float: left;
+					clear: both;
 
 					select {
 						margin-bottom: 20px;
@@ -1565,6 +1575,11 @@ header {
 						clear: both;
 						margin-bottom: 20px;
 					}
+				}
+				.btns {
+					float: left;
+					clear: both;
+					margin-top: 20px;
 				}
 			}
 
@@ -1745,7 +1760,6 @@ header {
 			}
 
 		}
-
 	}
 }
 

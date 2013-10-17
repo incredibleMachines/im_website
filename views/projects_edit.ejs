@@ -1,4 +1,4 @@
- <% include includes/header %>   
+ <% include includes/header %>  
  <section class="project-form-wrap">
     <article class="current-proj">
         <h1>Current Projects</h1>
@@ -30,7 +30,8 @@
                   <p><input type="checkbox" name="clients[<%= i %>]" value="<%= data.clients[i]._id %>"> <%= data.clients[i].name %></p>
                 <% } %>
                 <p id="new-clients"></p>
-                <button type="button" class="new-clients" >Add a New Client</button>
+                
+                    <button type="button" class="new-clients" >Add a New Client</button>
             </section>
 
         	<section id="text">
@@ -41,8 +42,10 @@
     		    		<p><textarea class="copy text-box" name="project_text[0][text]" placeholder="Paragraph Text"></textarea></p>
     	    		</article>
         		</section>
-        		<button type="button" class="more-text" name="more_text">ADD Another</button>
-        		<button type="button" class="less-text" name="less_text">REMOVE This Text Row</button>
+                        <section class="btns">
+            		<button type="button" class="more-text" name="more_text">ADD Another</button>
+            		<button type="button" class="less-text" name="less_text">REMOVE This Text Row</button>
+                        </section>
         	</section>
 
         	 <section id="images">
@@ -61,8 +64,10 @@
     		    		<input type="file" name="project_image_block[0][0]" class="project-image-0 browse" placeholder="Project Text Title">
     	    		</article>
         		</section>
-        		<button type="button" class="more-images" name="more_images">ADD Another</button>
-        		<button type="button" class="less-images" name="less_images">REMOVE Block</button>
+                        <section class="btns">   
+        		      <button type="button" class="more-images" name="more_images">ADD Another</button>
+                             <button type="button" class="less-images" name="less_images">REMOVE Block</button>
+                        </section>
         	</section>
 
         	<section id="technology">
