@@ -805,6 +805,7 @@ header nav a.active {
 .single-project .footer-bg-wrap .footer-pg-wrap footer #contact h1 {
   color: #ffd24f;
   text-align: center;
+  margin-bottom: 40px;
 }
 .single-project .footer-bg-wrap .footer-pg-wrap footer #contact #email-phone {
   margin: 0 0 20px 0;
@@ -1415,6 +1416,7 @@ header nav a.active {
 .footer-bg-wrap footer #contact h1 {
   color: #ffd24f;
   text-align: center;
+  margin-bottom: 40px;
 }
 .footer-bg-wrap footer #contact #email-phone {
   margin: 0 0 20px 0;
@@ -1475,20 +1477,20 @@ header nav a.active {
 /*-------------------------------------------------------------------------------*/
 /*--------------------------- BACK END EDIT MODE SHIZ ---------------------------*/
 /*-------------------------------------------------------------------------------*/
-h1 {
+.edit-projects h1 {
   line-height: 50px;
 }
-h3 {
+.edit-projects h3 {
   border-bottom: 1px solid #333333;
   margin-bottom: 20px;
 }
-a {
+.edit-projects a {
   font-style: normal;
 }
-a:hover {
+.edit-projects a:hover {
   font-style: oblique;
 }
-button {
+.edit-projects button {
   width: auto;
   height: 40px;
   background-color: #333333;
@@ -1497,11 +1499,11 @@ button {
   padding: 0 20px;
   color: #cccccc;
 }
-button:hover {
+.edit-projects button:hover {
   background-color: #ffd24f;
   color: #333333;
 }
-.field {
+.edit-projects .field {
   height: 25px;
   width: 400px;
   margin-bottom: 10px;
@@ -1735,6 +1737,38 @@ button:hover {
 .edit-projects .project-form-wrap .add-proj .bottom-btn {
   float: left;
   clear: both;
+}
+.edit-clients h1 {
+  line-height: 50px;
+}
+.edit-clients h3 {
+  border-bottom: 1px solid #333333;
+  margin-bottom: 20px;
+}
+.edit-clients a {
+  font-style: normal;
+}
+.edit-clients a:hover {
+  font-style: oblique;
+}
+.edit-clients button {
+  width: auto;
+  height: 40px;
+  background-color: #333333;
+  text-align: center;
+  font-size: 13px;
+  padding: 0 20px;
+  color: #cccccc;
+}
+.edit-clients button:hover {
+  background-color: #ffd24f;
+  color: #333333;
+}
+.edit-clients .field {
+  height: 25px;
+  width: 400px;
+  margin-bottom: 10px;
+  padding: 5px;
 }
 .edit-clients .client-form-wrap {
   border: 6px solid #e7e7e7;
