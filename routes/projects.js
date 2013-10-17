@@ -172,9 +172,11 @@ exports.store = function(db){
 		var project_obj = {
 						title: post.project_title,
 						slug: post.project_slug,
+						location: post.project_location,
 						video_url: post.project_video,
 						video_backup: post.project_video_backup,
 						thumbnail: null,
+						poster: null,
 						imageBlocks: [],
 						textBlocks: (post.project_text)? post.project_text : {},
 						infoBlocks: (post.project_info)? post.project_info : {},
@@ -196,7 +198,29 @@ exports.store = function(db){
 			console.log(project_obj._id.toString());
 		});
 
+		if(files.project_poster_image){
+			var poster = files.project_poster_image;
+			delete files.project_poster_image;
 
+			var path = "./public/uploads/posters/"+poster.originalFilename;
+			fs.rename("./"+poster.path, path, function(err){
+				if(err) throw err;
+				console.log(' moved : %s to %s',thumbnail.path, path);
+				poster.path = path.substring(8);
+				poster.type = poster.headers['content-type'];
+				poster.name = poster.originalFilename;
+
+				delete poster.originalFilename;
+				delete poster.headers;
+				delete poster.ws;
+
+				var update_obj = {$set:{poster:poster}};
+				projectsDB.update(project_obj._id,update_obj,function(err,doc){
+					if(err) throw err;
+				})
+			});
+
+		}
 		if(files.project_thumbnail){
 
 			var thumbnail = files.project_thumbnail;
