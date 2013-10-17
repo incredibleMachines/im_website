@@ -32,18 +32,12 @@
 					<h3>Projects</h3>
 				</div>
 				<div class="work-thumbs">
+					<% for (var j=0; j<capabilities[i].projects.length; j++){%>
 					<div class="project">
 						<img src="images/related_work_thumb.png" alt="Project Name" />
-						<a>Project Title ›</a>
+						<a href="/projects/<%= makeSlug(capabilities[i].projects[j].title) %>"><%= capabilities[i].projects[j].title %> ›</a>
 					</div>
-					<div class="project">
-						<img src="images/related_work_thumb.png" alt="Project Name" />
-						<a>Project Title ›</a>
-					</div>
-					<div class="project">
-						<img src="images/related_work_thumb.png" alt="Project Name" />
-						<a>Project Title ›</a>
-					</div>
+					<% } %>
 				</div>
 			</article>
 			<article class="related-clients">
@@ -52,9 +46,24 @@
 				</div>
 				<div class="client-list">
 					<ul>
-						<li><a href="#">Client Name  ›</a></li>
-						<li><a href="#">Another Client ›</a></li>
-						<li><a href="#">Client McClientson ›</a></li>
+
+					<% var ids=[];
+						for (var j=0; j<capabilities[i].projects.length; j++){
+							for( var k=0; k<capabilities[i].projects[j].clients.length;k++){
+								var isUsed=false;
+								for(var l = 0; l < ids.length; l++){ 
+									if(ids[l]==capabilities[i].projects[j].clients[k].name){
+										isUsed=true;
+									}
+								}
+								if(isUsed==false){
+									ids.push(capabilities[i].projects[j].clients[k].name);%>
+					<li>
+						<a href="/clients"><%= capabilities[i].projects[j].clients[k].name %> ›</a>
+					</li>
+					<% 			}
+							}		
+						}%>
 					</ul>
 				</div>
 			</article>

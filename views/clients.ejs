@@ -20,10 +20,29 @@
 							<h3>Capabilities</h3>
 						</div>
 
-						<!---  MAKE DYNAMIC ONCE PROJECT INFO IS LOADED HERE -->
 						<div class="detail-list">
 							<ul>
-								<!-- this is not working -->
+								<% var ids=[];
+
+								for(var j = 0; j< clients[i].capabilities.length; j++){
+
+									for(var k = 0; k< clients[i].capabilities[j].capabilities.length; k++){
+										console.log(clients[i].capabilities[j].capabilities.length);
+										var isUsed=false; 
+										for(var l = 0; l < ids.length; l++){ 
+											if(ids[l]==clients[i].capabilities[j].capabilities[k]._id){
+												isUsed=true;
+											}
+										}
+										if(isUsed==false){
+											ids.push(clients[i].capabilities[j].capabilities[k]._id);
+											%>
+
+									<li><a href="/capabilities#<%= makeSlug(clients[i].capabilities[j].capabilities[k].name)%>"><%= clients[i].capabilities[j].capabilities[k].name %> ›</a></li>
+								<% 		}
+									}
+								} 
+								%>
 							</ul>
 						</div>
 					</article>
@@ -67,41 +86,11 @@
 			</article>
 			<article class="list light">
 				<ul>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
+					<% for (var i=0; i<partners.length;i++){ %>
+					<li><%= partners[i].name %></li>
+					<% } %>
 				</ul>
 			</article>
-			<article class="list light">
-				<ul>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
-				</ul>
-			</article>
-			<article class="list light">
-				<ul>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
-				</ul>
-			</article>
-			<article class="list light">
-				<ul>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
-					<li>Partner Name</li>
-				</ul>
-			</article>
-
 		</article>
 	</section>
 
