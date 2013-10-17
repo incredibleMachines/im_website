@@ -805,6 +805,7 @@ header nav a.active {
 .single-project .footer-bg-wrap .footer-pg-wrap footer #contact h1 {
   color: #ffd24f;
   text-align: center;
+  margin-bottom: 40px;
 }
 .single-project .footer-bg-wrap .footer-pg-wrap footer #contact #email-phone {
   margin: 0 0 20px 0;
@@ -1416,6 +1417,7 @@ header nav a.active {
 .footer-bg-wrap footer #contact h1 {
   color: #ffd24f;
   text-align: center;
+  margin-bottom: 40px;
 }
 .footer-bg-wrap footer #contact #email-phone {
   margin: 0 0 20px 0;
