@@ -26,7 +26,7 @@
 					<p><%= capabilities[i].text %></p>
 				</article>
 
-<!---  MAKE DYNAMIC ONCE PROJECT INFO IS LOADED HERE -->
+	<!-- RELATED PROJECTS -->
 			<article class="related-work">
 				<div class="title">
 					<h3>Projects</h3>
@@ -34,12 +34,14 @@
 				<div class="work-thumbs">
 					<% for (var j=0; j<capabilities[i].projects.length; j++){%>
 					<div class="project">
-						<img src="images/related_work_thumb.png" alt="Project Name" />
+						<img src="<%= capabilities[i].projects[j].thumbnail.path %>" alt="Project Name" />
 						<a href="/projects/<%= makeSlug(capabilities[i].projects[j].title) %>"><%= capabilities[i].projects[j].title %> ›</a>
 					</div>
 					<% } %>
 				</div>
 			</article>
+
+	<!-- RELATED CLIENTS -->
 			<article class="related-clients">
 				<div class="title">
 					<h3>Clients</h3>
@@ -72,7 +74,7 @@
 	</div>
 
 
-
+<!-- FOOTER IS INSIDE DIV TO WORK WITH CURTAINED SCROLLING-->
 	<% include includes/footer %>
 	</div>
 		

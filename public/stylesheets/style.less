@@ -767,7 +767,6 @@ header {
 					h1 {
 						color: @yellow;
 						text-align: center;
-						margin-bottom: 40px;
 					}
 					#email-phone {
 						margin: 0 0 20px 0;
@@ -1372,7 +1371,6 @@ header {
 			h1 {
 				color: @yellow;
 				text-align: center;
-				margin-bottom: 40px;
 			}
 			#email-phone {
 				margin: 0 0 20px 0;
@@ -1444,53 +1442,56 @@ header {
 /*--------------------------- BACK END EDIT MODE SHIZ ---------------------------*/
 /*-------------------------------------------------------------------------------*/
 
+
+
 .edit-projects {
+
+	h1 {
+		line-height: 50px;
+	}
+
+	h3 {
+		border-bottom: 1px solid @three;
+		margin-bottom: 20px;
+	}
+
+
+	a {
+		font-style: normal;
+	}
+
+	a:hover {
+		font-style: oblique;
+	}
+
+	button {
+		width: auto;
+		height: 40px;
+		background-color: @three;
+		text-align: center;
+		font-size: 13px;
+		padding: 0 20px;
+		color: @c;
+	}
+
+	button:hover {
+		background-color: @yellow;
+		color: @three;
+	}
+
+
+	.field {
+		height: 25px;
+		width: 400px;
+		margin-bottom: 10px;
+		padding: 5px;
+	}
+
 	.project-form-wrap {
 		border: 6px solid #e7e7e7;
 		width: 70%;
 		height: 100%;
 		float: left;
-
-		h1 {
-			line-height: 50px;
-		}
-
-		h3 {
-			border-bottom: 1px solid @three;
-			margin-bottom: 20px;
-		}
-
-
-		a {
-			font-style: normal;
-		}
-
-		a:hover {
-			font-style: oblique;
-		}
-
-		button {
-			width: auto;
-			height: 40px;
-			background-color: @three;
-			text-align: center;
-			font-size: 13px;
-			padding: 0 20px;
-			color: @c;
-		}
-
-		button:hover {
-			background-color: @yellow;
-			color: @three;
-		}
-
-
-		.field {
-			height: 25px;
-			width: 400px;
-			margin-bottom: 10px;
-			padding: 5px;
-		}
 
 		.current-proj {
 			background: #e7e7e7;
@@ -1735,6 +1736,10 @@ header {
 				.info-btns {
 					float: left;
 					clear: both;
+
+					button:hover {
+						background-color: white;
+					}
 				}
 			}
 			
@@ -1760,6 +1765,121 @@ header {
 			}
 
 		}
+	}
+}
+
+.edit-clients {
+
+	h1 {
+	line-height: 50px;
+	}
+
+	h3 {
+		border-bottom: 1px solid @three;
+		margin-bottom: 20px;
+	}
+
+
+	a {
+		font-style: normal;
+	}
+
+	a:hover {
+		font-style: oblique;
+	}
+
+	button {
+		width: auto;
+		height: 40px;
+		background-color: @three;
+		text-align: center;
+		font-size: 13px;
+		padding: 0 20px;
+		color: @c;
+	}
+
+	button:hover {
+		background-color: @yellow;
+		color: @three;
+	}
+
+
+	.field {
+		height: 25px;
+		width: 400px;
+		margin-bottom: 10px;
+		padding: 5px;
+	}
+	.client-form-wrap{
+		border: 6px solid #e7e7e7;
+		width: 70%;
+		height: 100%;
+		float: left;
+		padding: 100px 40px 0 40px;
+	}
+
+	.new-clients {
+		width: 90%;
+		height: auto;
+		float: left;
+		clear: both;
+		background-color: @yellow;
+		padding: 30px;
+		margin-bottom: 30px;
+
+		input, textarea, button {
+			float: left;
+			clear: both;
+		}
+
+		.text-box {
+			width: 99%;
+			height: 100px;
+			float: left;
+			clear: both;
+			padding: 5px;
+		}
+
+	}
+	.current-clients {
+		width: 90%;
+		height: auto;
+		float: left;
+		clear: both;
+		margin-bottom: 30px;
+
+	form {
+		float: left;
+		clear: both;
+		height: auto;
+		width: 90%;
+		border-bottom: 2px dotted @yellow;
+		padding-top: 30px;
+
+		img {
+			margin-top: 20px;
+		}
+	}
+
+		input, textarea {
+			float: left;
+			clear: both;
+		}
+
+		.text-box {
+			width: 99%;
+			height: 100px;
+			float: left;
+			clear: both;
+			padding: 5px;
+		}
+
+		.btns {
+			float: left;
+			clear: both;
+			margin-bottom: 30px;
+		}
+
 	}
 }
 

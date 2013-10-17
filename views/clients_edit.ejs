@@ -1,31 +1,33 @@
 <% include includes/header %>
 
+<section class="client-form-wrap">
     <h1><%= title %></h1>
-    <section>
+    <section class="new-clients">
     	<form enctype="multipart/form-data" action="/clients/submit" method="post">
-	    	<h2>Add New Clients</h2>
-	    	<input name="name" placeholder="Enter Title">
-	    	<textarea name="caption" placeholder="Enter Caption"></textarea>
-	    	<input type="file" name="image" >
-	    	<button type="submit">Submit</button>
+	    	<h3>Add A New Client</h3>
+	    	<input name="name" class="field" placeholder="Client Name">
+	    	<textarea name="caption" class="text-box" placeholder="Caption for client photo"></textarea>
+	    	<input type="file" name="image" class="field" >
+	    	<button type="submit">Add</button>
 	    </form>
-
-
     </section>
 
-    <section>
-	    <h2>Current Clients</h2>
+    <section class="current-clients">
+	    <h3>Current Clients</h3>
 		<% for(var i=0; i< clients.length; i++){ %>
 			<form enctype="multipart/form-data" action="/clients/update" method="post">
-				<input type="text" name="name" value="<%= clients[i].name %>">
-				<textarea name="caption"><%= clients[i].caption%></textarea>
+				<input type="text" name="name" class="field" value="<%= clients[i].name %>">
+				<textarea class="text-box" name="caption"><%= clients[i].caption%></textarea>
 				<img src="<%= clients[i].image.path %>">
-				<input type="file" name="image" >
-				<input type="hidden" name="_id" value="<%= clients[i]._id %>">
-				<button type="submit">Update</button>
-				<button type="button" class="delete">Delete</button>
+				<input type="file" name="image" class="field" >
+				<input type="hidden" name="_id" class="field" value="<%= clients[i]._id %>">
+				<article class="btns">
+					<button type="submit">Update</button>
+					<button type="button" class="delete">Delete</button>
+				</article>
 			</form>
 		<% } %>
 	</section>
+</section>
 
 <% include includes/footer %>

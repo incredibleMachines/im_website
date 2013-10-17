@@ -6,6 +6,8 @@
 			<h1>Clients</h1>
 			
 			<% for(var i = 0; i< clients.length; i++){ %>
+
+			<!-- CLIENT INFO -->
 				<section class="client-detail" id="<%= makeSlug(clients[i].name) %>">
 					<div class="corner close">
 						<button><p>+</p></button>
@@ -14,6 +16,8 @@
 							<img src="<%= clients[i].image.path %>" alt="need an image" />
 							<p><%= clients[i].caption %></p>
 					</article>
+
+			<!-- RELATED CAPABILITIES -->
 
 					<article class="detail-col">
 						<div class="title">
@@ -46,6 +50,8 @@
 							</ul>
 						</div>
 					</article>
+
+			<!-- RELATED PROJECTS -->
 
 					<article class="detail-col">
 						<div class="title">
