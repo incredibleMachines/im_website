@@ -1440,8 +1440,314 @@ header {
 		} /* ---end footer--- */
 	} /*--- end footer-bg-wrap---*/
 
+/*-------------------------------------------------------------------------------*/
+/*--------------------------- BACK END EDIT MODE SHIZ ---------------------------*/
+/*-------------------------------------------------------------------------------*/
+
+.edit-projects {
+	.project-form-wrap {
+		border: 6px solid #e7e7e7;
+		width: 70%;
+		height: 4000px;
+		margin: 0px auto;
+
+		h1 {
+			line-height: 50px;
+		}
+
+		h3 {
+			border-bottom: 1px solid @three;
+			margin-bottom: 20px;
+		}
 
 
+		a {
+			font-style: normal;
+		}
+
+		a:hover {
+			font-style: oblique;
+		}
+
+		button {
+			width: auto;
+			height: 40px;
+			background-color: @three;
+			text-align: center;
+			font-size: 13px;
+			padding: 0 20px;
+			color: @c;
+		}
+
+		button:hover {
+			background-color: @yellow;
+			color: @three;
+		}
+
+
+		.field {
+			height: 25px;
+			width: 400px;
+			margin-bottom: 10px;
+			padding: 5px;
+		}
+
+		.current-proj {
+			background: #e7e7e7;
+			padding: 40px;
+			margin-top: 64px;
+
+			ul li {
+				height: 40px;
+				margin-bottom: 10px;
+			}
+		}
+
+		.add-proj {
+			padding: 40px;
+			float: left;
+			clear: both;
+			width: 90%;
+
+			#main {
+				margin-bottom: 30px;
+				float: left;
+				clear: both;
+			}
+
+			#text {
+				margin-bottom: 30px;
+				height: 620px;
+				float: left;
+				clear: both;
+				width: 90%;
+
+				.text-blocks {
+					height: 490px;
+
+					.project-text-block {
+						height: 490px;
+
+						.title {
+							margin: 0 0 20px 0;
+							border: 1px solid @nine;
+						}
+
+						.text-box {
+							width: 99%;
+							height: 400px;
+							float: left;
+							clear: both;
+							padding: 5px;
+						}
+					}
+				}
+			}
+
+			#images {
+				float: left;
+				clear: both;
+				width: 90%;
+				height: 300px;
+				background-color: #e7e7e7;
+				padding: 30px;
+				margin-bottom: 30px;
+
+				.project-image-block {
+					height: 210px;
+
+					select {
+						margin-bottom: 20px;
+					}
+
+					.browse {
+						float: left;
+						clear: both;
+						margin-bottom: 20px;
+					}
+				}
+			}
+
+			#technology {
+				float: left;
+				clear: both;
+				width: 90%;
+				height: auto;
+				background-color: @three;
+				padding: 30px;
+				margin-bottom: 30px;
+
+				h3 {
+					color: @yellow;
+					border-bottom: 1px solid @yellow;
+				}
+
+				a {
+					color: @nine;
+				}
+
+				p {
+					color: white;
+					margin-top: 20px;
+				}
+
+				button {
+					background-color: @six;
+				}
+				button:hover {
+					background-color: @yellow;
+				}
+
+				p#new-technology input {
+					height: 30px;
+					width: 300px;
+					padding: 5px;
+					margin-bottom: 20px;
+				}
+			}
+
+			#clients {
+				float: left;
+				clear: both;
+				width: 90%;
+				height: auto;
+				margin-bottom: 60px;
+
+				p {
+					margin: 20px 0 20px 0;
+				}
+
+
+				p#new-clients input {
+					height: 30px;
+					width: 300px;
+					padding: 5px;
+				}
+			}
+
+			#partners {
+				float: left;
+				clear: both;
+				width: 90%;
+				height: auto;
+				background-color: @yellow;
+				padding: 30px;
+				margin-bottom: 30px;
+
+				button:hover {
+					background-color: white;
+				}
+
+				p {
+					margin: 20px 0 20px 0;
+				}
+
+				p#new-partners input {
+					height: 30px;
+					width: 300px;
+					padding: 5px;
+				}
+			}
+
+			#capabilities {
+				float: left;
+				clear: both;
+				width: 90%;
+				height: auto;
+				background-color: @three;
+				padding: 30px;
+				margin-bottom: 30px;
+
+				h3 {
+					color: @yellow;
+					border-bottom: 1px solid @yellow;
+				}
+
+				a {
+					color: @nine;
+				}
+
+				p {
+					color: white;
+					margin: 20px 0 20px 0;
+				}
+
+				button {
+					background-color: @six;
+				}
+				button:hover {
+					background-color: @yellow;
+				}
+
+				p#new-technology input {
+					height: 30px;
+					width: 300px;
+					padding: 5px;
+					margin-bottom: 20px;
+				}
+			}
+
+			#more-info {
+				float: left;
+				clear: both;
+				width: 90%;
+				height: auto;
+				background-color: @yellow;
+				padding: 30px;
+				margin-bottom: 30px;
+
+				.info-blocks {
+					height: auto;
+					width: 100%;
+					float: left;
+					clear: both;
+
+					.project-info-block {
+						float: left;
+						clear: both;
+						margin-bottom: 20px;
+
+
+
+						.title {
+							margin: 0 0 10px 0;
+							border: 1px solid @nine;
+						}
+
+					}
+				}
+
+				.info-btns {
+					float: left;
+					clear: both;
+				}
+			}
+			
+
+			#privacy {
+				float: left;
+				clear: both;
+				width: 90%;
+				height: auto;
+
+				h3 {
+					margin: 40px 0 10px 0;
+				}
+
+				p {
+					margin-bottom: 20px;
+				}
+			}			
+
+			.bottom-btn {
+				float: left;
+				clear: both;
+			}
+
+		}
+
+	}
+}
 
 
 

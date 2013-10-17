@@ -1474,3 +1474,251 @@ header nav a.active {
   color: #ffffff;
 }
 /*--- end footer-bg-wrap---*/
+/*-------------------------------------------------------------------------------*/
+/*--------------------------- BACK END EDIT MODE SHIZ ---------------------------*/
+/*-------------------------------------------------------------------------------*/
+.edit-projects .project-form-wrap {
+  border: 6px solid #e7e7e7;
+  width: 70%;
+  height: 4000px;
+  margin: 0px auto;
+}
+.edit-projects .project-form-wrap h1 {
+  line-height: 50px;
+}
+.edit-projects .project-form-wrap h3 {
+  border-bottom: 1px solid #333333;
+  margin-bottom: 20px;
+}
+.edit-projects .project-form-wrap a {
+  font-style: normal;
+}
+.edit-projects .project-form-wrap a:hover {
+  font-style: oblique;
+}
+.edit-projects .project-form-wrap button {
+  width: auto;
+  height: 40px;
+  background-color: #333333;
+  text-align: center;
+  font-size: 13px;
+  padding: 0 20px;
+  color: #cccccc;
+}
+.edit-projects .project-form-wrap button:hover {
+  background-color: #ffd24f;
+  color: #333333;
+}
+.edit-projects .project-form-wrap .field {
+  height: 25px;
+  width: 400px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.edit-projects .project-form-wrap .current-proj {
+  background: #e7e7e7;
+  padding: 40px;
+  margin-top: 64px;
+}
+.edit-projects .project-form-wrap .current-proj ul li {
+  height: 40px;
+  margin-bottom: 10px;
+}
+.edit-projects .project-form-wrap .add-proj {
+  padding: 40px;
+  float: left;
+  clear: both;
+  width: 90%;
+}
+.edit-projects .project-form-wrap .add-proj #main {
+  margin-bottom: 30px;
+  float: left;
+  clear: both;
+}
+.edit-projects .project-form-wrap .add-proj #text {
+  margin-bottom: 30px;
+  height: 620px;
+  float: left;
+  clear: both;
+  width: 90%;
+}
+.edit-projects .project-form-wrap .add-proj #text .text-blocks {
+  height: 490px;
+}
+.edit-projects .project-form-wrap .add-proj #text .text-blocks .project-text-block {
+  height: 490px;
+}
+.edit-projects .project-form-wrap .add-proj #text .text-blocks .project-text-block .title {
+  margin: 0 0 20px 0;
+  border: 1px solid #999999;
+}
+.edit-projects .project-form-wrap .add-proj #text .text-blocks .project-text-block .text-box {
+  width: 99%;
+  height: 400px;
+  float: left;
+  clear: both;
+  padding: 5px;
+}
+.edit-projects .project-form-wrap .add-proj #images {
+  float: left;
+  clear: both;
+  width: 90%;
+  height: 300px;
+  background-color: #e7e7e7;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.edit-projects .project-form-wrap .add-proj #images .project-image-block {
+  height: 210px;
+}
+.edit-projects .project-form-wrap .add-proj #images .project-image-block select {
+  margin-bottom: 20px;
+}
+.edit-projects .project-form-wrap .add-proj #images .project-image-block .browse {
+  float: left;
+  clear: both;
+  margin-bottom: 20px;
+}
+.edit-projects .project-form-wrap .add-proj #technology {
+  float: left;
+  clear: both;
+  width: 90%;
+  height: auto;
+  background-color: #333333;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.edit-projects .project-form-wrap .add-proj #technology h3 {
+  color: #ffd24f;
+  border-bottom: 1px solid #ffd24f;
+}
+.edit-projects .project-form-wrap .add-proj #technology a {
+  color: #999999;
+}
+.edit-projects .project-form-wrap .add-proj #technology p {
+  color: white;
+  margin-top: 20px;
+}
+.edit-projects .project-form-wrap .add-proj #technology button {
+  background-color: #666666;
+}
+.edit-projects .project-form-wrap .add-proj #technology button:hover {
+  background-color: #ffd24f;
+}
+.edit-projects .project-form-wrap .add-proj #technology p#new-technology input {
+  height: 30px;
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+.edit-projects .project-form-wrap .add-proj #clients {
+  float: left;
+  clear: both;
+  width: 90%;
+  height: auto;
+  margin-bottom: 60px;
+}
+.edit-projects .project-form-wrap .add-proj #clients p {
+  margin: 20px 0 20px 0;
+}
+.edit-projects .project-form-wrap .add-proj #clients p#new-clients input {
+  height: 30px;
+  width: 300px;
+  padding: 5px;
+}
+.edit-projects .project-form-wrap .add-proj #partners {
+  float: left;
+  clear: both;
+  width: 90%;
+  height: auto;
+  background-color: #ffd24f;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.edit-projects .project-form-wrap .add-proj #partners button:hover {
+  background-color: white;
+}
+.edit-projects .project-form-wrap .add-proj #partners p {
+  margin: 20px 0 20px 0;
+}
+.edit-projects .project-form-wrap .add-proj #partners p#new-partners input {
+  height: 30px;
+  width: 300px;
+  padding: 5px;
+}
+.edit-projects .project-form-wrap .add-proj #capabilities {
+  float: left;
+  clear: both;
+  width: 90%;
+  height: auto;
+  background-color: #333333;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.edit-projects .project-form-wrap .add-proj #capabilities h3 {
+  color: #ffd24f;
+  border-bottom: 1px solid #ffd24f;
+}
+.edit-projects .project-form-wrap .add-proj #capabilities a {
+  color: #999999;
+}
+.edit-projects .project-form-wrap .add-proj #capabilities p {
+  color: white;
+  margin: 20px 0 20px 0;
+}
+.edit-projects .project-form-wrap .add-proj #capabilities button {
+  background-color: #666666;
+}
+.edit-projects .project-form-wrap .add-proj #capabilities button:hover {
+  background-color: #ffd24f;
+}
+.edit-projects .project-form-wrap .add-proj #capabilities p#new-technology input {
+  height: 30px;
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+.edit-projects .project-form-wrap .add-proj #more-info {
+  float: left;
+  clear: both;
+  width: 90%;
+  height: auto;
+  background-color: #ffd24f;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.edit-projects .project-form-wrap .add-proj #more-info .info-blocks {
+  height: auto;
+  width: 100%;
+  float: left;
+  clear: both;
+}
+.edit-projects .project-form-wrap .add-proj #more-info .info-blocks .project-info-block {
+  float: left;
+  clear: both;
+  margin-bottom: 20px;
+}
+.edit-projects .project-form-wrap .add-proj #more-info .info-blocks .project-info-block .title {
+  margin: 0 0 10px 0;
+  border: 1px solid #999999;
+}
+.edit-projects .project-form-wrap .add-proj #more-info .info-btns {
+  float: left;
+  clear: both;
+}
+.edit-projects .project-form-wrap .add-proj #privacy {
+  float: left;
+  clear: both;
+  width: 90%;
+  height: auto;
+}
+.edit-projects .project-form-wrap .add-proj #privacy h3 {
+  margin: 40px 0 10px 0;
+}
+.edit-projects .project-form-wrap .add-proj #privacy p {
+  margin-bottom: 20px;
+}
+.edit-projects .project-form-wrap .add-proj .bottom-btn {
+  float: left;
+  clear: both;
+}

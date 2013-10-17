@@ -1,120 +1,139 @@
  <% include includes/header %>   
-    <h2>Current Projects</h2>
-    <ul>
-        <%for(var i = 0; i<data.projects.length; i++){ %>
+ <section class="project-form-wrap">
+    <article class="current-proj">
+        <h1>Current Projects</h1>
+        <h3>(Click on one to edit it)</h3>
+        <ul>
+            <%for(var i = 0; i<data.projects.length; i++){ %>
 
-            <li><a href="/projects/<%= data.projects[i].slug %>/edit"><%= data.projects[i].title %></a></li>
+                <li><a href="/projects/<%= data.projects[i].slug %>/edit"><%= data.projects[i].title %> ›</a></li>
 
-        <% } %>
-    </ul>
-    <h2>Add Project</h2>
-    <form class="new_project" enctype="multipart/form-data" action="/projects" method="post">
-
-    	<section id="main">
-    		<p><input type="text" name="project_title" class="project_title" placeholder="Project Title"/></p>
-    		<p><input type="text" name="project_slug" class="project_slug" placeholder="Project Slug"/></p>
-    		<p><input type="text" name="project_video" placeholder="Project Video"/></p>
-            <p><input type="text" name="project_video_backup" placeholder="Project Backup Video"/></p>
-    	</section>
-
-    	<section id="text">
-    		<h3>Project Text</h3>
-	    	<section class="text-blocks">
-	     		<article class="project-text-block text-block-0">
-			   		<p><input class="title" type="text" name="project_text[0][title]" placeholder="Project Text Title"></p>
-		    		<p><textarea class="copy" name="project_text[0][text]" placeholder="Project Text"></textarea></p>
-	    		</article>
-    		</section>
-    		<button type="button" class="more-text" name="more_text">Add Another Text Field</button>
-    		<button type="button" class="less-text" name="less_text">Remove Text Field</button>
-    	</section>
-
-    	 <section id="images">
-    		<h3>Project Image Block</h3>
-    		<section class="image-blocks">
-	    		<article class="project-image-block image-block-0">
-		    		<p>
-			    		<select class="num-images">
-			    			<option selected="selected">Images in Block</option>
-			    			<option value="1">1</option>
-			    			<option value="2">2</option>
-			    			<option value="3">3</option>
-			    			<option value="4">4</option>
-			    		</select>
-		    		</p>
-		    		<input type="file" name="project_image_block[0][0]" class="project-image-0" placeholder="Project Text Title">
-	    		</article>
-    		</section>
-    		<button type="button" class="more-images" name="more_images">Add Another Image Block</button>
-    		<button type="button" class="less-images" name="less_images">Remove Image Block</button>
-    	</section>
-
-    	<section id="technology">
-    		<h3><a href="/technologies/edit">Technologies</a></h3>
-            <% for(var i =0; i< data.technology.length; i++){ %>
-    		  <p><input type="checkbox" name="technology[<%= i %>]" value="<%= data.technology[i]._id %>"> 
-              <%= data.technology[i].name %>
-              </p>
             <% } %>
-    		<p id="new-technology"></p>
-            <button type="button" class="new-technology" >Add a New Technology</button>
+        </ul>
+    </article>
+    <section class="add-proj">
+            <h1>Add a Project</h1>
+            <form class="new_project" enctype="multipart/form-data" action="/projects" method="post">
 
-    	</section>
+        	<section id="main">
+                <h3>Title, Slug, and Video Info</h3>
+        		<p><input type="text" name="project_title" class="project_title field" placeholder="Title"/></p>
+        		<p><input type="text" name="project_slug" class="project_slug field" placeholder="Slug"/></p>
+        		<p><input type="text" name="project_video" class="field" placeholder="Video URL"/></p>
+                <p><input type="text" name="project_video_backup" class="field" placeholder="Backup Video URL"/></p>
+        	</section>
 
-    	<section id="clients">
-    		<h3><a href="/clients/edit">Clients</a></h3>
-            <% for(var i =0; i< data.clients.length; i++){ %>
-    		  <p><input type="checkbox" name="clients[<%= i %>]" value="<%= data.clients[i]._id %>"> <%= data.clients[i].name %></p>
-            <% } %>
-            <p id="new-clients"></p>
-            <button type="button" class="new-clients" >Add a New Client</button>
-    	</section>
+            <section id="clients">
+                   <h3>Client(s)</h3>   
+                <a href="/clients/edit">or edit master list ›</a>
+                <% for(var i =0; i< data.clients.length; i++){ %>
+                  <p><input type="checkbox" name="clients[<%= i %>]" value="<%= data.clients[i]._id %>"> <%= data.clients[i].name %></p>
+                <% } %>
+                <p id="new-clients"></p>
+                <button type="button" class="new-clients" >Add a New Client</button>
+            </section>
 
-        <section id="partners">
-            <h3><a href="/partners/edit">Partners</a></h3>
-            <% for(var i =0; i< data.partners.length; i++){ %>
-                <p><input type="checkbox" name="partners[<%= i %>]" value="<%= data.partners[i]._id %>"> <%= data.partners[i].name %></p>
-            <% } %>
-            <p id="new-partners"></p>
-            <button type="button" class="new-partners" >Add a New Partner</button>
-        </section>
+        	<section id="text">
+        		<h3>White Paragraph Text Row</h3>
+    	    	<section class="text-blocks">
+    	     		<article class="project-text-block text-block-0">
+    			   	<p><input class="title field" type="text" name="project_text[0][title]" class="field" placeholder="Section Title"></p>
+    		    		<p><textarea class="copy text-box" name="project_text[0][text]" placeholder="Paragraph Text"></textarea></p>
+    	    		</article>
+        		</section>
+        		<button type="button" class="more-text" name="more_text">ADD Another</button>
+        		<button type="button" class="less-text" name="less_text">REMOVE This Text Row</button>
+        	</section>
 
-    	<section id="capabilities">
-    		<h3><a href="/capabilities/edit">Capabilities</a></h3>
-            <% for(var i =0; i< data.capabilities.length; i++){ %>
-    		<p><input type="checkbox" name="capabilities[<%=  i %>]" value="<%= data.capabilities[i]._id %>"><%= data.capabilities[i].name %></p>
-            <% } %>
-            <p id="new-capabilities"></p>
-            <button type="button" class="new-capabilities" >Add a New Capabilities</button>
-    	</section>
+        	 <section id="images">
+        		<h3>Project Image Block</h3>
+        		<section class="image-blocks">
+    	    		<article class="project-image-block image-block-0">
+    		    		<p>
+    			    		<select class="num-images">
+    			    			<option selected="selected"># of Images in Block</option>
+    			    			<option value="1">1</option>
+    			    			<option value="2">2</option>
+    			    			<option value="3">3</option>
+    			    			<option value="4">4</option>
+    			    		</select>
+    		    		</p>
+    		    		<input type="file" name="project_image_block[0][0]" class="project-image-0 browse" placeholder="Project Text Title">
+    	    		</article>
+        		</section>
+        		<button type="button" class="more-images" name="more_images">ADD Another</button>
+        		<button type="button" class="less-images" name="less_images">REMOVE Block</button>
+        	</section>
 
-    	<section id="more-info">
-    		<h3>More Info</h3>
-    		<section class="info-blocks">
-	     		<article class="project-info-block info-block-0">
-			   		<p><input class="title" type="text" name="project_info[0][title]" placeholder="More Info Title"></p>
-		    		<p><input class="copy" type="text" name="project_info[0][text]" placeholder="More Info Link"></p>
-	    		</article>
-    		</section>
-    		<button type="button" class="more-info" name="more_info">Add Another Info Block</button>
-    		<button type="button" class="less-info" name="less_info">Remove Info Block</button>
-    	</section>
+        	<section id="technology">
+                <h3>Technologies List</h3>
+        		<a href="/technologies/edit">or edit master list ›</a>
+                <% for(var i =0; i< data.technology.length; i++){ %>
+        		  <p><input type="checkbox" name="technology[<%= i %>]" value="<%= data.technology[i]._id %>"> 
+                  <%= data.technology[i].name %>
+                  </p>
+                <% } %>
+        		<p id="new-technology"></p>
+                <button type="button" class="new-technology" >Add a New Technology</button>
 
-    	<section id="privacy">
-    		<h3>Featured</h3>
-    		<p>Select if this project shows up on the featured page</p>
-    		<p>
-    			<input type="checkbox" name="project_featured" value="true" checked/> Yes
-    			<input type="checkbox" name="project_featured" value="false"/> No
-    		</p>
-    		<h3>Password</h3>
-    		<p>Add a password and confirm if you'd like to password protect this page</p>
-    		<p>
-    			<input type="text" name="project_password" placeholder="Enter Password"/>
-    			<input type="text" name="project_password_confirm" placeholder="Confirm Password"/>
-    		</p>
-    	</section>
+        	</section>
 
-    	<button type="submit">Add New Project</button>
-    </form>
+            <section id="capabilities">
+                    <h3>Capabilities List</h3>
+                <a href="/capabilities/edit">or edit master list ›</a>
+                <% for(var i =0; i< data.capabilities.length; i++){ %>
+                <p><input type="checkbox" name="capabilities[<%=  i %>]" value="<%= data.capabilities[i]._id %>"><%= data.capabilities[i].name %></p>
+                <% } %>
+                <p id="new-capabilities"></p>
+                <button type="button" class="new-capabilities" >Add a New Capabilities</button>
+            </section>
+
+
+
+            <section id="partners">
+                <h3>Partner(s)</h3>
+                <a href="/partners/edit">or edit master list ›</a>
+                <% for(var i =0; i< data.partners.length; i++){ %>
+                    <p><input type="checkbox" name="partners[<%= i %>]" value="<%= data.partners[i]._id %>"> <%= data.partners[i].name %></p>
+                <% } %>
+                <p id="new-partners"></p>
+                <button type="button" class="new-partners" >Add a New Partner</button>
+            </section>
+
+        	
+
+        	<section id="more-info">
+        		<h3>More Info</h3>
+        		<section class="info-blocks">
+    	     		<article class="project-info-block info-block-0">
+    			   		<p><input class="title field" type="text" name="project_info[0][title]" placeholder="Name of Link"></p>
+    		    		<p><input class="copy field" type="text" name="project_info[0][text]"placeholder="Link URL"></p>
+    	    		</article>
+        		</section>
+                        <section class="info-btns">
+            		<button type="button" class="more-info" name="more_info">ADD Another</button>
+            		<button type="button" class="less-info" name="less_info">REMOVE  Block</button>
+                        </section>
+        	</section>
+
+        	<section id="privacy">
+        		<h3>Featured</h3>
+        		<p>Does this project show on the Featured Work page?</p>
+        		<p>
+        			<input type="checkbox" name="project_featured" value="true" checked/> Yes
+        			<input type="checkbox" name="project_featured" value="false"/> No
+        		</p>
+        		<h3>Password</h3>
+        		<p>Add a password and confirm if you'd like to password protect this page</p>
+        		<p>
+        			<input type="text" name="project_password" class="field" placeholder="Enter Password"/>
+        			<input type="text" name="project_password_confirm" class="field" placeholder="Confirm Password"/>
+        		</p>
+        	</section>
+            <section class="bottom-btn">
+        	   <button type="submit">FINISH + ADD PROJECT</button>
+            </section>
+        </form>
+    </section>
+</section>
 <% include includes/footer %>
