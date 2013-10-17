@@ -7,9 +7,36 @@ var upload = require('../functions/upload'); //back a folder
 exports.view = function(db){
 	return function(req, res){
 		var clients = db.get('clients');
-		clients.find({},function(err,docs){
-			console.log(docs);
-			 res.render('clients', { title: 'Clients', slug: 'clients', clients: docs });
+		var partners = db.get('partners');
+		var projects = db.get('projects');
+
+		clients.find({},function(err,client_docs){
+			console.log(client_docs);
+
+			//iterate through the clients and find projects that are associated
+			client_docs.forEach(function(v,i){
+
+				var find_obj = {clients: {$elemMatch: { _id: v._id.toString() } } };
+
+				projects.find(find_obj, 'capabilities title',function(err, project_docs){
+					//console.log(i+": "+JSON.stringify(project_docs));
+					
+					client_docs[i].capabilities = project_docs;
+					
+					if(i==client_docs.length-1){
+
+						partners.find({}, function(err,partner_docs){
+							console.log('clients: '+JSON.stringify(client_docs));	//for debug only
+							console.log('partners: '+ JSON.stringify(partner_docs)); //for debug only
+							res.render('clients', { title: 'Clients', slug: 'clients', clients: client_docs, partners: partner_docs });
+
+						});
+
+					}//#endif
+				});
+
+			})
+
 
 		});
 	}

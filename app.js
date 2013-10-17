@@ -44,7 +44,7 @@ app.use( less( {src: __dirname+ '/public', force: true } ) );
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-// development only
+//development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
@@ -65,7 +65,6 @@ app.get('/admin/login', admin.login); //admin login view
 
 
 //authenticated other pages pages
-
 app.get('/capabilities/edit', authenticate.admin, capabilities.edit(db) );
 app.get('/clients/edit',authenticate.admin, clients.edit(db));
 app.get('/partners/edit',authenticate.admin, partners.edit(db));
