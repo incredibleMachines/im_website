@@ -36,6 +36,8 @@ Getting Started:
 
 	$ mkdir public/uploads/clients	
 	
+	$ mkdir public/uploads/posters	
+	
 	$ mkdir public/uploads/thumbnails	
 
 	#Run the app on localhost	
