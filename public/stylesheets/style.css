@@ -1569,7 +1569,7 @@ header nav a.active {
   float: left;
   clear: both;
   width: 90%;
-  height: 300px;
+  height: auto;
   background-color: #e7e7e7;
   padding: 30px;
   margin-bottom: 30px;
