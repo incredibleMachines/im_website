@@ -174,6 +174,7 @@ exports.store = function(db){
 						slug: post.project_slug,
 						video_url: post.project_video,
 						video_backup: post.project_video_backup,
+						thumbnail: null,
 						imageBlocks: [],
 						textBlocks: (post.project_text)? post.project_text : {},
 						infoBlocks: (post.project_info)? post.project_info : {},
@@ -195,6 +196,34 @@ exports.store = function(db){
 			console.log(project_obj._id.toString());
 		});
 
+
+		if(files.project_thumbnail){
+
+			var thumbnail = files.project_thumbnail;
+			delete files.project_thumbnail;
+
+			var path = "./public/uploads/thumbnails/"+thumbnail.originalFilename;
+
+			fs.rename("./"+thumbnail.path, path, function(err){
+				if(err) throw err;
+				console.log(' moved : %s to %s',thumbnail.path, path);
+				thumbnail.path = path.substring(8);
+				thumbnail.type = thumbnail.headers['content-type'];
+				thumbnail.name = thumbnail.originalFilename;
+
+				delete thumbnail.originalFilename;
+				delete thumbnail.headers;
+				delete thumbnail.ws;
+
+				var update_obj = {$set: {thumbnail: thumbnail}};
+
+				projectsDB.update(project_obj._id,update_obj,function(err,doc){
+					if(err) throw err;
+				});
+
+			});
+
+		}
 		//process new clients
 		if(post.new_client_name && files.new_client_image){
 
@@ -215,7 +244,7 @@ exports.store = function(db){
 					if(err) throw err;
 					console.log(' moved : %s to %s',image.path, path);
 					//console.log(image);
-					image.path = path;	//reset our path to root of server
+					image.path = path.substring(8);;	//reset our path to root of server
 			 		image.type = image.headers['content-type']; //pull out content-type for mime data
 			 		image.name = image.originalFilename; //generally the same - but ensure they are
 
