@@ -805,7 +805,6 @@ header nav a.active {
 .single-project .footer-bg-wrap .footer-pg-wrap footer #contact h1 {
   color: #ffd24f;
   text-align: center;
-  margin-bottom: 40px;
 }
 .single-project .footer-bg-wrap .footer-pg-wrap footer #contact #email-phone {
   margin: 0 0 20px 0;
@@ -1416,7 +1415,6 @@ header nav a.active {
 .footer-bg-wrap footer #contact h1 {
   color: #ffd24f;
   text-align: center;
-  margin-bottom: 40px;
 }
 .footer-bg-wrap footer #contact #email-phone {
   margin: 0 0 20px 0;
@@ -1477,26 +1475,20 @@ header nav a.active {
 /*-------------------------------------------------------------------------------*/
 /*--------------------------- BACK END EDIT MODE SHIZ ---------------------------*/
 /*-------------------------------------------------------------------------------*/
-.edit-projects .project-form-wrap {
-  border: 6px solid #e7e7e7;
-  width: 70%;
-  height: 100%;
-  float: left;
-}
-.edit-projects .project-form-wrap h1 {
+h1 {
   line-height: 50px;
 }
-.edit-projects .project-form-wrap h3 {
+h3 {
   border-bottom: 1px solid #333333;
   margin-bottom: 20px;
 }
-.edit-projects .project-form-wrap a {
+a {
   font-style: normal;
 }
-.edit-projects .project-form-wrap a:hover {
+a:hover {
   font-style: oblique;
 }
-.edit-projects .project-form-wrap button {
+button {
   width: auto;
   height: 40px;
   background-color: #333333;
@@ -1505,15 +1497,21 @@ header nav a.active {
   padding: 0 20px;
   color: #cccccc;
 }
-.edit-projects .project-form-wrap button:hover {
+button:hover {
   background-color: #ffd24f;
   color: #333333;
 }
-.edit-projects .project-form-wrap .field {
+.field {
   height: 25px;
   width: 400px;
   margin-bottom: 10px;
   padding: 5px;
+}
+.edit-projects .project-form-wrap {
+  border: 6px solid #e7e7e7;
+  width: 70%;
+  height: 100%;
+  float: left;
 }
 .edit-projects .project-form-wrap .current-proj {
   background: #e7e7e7;
@@ -1719,6 +1717,9 @@ header nav a.active {
   float: left;
   clear: both;
 }
+.edit-projects .project-form-wrap .add-proj #more-info .info-btns button:hover {
+  background-color: white;
+}
 .edit-projects .project-form-wrap .add-proj #privacy {
   float: left;
   clear: both;
@@ -1734,4 +1735,68 @@ header nav a.active {
 .edit-projects .project-form-wrap .add-proj .bottom-btn {
   float: left;
   clear: both;
+}
+.edit-clients .client-form-wrap {
+  border: 6px solid #e7e7e7;
+  width: 70%;
+  height: 100%;
+  float: left;
+  padding: 100px 40px 0 40px;
+}
+.edit-clients .new-clients {
+  width: 90%;
+  height: auto;
+  float: left;
+  clear: both;
+  background-color: #ffd24f;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.edit-clients .new-clients input,
+.edit-clients .new-clients textarea,
+.edit-clients .new-clients button {
+  float: left;
+  clear: both;
+}
+.edit-clients .new-clients .text-box {
+  width: 99%;
+  height: 100px;
+  float: left;
+  clear: both;
+  padding: 5px;
+}
+.edit-clients .current-clients {
+  width: 90%;
+  height: auto;
+  float: left;
+  clear: both;
+  margin-bottom: 30px;
+}
+.edit-clients .current-clients form {
+  float: left;
+  clear: both;
+  height: auto;
+  width: 90%;
+  border-bottom: 2px dotted #ffd24f;
+  padding-top: 30px;
+}
+.edit-clients .current-clients form img {
+  margin-top: 20px;
+}
+.edit-clients .current-clients input,
+.edit-clients .current-clients textarea {
+  float: left;
+  clear: both;
+}
+.edit-clients .current-clients .text-box {
+  width: 99%;
+  height: 100px;
+  float: left;
+  clear: both;
+  padding: 5px;
+}
+.edit-clients .current-clients .btns {
+  float: left;
+  clear: both;
+  margin-bottom: 30px;
 }
