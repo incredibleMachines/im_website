@@ -34,7 +34,7 @@
 				<div class="work-thumbs">
 					<% for (var j=0; j<capabilities[i].projects.length; j++){%>
 					<div class="project">
-						<img src="images/related_work_thumb.png" alt="Project Name" />
+						<img src="<%= capabilities[i].projects[j].thumbnail.path %>" alt="Project Name" />
 						<a href="/projects/<%= makeSlug(capabilities[i].projects[j].title) %>"><%= capabilities[i].projects[j].title %> ›</a>
 					</div>
 					<% } %>
