@@ -1,0 +1,11 @@
+<% include includes/header %>
+
+	<h1><%= title%></h1>
+	
+	<form method="post" action="/projects/login">
+		<input type="password" placeholder="Enter Password" name="pw"/>
+		<input type="hidden" name="project_slug" value="<%=project_slug %>">
+		<button type="submit">Login</button>
+	</form>
+
+<% include includes/footer %>
