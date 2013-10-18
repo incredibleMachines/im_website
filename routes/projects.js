@@ -36,16 +36,29 @@ exports.single = function(db) {
 		var name = req.params.name;
 		//query the database and load all the info
 		var projects = db.get('projects');
+		projects.find({featured: true},'_id slug title',function(err,project_docs){
+			
 
-		projects.findOne({slug:name},function(err,doc){
+			projects.findOne({slug:name},function(err,doc){
 
-			console.log(doc);
-			if(!doc){
-				res.render('404', {title: 'Project Not Found', slug:'project-not-found'});
-			}else{
-				res.render('project', {title: doc.title , slug: 'single-project '+doc.slug, project: doc });
-			}
-		});
+				if(!doc){
+					res.render('404', {title: 'Project Not Found', slug:'project-not-found'});
+				}else{
+					var project_index;
+					project_docs.forEach(function(v,i){
+						if(v._id.toString() == doc._id.toString()){
+							project_index = i;
+						}
+					});
+
+					var next_project = (project_index == project_docs.length-1) ? 0 : project_index+1;
+					var previous_project = (project_index == 0 )? project_docs.length-1 : project_index-1;
+
+					res.render('project', {title: doc.title , slug: 'single-project '+doc.slug, project: doc, next: project_docs[next_project].slug, previous: project_docs[previous_project].slug });
+				}
+			});
+
+		})
 
 	}
 }
