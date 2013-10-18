@@ -214,6 +214,9 @@ header {
 		left: 0;
 		right: 0;
 		z-index: 9;
+		@media screen and (max-width: 700px), (max-device-width: 500px) {
+			top:0;
+		}
 	
 		.logoHome {
 			margin: 5px 0 0 0;
@@ -222,6 +225,12 @@ header {
 					width: 250px;
 					height: 60px;
 				}
+
+		@media screen and (max-width: 700px), (max-device-width: 500px) {
+			display:block
+		}
+
+		
 		}
 	
 		nav {
@@ -270,6 +279,15 @@ header {
 			position: absolute;
 			top: 0;
 			left: 0;
+
+		}
+
+		.intro-vid{
+
+					@media screen and (max-width: 600px), (max-device-width: 500px) {
+			display:none;
+		}
+
 		}
 				
 		.introLogo {
@@ -282,26 +300,31 @@ header {
 			margin: 30px 0;
 			height: auto;
 			float: left;
-			@media screen and (max-width: 700px) {
-				width: 100%;
-			}
+			width: 100%;
 
 			.port-item {
-				margin: 0 0 30px 0;
-				padding-left: 3%;
-				max-width: 45%;
+				margin: 0 0 0 3.3%;
+				width: 45%;
 				float: left;
-		@media screen and (max-width: 1720px) {
-			width: 75%;
+
+@media screen and (min-width: 1200px) {
+		
+			padding: 0;
+			width:30%;
 		}
-		@media screen and (max-width: 700px) {
+
+		@media screen and (max-width: 600px), (max-device-width: 500px) {
 			padding: 0;
 			min-width: 100%;
+			margin:0;
 			float: none;
+			min-width:100%;
+			max-width:100%;
 		}
-		
+
 				img {
 					width: 100%;
+				
 				}
 				h2 {
 					clear: both;
@@ -855,6 +878,10 @@ header {
 		background:url('../images/yellow_pattern.png');
 		background-color: @yellow;
 		position:fixed;
+
+	@media screen and (max-width: 600px), (max-device-width: 500px) {
+		position:relative;
+	}
 		top:100;
 		z-index:-100;
 		
@@ -887,7 +914,7 @@ header {
 					line-height: 34px;
 				}
 
-				@media screen and (max-width: 530px) {
+				@media screen and (max-width: 600px), (max-device-width: 500px) {
 					font-size: 18px;
 					line-height: 28px;
 				}
@@ -899,99 +926,111 @@ header {
 	
 	#skills-section{
 		position:absolute;
+		@media screen and (max-width: 600px), (max-device-width: 500px) {
+			position:relative;
+		}	
 		background-color:@white;
 		width: inherit;
-	#skills {
-		padding-left: 35px;
-		width: 45%;
-		float: left;
-		clear: both;
-
-		@media screen and (max-width: 900px) {
-			width: 26%;
-			margin-top: 50px;
-		}
-
-		@media screen and (max-width: 800px) {
-			width: 84%;
-			margin-top: 35px;
-		}
 		
-		ul {
+		#skills {
+			padding-left: 5%;
+			width: 40%;
 			float: left;
-			width: 100%;
+			clear: both;
+			margin-top:20px;
+			padding-bottom:20px;
 
-			li {
-				height: 80px;
-				border-bottom: 1px solid @nine;
 
-				@media screen and (max-width: 900px) {
-					height: auto;
-					width: 100%;
-					float: left;
-					clear: both;
-					line-height: 22px;
-					margin-bottom: 20px;
-				}
-
-				@media screen and (max-width: 800px) {
-					margin-bottom: 10px;
-					text-align: center;
-				}
-				a {
-					font-family: @proxima;
-					font-size: 46px;
-					line-height: 106px;
-					font-weight: 100;
-					color: @nine;
-					text-transform: uppercase;
-					font-style: normal;
-
-					@media screen and (max-width: 900px) {
-						font-size: 24px;
-						line-height: 18px;
-					}
-				}
-				a:hover {
-					font-style: italic;
-					color: @three;
-				}
+			@media screen and (max-width: 600px), (max-device-width: 500px) {
+				width: 90%;
 			}
 
-			li.active {
-				border-bottom: 3px solid @yellow;
-				a {
-					font-style: italic;
-					color: @three;
+			
+			
+			ul {
+				float: left;
+				width: 100%;
+
+				li {
+				
+					border-bottom: 1px solid @nine;
+					
+
+					@media screen and (max-width: 600px), (max-device-width: 500px)  {
+						height: 100%;
+						width: 100%;
+						float: left;
+						clear: both;
+						text-align: center;
 					}
-			}
-		} /* ---end ul--- */
-	} /* ---end skills--- */
+
+					a {
+						font-family: @proxima;
+						font-weight: 100;
+						color: @nine;
+						text-transform: uppercase;
+						font-style: normal;
+						font-size:40px;
+						line-height: 86px;
+
+						@media screen and (max-width: 1220px)  {
+							font-size:30px;
+						line-height: 56px;
+						}
+
+						@media screen and (max-width: 920px)  {
+							font-size:24px;
+						line-height: 56px;
+						}
+
+						@media screen and (max-width: 720px)  {
+							font-size:19px;
+						line-height: 34px;
+						}
+
+
+
+						@media screen and (max-width: 600px), (max-device-width: 500px)  {
+							font-size:32px;
+							line-height: 46px;
+						
+						}
+
+					}
+					a:hover {
+						font-style: italic;
+						color: @three;
+					}
+				}
+
+				li.active {
+					border-bottom: 3px solid @yellow;
+					a {
+						font-style: italic;
+						color: @three;
+						}
+				}
+			} /* ---end ul--- */
+		} /* ---end skills--- */
 	
 	#about-skills {
-		width: 45%;
+		width: 50%;
 		float: right;
-		padding-right: 35px;
-		margin: 50px 0 60px 0;
+		padding-right: 3%;
+		margin: 30px 0 60px 0;
 
-		@media screen and (max-width: 900px) {
-			width: 60%;
-			float: right;
-			margin: 50px 0 60px 0;
-		}
 
-		@media screen and (max-width: 800px) {
-			clear: both;
-			float: left;
-			padding-left: 35px;
-			width: auto;
+		@media screen and (max-width: 600px), (max-device-width: 500px) {
+			width:90%;
+			float:left;
+			padding-left: 5%;
 			margin-top: 10px;
 		}
 		
 		.about-skill{
 		padding-top:100px;
 		margin-top:-100px;
-		float:right;
+		float:left;
 		height:auto;
 
 		.skill-blurb {
@@ -1002,32 +1041,40 @@ header {
 		
 		.related-work {
 			width: 100%;
-			float: right;
+			float: left;
 			clear: both;
 
-			@media screen and (max-width: 900px) {
-				width: 53%;
-				float: left;
-			}
 			
 			.title {
 				margin-left: 0;
 				margin-bottom: 20px;
+				margin-top:0;
 			}
 
 			.work-thumbs {
 				float: left;
-				clear: both;
-
+				width:100%;
 				
 				.project {
 					float: left;
-					margin: 0 20px 20px 0;
+					margin: 0 2% 20px 0;
+					width:48%;
+
+					@media screen and (max-width: 900px){
+						width:100%;
+						margin: 0 0 20px 0;
+					}
+
+					@media screen and (max-width: 600px), (max-device-width: 500px) {
+					margin: 0 2% 20px 0;
+					width:48%;
+		}
 										
 					img {
 						display: block;
 						margin-bottom: 5px;
-						width:50%;
+						width:100%
+						
 					}
 					
 					a {
@@ -1039,29 +1086,23 @@ header {
 		
 		.related-clients {
 			width: 100%;
-			float: right;
 			clear: both;
 			
-			@media screen and (max-width: 900px) {
-				width: 38%;
-				clear: none;
-			}
-
-			@media screen and (max-width: 800px) {
-				float: left;
-				clear: both;
-				width: auto;
-			}
 
 			.title {
 				margin-left: 0;
 				margin-bottom: 20px;
+				margin-top:0;
 			}
 
 			.client-list {
-				width: 100%;
-				float: left;
+				width:100%;
 				clear: both;
+
+				li{
+					float:left; 
+					padding-right:2%;
+				}
 				
 				a {
 						font-size: 14px;
@@ -1086,7 +1127,6 @@ header {
 		float: left;
 	
 		#client-grid {
-			padding-left: 2.5%;
 		
 			h1 {
 				text-align: center;
@@ -1096,31 +1136,44 @@ header {
 			}
 			
 			#client-list{
-			float:left;
-			height:auto;
-		
+				padding-left: 2.5%;
+				width: 97.5%;
+				float:left;
+				height:auto;
 				margin-bottom: 2px;
 				height: auto;
-				width: 95%;
-				float: left;
 
-				@media screen and (max-width: 720px) {
+				@media screen and (max-width: 600px), (max-device-width: 500px) {
 					margin-bottom: 0;
+					padding-left: 0;
+					width:100%;
 				}
 
 				.client {
 					background-color: @white;
-					width: 33%;
+					width: 24%;
 					height: auto;
 					display: block;
 					float: left;
 					padding-bottom: 34px;
-					border-right: 2px solid @three;
+					margin-right:.5%;
+					margin-bottom: .5%;
 
-					@media screen and (max-width: 720px) {
+					@media screen and (max-width: 1300px) {
+						width:32%;
+					}
+
+					@media screen and (max-width: 900px) {
+						width:48%;
+					}
+
+
+
+					@media screen and (max-width: 600px), (max-device-width: 500px) {
 						width: 100%;
-						margin-bottom: 2px;
+						margin-bottom: 1%;
 						border-right: none;
+						margin-right:0;
 					}
 					
 						h2 {
@@ -1179,18 +1232,26 @@ header {
 			height: auto;
 			position:absolute;
 			width:92.5%;
-			padding:40px 0 40px 2.5%;
+			margin-left: 2.5%;
+			padding:40px 0 20px 2.5%;
+
+			@media screen and (max-width: 600px), (max-device-width: 500px) {
+				width:95%;
+				margin-left: 0;
+				padding:40px 0 20px 5%;
+
+			}
 			
 			.client-img {
 				float: left;
-				width: 42%;
+				width: 50%;
 
-				@media screen and (max-width: 850px) {
-					width: 95%
+				@media screen and (max-width: 1300px) {
+					width:42%;
 				}
 
-				@media screen and (max-width: 600px) {
-					width: 87%;
+				@media screen and (max-width: 960px), (max-device-width: 500px) {
+					width: 95%
 				}
 			
 				img {
@@ -1208,31 +1269,42 @@ header {
 			
 			.detail-col {
 				float: left;
-				width: 25%;
+				width: 20%;
+				margin-left:4%;
+				margin-bottom: 20px;
 
-				@media screen and (max-width: 850px) {
-					margin: 50px 50px 0 0;
-					width: 40%;
+				@media screen and (max-width: 1300px) {
+					width:25%;
+					margin-bottom:0
+					
 				}
+
+				@media screen and (max-width: 960px){
+					width: 45%;
+					margin-top: 10px;
+					margin-left:0;
+					margin-right:4%;
+				}
+
+
+				@media screen and (max-width: 600px), (max-device-width: 500px) {
+					width: 100%;
+					margin-top: 10px;
+					margin-left:0;
+					margin-right:0;
+				}
+
+
 				
 				.title {
-					margin-top: 0;
-					margin-left: 20%;
-
-					@media screen and (max-width: 850px) {
-						margin-left: 0;
-					}
-
-					@media screen and (max-width: 600px) {
-						margin-bottom: 20px;
-					}
+					clear:both;
+					margin:0;
 				}
 					
 				.detail-list {
 					clear: both;
-					margin-left: 20%;
 
-					@media screen and (max-width: 850px) {
+					@media screen and (max-width: 600px), (max-device-width: 500px) {
 						margin-left: 0;
 					}
 				}
@@ -1290,13 +1362,6 @@ header {
 				float: left;
 				margin-left: 8%;
 
-				@media screen and (max-width: 1125px) {
-					margin-left: 3%;
-				}
-
-				@media screen and (max-width: 850px) {
-					margin: 0;
-				}
 
 				ul {
 					width: 100%;
@@ -1305,13 +1370,6 @@ header {
 					li {
 						margin-right: 30px;
 
-					@media screen and (max-width: 850px) {
-						float: left;
-					}
-
-					@media screen and (max-width: 720px) {
-
-					}
 
 						a {
 						}
