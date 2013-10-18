@@ -214,6 +214,9 @@ header {
 		left: 0;
 		right: 0;
 		z-index: 9;
+		@media screen and (max-width: 700px), (max-device-width: 500px) {
+			top:0;
+		}
 	
 		.logoHome {
 			margin: 5px 0 0 0;
@@ -222,6 +225,12 @@ header {
 					width: 250px;
 					height: 60px;
 				}
+
+		@media screen and (max-width: 700px), (max-device-width: 500px) {
+			display:block
+		}
+
+		
 		}
 	
 		nav {
@@ -270,6 +279,18 @@ header {
 			position: absolute;
 			top: 0;
 			left: 0;
+
+		}
+
+		.intro-vid{
+
+					@media screen and (max-width: 700px) {
+			display:none;
+		}
+		@media screen and (max-device-width: 568px) {
+			display:none;
+		}
+
 		}
 				
 		.introLogo {
@@ -282,26 +303,31 @@ header {
 			margin: 30px 0;
 			height: auto;
 			float: left;
-			@media screen and (max-width: 700px) {
-				width: 100%;
-			}
+			width: 100%;
 
 			.port-item {
 				margin: 0 0 30px 0;
 				padding-left: 3%;
 				max-width: 45%;
 				float: left;
-		@media screen and (max-width: 1720px) {
-			width: 75%;
-		}
 		@media screen and (max-width: 700px) {
 			padding: 0;
 			min-width: 100%;
 			float: none;
+			min-width:100%;
+			max-width:100%;
 		}
-		
+		@media screen and (max-device-width: 568px) {
+			padding: 0;
+			min-width: 100%;
+			float: none;
+			min-width:100%;
+			max-width:100%;
+		}
+
 				img {
 					width: 100%;
+				
 				}
 				h2 {
 					clear: both;
@@ -855,6 +881,10 @@ header {
 		background:url('../images/yellow_pattern.png');
 		background-color: @yellow;
 		position:fixed;
+
+	@media screen and (max-width: 600px), (max-device-width: 500px) {
+		position:relative;
+	}
 		top:100;
 		z-index:-100;
 		
@@ -887,7 +917,7 @@ header {
 					line-height: 34px;
 				}
 
-				@media screen and (max-width: 530px) {
+				@media screen and (max-width: 600px), (max-device-width: 500px) {
 					font-size: 18px;
 					line-height: 28px;
 				}
@@ -899,88 +929,108 @@ header {
 	
 	#skills-section{
 		position:absolute;
+		@media screen and (max-width: 600px), (max-device-width: 500px) {
+			position:relative;
+		}	
 		background-color:@white;
 		width: inherit;
-	#skills {
-		padding-left: 35px;
-		width: 45%;
-		float: left;
-		clear: both;
-
-		@media screen and (max-width: 900px) {
-			width: 26%;
-			margin-top: 50px;
-		}
-
-		@media screen and (max-width: 800px) {
-			width: 84%;
-			margin-top: 35px;
-		}
 		
-		ul {
+		#skills {
+			padding-left: 35px;
+			width: 35%;
 			float: left;
-			width: 100%;
+			clear: both;
+			margin-top:20px;
+			padding-bottom:20px;
 
-			li {
-				height: 80px;
-				border-bottom: 1px solid @nine;
-
-				@media screen and (max-width: 900px) {
-					height: auto;
-					width: 100%;
-					float: left;
-					clear: both;
-					line-height: 22px;
-					margin-bottom: 20px;
-				}
-
-				@media screen and (max-width: 800px) {
-					margin-bottom: 10px;
-					text-align: center;
-				}
-				a {
-					font-family: @proxima;
-					font-size: 46px;
-					line-height: 106px;
-					font-weight: 100;
-					color: @nine;
-					text-transform: uppercase;
-					font-style: normal;
-
-					@media screen and (max-width: 900px) {
-						font-size: 24px;
-						line-height: 18px;
-					}
-				}
-				a:hover {
-					font-style: italic;
-					color: @three;
-				}
+			@media screen and (max-width: 900px) {
+				width: 28%;
 			}
 
-			li.active {
-				border-bottom: 3px solid @yellow;
-				a {
-					font-style: italic;
-					color: @three;
-					}
+			@media screen and (max-width: 600px), (max-device-width: 500px) {
+				width: 84%;
 			}
-		} /* ---end ul--- */
-	} /* ---end skills--- */
+
+			
+			
+			ul {
+				float: left;
+				width: 100%;
+
+				li {
+				
+					border-bottom: 1px solid @nine;
+					
+
+					@media screen and (max-width: 600px), (max-device-width: 500px)  {
+						height: 100%;
+						width: 100%;
+						float: left;
+						clear: both;
+					}
+
+					@media screen and (max-width: 900px)  {
+						height: 100%;
+						width: 100%;
+						float: left;
+						clear: both;
+						font-size:26px;
+						line-height: 16px;
+						text-align: center;
+					}
+
+					a {
+						font-family: @proxima;
+						font-weight: 100;
+						color: @nine;
+						text-transform: uppercase;
+						font-style: normal;
+						font-size:50px;
+							line-height: 86px;
+
+						@media screen and (max-width: 900px)  {
+							font-size:40px;
+						line-height: 56px;
+						text-align: center;
+						}
+
+
+						@media screen and (max-width: 600px), (max-device-width: 500px)  {
+							font-size:26px;
+						line-height: 46px;
+						text-align: center;
+						}
+
+					}
+					a:hover {
+						font-style: italic;
+						color: @three;
+					}
+				}
+
+				li.active {
+					border-bottom: 3px solid @yellow;
+					a {
+						font-style: italic;
+						color: @three;
+						}
+				}
+			} /* ---end ul--- */
+		} /* ---end skills--- */
 	
 	#about-skills {
 		width: 45%;
 		float: right;
 		padding-right: 35px;
-		margin: 50px 0 60px 0;
+		margin: 30px 0 60px 0;
 
 		@media screen and (max-width: 900px) {
 			width: 60%;
 			float: right;
-			margin: 50px 0 60px 0;
+			margin: 30 0 60px 0;
 		}
 
-		@media screen and (max-width: 800px) {
+		@media screen and (max-width: 600px), (max-device-width: 500px) {
 			clear: both;
 			float: left;
 			padding-left: 35px;
@@ -1047,7 +1097,7 @@ header {
 				clear: none;
 			}
 
-			@media screen and (max-width: 800px) {
+			@media screen and (max-width: 600px), (max-device-width: 500px) {
 				float: left;
 				clear: both;
 				width: auto;

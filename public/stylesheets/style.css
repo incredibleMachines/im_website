@@ -247,6 +247,11 @@ header nav a.active {
   right: 0;
   z-index: 9;
 }
+@media screen and (max-width: 700px), (max-device-width: 500px) {
+  .projects header.home {
+    top: 0;
+  }
+}
 .projects header.home .logoHome {
   margin: 5px 0 0 0;
   float: left;
@@ -254,6 +259,11 @@ header nav a.active {
 .projects header.home .logoHome img {
   width: 250px;
   height: 60px;
+}
+@media screen and (max-width: 700px), (max-device-width: 500px) {
+  .projects header.home .logoHome {
+    display: block;
+  }
 }
 .projects header.home nav {
   float: right;
@@ -297,6 +307,16 @@ header nav a.active {
   top: 0;
   left: 0;
 }
+@media screen and (max-width: 700px) {
+  .projects #portfolio-wrap .intro-vid {
+    display: none;
+  }
+}
+@media screen and (max-device-width: 568px) {
+  .projects #portfolio-wrap .intro-vid {
+    display: none;
+  }
+}
 .projects #portfolio-wrap .introLogo {
   position: absolute;
   padding: 20px 35px;
@@ -306,11 +326,7 @@ header nav a.active {
   margin: 30px 0;
   height: auto;
   float: left;
-}
-@media screen and (max-width: 700px) {
-  .projects #portfolio-wrap #portfolio {
-    width: 100%;
-  }
+  width: 100%;
 }
 .projects #portfolio-wrap #portfolio .port-item {
   margin: 0 0 30px 0;
@@ -318,16 +334,20 @@ header nav a.active {
   max-width: 45%;
   float: left;
 }
-@media screen and (max-width: 1720px) {
-  .projects #portfolio-wrap #portfolio .port-item {
-    width: 75%;
-  }
-}
 @media screen and (max-width: 700px) {
   .projects #portfolio-wrap #portfolio .port-item {
     padding: 0;
-    min-width: 100%;
     float: none;
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+@media screen and (max-device-width: 568px) {
+  .projects #portfolio-wrap #portfolio .port-item {
+    padding: 0;
+    float: none;
+    min-width: 100%;
+    max-width: 100%;
   }
 }
 .projects #portfolio-wrap #portfolio .port-item img {
@@ -894,6 +914,11 @@ header nav a.active {
   /* ---end about-text--- */
 
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #about {
+    position: relative;
+  }
+}
 .capabilities #about .about-text {
   width: 50%;
   margin: 0px auto;
@@ -927,7 +952,7 @@ header nav a.active {
     line-height: 34px;
   }
 }
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #about .about-text p {
     font-size: 18px;
     line-height: 28px;
@@ -942,24 +967,29 @@ header nav a.active {
   /* --- end about-skills div --- */
 
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section {
+    position: relative;
+  }
+}
 .capabilities #skills-section #skills {
   padding-left: 35px;
-  width: 45%;
+  width: 35%;
   float: left;
   clear: both;
+  margin-top: 20px;
+  padding-bottom: 20px;
   /* ---end ul--- */
 
 }
 @media screen and (max-width: 900px) {
   .capabilities #skills-section #skills {
-    width: 26%;
-    margin-top: 50px;
+    width: 28%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #skills {
     width: 84%;
-    margin-top: 35px;
   }
 }
 .capabilities #skills-section #skills ul {
@@ -967,38 +997,48 @@ header nav a.active {
   width: 100%;
 }
 .capabilities #skills-section #skills ul li {
-  height: 80px;
   border-bottom: 1px solid #999999;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #skills ul li {
-    height: auto;
+    height: 100%;
     width: 100%;
     float: left;
     clear: both;
-    line-height: 22px;
-    margin-bottom: 20px;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .capabilities #skills-section #skills ul li {
-    margin-bottom: 10px;
+    height: 100%;
+    width: 100%;
+    float: left;
+    clear: both;
+    font-size: 26px;
+    line-height: 16px;
     text-align: center;
   }
 }
 .capabilities #skills-section #skills ul li a {
   font-family: "proxima-nova-sc-osf-ext-cond", "Arial narrow", arial, sans-serif;
-  font-size: 46px;
-  line-height: 106px;
   font-weight: 100;
   color: #999999;
   text-transform: uppercase;
   font-style: normal;
+  font-size: 50px;
+  line-height: 86px;
 }
 @media screen and (max-width: 900px) {
   .capabilities #skills-section #skills ul li a {
-    font-size: 24px;
-    line-height: 18px;
+    font-size: 40px;
+    line-height: 56px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section #skills ul li a {
+    font-size: 26px;
+    line-height: 46px;
+    text-align: center;
   }
 }
 .capabilities #skills-section #skills ul li a:hover {
@@ -1016,7 +1056,7 @@ header nav a.active {
   width: 45%;
   float: right;
   padding-right: 35px;
-  margin: 50px 0 60px 0;
+  margin: 30px 0 60px 0;
   /* ---end about-skill--- */
 
 }
@@ -1024,10 +1064,10 @@ header nav a.active {
   .capabilities #skills-section #about-skills {
     width: 60%;
     float: right;
-    margin: 50px 0 60px 0;
+    margin: 30 0 60px 0;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #about-skills {
     clear: both;
     float: left;
@@ -1095,7 +1135,7 @@ header nav a.active {
     clear: none;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #about-skills .about-skill .related-clients {
     float: left;
     clear: both;

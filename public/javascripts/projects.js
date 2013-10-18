@@ -2,13 +2,27 @@ $(document).ready(function(){
 
 $('nav a').removeClass('active');
 var topPadding=20;
-	$('#portfolio').css('padding-top',$('header').height()+topPadding).css('margin-top',-$('header').height());
-$('header.home').css({
+$('#portfolio').css('padding-top',$('header').height()+topPadding).css('margin-top',-$('header').height());
+
+console.log($('.intro-vid').css('display'));
+if($('.intro-vid').css('display')=='none'){
+	console.log('mobile')
+	$('header.home').css({
+				top: 0,
+				background: 'rgb(0,0,0)',
+			});
+			$('nav a:contains("Featured Work")').addClass('active');
+			$('.logoHome').show();
+}
+
+else{
+	$('header.home').css({
 				background: 'transparent',
 				top: '',
 				bottom: 0,
 				transition: 'background 0.4s ease-in'
 			});
+}
 
 
 videojs("intro-video-1").ready(function(){
@@ -37,6 +51,38 @@ $('.intro-vid').css("height",myPlayer.height());
 	
 	
 	userResize = function() {
+if($('.intro-vid').css('display')=='none'){
+		$('header.home').css({
+				top: 0,
+				background: 'rgb(0,0,0)',
+			});
+			$('nav a:contains("Featured Work")').addClass('active');
+			$('.logoHome').show();
+		}
+else{
+	var amtScroll = $(window).scrollTop();
+	if (amtScroll >= sH-70) {
+			$('header.home').css({
+				top: 0,
+				background: 'rgb(0,0,0)',
+				transition: 'background 0.4s ease-in'
+			});
+			$('nav a:contains("Featured Work")').addClass('active');
+			$('.logoHome').fadeIn();
+		} 
+		else {
+			console.log('scrolling up');
+			// remove top:0
+			$('header.home').css({
+				background: 'transparent',
+				top: '',
+				bottom: amtScroll,
+				transition: 'background 0.4s ease-in'
+			});
+			$('nav a').removeClass('active');
+			$('.logoHome').fadeOut();
+		}
+
   	if(window.innerHeight<window.innerWidth*(1/aspect)){
 	  	myPlayer.dimensions(window.innerWidth,window.innerWidth*(1/aspect));
 	  	$('#intro-video-1').css("left",0);
@@ -53,11 +99,23 @@ $('.intro-vid').css("height",myPlayer.height());
 	$('.intro-vid').css("height",myPlayer.height());
 	sH = window.innerHeight;
 	sW = window.innerWidth;
+}
 
 	
 	};
 	
 	userScroll=function() {
+
+		if($('.intro-vid').css('display')=='none'){
+			$('header.home').css({
+				top: 0,
+				background: 'rgb(0,0,0)',
+			});
+			$('nav a:contains("Featured Work")').addClass('active');
+			$('.logoHome').show();
+		}
+
+		else{
 		var amtScroll = $(window).scrollTop();
 		if (amtScroll >= sH-70) {
 			$('header.home').css({
@@ -80,11 +138,15 @@ $('.intro-vid').css("height",myPlayer.height());
 			$('nav a').removeClass('active');
 			$('.logoHome').fadeOut();
 		}
+	}
 	};
+
+
 	 
 			  
   window.addEventListener('resize', userResize, false);
   window.addEventListener('scroll',userScroll,false);
+  // window.addEventListener('click',userClick.false);
 });
 
 });
