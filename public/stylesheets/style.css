@@ -247,6 +247,11 @@ header nav a.active {
   right: 0;
   z-index: 9;
 }
+@media screen and (max-width: 700px), (max-device-width: 500px) {
+  .projects header.home {
+    top: 0;
+  }
+}
 .projects header.home .logoHome {
   margin: 5px 0 0 0;
   float: left;
@@ -254,6 +259,11 @@ header nav a.active {
 .projects header.home .logoHome img {
   width: 250px;
   height: 60px;
+}
+@media screen and (max-width: 700px), (max-device-width: 500px) {
+  .projects header.home .logoHome {
+    display: block;
+  }
 }
 .projects header.home nav {
   float: right;
@@ -297,6 +307,11 @@ header nav a.active {
   top: 0;
   left: 0;
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .projects #portfolio-wrap .intro-vid {
+    display: none;
+  }
+}
 .projects #portfolio-wrap .introLogo {
   position: absolute;
   padding: 20px 35px;
@@ -306,28 +321,26 @@ header nav a.active {
   margin: 30px 0;
   height: auto;
   float: left;
-}
-@media screen and (max-width: 700px) {
-  .projects #portfolio-wrap #portfolio {
-    width: 100%;
-  }
+  width: 100%;
 }
 .projects #portfolio-wrap #portfolio .port-item {
-  margin: 0 0 30px 0;
-  padding-left: 3%;
-  max-width: 45%;
+  margin: 0 0 0 3.3%;
+  width: 45%;
   float: left;
 }
-@media screen and (max-width: 1720px) {
-  .projects #portfolio-wrap #portfolio .port-item {
-    width: 75%;
-  }
-}
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 1200px) {
   .projects #portfolio-wrap #portfolio .port-item {
     padding: 0;
-    min-width: 100%;
+    width: 30%;
+  }
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .projects #portfolio-wrap #portfolio .port-item {
+    padding: 0;
+    margin: 0;
     float: none;
+    min-width: 100%;
+    max-width: 100%;
   }
 }
 .projects #portfolio-wrap #portfolio .port-item img {
@@ -894,6 +907,11 @@ header nav a.active {
   /* ---end about-text--- */
 
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #about {
+    position: relative;
+  }
+}
 .capabilities #about .about-text {
   width: 50%;
   margin: 0px auto;
@@ -927,7 +945,7 @@ header nav a.active {
     line-height: 34px;
   }
 }
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #about .about-text p {
     font-size: 18px;
     line-height: 28px;
@@ -942,24 +960,24 @@ header nav a.active {
   /* --- end about-skills div --- */
 
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section {
+    position: relative;
+  }
+}
 .capabilities #skills-section #skills {
-  padding-left: 35px;
-  width: 45%;
+  padding-left: 5%;
+  width: 40%;
   float: left;
   clear: both;
+  margin-top: 20px;
+  padding-bottom: 20px;
   /* ---end ul--- */
 
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #skills {
-    width: 26%;
-    margin-top: 50px;
-  }
-}
-@media screen and (max-width: 800px) {
-  .capabilities #skills-section #skills {
-    width: 84%;
-    margin-top: 35px;
+    width: 90%;
   }
 }
 .capabilities #skills-section #skills ul {
@@ -967,38 +985,48 @@ header nav a.active {
   width: 100%;
 }
 .capabilities #skills-section #skills ul li {
-  height: 80px;
   border-bottom: 1px solid #999999;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #skills ul li {
-    height: auto;
+    height: 100%;
     width: 100%;
     float: left;
     clear: both;
-    line-height: 22px;
-    margin-bottom: 20px;
-  }
-}
-@media screen and (max-width: 800px) {
-  .capabilities #skills-section #skills ul li {
-    margin-bottom: 10px;
     text-align: center;
   }
 }
 .capabilities #skills-section #skills ul li a {
   font-family: "proxima-nova-sc-osf-ext-cond", "Arial narrow", arial, sans-serif;
-  font-size: 46px;
-  line-height: 106px;
   font-weight: 100;
   color: #999999;
   text-transform: uppercase;
   font-style: normal;
+  font-size: 40px;
+  line-height: 86px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1220px) {
+  .capabilities #skills-section #skills ul li a {
+    font-size: 30px;
+    line-height: 56px;
+  }
+}
+@media screen and (max-width: 920px) {
   .capabilities #skills-section #skills ul li a {
     font-size: 24px;
-    line-height: 18px;
+    line-height: 56px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .capabilities #skills-section #skills ul li a {
+    font-size: 19px;
+    line-height: 34px;
+  }
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section #skills ul li a {
+    font-size: 32px;
+    line-height: 46px;
   }
 }
 .capabilities #skills-section #skills ul li a:hover {
@@ -1013,33 +1041,25 @@ header nav a.active {
   color: #333333;
 }
 .capabilities #skills-section #about-skills {
-  width: 45%;
+  width: 50%;
   float: right;
-  padding-right: 35px;
-  margin: 50px 0 60px 0;
+  padding-right: 3%;
+  margin: 30px 0 60px 0;
   /* ---end about-skill--- */
 
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #about-skills {
-    width: 60%;
-    float: right;
-    margin: 50px 0 60px 0;
-  }
-}
-@media screen and (max-width: 800px) {
-  .capabilities #skills-section #about-skills {
-    clear: both;
+    width: 90%;
     float: left;
-    padding-left: 35px;
-    width: auto;
+    padding-left: 5%;
     margin-top: 10px;
   }
 }
 .capabilities #skills-section #about-skills .about-skill {
   padding-top: 100px;
   margin-top: -100px;
-  float: right;
+  float: left;
   height: auto;
   /* ---end related-work--- */
 
@@ -1051,64 +1071,63 @@ header nav a.active {
 }
 .capabilities #skills-section #about-skills .about-skill .related-work {
   width: 100%;
-  float: right;
+  float: left;
   clear: both;
   /* ---end work-thumbs--- */
 
 }
-@media screen and (max-width: 900px) {
-  .capabilities #skills-section #about-skills .about-skill .related-work {
-    width: 53%;
-    float: left;
-  }
-}
 .capabilities #skills-section #about-skills .about-skill .related-work .title {
   margin-left: 0;
   margin-bottom: 20px;
+  margin-top: 0;
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs {
   float: left;
-  clear: both;
+  width: 100%;
   /* ---end project--- */
 
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project {
   float: left;
-  margin: 0 20px 20px 0;
+  margin: 0 2% 20px 0;
+  width: 48%;
+}
+@media screen and (max-width: 900px) {
+  .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project {
+    margin: 0 2% 20px 0;
+    width: 48%;
+  }
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project img {
   display: block;
   margin-bottom: 5px;
+  width: 100%;
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project a {
   font-size: 14px;
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients {
   width: 100%;
-  float: right;
   clear: both;
-}
-@media screen and (max-width: 900px) {
-  .capabilities #skills-section #about-skills .about-skill .related-clients {
-    width: 38%;
-    clear: none;
-  }
-}
-@media screen and (max-width: 800px) {
-  .capabilities #skills-section #about-skills .about-skill .related-clients {
-    float: left;
-    clear: both;
-    width: auto;
-  }
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients .title {
   margin-left: 0;
   margin-bottom: 20px;
+  margin-top: 0;
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients .client-list {
   width: 100%;
-  float: left;
   clear: both;
+}
+.capabilities #skills-section #about-skills .about-skill .related-clients .client-list li {
+  float: left;
+  padding-right: 2%;
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients .client-list a {
   font-size: 14px;
@@ -1137,9 +1156,6 @@ header nav a.active {
   /* ---end client-detail--- */
 
 }
-.clients #client-wrap #client-grid {
-  padding-left: 2.5%;
-}
 .clients #client-wrap #client-grid h1 {
   text-align: center;
   color: #ffd24f;
@@ -1147,34 +1163,49 @@ header nav a.active {
   line-height: 30px;
 }
 .clients #client-wrap #client-grid #client-list {
+  padding-left: 2.5%;
+  width: 97.5%;
+  float: left;
   margin-bottom: 2px;
   height: auto;
-  width: 95%;
-  float: left;
   /* ---end client--- */
 
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .clients #client-wrap #client-grid #client-list {
     margin-bottom: 0;
+    padding-left: 0;
+    width: 100%;
   }
 }
 .clients #client-wrap #client-grid #client-list .client {
   background-color: #ffffff;
-  width: 33%;
+  width: 24%;
   height: auto;
   display: block;
   float: left;
   padding-bottom: 34px;
-  border-right: 2px solid #333333;
+  margin-right: .5%;
+  margin-bottom: .5%;
   /*--- end corner ---*/
 
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1300px) {
+  .clients #client-wrap #client-grid #client-list .client {
+    width: 32%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .clients #client-wrap #client-grid #client-list .client {
+    width: 48%;
+  }
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .clients #client-wrap #client-grid #client-list .client {
     width: 100%;
-    margin-bottom: 2px;
+    margin-bottom: 1%;
     border-right: none;
+    margin-right: 0;
   }
 }
 .clients #client-wrap #client-grid #client-list .client h2 {
@@ -1219,22 +1250,30 @@ header nav a.active {
   height: auto;
   position: absolute;
   width: 92.5%;
-  padding: 40px 0 40px 2.5%;
+  margin-left: 2.5%;
+  padding: 40px 0 20px 2.5%;
   /*--- end corner ---*/
 
 }
-.clients #client-wrap .client-detail .client-img {
-  float: left;
-  width: 42%;
-}
-@media screen and (max-width: 850px) {
-  .clients #client-wrap .client-detail .client-img {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .clients #client-wrap .client-detail {
     width: 95%;
+    margin-left: 0;
+    padding: 40px 0 20px 5%;
   }
 }
-@media screen and (max-width: 600px) {
+.clients #client-wrap .client-detail .client-img {
+  float: left;
+  width: 50%;
+}
+@media screen and (max-width: 1300px) {
   .clients #client-wrap .client-detail .client-img {
-    width: 87%;
+    width: 42%;
+  }
+}
+@media screen and (max-width: 960px), (max-device-width: 500px) {
+  .clients #client-wrap .client-detail .client-img {
+    width: 95%;
   }
 }
 .clients #client-wrap .client-detail .client-img img {
@@ -1249,33 +1288,40 @@ header nav a.active {
 }
 .clients #client-wrap .client-detail .detail-col {
   float: left;
-  width: 25%;
+  width: 20%;
+  margin-left: 4%;
+  margin-bottom: 20px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1300px) {
   .clients #client-wrap .client-detail .detail-col {
-    margin: 50px 50px 0 0;
-    width: 40%;
+    width: 25%;
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 960px) {
+  .clients #client-wrap .client-detail .detail-col {
+    width: 45%;
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 4%;
+  }
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .clients #client-wrap .client-detail .detail-col {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 .clients #client-wrap .client-detail .detail-col .title {
-  margin-top: 0;
-  margin-left: 20%;
-}
-@media screen and (max-width: 850px) {
-  .clients #client-wrap .client-detail .detail-col .title {
-    margin-left: 0;
-  }
-}
-@media screen and (max-width: 600px) {
-  .clients #client-wrap .client-detail .detail-col .title {
-    margin-bottom: 20px;
-  }
+  clear: both;
+  margin: 0;
 }
 .clients #client-wrap .client-detail .detail-col .detail-list {
   clear: both;
-  margin-left: 20%;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .clients #client-wrap .client-detail .detail-col .detail-list {
     margin-left: 0;
   }
@@ -1326,30 +1372,12 @@ header nav a.active {
   float: left;
   margin-left: 8%;
 }
-@media screen and (max-width: 1125px) {
-  .clients .list-block .list {
-    margin-left: 3%;
-  }
-}
-@media screen and (max-width: 850px) {
-  .clients .list-block .list {
-    margin: 0;
-  }
-}
 .clients .list-block .list ul {
   width: 100%;
   float: left;
 }
 .clients .list-block .list ul li {
   margin-right: 30px;
-}
-@media screen and (max-width: 850px) {
-  .clients .list-block .list ul li {
-    float: left;
-  }
-}
-@media screen and (max-width: 720px) {
-  
 }
 .clients .cap-tech {
   background-color: #333333;

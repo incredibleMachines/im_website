@@ -55,8 +55,9 @@ $('.photo-block-multi').each(function(){
 		  	myPlayer.dimensions(window.innerWidth,window.innerWidth*(1/aspect));
 		  	}
 
-/* position play button and center player */	  	
-		$('.vjs-big-play-button').css("margin-top",(myPlayer.height()/2)-135/2);
+/* position play button and center player */	
+$('.vjs-big-play-button').height(myPlayer.height()/4);  	
+		$('.vjs-big-play-button').css("margin-top",-((myPlayer.height()/2)+135/2));
 		$('.project-vid').css("height",myPlayer.height());
 		$('#project-video-1').css("margin-left",(window.innerWidth-myPlayer.width())/2);
 	
@@ -73,7 +74,8 @@ $('.photo-block-multi').each(function(){
 				 myPlayer.dimensions(window.innerWidth,window.innerWidth*(1/aspect));
 		
 				  }
-			$('.vjs-big-play-button').css("margin-top",(myPlayer.height()/2)-135/2);
+			$('.vjs-big-play-button').height(myPlayer.height()/4).width(myPlayer.height()/4);
+			$('.vjs-big-play-button').css("margin-top",$('header').height()-((myPlayer.height()/2)+135/2));
 			$('.project-vid').css("height",myPlayer.height());
 			$('#project-video-1').css("margin-left",(window.innerWidth-myPlayer.width())/2)
 		};
