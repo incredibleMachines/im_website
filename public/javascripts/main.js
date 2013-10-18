@@ -188,7 +188,42 @@ $(document).ready(function(){
 		var form = $(this).parent();
 		form.attr('action','/partners/delete');
 		$(form).submit();
-	})
+	});
+
+	// check for crucial values when submit the form
+	$('.new_project').on('submit', function(e) {
+		// alert('submitted!');
+		valTitle = $('input[name="project_title"]').val();
+		valSlug = $('input[name="project_slug"]').val();
+		valLocation = $('input[name="project_location"]').val();
+		valVideo = $('input[name="project_video"]').val();
+		var checkInputFile = function() {
+			var checkArray = [];
+			$('input[type="file"]').each(function() {
+				if($(this).val().length > 1) {
+					checkArray.push(true);
+				} else {
+					checkArray.push(false);
+				}
+			});
+			if($.inArray(false, checkArray) === -1) {
+				// hooray, you shall pass
+				return true;
+			}
+		};
+		// checkInputFile();
+		if(valTitle.length > 3 &&
+			valSlug.length > 3 &&
+			valLocation.length > 3 &&
+			valVideo.length > 3 &&
+			checkInputFile() == true) {
+			// submit
+		} else {
+			e.preventDefault();
+			alert('You missed something.\nMake sure the basic info:\n–Title\n–Slug\n–Project Location\n–Video URL\nand all image fields are filled');
+		}
+	});
+
 
 
 });

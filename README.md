@@ -26,23 +26,34 @@ Getting Started:
 	
 	# Enter server root folder
 
-	$ cd /path/to/your/folder
+		$ cd /path/to/your/folder
 
-	$ npm install
+		$ npm install
 	
-	$ mkdir tmp
+		$ mkdir tmp
 	
-	$ mkdir public/uploads	
+		$ mkdir public/uploads	
 
-	$ mkdir public/uploads/clients	
+		$ mkdir public/uploads/clients	
 	
-	$ mkdir public/uploads/posters	
+		$ mkdir public/uploads/posters	
 	
-	$ mkdir public/uploads/thumbnails	
+		$ mkdir public/uploads/thumbnails	
+
+	#Ensure DB indexes
+	
+		$ mongo
+	
+		$ use im_site	
+	
+		$ db.projects.ensureIndex({timestamp: -1})	
 
 	#Run the app on localhost	
 
-	$ node app.js
+		$ node app.js
+	
+	#Setup admin un/pw
+	
 	
 	
 
