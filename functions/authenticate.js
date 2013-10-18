@@ -38,11 +38,11 @@ exports.project = function(db){
 
 				if(!req.session.project){
 					//console.log(req);
-					res.render('project-login',{title:'This Project Requires Login', slug: 'project-login', project_slug: name });
+					res.render('project_login',{title:'This Project Requires Login', slug: 'project-login', project_slug: name });
 					console.log(doc.password);
 				}else{
 					if(req.session.project === name) next();	
-					else res.render('project-login',{title:'This Project Requires Login', slug: 'project-login', project_slug: name });
+					else res.render('project_login',{title:'This Project Requires Login', slug: 'project-login', project_slug: name });
 
 				}
 			}
