@@ -1,11 +1,12 @@
-var upload = require('../functions/upload'); //back a folder
-var fs = require('fs');
-
 /*
  *
+ *		Project Functionality
  *
  */
 
+var upload = require('../functions/upload'); //back a folder
+var fs = require('fs');
+var crypto = require('crypto');
 
 /*
  * GET projects
@@ -123,10 +124,15 @@ exports.edit = function(db){
 
  		var post = req.body;
  		console.log(post)
- 		projects.findOne({slug:post.project_slug}, 'password', function(err,doc){
+ 		projects.findOne({slug:post.project_slug}, 'password timestamp', function(err,doc){
  			if(err) throw err;
  			//console.log(doc);
- 			if(doc.password === post.pw){
+
+ 			//create the authentication
+ 			var cipher = crypto.createCipher('aes-256-cbc', doc.timestamp.toString());
+			cipher.update(post.pw, 'utf-8','base64');
+
+ 			if(doc.password === cipher.final('base64')){
 
  				req.session.project = post.project_slug;
  				res.redirect('/projects/'+post.project_slug);
@@ -181,7 +187,7 @@ exports.store = function(db){
 						textBlocks: (post.project_text)? post.project_text : {},
 						infoBlocks: (post.project_info)? post.project_info : {},
 						featured: (post.project_featured === 'true') ? true : false,
-						password: (post.project_password) ? post.project_password : null,
+						password: null,
 						capabilities: [],
 						clients: [],
 						technologies: [],
@@ -438,7 +444,15 @@ exports.store = function(db){
 			});
 
 		}
-
+		if(post.project_password){
+			//encrypt password
+			var cipher = crypto.createCipher('aes-256-cbc', project_obj.timestamp.toString());
+			cipher.update(post.project_password, 'utf-8','base64');
+			var update_obj = {$set: {password: cipher.final('base64')}} 
+			projectsDB.update(project_obj._id,update_obj,function(err,doc){
+				if(err) throw err;
+			})
+		}
 		//custom image uploader 
 		upload.projectImages(files, function(images){
 			//console.log(images);

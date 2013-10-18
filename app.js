@@ -62,6 +62,7 @@ app.get('/projects/:name/:action', authenticate.admin, projects.action(db));
 app.get('/capabilities', capabilities.view(db) );
 app.get('/clients', clients.view(db));
 app.get('/admin/login', admin.login); //admin login view
+app.get('/admin/create',admin._new(db));
 
 
 //authenticated other pages pages
@@ -81,6 +82,7 @@ app.post('/partners/:action',partners.action(db));
 app.post('/technologies/:action',technologies.action(db));
 
 app.post('/login', admin.auth(db));
+app.post('/create',admin.create(db));
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
