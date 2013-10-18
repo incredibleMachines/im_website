@@ -11,7 +11,7 @@
 <!-- TITLE / PAGINATION -->
 		<section class="title-nav">
 			<div class="previous-proj">
-				<a><button class="left"></button></a>
+				<a href="/projects/<%= previous %>"><button class="left"></button></a>
 				<p class="nav-label-prev">Prev Project</p>
 			</div>
 			<article class="project-meta">
@@ -24,7 +24,7 @@
 				<p><%= project.location %>
 			</article>
 			<div class="next-proj">
-				<button class="right"></button>
+				<a href="/projects/<%= next %>"><button class="right"></button></a>
 				<p class="nav-label-next">Next Project</p>
 			</div>
 		</section>
