@@ -56,6 +56,33 @@ Getting Started:
 	
 	
 	
+Linux install
+---------------
+
+Almost the same as above. use apt-get vs brew follow other instructions
+
+Start app with forever.js
+
+	$ cd /path/to/node/server
+	
+	$ forever start -l im_site.log -o im_site_out.log -e im_site_errors.log app.js 
+
+Check out Forevers Console logs
+
+	$ tail -f ~/.forever/im_site.log
+
+Restart Forever and Code
+
+	$ forever restartall
+
+Check if the app is running
+
+	$ forever list
+
+
+
+
+
 
 
 Notes:
