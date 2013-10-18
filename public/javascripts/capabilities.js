@@ -56,11 +56,14 @@ $(document).ready(function(){
 				$('#skills-section').css('top',aboutHeight);
 				$('#skills ul li:nth-child(1) a').addClass('active');
 				$('.about-skill').css('padding-top',headerHeight).css('margin-top',-headerHeight);
+				scrollLock=false;
+				userScroll();
 			}
 			else{
 				$('#skills-section').css('position','relative').css('top','');
 				$('#skills ul li a').removeClass('active');
 				$('#skills').css('position','relative').css('top','');
+				scrollLock=true;
 			}
 
 		}

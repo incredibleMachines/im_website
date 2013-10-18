@@ -307,12 +307,7 @@ header nav a.active {
   top: 0;
   left: 0;
 }
-@media screen and (max-width: 700px) {
-  .projects #portfolio-wrap .intro-vid {
-    display: none;
-  }
-}
-@media screen and (max-device-width: 568px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .projects #portfolio-wrap .intro-vid {
     display: none;
   }
@@ -329,22 +324,20 @@ header nav a.active {
   width: 100%;
 }
 .projects #portfolio-wrap #portfolio .port-item {
-  margin: 0 0 30px 0;
-  padding-left: 3%;
-  max-width: 45%;
+  margin: 0 0 0 3.3%;
+  width: 45%;
   float: left;
 }
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 1200px) {
   .projects #portfolio-wrap #portfolio .port-item {
     padding: 0;
-    float: none;
-    min-width: 100%;
-    max-width: 100%;
+    width: 30%;
   }
 }
-@media screen and (max-device-width: 568px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .projects #portfolio-wrap #portfolio .port-item {
     padding: 0;
+    margin: 0;
     float: none;
     min-width: 100%;
     max-width: 100%;
@@ -914,7 +907,7 @@ header nav a.active {
   /* ---end about-text--- */
 
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 700px) {
   .capabilities #about {
     position: relative;
   }
@@ -973,8 +966,8 @@ header nav a.active {
   }
 }
 .capabilities #skills-section #skills {
-  padding-left: 35px;
-  width: 35%;
+  padding-left: 5%;
+  width: 40%;
   float: left;
   clear: both;
   margin-top: 20px;
@@ -982,14 +975,9 @@ header nav a.active {
   /* ---end ul--- */
 
 }
-@media screen and (max-width: 900px) {
-  .capabilities #skills-section #skills {
-    width: 28%;
-  }
-}
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #skills {
-    width: 84%;
+    width: 90%;
   }
 }
 .capabilities #skills-section #skills ul {
@@ -1005,16 +993,6 @@ header nav a.active {
     width: 100%;
     float: left;
     clear: both;
-  }
-}
-@media screen and (max-width: 900px) {
-  .capabilities #skills-section #skills ul li {
-    height: 100%;
-    width: 100%;
-    float: left;
-    clear: both;
-    font-size: 26px;
-    line-height: 16px;
     text-align: center;
   }
 }
@@ -1024,21 +1002,31 @@ header nav a.active {
   color: #999999;
   text-transform: uppercase;
   font-style: normal;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 86px;
+}
+@media screen and (max-width: 1220px) {
+  .capabilities #skills-section #skills ul li a {
+    font-size: 30px;
+    line-height: 56px;
+  }
 }
 @media screen and (max-width: 900px) {
   .capabilities #skills-section #skills ul li a {
-    font-size: 40px;
+    font-size: 24px;
     line-height: 56px;
-    text-align: center;
+  }
+}
+@media screen and (max-width: 720px) {
+  .capabilities #skills-section #skills ul li a {
+    font-size: 19px;
+    line-height: 34px;
   }
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #skills ul li a {
-    font-size: 26px;
+    font-size: 32px;
     line-height: 46px;
-    text-align: center;
   }
 }
 .capabilities #skills-section #skills ul li a:hover {
@@ -1053,33 +1041,25 @@ header nav a.active {
   color: #333333;
 }
 .capabilities #skills-section #about-skills {
-  width: 45%;
+  width: 50%;
   float: right;
-  padding-right: 35px;
+  padding-right: 3%;
   margin: 30px 0 60px 0;
   /* ---end about-skill--- */
 
 }
-@media screen and (max-width: 900px) {
-  .capabilities #skills-section #about-skills {
-    width: 60%;
-    float: right;
-    margin: 30 0 60px 0;
-  }
-}
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #about-skills {
-    clear: both;
+    width: 90%;
     float: left;
-    padding-left: 35px;
-    width: auto;
+    padding-left: 5%;
     margin-top: 10px;
   }
 }
 .capabilities #skills-section #about-skills .about-skill {
   padding-top: 100px;
   margin-top: -100px;
-  float: right;
+  float: left;
   height: auto;
   /* ---end related-work--- */
 
@@ -1091,65 +1071,63 @@ header nav a.active {
 }
 .capabilities #skills-section #about-skills .about-skill .related-work {
   width: 100%;
-  float: right;
+  float: left;
   clear: both;
   /* ---end work-thumbs--- */
 
 }
-@media screen and (max-width: 900px) {
-  .capabilities #skills-section #about-skills .about-skill .related-work {
-    width: 53%;
-    float: left;
-  }
-}
 .capabilities #skills-section #about-skills .about-skill .related-work .title {
   margin-left: 0;
   margin-bottom: 20px;
+  margin-top: 0;
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs {
   float: left;
-  clear: both;
+  width: 100%;
   /* ---end project--- */
 
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project {
   float: left;
-  margin: 0 20px 20px 0;
+  margin: 0 2% 20px 0;
+  width: 48%;
+}
+@media screen and (max-width: 900px) {
+  .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project {
+    margin: 0 2% 20px 0;
+    width: 48%;
+  }
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project img {
   display: block;
   margin-bottom: 5px;
-  width: 50%;
+  width: 100%;
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project a {
   font-size: 14px;
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients {
   width: 100%;
-  float: right;
   clear: both;
-}
-@media screen and (max-width: 900px) {
-  .capabilities #skills-section #about-skills .about-skill .related-clients {
-    width: 38%;
-    clear: none;
-  }
-}
-@media screen and (max-width: 600px), (max-device-width: 500px) {
-  .capabilities #skills-section #about-skills .about-skill .related-clients {
-    float: left;
-    clear: both;
-    width: auto;
-  }
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients .title {
   margin-left: 0;
   margin-bottom: 20px;
+  margin-top: 0;
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients .client-list {
   width: 100%;
-  float: left;
   clear: both;
+}
+.capabilities #skills-section #about-skills .about-skill .related-clients .client-list li {
+  float: left;
+  padding-right: 2%;
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients .client-list a {
   font-size: 14px;
