@@ -13,6 +13,7 @@ e.g. <video class="video-js my-skin-name">
 .vjs-project-page {
   color: #cccccc;
   position:absolute !important;
+
 }
 /* Custom Icon Font
 --------------------------------------------------------------------------------
@@ -367,7 +368,6 @@ easily in the skin designer. http://designer.videojs.com/
   display: block;
   z-index: 2;
   position: relative;
-  margin-top: 200px;
   margin-left:auto;
   margin-right:auto;
 	width: 119px;
@@ -375,8 +375,7 @@ easily in the skin designer. http://designer.videojs.com/
   cursor: pointer;
   /* Need a slightly gray bg so it can be seen on black backgrounds */
   /* background-color-with-alpha */
-  background: url('../images/play_btn_sprite.png') 0 0 no-repeat;
-  background-size:100%;
+  background: url('../images/play_btn_sprite.png') 0 0  no-repeat;
   }
 /* Hide if controls are disabled */
 .vjs-project-page.vjs-controls-disabled .vjs-big-play-button {
@@ -393,7 +392,7 @@ easily in the skin designer. http://designer.videojs.com/
 }
 .vjs-project-page:hover .vjs-big-play-button,
 .vjs-project-page .vjs-big-play-button:focus {
-background: url('../images/play_btn_sprite.png') -120px 0
+background: url('../images/play_btn_sprite.png') -120px 0 no-repeat;
 
 }
 .vjs-project-page .vjs-big-play-button:before {

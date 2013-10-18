@@ -11,17 +11,20 @@
 <!-- TITLE / PAGINATION -->
 		<section class="title-nav">
 			<div class="previous-proj">
-				<a><button class="left"></button></a>
+				<a href="/projects/<%= previous %>"><button class="left"></button></a>
 				<p class="nav-label-prev">Prev Project</p>
 			</div>
 			<article class="project-meta">
 				<h1><%= project.title %></h1>
-				<% for(var i = 0; i< project.clients.length; i++){ %>
-					<p><%= project.clients[i].name %>   ::  <%= project.location %></p>
+				<p>
+				<% for(var i = 0; i< project.clients.length; i++){ 
+					if(i!=0){%> , <%}%><%= project.clients[i].name %>
 				<% } %>
+				</p>
+				<p><%= project.location %>
 			</article>
 			<div class="next-proj">
-				<button class="right"></button>
+				<a href="/projects/<%= next %>"><button class="right"></button></a>
 				<p class="nav-label-next">Next Project</p>
 			</div>
 		</section>
@@ -35,11 +38,11 @@
 	for(var i = 0; i< project.imageBlocks.length; i++){ 
 		if(textCount<project.textBlocks.length){%>
 			<section class="project-text-titled">
-			<article class="left-col">
+				<article class="title">
+					<h3><%= project.textBlocks[textCount].title %></h3>
+				</article>
+			<article class="text-body">
 			<p><%= project.textBlocks[textCount].text %></p>
-			</article>
-			<article class="right-col">
-			<p>Need to, with JS, break text into 2 columns and have 2nd column populate here.</p>
 			</article>
 			</section>
 			
@@ -88,7 +91,7 @@
 	<!-- PHOTO BLOCK-->
 	<section class="photo-block-multi">
 	<% for(var j= 0; j<project.imageBlocks[i].length; j++){ %>
-		<div class="img-wrap">
+		<div class="img-wrap" data-image-size="<%= project.imageBlocks[i][j].size  %>">
 				<img src="<%= project.imageBlocks[i][j].path  %>" alt="alt text" />
 		</div>
 	<% } %>

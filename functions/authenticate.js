@@ -1,12 +1,16 @@
+
 exports.admin = function(req, res, next){
 	if(!req.session.admin_user && !req.session.key){
 		//check that date and key match up
 		console.log('page-access-denied');
 		//console.log(req);
 		console.log(req.path);
-		res.render('admin-login', {title:'You must login to access.', slug:'admin-login', path:req.path});
+		res.render('admin-login', {title:'You must login to access.', slug:'admin-login', post_path: '/login', path:req.path});
 
 	}else{
+
+		//check the value matches for username
+
 		console.log(req.session.admin_user);
 		next();
 	}
@@ -26,18 +30,19 @@ exports.project = function(db){
 			if(!doc) next();  //must ensure we call next to continue processes
 			//console.log(doc.password)
 
-			if(doc.password===null){ next();
-			}else if(doc.password == null){ next();
-			//we have a password situation here..
+			if(doc.password===null || doc.password == null){ next(); //no password
+			
 			}else{
+
+				//we have a password situation here..
 
 				if(!req.session.project){
 					//console.log(req);
-					res.render('project-login',{title:'This Project Requires Login', slug: 'project-login', project_slug: name });
+					res.render('project_login',{title:'This Project Requires Login', slug: 'project-login', project_slug: name });
 					console.log(doc.password);
 				}else{
 					if(req.session.project === name) next();	
-					else res.render('project-login',{title:'This Project Requires Login', slug: 'project-login', project_slug: name });
+					else res.render('project_login',{title:'This Project Requires Login', slug: 'project-login', project_slug: name });
 
 				}
 			}

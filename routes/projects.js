@@ -1,11 +1,12 @@
-var upload = require('../functions/upload'); //back a folder
-var fs = require('fs');
-
 /*
  *
+ *		Project Functionality
  *
  */
 
+var upload = require('../functions/upload'); //back a folder
+var fs = require('fs');
+var crypto = require('crypto');
 
 /*
  * GET projects
@@ -35,16 +36,29 @@ exports.single = function(db) {
 		var name = req.params.name;
 		//query the database and load all the info
 		var projects = db.get('projects');
+		projects.find({featured: true},'_id slug title',function(err,project_docs){
+			
 
-		projects.findOne({slug:name},function(err,doc){
+			projects.findOne({slug:name},function(err,doc){
 
-			console.log(doc);
-			if(!doc){
-				res.render('404', {title: 'Project Not Found', slug:'project-not-found'});
-			}else{
-				res.render('project', {title: doc.title , slug: 'single-project '+doc.slug, project: doc });
-			}
-		});
+				if(!doc){
+					res.render('404', {title: 'Project Not Found', slug:'project-not-found'});
+				}else{
+					var project_index;
+					project_docs.forEach(function(v,i){
+						if(v._id.toString() == doc._id.toString()){
+							project_index = i;
+						}
+					});
+
+					var next_project = (project_index == project_docs.length-1) ? 0 : project_index+1;
+					var previous_project = (project_index == 0 )? project_docs.length-1 : project_index-1;
+
+					res.render('project', {title: doc.title , slug: 'single-project '+doc.slug, project: doc, next: project_docs[next_project].slug, previous: project_docs[previous_project].slug });
+				}
+			});
+
+		})
 
 	}
 }
@@ -123,10 +137,15 @@ exports.edit = function(db){
 
  		var post = req.body;
  		console.log(post)
- 		projects.findOne({slug:post.project_slug}, 'password', function(err,doc){
+ 		projects.findOne({slug:post.project_slug}, 'password timestamp', function(err,doc){
  			if(err) throw err;
  			//console.log(doc);
- 			if(doc.password === post.pw){
+
+ 			//create the authentication
+ 			var cipher = crypto.createCipher('aes-256-cbc', doc.timestamp.toString());
+			cipher.update(post.pw, 'utf-8','base64');
+
+ 			if(doc.password === cipher.final('base64')){
 
  				req.session.project = post.project_slug;
  				res.redirect('/projects/'+post.project_slug);
@@ -181,7 +200,7 @@ exports.store = function(db){
 						textBlocks: (post.project_text)? post.project_text : {},
 						infoBlocks: (post.project_info)? post.project_info : {},
 						featured: (post.project_featured === 'true') ? true : false,
-						password: (post.project_password) ? post.project_password : null,
+						password: null,
 						capabilities: [],
 						clients: [],
 						technologies: [],
@@ -438,7 +457,15 @@ exports.store = function(db){
 			});
 
 		}
-
+		if(post.project_password){
+			//encrypt password
+			var cipher = crypto.createCipher('aes-256-cbc', project_obj.timestamp.toString());
+			cipher.update(post.project_password, 'utf-8','base64');
+			var update_obj = {$set: {password: cipher.final('base64')}} 
+			projectsDB.update(project_obj._id,update_obj,function(err,doc){
+				if(err) throw err;
+			})
+		}
 		//custom image uploader 
 		upload.projectImages(files, function(images){
 			//console.log(images);

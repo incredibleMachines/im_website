@@ -1,6 +1,9 @@
 $(document).ready(function(){
 
 $('nav a').removeClass('active');
+$('.video-js').css('position','absolute');
+$('.introLogo').find('img').attr('src','../images/im_logo_white.png');
+
 var topPadding=20;
 $('#portfolio').css('padding-top',$('header').height()+topPadding).css('margin-top',-$('header').height());
 
