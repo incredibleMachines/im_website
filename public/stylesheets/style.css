@@ -173,13 +173,18 @@ ul li {
 }
 /*************************** Global Header ***************************/
 header {
-  height: 70px;
   padding: 0 35px;
   background-color: #000000;
   position: fixed;
   left: 0;
   right: 0;
   z-index: 999;
+  height: 70px;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  header {
+    padding: 0;
+  }
 }
 header .logoHome {
   margin: 5px 0 0 0;
@@ -189,9 +194,60 @@ header .logoHome img {
   width: 250px;
   height: 60px;
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  header .logoHome {
+    display: none;
+  }
+}
+header .logoMobile {
+  display: none;
+  padding-left: 10px;
+  margin-top: 8px;
+  float: left;
+}
+header .logoMobile img {
+  width: 38px;
+  height: 52px;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  header .logoMobile {
+    display: block;
+  }
+}
+header .buttonMobile {
+  display: none;
+  padding-top: 20px;
+  padding-right: 16px;
+  float: right;
+  width: 33px;
+}
+header .buttonMobile .buttonLine {
+  height: 8px;
+  border-top: 3px solid #666;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  header .buttonMobile {
+    display: block;
+  }
+}
+header .buttonMobile.active .buttonLine {
+  height: 8px;
+  border-top: 3px solid #fff;
+}
 header nav {
   float: right;
   margin: 20px 0 0 0;
+  display: block;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  header nav {
+    display: none;
+    float: left;
+    clear: both;
+    background-color: #222;
+    width: 100%;
+    margin: 0;
+  }
 }
 header nav a {
   font-family: "museo-slab", courier, serif;
@@ -203,17 +259,43 @@ header nav a {
   margin: 0 0 0 25px;
   letter-spacing: 1px;
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  header nav a {
+    float: left;
+    clear: both;
+    color: #999;
+    font-size: 18px;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0 20px 20px;
+    border-top: 1px solid #333;
+  }
+}
 header nav a:hover {
   border-top: 1px solid #ffd24f;
   color: #ffffff;
   font-weight: 100;
   padding-top: 5px;
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  header nav a:hover {
+    border-top: 1px solid #333;
+    padding: 20px 0 20px 20px;
+    font-style: oblique;
+  }
+}
 header nav a.active {
   border-top: 1px solid #ffd24f;
   color: #ffffff;
   font-weight: 100;
   padding-top: 5px;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  header nav a.active {
+    padding: 20px 0 20px 20px;
+    border-top: 1px solid #333;
+    font-style: oblique;
+  }
 }
 /* --- end header --- */
 /*************************** Sub-Section Titles ***************************/
@@ -250,6 +332,7 @@ header nav a.active {
 @media screen and (max-width: 700px), (max-device-width: 500px) {
   .projects header.home {
     top: 0;
+    padding: 0;
   }
 }
 .projects header.home .logoHome {
@@ -260,14 +343,25 @@ header nav a.active {
   width: 250px;
   height: 60px;
 }
-@media screen and (max-width: 700px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .projects header.home .logoHome {
-    display: block;
+    display: none;
   }
 }
 .projects header.home nav {
   float: right;
   margin: 20px 0 0 0;
+  display: block;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .projects header.home nav {
+    display: none;
+    float: left;
+    clear: both;
+    background-color: #222;
+    width: 100%;
+    margin: 0;
+  }
 }
 .projects header.home nav a {
   font-family: "museo-slab", courier, serif;
@@ -279,11 +373,39 @@ header nav a.active {
   margin: 0 0 0 25px;
   letter-spacing: 1px;
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .projects header.home nav a {
+    float: left;
+    clear: both;
+    color: #999;
+    font-size: 18px;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0 20px 20px;
+    border-top: 1px solid #333;
+  }
+}
 .projects header.home nav a:hover {
   border-top: 1px solid #ffd24f;
   color: #ffffff;
   font-weight: 100;
   padding-top: 5px;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .projects header.home nav a:hover {
+    border-top: 1px solid #333;
+    padding: 20px 0 20px 20px;
+    font-style: oblique;
+  }
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .projects header.home nav a:hover a.active {
+    color: #ffffff;
+    font-weight: 100;
+    padding: 20px 0 20px 20px;
+    border-top: 1px solid #333;
+    font-style: oblique;
+  }
 }
 .projects header.home .logoHome {
   display: none;
