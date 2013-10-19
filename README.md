@@ -1,9 +1,11 @@
-Getting Started:
----------------
+Getting Started
+===============
+
+OSX Install
+-----------
 
 Make sure you have mongodb installed 
-		
-	On OSX	
+			
 	$ which mongodb
 		
 	-if not install using homebrew
@@ -60,25 +62,34 @@ Setup admin un/pw
 Linux install
 ---------------
 
-Almost the same as above. use apt-get vs brew follow other instructions
+Almost the same as above. use apt-get vs brew follow other instructions as needed
 
-Start app with forever.js
+Set node application with nvm
 
-	$ cd /path/to/node/server
+	$ nvm use 0.10
+
+Start app with nvm & forever.js
+
+	$ cd /var/www
 	
-	$ forever start -l im_site.log -o im_site_out.log -e im_site_errors.log app.js 
+	$ forever start -l im_site.log -a -o im_site_out.log -e im_site_errors.log app.js 
 
 Check out Forevers Console logs
 
 	$ tail -f ~/.forever/im_site.log
 
 Restart Forever and Code
+	
+	$ cd /var/www
+
+	$ git pull origin master
 
 	$ forever restartall
 
 Check if the app is running
 
 	$ forever list
+
 
 
 
