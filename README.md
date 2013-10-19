@@ -44,9 +44,7 @@ Make sure mongod is running
 
 Ensure DB indexes
 	
-	$ mongo
-	
-	$ use im_site	
+	$ mongo im_site	
 	
 	$ db.projects.ensureIndex({timestamp: -1})	
 
@@ -62,7 +60,7 @@ Setup admin un/pw
 Linux install
 ---------------
 
-Almost the same as above. use apt-get vs brew follow other instructions as needed
+Almost the same as above. use apt-get in place of brew follow OSX instructions above except running app and nvm
 
 Set node application with nvm
 
