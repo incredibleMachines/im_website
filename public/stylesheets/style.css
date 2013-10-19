@@ -117,7 +117,7 @@ button:hover {
 /*************************** FONTS ***************************/
 /*************************** TYPE STYLES ***************************/
 h1 {
-  font-family: "museo-slab", courier, serif;
+  font-family: "museo-slab", "Museo Slab", courier, serif;
   font-size: 46px;
   line-height: 0px;
   font-weight: 100;
@@ -126,7 +126,7 @@ h1 {
   letter-spacing: 1px;
 }
 h2 {
-  font-family: "proxima-nova-sc-osf-ext-cond", "Arial narrow", arial, sans-serif;
+  font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
   font-size: 46px;
   line-height: 46px;
   font-weight: 100;
@@ -134,7 +134,7 @@ h2 {
   text-transform: uppercase;
 }
 h3 {
-  font-family: "museo-slab", courier, serif;
+  font-family: "museo-slab", "Museo Slab", courier, serif;
   font-size: 20px;
   line-height: 22px;
   font-weight: 100;
@@ -143,7 +143,7 @@ h3 {
   letter-spacing: 1px;
 }
 p {
-  font-family: "jaf-facitweb", arial, sans-serif;
+  font-family: "jaf-facitweb", "Facit", arial, sans-serif;
   font-size: 18px;
   line-height: 28px;
   font-weight: 100;
@@ -151,7 +151,7 @@ p {
   letter-spacing: 1px;
 }
 a {
-  font-family: "jaf-facitweb", arial, sans-serif;
+  font-family: "jaf-facitweb", "Facit", arial, sans-serif;
   font-size: 18px;
   font-style: oblique;
   /*line-height: 28px;*/
@@ -165,7 +165,7 @@ a:hover {
   font-weight: 300;
 }
 ul li {
-  font-family: "jaf-facitweb", arial, sans-serif;
+  font-family: "jaf-facitweb", "Facit", arial, sans-serif;
   font-size: 18px;
   line-height: 38px;
   font-weight: 100;
@@ -250,7 +250,7 @@ header nav {
   }
 }
 header nav a {
-  font-family: "museo-slab", courier, serif;
+  font-family: "museo-slab", "Museo Slab", courier, serif;
   font-size: 14px;
   text-transform: uppercase;
   color: #cccccc;
@@ -364,7 +364,7 @@ header nav a.active {
   }
 }
 .projects header.home nav a {
-  font-family: "museo-slab", courier, serif;
+  font-family: "museo-slab", "Museo Slab", courier, serif;
   font-size: 14px;
   text-transform: uppercase;
   color: #cccccc;
@@ -472,7 +472,7 @@ header nav a.active {
   clear: both;
 }
 .projects #portfolio-wrap #portfolio .port-item h2 a {
-  font-family: "proxima-nova-sc-osf-ext-cond", "Arial narrow", arial, sans-serif;
+  font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
   font-size: 46px;
   line-height: 0;
   font-weight: 100;
@@ -483,7 +483,7 @@ header nav a.active {
 .projects #portfolio-wrap #portfolio .port-item h2 a:hover {
   font-style: italic;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .projects #portfolio-wrap #portfolio .port-item h2 {
     text-align: center;
     margin: 0 10px;
@@ -493,7 +493,7 @@ header nav a.active {
   clear: both;
   line-height: 20px;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .projects #portfolio-wrap #portfolio .port-item p {
     text-align: center;
     margin: 0 10px;
@@ -1331,7 +1331,7 @@ header nav a.active {
   }
 }
 .capabilities #skills-section #skills ul li a {
-  font-family: "proxima-nova-sc-osf-ext-cond", "Arial narrow", arial, sans-serif;
+  font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
   font-weight: 100;
   color: #999999;
   text-transform: uppercase;
