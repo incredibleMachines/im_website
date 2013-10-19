@@ -2,6 +2,21 @@ $(document).ready(function(){
 	$('nav a').removeClass('active');
 	$('nav a:contains("Clients")').addClass('active');
 
+	var clientSize=42;
+
+
+		$('.client h2').each(function(){
+			$(this).css('font-size',clientSize);
+			for(var i=0;i<parseInt($(this).css('font-size'));i++){
+				if($(this).innerHeight()>clientSize+parseInt($(this).css('padding-top'))+parseInt($(this).css('padding-bottom'))+10){
+					$(this).css('font-size',parseInt($(this).css('font-size'))-1);
+				}
+				else{
+					break;
+				}
+			}
+		});
+
 	$('.client-detail').hide();
 	$('.client').click(function(){
 		var clientName=$(this).find('h2').text();
@@ -33,6 +48,18 @@ $(document).ready(function(){
 		if($('.client-detail').css('display')=='block'){
 			$('.cap-tech').css({'padding-top': $('.client-detail').height()+parseInt($('.cap-tech').css('margin-top'))},500);
 		}
+
+		$('.client h2').each(function(){
+			$(this).css('font-size',clientSize);
+			for(var i=0;i<parseInt($(this).css('font-size'));i++){
+				if($(this).innerHeight()>clientSize+parseInt($(this).css('padding-top'))+parseInt($(this).css('padding-bottom'))+10){
+					$(this).css('font-size',parseInt($(this).css('font-size'))-1);
+				}
+				else{
+					break;
+				}
+			}
+		});
 	}
 
 	  window.addEventListener('resize', userResize, false);
