@@ -1751,29 +1751,84 @@ header nav a.active {
   clear: both;
   float: left;
   border-bottom: 1px solid #ffffff;
-  width: 95%%;
-  padding-bottom: 50px;
-  margin-top: 50px;
-  padding-left: 5%;
-}
-.clients .list-block .title {
-  padding-top: 8px;
-  margin: 0 0 40px 0;
+  width: 100%;
+  padding: 30px 0 0 5%;
 }
 .clients .list-block .column {
   float: left;
-  width: inherit;
+  width: 95%;
 }
-.clients .list-block .list {
+.clients .list-block .column .title {
   float: left;
-  margin-left: 8%;
+  padding-right: 0;
+  padding-top: 0;
+  margin: 0;
 }
-.clients .list-block .list ul {
-  width: 100%;
+@media screen and (max-width: 1100px) {
+  .clients .list-block .column .title {
+    padding-bottom: 10px;
+  }
+}
+.clients .list-block .column .list {
+  padding-left: 2.5%;
+  float: left;
+  width: 78%;
+  -webkit-columns: 5;
+  /* Safari and Chrome */
+
+  -moz-columns: 5;
+  /* Firefox */
+
+  columns: 5;
+}
+@media screen and (max-width: 1700px) {
+  .clients .list-block .column .list {
+    -webkit-columns: 4;
+    /* Safari and Chrome */
+  
+    -moz-columns: 4;
+    /* Firefox */
+  
+    columns: 4;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .clients .list-block .column .list {
+    -moz-columns: 3;
+    -webkit-columns: 3;
+    columns: 3;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .clients .list-block .column .list {
+    -moz-columns: 4;
+    -webkit-columns: 4;
+    columns: 4;
+    width: 100%;
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 900px), (max-device-width: 500px) {
+  .clients .list-block .column .list {
+    -moz-columns: 1s;
+    -webkit-columns: 1;
+    columns: 1;
+    padding-left: 0;
+    width: 100%;
+  }
+}
+.clients .list-block .column .list ul {
   float: left;
 }
-.clients .list-block .list ul li {
-  margin-right: 30px;
+.clients .list-block .column .list ul li {
+  float: left;
+  clear: both;
+}
+@media screen and (max-width: 900px), (max-device-width: 500px) {
+  .clients .list-block .column .list ul li {
+    clear: none;
+    padding-right: 5px;
+  }
 }
 .clients .cap-tech {
   background-color: #333333;
