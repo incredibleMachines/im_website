@@ -476,9 +476,13 @@ header nav a.active {
 }
 .projects #portfolio-wrap #portfolio .port-item a img {
   width: 100%;
+  -moz-transition: all .5s ;
+  -webkit-transition: all .5s ;
+  transition: all .5s ;
 }
 .projects #portfolio-wrap #portfolio .port-item a h2 {
   clear: both;
+  width: 95%;
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .projects #portfolio-wrap #portfolio .port-item a h2 {
