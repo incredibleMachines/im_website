@@ -117,7 +117,7 @@ button:hover {
 /*************************** FONTS ***************************/
 /*************************** TYPE STYLES ***************************/
 h1 {
-  font-family: "museo-slab", courier, serif;
+  font-family: "museo-slab", "Museo Slab", courier, serif;
   font-size: 46px;
   line-height: 0px;
   font-weight: 100;
@@ -126,7 +126,7 @@ h1 {
   letter-spacing: 1px;
 }
 h2 {
-  font-family: "proxima-nova-sc-osf-ext-cond", "Arial narrow", arial, sans-serif;
+  font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
   font-size: 46px;
   line-height: 46px;
   font-weight: 100;
@@ -134,7 +134,7 @@ h2 {
   text-transform: uppercase;
 }
 h3 {
-  font-family: "museo-slab", courier, serif;
+  font-family: "museo-slab", "Museo Slab", courier, serif;
   font-size: 20px;
   line-height: 22px;
   font-weight: 100;
@@ -143,7 +143,7 @@ h3 {
   letter-spacing: 1px;
 }
 p {
-  font-family: "jaf-facitweb", arial, sans-serif;
+  font-family: "jaf-facitweb", "Facit", arial, sans-serif;
   font-size: 18px;
   line-height: 28px;
   font-weight: 100;
@@ -151,7 +151,7 @@ p {
   letter-spacing: 1px;
 }
 a {
-  font-family: "jaf-facitweb", arial, sans-serif;
+  font-family: "jaf-facitweb", "Facit", arial, sans-serif;
   font-size: 18px;
   font-style: oblique;
   /*line-height: 28px;*/
@@ -165,7 +165,7 @@ a:hover {
   font-weight: 300;
 }
 ul li {
-  font-family: "jaf-facitweb", arial, sans-serif;
+  font-family: "jaf-facitweb", "Facit", arial, sans-serif;
   font-size: 18px;
   line-height: 38px;
   font-weight: 100;
@@ -173,13 +173,18 @@ ul li {
 }
 /*************************** Global Header ***************************/
 header {
-  height: 70px;
   padding: 0 35px;
   background-color: #000000;
   position: fixed;
   left: 0;
   right: 0;
   z-index: 999;
+  height: 70px;
+}
+@media screen and (max-width: 828px), (max-device-width: 500px) {
+  header {
+    padding: 0;
+  }
 }
 header .logoHome {
   margin: 5px 0 0 0;
@@ -189,12 +194,63 @@ header .logoHome img {
   width: 250px;
   height: 60px;
 }
+@media screen and (max-width: 828px), (max-device-width: 500px) {
+  header .logoHome {
+    display: none;
+  }
+}
+header .logoMobile {
+  display: none;
+  padding-left: 10px;
+  margin-top: 8px;
+  float: left;
+}
+header .logoMobile img {
+  width: 38px;
+  height: 52px;
+}
+@media screen and (max-width: 828px), (max-device-width: 500px) {
+  header .logoMobile {
+    display: block;
+  }
+}
+header .buttonMobile {
+  display: none;
+  padding-top: 20px;
+  padding-right: 16px;
+  float: right;
+  width: 33px;
+}
+header .buttonMobile .buttonLine {
+  height: 8px;
+  border-top: 3px solid #666;
+}
+@media screen and (max-width: 828px), (max-device-width: 500px) {
+  header .buttonMobile {
+    display: block;
+  }
+}
+header .buttonMobile.active .buttonLine {
+  height: 8px;
+  border-top: 3px solid #fff;
+}
 header nav {
   float: right;
-  margin: 20px 0 0 0;
+  margin: 29px 0 0 0;
+  display: block;
+}
+@media screen and (max-width: 828px), (max-device-width: 500px) {
+  header nav {
+    display: none;
+    float: left;
+    clear: both;
+    background-color: #222;
+    width: 100%;
+    margin: 0;
+  }
 }
 header nav a {
-  font-family: "museo-slab", courier, serif;
+  font-family: "museo-slab", "Museo Slab", courier, serif;
   font-size: 14px;
   text-transform: uppercase;
   color: #cccccc;
@@ -203,17 +259,43 @@ header nav a {
   margin: 0 0 0 25px;
   letter-spacing: 1px;
 }
+@media screen and (max-width: 828px), (max-device-width: 500px) {
+  header nav a {
+    float: left;
+    clear: both;
+    color: #999;
+    font-size: 18px;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0 20px 20px;
+    border-top: 1px solid #333;
+  }
+}
 header nav a:hover {
   border-top: 1px solid #ffd24f;
   color: #ffffff;
   font-weight: 100;
   padding-top: 5px;
 }
+@media screen and (max-width: 828px), (max-device-width: 500px) {
+  header nav a:hover {
+    border-top: 1px solid #333;
+    padding: 20px 0 20px 20px;
+    font-style: oblique;
+  }
+}
 header nav a.active {
   border-top: 1px solid #ffd24f;
   color: #ffffff;
   font-weight: 100;
   padding-top: 5px;
+}
+@media screen and (max-width: 828px), (max-device-width: 500px) {
+  header nav a.active {
+    padding: 20px 0 20px 20px;
+    border-top: 1px solid #333;
+    font-style: oblique;
+  }
 }
 /* --- end header --- */
 /*************************** Sub-Section Titles ***************************/
@@ -250,6 +332,7 @@ header nav a.active {
 @media screen and (max-width: 700px), (max-device-width: 500px) {
   .projects header.home {
     top: 0;
+    padding: 0;
   }
 }
 .projects header.home .logoHome {
@@ -260,17 +343,28 @@ header nav a.active {
   width: 250px;
   height: 60px;
 }
-@media screen and (max-width: 700px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .projects header.home .logoHome {
-    display: block;
+    display: none;
   }
 }
 .projects header.home nav {
   float: right;
-  margin: 20px 0 0 0;
+  margin: 28px 0 0 0;
+  display: block;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .projects header.home nav {
+    display: none;
+    float: left;
+    clear: both;
+    background-color: #222;
+    width: 100%;
+    margin: 0;
+  }
 }
 .projects header.home nav a {
-  font-family: "museo-slab", courier, serif;
+  font-family: "museo-slab", "Museo Slab", courier, serif;
   font-size: 14px;
   text-transform: uppercase;
   color: #cccccc;
@@ -279,11 +373,39 @@ header nav a.active {
   margin: 0 0 0 25px;
   letter-spacing: 1px;
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .projects header.home nav a {
+    float: left;
+    clear: both;
+    color: #999;
+    font-size: 18px;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0 20px 20px;
+    border-top: 1px solid #333;
+  }
+}
 .projects header.home nav a:hover {
   border-top: 1px solid #ffd24f;
   color: #ffffff;
   font-weight: 100;
   padding-top: 5px;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .projects header.home nav a:hover {
+    border-top: 1px solid #333;
+    padding: 20px 0 20px 20px;
+    font-style: oblique;
+  }
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .projects header.home nav a:hover a.active {
+    color: #ffffff;
+    font-weight: 100;
+    padding: 20px 0 20px 20px;
+    border-top: 1px solid #333;
+    font-style: oblique;
+  }
 }
 .projects header.home .logoHome {
   display: none;
@@ -343,14 +465,8 @@ header nav a.active {
     max-width: 100%;
   }
 }
-.projects #portfolio-wrap #portfolio .port-item img {
-  width: 100%;
-}
-.projects #portfolio-wrap #portfolio .port-item h2 {
-  clear: both;
-}
-.projects #portfolio-wrap #portfolio .port-item h2 a {
-  font-family: "proxima-nova-sc-osf-ext-cond", "Arial narrow", arial, sans-serif;
+.projects #portfolio-wrap #portfolio .port-item a {
+  font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
   font-size: 46px;
   line-height: 0;
   font-weight: 100;
@@ -358,20 +474,35 @@ header nav a.active {
   text-transform: uppercase;
   font-style: normal;
 }
-.projects #portfolio-wrap #portfolio .port-item h2 a:hover {
-  font-style: italic;
+.projects #portfolio-wrap #portfolio .port-item a img {
+  width: 100%;
+  -moz-transition: all .5s ;
+  -webkit-transition: all .5s ;
+  transition: all .5s ;
 }
-@media screen and (max-width: 700px) {
-  .projects #portfolio-wrap #portfolio .port-item h2 {
+.projects #portfolio-wrap #portfolio .port-item a h2 {
+  clear: both;
+  width: 95%;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .projects #portfolio-wrap #portfolio .port-item a h2 {
     text-align: center;
     margin: 0 10px;
   }
+}
+.projects #portfolio-wrap #portfolio .port-item a:hover {
+  font-style: italic;
+}
+.projects #portfolio-wrap #portfolio .port-item a:hover img {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 .projects #portfolio-wrap #portfolio .port-item p {
   clear: both;
   line-height: 20px;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .projects #portfolio-wrap #portfolio .port-item p {
     text-align: center;
     margin: 0 10px;
@@ -1122,6 +1253,8 @@ header nav a.active {
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #about {
     position: relative;
+    padding-top: 140px;
+    padding-bottom: 70px;
   }
 }
 .capabilities #about .about-text {
@@ -1159,8 +1292,8 @@ header nav a.active {
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #about .about-text p {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 22px;
+    line-height: 34px;
   }
 }
 .capabilities #skills-section {
@@ -1182,14 +1315,20 @@ header nav a.active {
   width: 40%;
   float: left;
   clear: both;
-  margin-top: 20px;
+  padding-top: 20px;
   padding-bottom: 20px;
   /* ---end ul--- */
 
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #skills {
-    width: 90%;
+    width: 100%;
+    background-color: #333;
+    padding-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 10px solid #000;
+    border-bottom: 10px solid #000;
   }
 }
 .capabilities #skills-section #skills ul {
@@ -1202,14 +1341,15 @@ header nav a.active {
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #skills ul li {
     height: 100%;
-    width: 100%;
+    width: 95%;
     float: left;
     clear: both;
-    text-align: center;
+    border-bottom: 1px solid #000000;
+    padding-left: 5%;
   }
 }
 .capabilities #skills-section #skills ul li a {
-  font-family: "proxima-nova-sc-osf-ext-cond", "Arial narrow", arial, sans-serif;
+  font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
   font-weight: 100;
   color: #999999;
   text-transform: uppercase;
@@ -1245,12 +1385,31 @@ header nav a.active {
   font-style: italic;
   color: #333333;
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section #skills ul li a:hover {
+    color: #ffffff;
+  }
+}
 .capabilities #skills-section #skills ul li.active {
   border-bottom: 3px solid #ffd24f;
 }
 .capabilities #skills-section #skills ul li.active a {
   font-style: italic;
   color: #333333;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section #skills ul li.active {
+    border-bottom: 1px solid #000000;
+  }
+  .capabilities #skills-section #skills ul li.active a {
+    font-style: normal;
+    color: #999999;
+  }
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section #skills ul li:last-child {
+    border: none;
+  }
 }
 .capabilities #skills-section #about-skills {
   width: 50%;
@@ -1266,6 +1425,7 @@ header nav a.active {
     float: left;
     padding-left: 5%;
     margin-top: 10px;
+    margin-bottom: 30px;
   }
 }
 .capabilities #skills-section #about-skills .about-skill {
@@ -1277,6 +1437,21 @@ header nav a.active {
 
   /* ---end related-clients--- */
 
+}
+.capabilities #skills-section #about-skills .about-skill .skill-title {
+  display: none;
+  border-bottom: 4px solid #ffd24f;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section #about-skills .about-skill .skill-title {
+    display: block;
+  }
+}
+.capabilities #skills-section #about-skills .about-skill .skill-title h2 {
+  font-size: 32px;
+}
+.capabilities #skills-section #about-skills .about-skill .skill-blurb {
+  padding-top: 10px;
 }
 .capabilities #skills-section #about-skills .about-skill .skill-blurb p {
   margin-bottom: 30px;
@@ -1290,7 +1465,7 @@ header nav a.active {
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .title {
   margin-left: 0;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   margin-top: 0;
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs {
@@ -1312,8 +1487,8 @@ header nav a.active {
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project {
-    margin: 0 2% 20px 0;
-    width: 48%;
+    margin: 0 0 20px 0;
+    width: 100%;
   }
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project img {
@@ -1327,10 +1502,11 @@ header nav a.active {
 .capabilities #skills-section #about-skills .about-skill .related-clients {
   width: 100%;
   clear: both;
+  padding-bottom: 50px;
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients .title {
   margin-left: 0;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   margin-top: 0;
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients .client-list {
@@ -1343,6 +1519,14 @@ header nav a.active {
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients .client-list a {
   font-size: 14px;
+}
+.capabilities #skills-section .bottom-skills {
+  display: none;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section .bottom-skills {
+    display: block;
+  }
 }
 /* --- end capabilities ---*/
 /*--------------------------- CLIENTS ---------------------------*/
@@ -1567,29 +1751,84 @@ header nav a.active {
   clear: both;
   float: left;
   border-bottom: 1px solid #ffffff;
-  width: 95%%;
-  padding-bottom: 50px;
-  margin-top: 50px;
-  padding-left: 5%;
-}
-.clients .list-block .title {
-  padding-top: 8px;
-  margin: 0 0 40px 0;
+  width: 100%;
+  padding: 30px 0 20px 5%;
 }
 .clients .list-block .column {
   float: left;
-  width: inherit;
+  width: 95%;
 }
-.clients .list-block .list {
+.clients .list-block .column .title {
   float: left;
-  margin-left: 8%;
+  padding-right: 0;
+  padding-top: 0;
+  margin: 0;
 }
-.clients .list-block .list ul {
-  width: 100%;
+@media screen and (max-width: 1100px) {
+  .clients .list-block .column .title {
+    padding-bottom: 10px;
+  }
+}
+.clients .list-block .column .list {
+  padding-left: 2.5%;
+  float: left;
+  width: 78%;
+  -webkit-columns: 5;
+  /* Safari and Chrome */
+
+  -moz-columns: 5;
+  /* Firefox */
+
+  columns: 5;
+}
+@media screen and (max-width: 1700px) {
+  .clients .list-block .column .list {
+    -webkit-columns: 4;
+    /* Safari and Chrome */
+  
+    -moz-columns: 4;
+    /* Firefox */
+  
+    columns: 4;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .clients .list-block .column .list {
+    -moz-columns: 3;
+    -webkit-columns: 3;
+    columns: 3;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .clients .list-block .column .list {
+    -moz-columns: 4;
+    -webkit-columns: 4;
+    columns: 4;
+    width: 100%;
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 900px), (max-device-width: 500px) {
+  .clients .list-block .column .list {
+    -moz-columns: 1s;
+    -webkit-columns: 1;
+    columns: 1;
+    padding-left: 0;
+    width: 100%;
+  }
+}
+.clients .list-block .column .list ul {
   float: left;
 }
-.clients .list-block .list ul li {
-  margin-right: 30px;
+.clients .list-block .column .list ul li {
+  float: left;
+  clear: both;
+}
+@media screen and (max-width: 900px), (max-device-width: 500px) {
+  .clients .list-block .column .list ul li {
+    clear: none;
+    padding-right: 5px;
+  }
 }
 .clients .cap-tech {
   background-color: #333333;

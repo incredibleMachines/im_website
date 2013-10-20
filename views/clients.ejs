@@ -31,7 +31,6 @@
 								for(var j = 0; j< clients[i].capabilities.length; j++){
 
 									for(var k = 0; k< clients[i].capabilities[j].capabilities.length; k++){
-										console.log(clients[i].capabilities[j].capabilities.length);
 										var isUsed=false; 
 										for(var l = 0; l < ids.length; l++){ 
 											if(ids[l]==clients[i].capabilities[j].capabilities[k]._id){
@@ -60,7 +59,7 @@
 						<div class="detail-list">
 							<ul>
 								<% for(var j = 0; j< clients[i].projects.length; j++){ %>
-									<li><a href="/projects/<%= makeSlug(clients[i].projects[j].title)%>"><%= clients[i].projects[j].title %> ›</a></li>
+									<li><a href="/projects/<%= clients[i].projects[j].slug %>"><%= clients[i].projects[j].title %> ›</a></li>
 								<% } %>
 							</ul>
 						</div>

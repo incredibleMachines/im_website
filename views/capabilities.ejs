@@ -22,6 +22,9 @@
 
 		<% for(var i = 0; i< capabilities.length; i++){ %>
 		<section class="about-skill" id="<%=makeSlug(capabilities[i].name)%>">
+				<article class="skill-title">
+					<h2><%=capabilities[i].name %></h2>
+				</article>
 				<article class="skill-blurb">
 					<p><%= capabilities[i].text %></p>
 				</article>
@@ -34,8 +37,9 @@
 				<div class="work-thumbs">
 					<% for (var j=0; j<capabilities[i].projects.length; j++){%>
 					<div class="project">
+						<a href="/projects/<%= capabilities[i].projects[j].slug %>">
 						<img src="<%= capabilities[i].projects[j].thumbnail.path %>" alt="Project Name" />
-						<a href="/projects/<%= makeSlug(capabilities[i].projects[j].title) %>"><%= capabilities[i].projects[j].title %> ›</a>
+						<%= capabilities[i].projects[j].title %> ›</a>
 					</div>
 					<% } %>
 				</div>
@@ -72,6 +76,14 @@
 		</section>
 		<% } %>
 	</div>
+
+	<section id="skills" class="bottom-skills">
+			<ul>
+				<% for(var i = 0; i< capabilities.length; i++){ %>
+					<li><a href="#<%=makeSlug(capabilities[i].name)%>"> <%= capabilities[i].name %></a></li>
+				<% } %>
+			</ul>
+	</section>
 
 
 <!-- FOOTER IS INSIDE DIV TO WORK WITH CURTAINED SCROLLING-->

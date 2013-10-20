@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 $('nav a').removeClass('active');
+$('nav a:contains("Featured Work")').addClass('active');
 $('.video-js').css('position','absolute');
 $('.introLogo').find('img').attr('src','../images/im_logo_white.png');
 
@@ -15,7 +16,7 @@ if($('.intro-vid').css('display')=='none'){
 				background: 'rgb(0,0,0)',
 			});
 			$('nav a:contains("Featured Work")').addClass('active');
-			$('.logoHome').show();
+			// $('.logoHome').show();
 }
 
 else{
@@ -60,7 +61,7 @@ if($('.intro-vid').css('display')=='none'){
 				background: 'rgb(0,0,0)',
 			});
 			$('nav a:contains("Featured Work")').addClass('active');
-			$('.logoHome').show();
+			// $('.logoHome').show();
 		}
 else{
 	var amtScroll = $(window).scrollTop();
@@ -115,7 +116,7 @@ else{
 				background: 'rgb(0,0,0)',
 			});
 			$('nav a:contains("Featured Work")').addClass('active');
-			$('.logoHome').show();
+			// $('.logoHome').show();
 		}
 
 		else{

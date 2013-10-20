@@ -12,7 +12,7 @@ exports.view = function(db){
 
 		clients.find({},function(err,client_docs){
 			console.log(client_docs);
-
+			if(client_docs.length==0) res.render('clients', { title: 'No Clients', slug: 'clients', clients: [], partners: []})
 			//iterate through the clients and find projects that are associated
 			client_docs.forEach(function(v,i){
 
@@ -22,7 +22,6 @@ exports.view = function(db){
 					//console.log(i+": "+JSON.stringify(project_docs));
 					
 					client_docs[i].capabilities = project_docs;
-					
 					if(i==client_docs.length-1){
 
 						partners.find({}, function(err,partner_docs){
