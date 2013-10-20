@@ -64,7 +64,7 @@ Almost the same as above. use apt-get in place of brew follow OSX instructions a
 
 Set node application with nvm
 
-	$ nvm use 0.10
+	$ nvm use 0.10.21
 
 Start app with nvm & forever.js
 
@@ -89,6 +89,20 @@ Check if the app is running
 	$ forever list
 
 
+*If you type Node and receive:
+
+	The program 'node' can be found in the following packages:
+ 		* node
+ 		* nodejs-legacy
+	Ask your administrator to install one of them
+
+*Or if you type Forever and receive:
+
+	forever: command not found
+
+*YOU MUST INIT NVM FIRST
+
+	nvm use 0.10.21
 
 
 
