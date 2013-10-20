@@ -390,8 +390,8 @@ easily in the skin designer. http://designer.videojs.com/
 .vjs-project-page.vjs-using-native-controls .vjs-big-play-button {
   display: none;
 }
-.vjs-project-page:hover .vjs-big-play-button,
-.vjs-project-page .vjs-big-play-button:focus {
+.vjs-big-play-button:hover,
+.vjs-big-play-button:focus {
 background: url('../images/play_btn_sprite.png') -120px 0 no-repeat;
 
 }
