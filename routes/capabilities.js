@@ -13,7 +13,8 @@ exports.view = function(db){
 		capabilities.find({}, function(err,docs){
 
 			//iterate through each capability and find out which projects are linked
-			console.log(docs.length)
+			//console.log(docs.length)
+			if(docs.length==0) res.render('capabilities', { title: 'No Capabilities', slug: 'capabilities', capabilities:docs });
 			docs.forEach(function(v,i){
 
 				//find associated projects where capabilities id is in project capability array
