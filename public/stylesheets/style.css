@@ -181,7 +181,7 @@ header {
   z-index: 999;
   height: 70px;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 500px) {
   header {
     padding: 0;
   }
@@ -194,7 +194,7 @@ header .logoHome img {
   width: 250px;
   height: 60px;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 500px) {
   header .logoHome {
     display: none;
   }
@@ -209,7 +209,7 @@ header .logoMobile img {
   width: 38px;
   height: 52px;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 500px) {
   header .logoMobile {
     display: block;
   }
@@ -225,7 +225,7 @@ header .buttonMobile .buttonLine {
   height: 8px;
   border-top: 3px solid #666;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 500px) {
   header .buttonMobile {
     display: block;
   }
@@ -236,10 +236,10 @@ header .buttonMobile.active .buttonLine {
 }
 header nav {
   float: right;
-  margin: 20px 0 0 0;
+  margin: 29px 0 0 0;
   display: block;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 500px) {
   header nav {
     display: none;
     float: left;
@@ -259,7 +259,7 @@ header nav a {
   margin: 0 0 0 25px;
   letter-spacing: 1px;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 500px) {
   header nav a {
     float: left;
     clear: both;
@@ -277,7 +277,7 @@ header nav a:hover {
   font-weight: 100;
   padding-top: 5px;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 500px) {
   header nav a:hover {
     border-top: 1px solid #333;
     padding: 20px 0 20px 20px;
@@ -290,7 +290,7 @@ header nav a.active {
   font-weight: 100;
   padding-top: 5px;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 500px) {
   header nav a.active {
     padding: 20px 0 20px 20px;
     border-top: 1px solid #333;
@@ -350,7 +350,7 @@ header nav a.active {
 }
 .projects header.home nav {
   float: right;
-  margin: 20px 0 0 0;
+  margin: 28px 0 0 0;
   display: block;
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
@@ -465,13 +465,7 @@ header nav a.active {
     max-width: 100%;
   }
 }
-.projects #portfolio-wrap #portfolio .port-item img {
-  width: 100%;
-}
-.projects #portfolio-wrap #portfolio .port-item h2 {
-  clear: both;
-}
-.projects #portfolio-wrap #portfolio .port-item h2 a {
+.projects #portfolio-wrap #portfolio .port-item a {
   font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
   font-size: 46px;
   line-height: 0;
@@ -480,14 +474,25 @@ header nav a.active {
   text-transform: uppercase;
   font-style: normal;
 }
-.projects #portfolio-wrap #portfolio .port-item h2 a:hover {
-  font-style: italic;
+.projects #portfolio-wrap #portfolio .port-item a img {
+  width: 100%;
+}
+.projects #portfolio-wrap #portfolio .port-item a h2 {
+  clear: both;
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
-  .projects #portfolio-wrap #portfolio .port-item h2 {
+  .projects #portfolio-wrap #portfolio .port-item a h2 {
     text-align: center;
     margin: 0 10px;
   }
+}
+.projects #portfolio-wrap #portfolio .port-item a:hover {
+  font-style: italic;
+}
+.projects #portfolio-wrap #portfolio .port-item a:hover img {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 .projects #portfolio-wrap #portfolio .port-item p {
   clear: both;
@@ -1244,6 +1249,8 @@ header nav a.active {
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #about {
     position: relative;
+    padding-top: 140px;
+    padding-bottom: 70px;
   }
 }
 .capabilities #about .about-text {
@@ -1281,8 +1288,8 @@ header nav a.active {
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #about .about-text p {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 22px;
+    line-height: 34px;
   }
 }
 .capabilities #skills-section {
@@ -1304,14 +1311,20 @@ header nav a.active {
   width: 40%;
   float: left;
   clear: both;
-  margin-top: 20px;
+  padding-top: 20px;
   padding-bottom: 20px;
   /* ---end ul--- */
 
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #skills {
-    width: 90%;
+    width: 100%;
+    background-color: #333;
+    padding-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 10px solid #000;
+    border-bottom: 10px solid #000;
   }
 }
 .capabilities #skills-section #skills ul {
@@ -1324,10 +1337,11 @@ header nav a.active {
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #skills ul li {
     height: 100%;
-    width: 100%;
+    width: 95%;
     float: left;
     clear: both;
-    text-align: center;
+    border-bottom: 1px solid #000000;
+    padding-left: 5%;
   }
 }
 .capabilities #skills-section #skills ul li a {
@@ -1367,12 +1381,31 @@ header nav a.active {
   font-style: italic;
   color: #333333;
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section #skills ul li a:hover {
+    color: #ffffff;
+  }
+}
 .capabilities #skills-section #skills ul li.active {
   border-bottom: 3px solid #ffd24f;
 }
 .capabilities #skills-section #skills ul li.active a {
   font-style: italic;
   color: #333333;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section #skills ul li.active {
+    border-bottom: 1px solid #000000;
+  }
+  .capabilities #skills-section #skills ul li.active a {
+    font-style: normal;
+    color: #999999;
+  }
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section #skills ul li:last-child {
+    border: none;
+  }
 }
 .capabilities #skills-section #about-skills {
   width: 50%;
@@ -1388,6 +1421,7 @@ header nav a.active {
     float: left;
     padding-left: 5%;
     margin-top: 10px;
+    margin-bottom: 30px;
   }
 }
 .capabilities #skills-section #about-skills .about-skill {
@@ -1399,6 +1433,21 @@ header nav a.active {
 
   /* ---end related-clients--- */
 
+}
+.capabilities #skills-section #about-skills .about-skill .skill-title {
+  display: none;
+  border-bottom: 4px solid #ffd24f;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section #about-skills .about-skill .skill-title {
+    display: block;
+  }
+}
+.capabilities #skills-section #about-skills .about-skill .skill-title h2 {
+  font-size: 32px;
+}
+.capabilities #skills-section #about-skills .about-skill .skill-blurb {
+  padding-top: 10px;
 }
 .capabilities #skills-section #about-skills .about-skill .skill-blurb p {
   margin-bottom: 30px;
@@ -1412,7 +1461,7 @@ header nav a.active {
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .title {
   margin-left: 0;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   margin-top: 0;
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs {
@@ -1434,8 +1483,8 @@ header nav a.active {
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project {
-    margin: 0 2% 20px 0;
-    width: 48%;
+    margin: 0 0 20px 0;
+    width: 100%;
   }
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project img {
@@ -1449,10 +1498,11 @@ header nav a.active {
 .capabilities #skills-section #about-skills .about-skill .related-clients {
   width: 100%;
   clear: both;
+  padding-bottom: 50px;
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients .title {
   margin-left: 0;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   margin-top: 0;
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients .client-list {
@@ -1465,6 +1515,14 @@ header nav a.active {
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients .client-list a {
   font-size: 14px;
+}
+.capabilities #skills-section .bottom-skills {
+  display: none;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section .bottom-skills {
+    display: block;
+  }
 }
 /* --- end capabilities ---*/
 /*--------------------------- CLIENTS ---------------------------*/
