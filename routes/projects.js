@@ -100,7 +100,7 @@ exports.single_edit = function(db){
 							}else{
 								data.project = project_doc;
 								console.log(data)
-								res.render('project_edit', { title: 'Edit '+project_doc.title, slug: 'project-edit single-project '+project_doc.slug, data: data});
+								res.render('project_edit', { title: 'Edit '+project_doc.title, slug: 'project-edit	 single-project '+project_doc.slug, data: data});
 							}
 						})
 					});
