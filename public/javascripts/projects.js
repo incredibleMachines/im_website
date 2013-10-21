@@ -5,6 +5,12 @@ $('nav a:contains("Featured Work")').addClass('active');
 $('.video-js').css('position','absolute');
 $('.introLogo').find('img').attr('src','../images/im_logo_white.png');
 
+var videoArray = [{mp4:'Cannes.mp4',ogv:'Cannes.ogv',link:'twitter-cannes'},{mp4:'Lincoln.mp4',ogv:'Lincoln.ogv',link:'lincoln-mkz-launch'},{mp4:'Naked.mp4',ogv:'Naked.ogv',link:'power-garden'},{mp4:'PaintOut.mp4',ogv:'PaintOut.ogv',link:'paintout'},{mp4:'Tones_Samsung.mp4',ogv:'Tones_Samsung.ogv',link:'make-it-mega'},{mp4:'Tones_sxsw.mp4',ogv:'Tones_sxsw.ogv',link:'tones'},{mp4:'VFA.mp4',ogv:'VFA.ogv',link:'vfa'}];
+
+var videoPlay = shuffle(videoArray);
+console.log(videoPlay[0].mp4);
+var videoIndex = 0;
+
 var topPadding=20;
 $('#portfolio').css('padding-top',$('header').height()+topPadding).css('margin-top',-$('header').height());
 
@@ -28,12 +34,17 @@ else{
 			});
 }
 
-
 videojs("intro-video-1").ready(function(){
 	var myPlayer = this;
-  var amtScroll = 0,
+  	var amtScroll = 0,
   	sH = window.innerHeight,
 	sW = window.innerWidth;
+
+	myPlayer.src([
+  		{ type: "video/mp4", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 },
+ 		{ type: "video/ogg", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 }
+	]);
+
 
 /*   var aspect=myPlayer.width()/myPlayer.height(); */
 var aspect=16/9;
@@ -146,11 +157,48 @@ else{
 	};
 
 
+
+function playNext(){
+	videoIndex++;
+	if(videoIndex>videoPlay.length-1){
+		videoIndex=0;
+	}
+	myPlayer.src([
+  		{ type: "video/mp4", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 },
+ 		{ type: "video/ogg", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 }
+	]);
+}
+
+
 	 
 			  
   window.addEventListener('resize', userResize, false);
   window.addEventListener('scroll',userScroll,false);
+  window.addEventListener('scroll',userScroll,false);
+  myPlayer.on('ended',playNext);
   // window.addEventListener('click',userClick.false);
 });
+
+function shuffle(array) {
+  var currentIndex = array.length
+    , temporaryValue
+    , randomIndex
+    ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
 
 });

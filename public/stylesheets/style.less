@@ -1368,78 +1368,91 @@ header {
 		}
 		
 		.about-skill{
+			padding-top:100px;
+			margin-top:-100px;
+			float:left;
+			height:auto;
 
-		.skill-title{
-			display:none;
-			border-bottom:4px solid @yellow;
-			@media screen and (max-width: 600px), (max-device-width: 500px) {
-				display:block;
-			}
-			h2{
-				font-size:32px;
-			}
-		}
-		padding-top:100px;
-		margin-top:-100px;
-		float:left;
-		height:auto;
+			.skill-title{
+				float:left;
+				display:none;
+				
+				@media screen and (max-width: 600px), (max-device-width: 500px) {
+					display:block;
+					border-bottom:4px solid @yellow;
+				}
 
-		.skill-blurb {
-			padding-top:10px;
+				h2{
+					font-size:32px;
+
+				}
+			}
+
+
+			.skill-blurb {
+				float:left;
+				padding-top:10px;
+				
+				.skill-name{
+					font-weight:500;
+				}
+
 				p {
 					margin-bottom: 30px;
 				}
-		}
-		
-		.related-work {
-			width: 100%;
-			float: left;
-			clear: both;
-
-			
-			.title {
-				margin-left: 0;
-				margin-bottom: 15px;
-				margin-top:0;
 			}
-
-			.work-thumbs {
+		
+			.related-work {
+				width: 100%;
 				float: left;
-				width:100%;
+				clear: both;
+
 				
-				.project {
+				.title {
+					margin-left: 0;
+					margin-bottom: 15px;
+					margin-top:0;
+				}
+
+				.work-thumbs {
 					float: left;
-					margin: 0 2% 20px 0;
-					width:48%;
-
-					@media screen and (max-width: 900px){
-						width:100%;
-						margin: 0 0 20px 0;
-					}
-
-					@media screen and (max-width: 600px), (max-device-width: 500px) {
-					margin: 0 0 20px 0;
 					width:100%;
-		}
-										
-					img {
-						display: block;
-						margin-bottom: 5px;
-						width:100%;
-						
-					}
 					
-					a {
-						font-size: 14px;
-					}
-				} /* ---end project--- */
-			} /* ---end work-thumbs--- */
-		} /* ---end related-work--- */
+					.project {
+						float: left;
+						margin: 0 2% 20px 0;
+						width:48%;
+
+						@media screen and (max-width: 900px){
+							width:100%;
+							margin: 0 0 20px 0;
+						}
+
+						@media screen and (max-width: 600px), (max-device-width: 500px) {
+						margin: 0 0 20px 0;
+						width:100%;
+			}
+											
+						img {
+							display: block;
+							margin-bottom: 5px;
+							width:100%;
+							
+						}
+						
+						a {
+							font-size: 14px;
+						}
+					} /* ---end project--- */
+				} /* ---end work-thumbs--- */
+			} /* ---end related-work--- */
 		
 		.related-clients {
 			width: 100%;
 			clear: both;
-			padding-bottom:50px;
+			padding-bottom:10px;
+			heigth:auto;
+			float:left;
 			
 
 			.title {
@@ -1455,6 +1468,8 @@ header {
 				li{
 					float:left; 
 					padding-right:2%;
+					font-size: 14px;
+					clear:both;
 				}
 				
 				a {
@@ -1462,6 +1477,19 @@ header {
 					}
 			}	
 		} /* ---end related-clients--- */
+
+
+			.skill-border{
+				border-top:3px solid @yellow;
+				margin:20px 0;
+				@media screen and (max-width: 600px), (max-device-width: 500px) {
+					border-top:none;
+					display:none;
+				}
+				float:left;
+				width:100%;
+			}
+
 	} /* ---end about-skill--- */
 	} /* --- end about-skills div --- */
 
