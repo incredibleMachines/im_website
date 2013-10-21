@@ -2518,3 +2518,102 @@ header nav a.active {
   clear: both;
   margin: 20px 0 30px 0;
 }
+.edit-technologies h1 {
+  line-height: 50px;
+}
+.edit-technologies h3 {
+  border-bottom: 1px solid #333333;
+  margin-bottom: 20px;
+}
+.edit-technologies a {
+  font-style: normal;
+}
+.edit-technologies a:hover {
+  font-style: oblique;
+}
+.edit-technologies button {
+  width: auto;
+  height: 40px;
+  background-color: #333333;
+  text-align: center;
+  font-size: 13px;
+  padding: 0 20px;
+  color: #cccccc;
+}
+.edit-technologies button:hover {
+  background-color: #ffd24f;
+  color: #333333;
+}
+.edit-technologies .field {
+  height: 25px;
+  width: 400px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.edit-technologies .tech-form-wrap {
+  border: 6px solid #e7e7e7;
+  width: 70%;
+  height: 100%;
+  float: left;
+  padding: 100px 40px 0 40px;
+}
+.edit-technologies .new-tech {
+  width: 90%;
+  height: auto;
+  float: left;
+  clear: both;
+  background-color: #ffd24f;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.edit-technologies .new-tech input,
+.edit-technologies .new-tech textarea,
+.edit-technologies .new-tech button {
+  float: left;
+  clear: both;
+}
+.edit-technologies .new-tech .text-box {
+  width: 99%;
+  height: 100px;
+  float: left;
+  clear: both;
+  padding: 5px;
+}
+.edit-technologies .new-tech button {
+  margin-top: 20px;
+}
+.edit-technologies .current-tech {
+  width: 90%;
+  height: auto;
+  float: left;
+  clear: both;
+  margin-bottom: 30px;
+}
+.edit-technologies .current-tech form {
+  float: left;
+  clear: both;
+  height: auto;
+  width: 90%;
+  border-bottom: 2px dotted #ffd24f;
+  padding-top: 30px;
+}
+.edit-technologies .current-tech form img {
+  margin-top: 20px;
+}
+.edit-technologies .current-tech input,
+.edit-technologies .current-tech textarea {
+  float: left;
+  clear: both;
+}
+.edit-technologies .current-tech .text-box {
+  width: 99%;
+  height: 100px;
+  float: left;
+  clear: both;
+  padding: 5px;
+}
+.edit-technologies .current-tech .btns {
+  float: left;
+  clear: both;
+  margin: 20px 0 30px 0;
+}
