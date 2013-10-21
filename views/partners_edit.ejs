@@ -1,25 +1,26 @@
 <% include includes/header %>
-    
-    <h1><%= title %></h1>
+<section class="partner-form-wrap">	
+	<h1><%= title %></h1>
+	<section class="new-partner">
+		<form enctype="multipart/form-data" action="/partners/submit" method="post">
+			<h3>Add New Partner</h3>
+			<input name="name" class="field"  placeholder="Enter Title">
+			<button type="submit">Add</button>
+		</form>
+	</section>
 
-	<section>
-    	<form enctype="multipart/form-data" action="/partners/submit" method="post">
-	    	<h2>Add New Partner</h2>
-	    	<input name="name" placeholder="Enter Title">
-	    	<button type="submit">Submit</button>
-	    </form>
-    </section>
-    <section>
-    	<h2>Current Partners</h2>
-    	<% for(var i =0; i<partners.length; i++){ %>
-    		<form enctype="multipart/form-data" action="/partners/update" method="post">
-    			<input type="text" name="name" value="<%= partners[i].name %>"/>
-    			<input type="hidden" name="_id" value="<%= partners[i]._id %>"/>
-    			<button type="submit">Update</button>
-    			<button type="button" class="delete">Delete</button>
-    		</form>
-    	<% } %>
-    </section>
-
-
+	<section class="current-partners">
+		<h3>Current Partners</h3>
+		<% for(var i =0; i<partners.length; i++){ %>
+			<form enctype="multipart/form-data" action="/partners/update" method="post">
+				<input type="text" class="field"  name="name" value="<%= partners[i].name %>"/>
+				<input type="hidden" class="field"  name="_id" value="<%= partners[i]._id %>"/>
+				<article class="btns">
+					<button type="submit">Update</button>
+					<button type="button" class="delete">Delete</button>
+				</article>
+			</form>
+		<% } %>
+	</section>
+</section>
 <% include includes/footer %>
