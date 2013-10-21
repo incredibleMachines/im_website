@@ -57,6 +57,7 @@ app.get('/projects', projects.featured(db)); //get all featured projects
 //authenticated project pages
 app.get('/projects/edit', authenticate.admin, projects.edit(db)); //must place this above :name route to ensure it doesn't match :name
 app.get('/projects/:name',authenticate.project(db), projects.single(db)); //will need custom authentication
+app.get('/projects/:name/edit', authenticate.admin, projects.single_edit(db));
 app.get('/projects/:name/:action', authenticate.admin, projects.action(db));
 
 app.get('/capabilities', capabilities.view(db) );

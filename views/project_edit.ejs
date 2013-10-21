@@ -1,60 +1,125 @@
 <% include includes/header %>   
 
-<%= project._id %>
 	<section class="project-form-wrap">
-		<h1>Update <%= project.title %></h1>
+		<h1>Update <%= data.project.title %></h1>
 		<form class="edit_project" enctype="multipart/form-data" action="/projects/name/update" method="post">
-			<input type="hidden" val="<%= project._id %>" name="project[id]">
+			<input type="hidden" val="<%= data.project._id %>" name="project[id]">
 			
 			<section id="main">
 				<h3>Title, Slug, and Video Info</h3>
-				<p>Title</br><input type="text" name="project_title" class="project_title field" placeholder="Project Title" value=" <%= project.title %>"/></p>
-				<p>Slug<br/><input type="text" name="project_slug" class="project_slug field" value=" <%= project.slug %>"/></p>
-				<p>Vimeo URL <br/><input type="text" name="project_video"  class="field" value=" <%= project.video_url %>"/></p>
+				<p>Title<br/><input type="text" name="project_title" class="project_title field" placeholder="Project Title" value=" <%= data.project.title %>"/></p>
+				<p>Slug<br/><input type="text" name="project_slug" class="project_slug field" value=" <%= data.project.slug %>"/></p>
+				<p>Vimeo URL <br/><input type="text" name="project_video"  class="field" value=" <%= data.project.video_url %>"/></p>
+				<p>Back-up URL <br/><input type="text" name="project_video_backup" class="field" value="<%= data.project.video_backup%>"/></p>
+
 			</section>
 
 			<section id="text">
 				<h3>White Paragraph Text Row</h3>
 				<section class="text-blocks">
-				<% for (var i = 0; i<project.textBlocks.length; i++){ %>
+				<% for (var i = 0; i<data.project.textBlocks.length; i++){ %>
 					<article class="project-text-block text-block-0">
-						<p><input class="title field" type="text" name="project_text[<%= i %>][title]" placeholder="Project Text Title" value="<%= project.textBlocks[i].title %>"></p>
-						<p><textarea class="copy text-box" name="project_text[<%= i %>][text]" placeholder="Project Text"><%= project.textBlocks[i].text %></textarea></p>
+						<p><input class="title field" type="text" name="project_text[<%= i %>][title]" placeholder="Project Text Title" value="<%= data.project.textBlocks[i].title %>"></p>
+						<p><textarea class="copy text-box" name="project_text[<%= i %>][text]" placeholder="Project Text"><%= data.project.textBlocks[i].text %></textarea></p>
 					</article>
 				<% } %>
-				</section>
+				</section><!--.text-blocks -->
 				<section class="btns">
 					<button type="button" class="more-text" name="more_text">Add Another Text Field</button>
 					<button type="button" class="less-text" name="less_text">Remove Text Field</button>
-				</section>
-			</section>
+				</section><!--.btns -->
+			</section><!--#text -->
 			
 			<section id="images">
 				<h3>Project Image Block</h3>
 				<section class="image-blocks">
-				<% for (var i = 0; i<project.imageBlocks.length; i++){ %>
+				<% for (var i = 0; i<data.project.imageBlocks.length; i++){ %>
 					<article class="project-image-block image-block-<%=i%>">
 						<p>
 							<select class="num-images">
 							<option selected="selected">Images in Block</option>
-							<option value="1" <% if(project.imageBlocks[i].length===1){%> selected="selected" <%} %> >1</option>
-							<option value="2" <% if(project.imageBlocks[i].length===2){%> selected="selected" <%} %> >2</option>
-							<option value="3" <% if(project.imageBlocks[i].length===3){%> selected="selected" <%} %> >3</option>
-							<option value="4" <% if(project.imageBlocks[i].length===4){%> selected="selected" <%} %> >4</option>
+							<option value="1" <% if(data.project.imageBlocks[i].length===1){%> selected="selected" <%} %> >1</option>
+							<option value="2" <% if(data.project.imageBlocks[i].length===2){%> selected="selected" <%} %> >2</option>
+							<option value="3" <% if(data.project.imageBlocks[i].length===3){%> selected="selected" <%} %> >3</option>
+							<option value="4" <% if(data.project.imageBlocks[i].length===4){%> selected="selected" <%} %> >4</option>
 							</select>
 						</p>
-					<% for(var j= 0; j<project.imageBlocks[i].length; j++){ %>
-						<img src="<%= project.imageBlocks[i][j].path  %>">
+					<% for(var j= 0; j<data.project.imageBlocks[i].length; j++){ %>
+						<img src="<%= data.project.imageBlocks[i][j].path  %>">
 						<input type="file" name="project_image_block[<%=i%>][<%=j%>]" class="project-image-<%=i%>" placeholder="Project Text Title">
 					<% } %>
 					</article>
-				</section>
 				<% } %>
+				</section><!--.image-blocks -->
 				<section class="btns">  
 					<button type="button" class="more-images" name="more_images">Add Another Image Block</button>
 					<button type="button" class="less-images" name="less_images">Remove Image Block</button>
-				</section>
-			</section>
+				</section><!--.btns -->
+			</section><!--#images-->
+			<section id="technology">
+				<h3>Technologies List</h3>
+				<a href="/technologies/edit">or edit master list ›</a>
+				<% for(var i =0; i< data.technology.length; i++){ %>
+					<p><input type="checkbox" name="technology[<%= i %>]" value="<%= data.technology[i]._id %>"> 
+						<%= data.technology[i].name %>
+					</p>
+				<% } %>
+				<p id="new-technology"></p>
+				<button type="button" class="new-technology" >Add a New Technology</button>
+			</section><!-- technology -->
+			<section id="capabilities">
+				<h3>Capabilities List</h3>
+				<a href="/capabilities/edit">or edit master list ›</a>
+				<% for(var i =0; i< data.capabilities.length; i++){ %>
+				<p><input type="checkbox" name="capabilities[<%=  i %>]" value="<%= data.capabilities[i]._id %>"><%= data.capabilities[i].name %></p>
+				<% } %>
+				<p id="new-capabilities"></p>
+				<button type="button" class="new-capabilities" >Add a New Capabilities</button>
+			</section><!-- capabilities -->
+			<section id="partners">
+				<h3>Partner(s)</h3>
+				<a href="/partners/edit">or edit master list ›</a>
+				<% for(var i =0; i< data.partners.length; i++){ %>
+				<p><input type="checkbox" name="partners[<%= i %>]" value="<%= data.partners[i]._id %>"> <%= data.partners[i].name %></p>
+				<% } %>
+				<p id="new-partners"></p>
+				<button type="button" class="new-partners" >Add a New Partner</button>
+			</section><!-- #partners -->
+			<section id="more-info">
+				<h3>More Info</h3>
+				<section class="info-blocks">
+					<% for(var i=0; i<data.project.infoBlocks.length;i++){ %>
+					<article class="project-info-block info-block-<%= i %>">
+						<p><input class="title field" type="text" name="project_info[<%= i %>][title]" value="<%= data.project.infoBlocks[i].title %>"></p>
+						<p><input class="copy field" type="text" name="project_info[<%= i %>][text]" value="<%= data.project.infoBlocks[i].text %>"></p>
+					</article>
+					<% } %>
+				</section><!--.info-blocks -->
+				<section class="info-btns">
+					<button type="button" class="more-info" name="more_info">ADD Another</button>
+					<button type="button" class="less-info" name="less_info">REMOVE  Block</button>
+				</section><!--.info-btns -->
+			</section><!--#more-info-->
+			<section id="privacy">
+				<h3>Featured</h3>
+				<p>Does this project show on the Featured Work page?</p>
+				<p>
+					<input type="checkbox" name="project_featured" value="true" <% if(data.project.featured == true){ %>checked<% } %> /> Yes
+					<input type="checkbox" name="project_featured" value="false" <% if(data.project.featured == false){ %>checked<% } %>/> No
+				</p>
+				<h3>Password</h3>
+				<p>Status: <%if(data.project.password == null){ %> No Password <% }else{ %> Password Protected <% } %></p>
+				<p>Change Project Password or Add a new password and confirm if you'd like to password protect this page </p>
+				<p>
+					<input type="password" name="project_password" class="field" placeholder="Enter Password"/>
+					<input type="password" name="project_password_confirm" class="field" placeholder="Confirm Password"/>
+				</p>
+			</section><!-- #privacy -->
+			
+			<section class="bottom-btn">
+				<button type="submit">FINISH + UPDATE PROJECT</button>
+			</section><!-- .bottom-btn -->
+
 		</form>
-	</section>
+	</section><!-- project-form-wrapper-->
 <% include includes/footer %>   
