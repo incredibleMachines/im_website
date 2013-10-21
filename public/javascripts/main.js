@@ -160,15 +160,15 @@ $(document).ready(function(){
 
         $('.edit-capabilities .delete').click(function(e){
 
-                var form = $(this).parent();//get the form which is the parent
+                var form = $(this).parent().parent();//get the form which is the parent
                 form.attr('action', '/capabilities/delete');
                 $(form).submit();
                 //alert('yes');
         });
 
         $('.edit-clients .delete').click(function(e){
-
-                var form = $(this).parent();//get the form which is the parent
+                alert('here');
+                var form = $(this).parent().parent();//get the form which is the parent
                 form.attr('action', '/clients/delete');
                 $(form).submit();
                 //alert('yes');
@@ -177,7 +177,7 @@ $(document).ready(function(){
         $('.edit-technologies .delete').click(function(e){
 
 
-                var form = $(this).parent();//get the form which is the parent
+                var form = $(this).parent().parent();//get the form which is the parent
                 form.attr('action', '/technologies/delete');
                 $(form).submit();
                 //alert('yes');
@@ -185,7 +185,7 @@ $(document).ready(function(){
 
         $('.edit-partners .delete').click(function(e){
 
-                var form = $(this).parent();
+                var form = $(this).parent().parent();
                 form.attr('action','/partners/delete');
                 $(form).submit();
         });
