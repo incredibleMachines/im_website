@@ -208,9 +208,78 @@ exports.edit = function(db){
  	}
  }
 
+/* 
+ *
+ * POST project/:name/update
+ *	
+ */
+
+ exports.single_update = function(db){
+ 	return function(req,res){
+ 		console.log("+++++++++++POST+++++++++++++");
+		var post = req.body; //this is our form data
+		//console.log(JSON.stringify(post)); //fixed arrays by adding indexs to items
+		console.log(post)
+		console.log("+++++++++++FILES+++++++++++++");
+		var files = req.files; //the incoming files from the server
+		//console.log(JSON.stringify(files)); //fixed arrays by adding indexs to items
+		console.log(files);
+
+		//get our project collection
+		var projects = db.get('projects');
+		//update base
+		var model = {	title: post.project_title, 
+						slug: post.project_slug,
+						video_url: post.project_video,
+						video_backup: post.project_video_backup,
+						featured: (post.project_featured === 'true')? true : false,
+						textBlocks: post.project_text,
+						infoBlocks: post.project_info
+						}
+		var update_obj = {$set: model};
+
+		//update object
+		projects.update({_id:post.project_id},update_obj,function(err,doc){
+			console.log('updated');
+			res.redirect('/projects/'+post.project_slug+'/edit');
+ 			res.location('/projects/'+post.project_slug+'/edit');
+		});
+
+		//check for pws
+		//check clients and 
+		//check for new clients and the like
+		//check for thumbnail image update
+		if(files.project_thumbnail.size !=0 ){
+
+		}else{console.log('No Thumbnail Images')}
+
+		//check for poster image update
+		if(files.project_poster_image.size !=0){
+
+		}else{console.log('No Poster Images')}
+		//check if there are any image block updates?
+		if(files.project_image_block){
+			var size=0;
+			console.log('Checking Image Blocks');
+			files.project_image_block.forEach(function(block,i){
+				block.forEach(function(image, j){
+					//if(block.size == 0) 
+					console.log("i: "+i+" j: "+j+" size: "+image.size)
+					size+=image.size;
+				});
+				if(i == files.project_image_block.length-1 && size ==0){
+					console.log('No Images');
+				}
+			});
+		}
+		
+
+		//check project password
+ 	}
+ }
 
 /*
- * POST project/:name/:action
+ * POST project/
  */
 
  /*

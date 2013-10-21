@@ -2,15 +2,24 @@
 
 	<section class="project-form-wrap">
 		<h1>Update <%= data.project.title %></h1>
-		<form class="edit_project" enctype="multipart/form-data" action="/projects/name/update" method="post">
-			<input type="hidden" val="<%= data.project._id %>" name="project[id]">
+		<form class="edit_project" enctype="multipart/form-data" action="/projects/<%=data.project.slug %>/update" method="post">
+			<input type="hidden" value="<%= data.project._id %>" name="project_id">
 			
 			<section id="main">
 				<h3>Title, Slug, and Video Info</h3>
 				<p>Title<br/><input type="text" name="project_title" class="project_title field" placeholder="Project Title" value=" <%= data.project.title %>"/></p>
 				<p>Slug<br/><input type="text" name="project_slug" class="project_slug field" value=" <%= data.project.slug %>"/></p>
+				<p>Location<br/><input type="text" name="project_location" class="field" value="<%= data.project.location %>"/></p>
+
 				<p>Vimeo URL <br/><input type="text" name="project_video"  class="field" value=" <%= data.project.video_url %>"/></p>
 				<p>Back-up URL <br/><input type="text" name="project_video_backup" class="field" value="<%= data.project.video_backup%>"/></p>
+				<p>Thumbnail <br/>
+					<input type="file" name="project_thumbnail" class="browse" placeholder="Project Thumbnail"/>
+					<img src="<%= data.project.thumbnail.path %>">
+				</p>
+				<p>Poster Image <br/><input type="file" name="project_poster_image" class="browse"/>
+					<img src="<%= data.project.poster.path %>">
+				</p>
 
 			</section>
 
@@ -104,12 +113,12 @@
 				<h3>Featured</h3>
 				<p>Does this project show on the Featured Work page?</p>
 				<p>
-					<input type="checkbox" name="project_featured" value="true" <% if(data.project.featured == true){ %>checked<% } %> /> Yes
-					<input type="checkbox" name="project_featured" value="false" <% if(data.project.featured == false){ %>checked<% } %>/> No
+					<input type="radio" name="project_featured" value="true" <% if(data.project.featured == true){ %>checked<% } %> /> Yes
+					<input type="radio" name="project_featured" value="false" <% if(data.project.featured == false){ %>checked<% } %>/> No
 				</p>
 				<h3>Password</h3>
 				<p>Status: <%if(data.project.password == null){ %> No Password <% }else{ %> Password Protected <% } %></p>
-				<p>Change Project Password or Add a new password and confirm if you'd like to password protect this page </p>
+				<p><em>Change or Add A Project Password </em></p>
 				<p>
 					<input type="password" name="project_password" class="field" placeholder="Enter Password"/>
 					<input type="password" name="project_password_confirm" class="field" placeholder="Confirm Password"/>
