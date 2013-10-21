@@ -63,6 +63,55 @@ exports.single = function(db) {
 	}
 }
 
+/* 
+ *
+ * GET project/:name/edit
+ *	
+ */
+
+exports.single_edit = function(db){
+	return function(req,res){
+		var name = req.params.name;
+		console.log('Request for: '+name);
+
+		var data = {};
+
+		var clientsDB = db.get('clients'); 
+		var partnersDB = db.get('partners');
+		var capabilitiesDB = db.get('capabilities');
+		var techologiesDB = db.get('technologies');
+		var projectsDB = db.get('projects');
+
+				//find all the data we need - async and then render the page when its all ready.
+		clientsDB.find({},function(err,clients_docs){
+
+			data.clients = clients_docs;
+			partnersDB.find({},function(err,partners_docs){
+				data.partners = partners_docs;
+				capabilitiesDB.find({},function(err,capabilities_docs){
+					data.capabilities = capabilities_docs;
+					techologiesDB.find({},function(err,technology_docs){
+						data.technology = technology_docs;
+
+						projectsDB.findOne({slug:name},function(err, project_doc){
+							
+							if(!project_doc){
+								res.render('404', {title: 'Project Not Found', slug:'project-not-found'});
+							}else{
+								data.project = project_doc;
+								console.log(data)
+								res.render('project_edit', { title: 'Edit '+project_doc.title, slug: 'project-edit	 single-project '+project_doc.slug, data: data});
+							}
+						})
+					});
+				});
+			});
+
+		});
+
+	}
+}
+
 /*
  * GET project/:name/:action
  */
@@ -112,13 +161,14 @@ exports.edit = function(db){
 
 						projectsDB.find({},function(err, project_docs){
 							data.projects = project_docs;
+							//console.log(data)
 							res.render('projects_edit', { title: 'Edit Projects', slug: 'edit-projects', data: data});
 						})
 					});
 				});
 			});
 
-		})
+		});
 
 	}
 };
