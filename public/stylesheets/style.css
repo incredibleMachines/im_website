@@ -2419,3 +2419,102 @@ header nav a.active {
   clear: both;
   margin-top: 20px;
 }
+.edit-capabilities h1 {
+  line-height: 50px;
+}
+.edit-capabilities h3 {
+  border-bottom: 1px solid #333333;
+  margin-bottom: 20px;
+}
+.edit-capabilities a {
+  font-style: normal;
+}
+.edit-capabilities a:hover {
+  font-style: oblique;
+}
+.edit-capabilities button {
+  width: auto;
+  height: 40px;
+  background-color: #333333;
+  text-align: center;
+  font-size: 13px;
+  padding: 0 20px;
+  color: #cccccc;
+}
+.edit-capabilities button:hover {
+  background-color: #ffd24f;
+  color: #333333;
+}
+.edit-capabilities .field {
+  height: 25px;
+  width: 400px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.edit-capabilities .cap-form-wrap {
+  border: 6px solid #e7e7e7;
+  width: 70%;
+  height: 100%;
+  float: left;
+  padding: 100px 40px 0 40px;
+}
+.edit-capabilities .new-cap {
+  width: 90%;
+  height: auto;
+  float: left;
+  clear: both;
+  background-color: #ffd24f;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.edit-capabilities .new-cap input,
+.edit-capabilities .new-cap textarea,
+.edit-capabilities .new-cap button {
+  float: left;
+  clear: both;
+}
+.edit-capabilities .new-cap .text-box {
+  width: 99%;
+  height: 100px;
+  float: left;
+  clear: both;
+  padding: 5px;
+}
+.edit-capabilities .new-cap button {
+  margin-top: 20px;
+}
+.edit-capabilities .current-cap {
+  width: 90%;
+  height: auto;
+  float: left;
+  clear: both;
+  margin-bottom: 30px;
+}
+.edit-capabilities .current-cap form {
+  float: left;
+  clear: both;
+  height: auto;
+  width: 90%;
+  border-bottom: 2px dotted #ffd24f;
+  padding-top: 30px;
+}
+.edit-capabilities .current-cap form img {
+  margin-top: 20px;
+}
+.edit-capabilities .current-cap input,
+.edit-capabilities .current-cap textarea {
+  float: left;
+  clear: both;
+}
+.edit-capabilities .current-cap .text-box {
+  width: 99%;
+  height: 100px;
+  float: left;
+  clear: both;
+  padding: 5px;
+}
+.edit-capabilities .current-cap .btns {
+  float: left;
+  clear: both;
+  margin: 20px 0 30px 0;
+}

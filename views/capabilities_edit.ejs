@@ -1,28 +1,28 @@
 <% include includes/header %>
-
-    <h1><%= title %></h1>
-    
-    <section>
-	    <form enctype="multipart/form-data" action="/capabilities/submit" method="post">
-	    	<h2>Add New Capabilities</h2>
-	    	<input name="name" placeholder="Enter Title">
-	    	<textarea name="text" placeholder="Enter Description"></textarea>
-	    	<button type="submit">Submit</button>
-	    </form>
+<section class="cap-form-wrap">
+	<h1><%= title %></h1>
+	<section class="new-cap">
+		<form enctype="multipart/form-data" action="/capabilities/submit" method="post">
+			<h3>Add New Capabilities</h3>
+			<input name="name" class="field" placeholder="Enter Title">
+			<textarea name="text" class="text-box" placeholder="Enter Description"></textarea>
+			<button type="submit">Add</button>
+		</form>
 	</section>
-    
-    <section>
-	    <h2>Current Capabilities</h2>
 	    
-	    <% for(var i=0; i< capabilities.length; i++){ %>
-	    	<form enctype="multipart/form-data" action="/capabilities/update" method="post">
-	    		<input type="text" name="name" value="<%= capabilities[i].name %>">
-	    		<textarea name="text"><%= capabilities[i].text %></textarea>
-	    		<input type="hidden" name="_id" value="<%= capabilities[i]._id %>">
-	    		<button type="submit">Update</button>
-	    		<button type="button" class="delete">Delete</button>
-	    	</form>
-	    <% } %>
-    </section>
-
+	<section class="current-cap">
+		<h3>Current Capabilities</h3>
+		<% for(var i=0; i< capabilities.length; i++){ %>
+			<form enctype="multipart/form-data" action="/capabilities/update" method="post">
+				<input type="text" class="field" name="name" value="<%= capabilities[i].name %>">
+				<textarea name="text" class="text-box"><%= capabilities[i].text %></textarea>
+				<input type="hidden" class="field" name="_id" value="<%= capabilities[i]._id %>">
+				<article class="btns">
+					<button type="submit">Update</button>
+					<button type="button" class="delete">Delete</button>
+				</article>
+			</form>
+		<% } %>
+	</section>
+</section>
 <% include includes/footer %>
