@@ -5,6 +5,7 @@ $(document).ready(function(){
                 //console.log(num);
                 var html = "<section>";
                         html +="<p><input type='text' name='new_client_name["+num+"]' placeholder='Enter Client Name'></p>";
+                        html +="<textarea name='new_client_caption["+num+"]' class='text-box' placeholder='Caption for client'></textarea>";
                         html +="<p><input type='file' name='new_client_image["+num+"]'></p>";
                         html +="</section>";
                 $('#new-clients').append(html);

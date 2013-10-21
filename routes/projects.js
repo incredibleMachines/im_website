@@ -282,6 +282,7 @@ exports.store = function(db){
 				//var image = client_images[i];
 				//console.log(image);
 				var client = post.new_client_name[i];
+				var caption =post.new_client_caption[i];
 				var path = "./public/uploads/clients/"+image.originalFilename;
 				fs.rename("./"+image.path, path, function(err){
 					if(err) throw err;
@@ -296,7 +297,7 @@ exports.store = function(db){
 			 		delete image.headers;
 			 		delete image.ws;
 
-			 		var client_obj = {name: client, image: image, projects: [{_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }], capabilities:[] };
+			 		var client_obj = {name: client, caption: caption, image: image, projects: [{_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }], capabilities:[] };
 
 					clientsDB.insert(client_obj, function(err,doc){
 
