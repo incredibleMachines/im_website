@@ -26,7 +26,7 @@
 					<h2><%=capabilities[i].name %></h2>
 				</article>
 				<article class="skill-blurb">
-					<p><%= capabilities[i].text %></p>
+					<p><span class="skill-name"><%=capabilities[i].name%> </span> – <%= capabilities[i].text %></p>
 				</article>
 
 	<!-- RELATED PROJECTS -->
@@ -65,7 +65,7 @@
 								if(isUsed==false){
 									ids.push(capabilities[i].projects[j].clients[k].name);%>
 					<li>
-						<a href="/clients"><%= capabilities[i].projects[j].clients[k].name %> ›</a>
+						<%= capabilities[i].projects[j].clients[k].name %>
 					</li>
 					<% 			}
 							}		
@@ -73,6 +73,9 @@
 					</ul>
 				</div>
 			</article>
+
+			<article class="skill-border"></article>
+
 		</section>
 		<% } %>
 	</div>
@@ -96,7 +99,7 @@
 }
 %>
 
-    <script src="../../javascripts/capabilities.js"></script>
+    <script src="/javascripts/capabilities.js"></script>
 
 </body>
 </html>

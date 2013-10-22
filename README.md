@@ -42,6 +42,8 @@ Make sure mongod is running
 	
 	$ mkdir public/uploads/thumbnails	
 
+	$ mkdir public/videos
+
 Ensure DB indexes
 	
 	$ mongo im_site	

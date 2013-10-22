@@ -57,6 +57,7 @@ app.get('/projects', projects.featured(db)); //get all featured projects
 //authenticated project pages
 app.get('/projects/edit', authenticate.admin, projects.edit(db)); //must place this above :name route to ensure it doesn't match :name
 app.get('/projects/:name',authenticate.project(db), projects.single(db)); //will need custom authentication
+app.get('/projects/:name/edit', authenticate.admin, projects.single_edit(db));
 app.get('/projects/:name/:action', authenticate.admin, projects.action(db));
 
 app.get('/capabilities', capabilities.view(db) );
@@ -72,14 +73,21 @@ app.get('/partners/edit',authenticate.admin, partners.edit(db));
 app.get('/technologies/edit',authenticate.admin, technologies.edit(db));
 app.get('/admin/index',authenticate.admin,admin.index); //index??
 
+
+//TO DO: Authenticate post requests!
 //post routes
 app.post('/projects', projects.store(db));
 app.post('/projects/login', projects.login(db));
-app.post('/projects/:action', projects.store(db));
+
+app.post('/projects/:name/update',projects.single_update(db) );
+
+
 app.post('/capabilities/:action', capabilities.action(db));
 app.post('/clients/:action',clients.action(db));
 app.post('/partners/:action',partners.action(db));
 app.post('/technologies/:action',technologies.action(db));
+
+
 
 app.post('/login', admin.auth(db));
 app.post('/create',admin.create(db));

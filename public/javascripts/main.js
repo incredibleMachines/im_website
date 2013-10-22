@@ -5,6 +5,7 @@ $(document).ready(function(){
                 //console.log(num);
                 var html = "<section>";
                         html +="<p><input type='text' name='new_client_name["+num+"]' placeholder='Enter Client Name'></p>";
+                        html +="<textarea name='new_client_caption["+num+"]' class='text-box' placeholder='Caption for client'></textarea>";
                         html +="<p><input type='file' name='new_client_image["+num+"]'></p>";
                         html +="</section>";
                 $('#new-clients').append(html);
@@ -160,15 +161,15 @@ $(document).ready(function(){
 
         $('.edit-capabilities .delete').click(function(e){
 
-                var form = $(this).parent();//get the form which is the parent
+                var form = $(this).parent().parent();//get the form which is the parent
                 form.attr('action', '/capabilities/delete');
                 $(form).submit();
                 //alert('yes');
         });
 
         $('.edit-clients .delete').click(function(e){
-
-                var form = $(this).parent();//get the form which is the parent
+                alert('here');
+                var form = $(this).parent().parent();//get the form which is the parent
                 form.attr('action', '/clients/delete');
                 $(form).submit();
                 //alert('yes');
@@ -177,7 +178,7 @@ $(document).ready(function(){
         $('.edit-technologies .delete').click(function(e){
 
 
-                var form = $(this).parent();//get the form which is the parent
+                var form = $(this).parent().parent();//get the form which is the parent
                 form.attr('action', '/technologies/delete');
                 $(form).submit();
                 //alert('yes');
@@ -185,7 +186,7 @@ $(document).ready(function(){
 
         $('.edit-partners .delete').click(function(e){
 
-                var form = $(this).parent();
+                var form = $(this).parent().parent();
                 form.attr('action','/partners/delete');
                 $(form).submit();
         });

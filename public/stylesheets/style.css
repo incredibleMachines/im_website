@@ -1439,19 +1439,24 @@ header nav a.active {
 
 }
 .capabilities #skills-section #about-skills .about-skill .skill-title {
+  float: left;
   display: none;
-  border-bottom: 4px solid #ffd24f;
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #about-skills .about-skill .skill-title {
     display: block;
+    border-bottom: 4px solid #ffd24f;
   }
 }
 .capabilities #skills-section #about-skills .about-skill .skill-title h2 {
   font-size: 32px;
 }
 .capabilities #skills-section #about-skills .about-skill .skill-blurb {
+  float: left;
   padding-top: 10px;
+}
+.capabilities #skills-section #about-skills .about-skill .skill-blurb .skill-name {
+  font-weight: 500;
 }
 .capabilities #skills-section #about-skills .about-skill .skill-blurb p {
   margin-bottom: 30px;
@@ -1502,7 +1507,9 @@ header nav a.active {
 .capabilities #skills-section #about-skills .about-skill .related-clients {
   width: 100%;
   clear: both;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
+  heigth: auto;
+  float: left;
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients .title {
   margin-left: 0;
@@ -1516,9 +1523,23 @@ header nav a.active {
 .capabilities #skills-section #about-skills .about-skill .related-clients .client-list li {
   float: left;
   padding-right: 2%;
+  font-size: 14px;
+  clear: both;
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients .client-list a {
   font-size: 14px;
+}
+.capabilities #skills-section #about-skills .about-skill .skill-border {
+  border-top: 3px solid #ffd24f;
+  margin: 20px 0;
+  float: left;
+  width: 100%;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #skills-section #about-skills .about-skill .skill-border {
+    border-top: none;
+    display: none;
+  }
 }
 .capabilities #skills-section .bottom-skills {
   display: none;
