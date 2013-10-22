@@ -1,14 +1,12 @@
 $(document).ready(function(){
 
 $('nav a').removeClass('active');
-$('nav a:contains("Featured Work")').addClass('active');
 $('.video-js').css('position','absolute');
 $('.introLogo').find('img').attr('src','../images/im_logo_white.png');
 
 var videoArray = [{mp4:'Cannes.mp4',ogv:'Cannes.ogv',link:'twitter-cannes'},{mp4:'Lincoln.mp4',ogv:'Lincoln.ogv',link:'lincoln-mkz-launch'},{mp4:'Naked.mp4',ogv:'Naked.ogv',link:'power-garden'},{mp4:'PaintOut.mp4',ogv:'PaintOut.ogv',link:'paintout'},{mp4:'Tones_Samsung.mp4',ogv:'Tones_Samsung.ogv',link:'make-it-mega'},{mp4:'Tones_sxsw.mp4',ogv:'Tones_sxsw.ogv',link:'tones'},{mp4:'VFA.mp4',ogv:'VFA.ogv',link:'vfa'}];
 
 var videoPlay = shuffle(videoArray);
-console.log(videoPlay[0].mp4);
 var videoIndex = 0;
 
 var topPadding=20;
@@ -40,11 +38,14 @@ videojs("intro-video-1").ready(function(){
   	sH = window.innerHeight,
 	sW = window.innerWidth;
 
-	myPlayer.src([
-  		{ type: "video/mp4", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 },
- 		{ type: "video/ogg", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 }
-	]);
+	if($('.header').css('padding')!='0'){
+		myPlayer.src([
+	  		{ type: "video/mp4", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 },
+	 		{ type: "video/ogg", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 }
+		]);
+	}
 
+$('.vid-project').attr('href',"/projects/"+videoPlay[videoIndex].link);
 
 /*   var aspect=myPlayer.width()/myPlayer.height(); */
 var aspect=16/9;
@@ -59,13 +60,13 @@ var aspect=16/9;
 	  	$('#intro-video-1').css("top",0);
 	  		$('#intro-video-1').css("left",(window.innerWidth-myPlayer.width())/2);
 	  	}
-  console.log(window.innerHeight-$('.title-nav').height());
+  console.log(myPlayer.height());
 
-$('.intro-vid').css("height",myPlayer.height());
+	$('.intro-vid').css("height",myPlayer.height());
 
 	
 	
-	userResize = function() {
+userResize = function() {
 if($('.intro-vid').css('display')=='none'){
 		$('header.home').css({
 				top: 0,
@@ -110,14 +111,11 @@ else{
 
 	}
 		  
-	console.log(myPlayer.width(),myPlayer.height(), window.innerHeight);
 	$('.intro-vid').css("height",myPlayer.height());
 	sH = window.innerHeight;
 	sW = window.innerWidth;
 }
-
-	
-	};
+};
 	
 	userScroll=function() {
 
