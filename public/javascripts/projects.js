@@ -45,6 +45,7 @@ videojs("intro-video-1").ready(function(){
  		{ type: "video/ogg", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 }
 	]);
 
+$('.vid-project').attr('href',"/projects/"+videoPlay[videoIndex].link);
 
 /*   var aspect=myPlayer.width()/myPlayer.height(); */
 var aspect=16/9;
@@ -61,7 +62,7 @@ var aspect=16/9;
 	  	}
   console.log(window.innerHeight-$('.title-nav').height());
 
-$('.intro-vid').css("height",myPlayer.height());
+$('#intro-vid').css("height",myPlayer.height());
 
 	
 	
