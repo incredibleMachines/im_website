@@ -39,8 +39,8 @@ The control icons are from a custom font. Each icon corresponds to a character
   padding: 0;
   margin:auto 0;
   /* background-color-with-alpha */
-  background-color: #333333;
-  background-color: rgba(51, 51, 51, 0.9);
+  /*background-color: #333333;
+  background-color: rgba(51, 51, 51, 0.9);*/
 }
 .vjs-project-page .vjs-slider:focus {
   /* box-shadow */
@@ -89,8 +89,8 @@ The default control bar that is a container for most of the controls.
   /* Height includes any margin you want above or below control items */
   height: 3.0em;
   /* background-color-with-alpha */
-  background-color: #07141e;
-  background-color: rgba(7, 20, 30, 0.7);
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0);
 }
 /* Show the control bar only once the video has started playing */
 .vjs-project-page.vjs-has-started .vjs-control-bar {
@@ -231,12 +231,16 @@ fonts to show/hide properly.
   position: absolute;
   top: 0;
   left: 0;
-  height: 0.5em;
-  background: #ffd24f url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC) -50% 0 repeat;
+  height: 20%;
+  margin-top: 4%;
+  /*background: #666 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC) -50% 0 repeat;*/
+  background-color: #fff;
+  opacity: 0.5;
 }
 .vjs-project-page .vjs-volume-bar .vjs-volume-handle {
   width: 0.5em;
   height: 0.5em;
+  display: none;
 }
 .vjs-project-page .vjs-volume-handle:before {
   font-size: 0.9em;
@@ -291,8 +295,8 @@ fonts to show/hide properly.
 .vjs-project-page .vjs-progress-holder .vjs-load-progress {
   position: absolute;
   display: block;
-  height: 100%;
-  margin: 0;
+  height: 20%;
+  margin-top: 0.5%;
   padding: 0;
   /* Needed for IE6 */
   left: 0;
@@ -317,6 +321,7 @@ fonts to show/hide properly.
 .vjs-project-page .vjs-seek-handle {
   width: 1.5em;
   height: 100%;
+  display: none;
 }
 .vjs-project-page .vjs-seek-handle:before {
   padding-top: 0.1em /* Minor adjustment */;
