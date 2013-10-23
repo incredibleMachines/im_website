@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 $('nav a').removeClass('active');
+$('nav a:contains("Featured Work")').addClass('active');
 
 /* add header animation css after DOM has loaded */
 $('header').css("-webkit-transition", "all 0.75s ease-in").css("-moz-transition", "all 0.75s ease-in").css("-o-transition", "all 0.75s ease-in").css("-ms-transition", "all 0.75s ease-in").css("transition", "all 0.75s ease-in");
