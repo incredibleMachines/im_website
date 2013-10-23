@@ -15,12 +15,13 @@ $('#portfolio').css('padding-top',$('header').height()+topPadding).css('margin-t
 console.log($('.intro-vid').css('display'));
 if($('.intro-vid').css('display')=='none'){
 	console.log('mobile')
-	$('header.home').css({
+	$('header').css({
 				top: 0,
 				background: 'rgb(0,0,0)',
-			});
-			$('nav a:contains("Featured Work")').addClass('active');
-			// $('.logoHome').show();
+	});
+	$('nav a:contains("Featured Work")').addClass('active');
+	// $('.logoHome').show();
+	$('#portfolio').css('padding-top',$('header').height()).css('margin-top',0);
 }
 
 else{
@@ -31,6 +32,8 @@ else{
 				transition: 'background 0.4s ease-in'
 			});
 }
+
+
 
 videojs("intro-video-1").ready(function(){
 	var myPlayer = this;
@@ -66,15 +69,16 @@ var aspect=16/9;
 
 	
 	
-userResize = function() {
+function userResize() {
 if($('.intro-vid').css('display')=='none'){
 		$('header.home').css({
 				top: 0,
 				background: 'rgb(0,0,0)',
 			});
-			$('nav a:contains("Featured Work")').addClass('active');
+		$('.logoHome').css('display','none');
+		$('nav a:contains("Featured Work")').addClass('active');
 			// $('.logoHome').show();
-		}
+	}
 else{
 	var amtScroll = $(window).scrollTop();
 	if (amtScroll >= sH-70) {
@@ -117,7 +121,7 @@ else{
 }
 };
 	
-	userScroll=function() {
+function userScroll() {
 
 		if($('.intro-vid').css('display')=='none'){
 			$('header.home').css({

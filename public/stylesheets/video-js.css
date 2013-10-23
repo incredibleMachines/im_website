@@ -38,6 +38,9 @@ The control icons are from a custom font. Each icon corresponds to a character
   cursor: pointer;
   padding: 0;
   margin:auto 0;
+  right:2em;
+
+
   /* background-color-with-alpha */
   /*background-color: #333333;
   background-color: rgba(51, 51, 51, 0.9);*/
@@ -356,6 +359,7 @@ fonts to show/hide properly.
   width: 3.8em;
   cursor: pointer;
   float: right;
+  display:none;
 }
 .vjs-project-page .vjs-fullscreen-control:before {
   content: "\e000";

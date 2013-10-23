@@ -141,20 +141,18 @@ ul li {
 
 header {
 	
-	padding: 0 35px;
+	padding:0;
 	background-color: @black;
 	position: fixed;
 	left: 0;
 	right: 0;
 	z-index: 999;
 	height:70px;
-
-	@media screen and (max-device-width: 500px) {
-			padding:0;
-	}
+	width:100%;
 
 	.logoHome {
 		margin: 5px 0 0 0;
+		padding-left:35px;
 		float: left;
 		img {
 			width: 250px;
@@ -286,96 +284,6 @@ header {
 	
 /*************************** Projects-Specific Header ***************************/
 
-	header.home {
-		height: 70px;
-		padding: 0 35px;
-		background: transparent;
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		z-index: 9;
-		@media screen and (max-width: 700px), (max-device-width: 500px) {
-			top:0;
-			padding:0;
-		}
-	
-		.logoHome {
-			margin: 5px 0 0 0;
-			float: left;
-				img {
-					width: 250px;
-					height: 60px;
-				}
-			@media screen and (max-width: 600px), (max-device-width: 500px) {
-				display:none;
-			}		
-		}
-	
-		nav {
-			float: right;
-			margin: 28px 0 0 0;
-			display:block;
-			@media screen and (max-width: 600px), (max-device-width: 500px) {
-				display:none;
-				float: left;
-				clear:both;
-				background-color:#222;
-				width:100%;
-				margin: 0;
-			}
-			a {
-				font-family: @museo;
-				font-size: 14px;
-				text-transform: uppercase;
-				color: @c;
-				font-style: normal;
-				font-weight: 100;
-				margin: 0 0 0 25px;
-				letter-spacing: 1px;
-
-				@media screen and (max-width: 600px), (max-device-width: 500px) {
-				float: left;
-				clear:both;
-				color:#999;
-				font-size:18px;
-				width:100%;
-				margin:0;
-				padding: 20px 0 20px 20px;
-				border-top:1px solid #333;
-			}
-			}
-			a:hover {
-				border-top: 1px solid @yellow;
-				color: @white;
-				font-weight: 100;
-				padding-top: 5px;
-			@media screen and (max-width: 600px), (max-device-width: 500px) {
-				border-top:1px solid #333;
-				padding: 20px 0 20px 20px;
-				font-style:oblique;
-			}
-
-			a.active {
-
-				@media screen and (max-width: 600px), (max-device-width: 500px) {
-							color: @white;
-					font-weight: 100;
-					padding: 20px 0 20px 20px;
-					border-top:1px solid #333;
-					font-style:oblique;
-				}
-			}
-		}
-
-
-		}
-	
-		.logoHome {
-			display: none;
-				}
-
-	} /* --- end header --- */
 
 	/*************************** Portfolio ***************************/
 
@@ -401,7 +309,7 @@ header {
 
 		.intro-vid{
 
-			@media screen and (max-width: 600px), (max-device-width: 500px) {
+			@media screen and (max-width: 828px), (max-device-width: 500px) {
 				display:none;
 			}
 
@@ -429,7 +337,7 @@ header {
 					width:30%;
 				}
 
-				@media screen and (max-width: 600px), (max-device-width: 500px) {
+				@media screen and (max-width: 828px), (max-device-width: 500px){
 					padding: 0;
 					min-width: 100%;
 					margin:0;
