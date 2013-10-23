@@ -244,10 +244,20 @@ exports.edit = function(db){
 			res.redirect('/projects/'+post.project_slug+'/edit');
  			res.location('/projects/'+post.project_slug+'/edit');
 		});
+		//TO DO:
 
-		//check for pws
-		//check clients and 
-		//check for new clients and the like
+		//check project password
+		//check clients
+		//check capabilities
+		// ""	technologies
+		// ""	partners
+
+		//check for new clients
+		//check for new capabilities
+		//check for new techologies
+		//check for new partners
+
+
 		//check for thumbnail image update
 		if(files.project_thumbnail.size !=0 ){
 
@@ -257,7 +267,9 @@ exports.edit = function(db){
 		if(files.project_poster_image.size !=0){
 
 		}else{console.log('No Poster Images')}
+		
 		//check if there are any image block updates?
+		//figure out what the hell to do with them.
 		if(files.project_image_block){
 			var size=0;
 			console.log('Checking Image Blocks');
@@ -274,7 +286,6 @@ exports.edit = function(db){
 		}
 		
 
-		//check project password
  	}
  }
 

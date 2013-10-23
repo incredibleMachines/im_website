@@ -3,6 +3,21 @@
  * GET home page.
  */
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Welcome to Incredible Machines', slug: 'index' });
+exports.index = function(db){
+	return function(req, res){
+		//db query for all featured projects
+
+		var projects = db.get('projects');
+
+		projects.find({featured: true},function(err,docs){
+			console.log(docs);
+			res.render('projects', { title: 'Incredible Machines' , slug: 'projects', projects: docs});
+
+		});
+		//array push each project 
+	}
 };
+
+exports.reel = function(req,res){
+	res.render('reel', {title: 'The Reel', slug: 'reel'});
+}

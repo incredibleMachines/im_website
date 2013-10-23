@@ -51,7 +51,8 @@ if ('development' == app.get('env')) {
 
 //our pages
 //get routes
-app.get('/', projects.featured(db));
+app.get('/', routes.index(db));
+app.get('/reel', routes.reel );
 app.get('/projects', projects.featured(db)); //get all featured projects
 
 //authenticated project pages
