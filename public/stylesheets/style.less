@@ -141,20 +141,18 @@ ul li {
 
 header {
 	
-	padding: 0 35px;
+	padding:0;
 	background-color: @black;
 	position: fixed;
 	left: 0;
 	right: 0;
 	z-index: 999;
 	height:70px;
-
-	@media screen and (max-device-width: 500px) {
-			padding:0;
-	}
+	width:100%;
 
 	.logoHome {
 		margin: 5px 0 0 0;
+		padding-left:35px;
 		float: left;
 		img {
 			width: 250px;
@@ -207,6 +205,7 @@ header {
 		float: right;
 		margin: 29px 0 0 0;
 		display:block;
+		padding-right:35px;
 
 		@media screen and (max-width: 828px), (max-device-width: 500px) {
 			display:none;
@@ -215,6 +214,7 @@ header {
 			background-color:#222;
 			width:100%;
 			margin: 0;
+			padding-right:0;
 		}
 
 		a {
@@ -286,96 +286,6 @@ header {
 	
 /*************************** Projects-Specific Header ***************************/
 
-	header.home {
-		height: 70px;
-		padding: 0 35px;
-		background: transparent;
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		z-index: 9;
-		@media screen and (max-width: 700px), (max-device-width: 500px) {
-			top:0;
-			padding:0;
-		}
-	
-		.logoHome {
-			margin: 5px 0 0 0;
-			float: left;
-				img {
-					width: 250px;
-					height: 60px;
-				}
-			@media screen and (max-width: 600px), (max-device-width: 500px) {
-				display:none;
-			}		
-		}
-	
-		nav {
-			float: right;
-			margin: 28px 0 0 0;
-			display:block;
-			@media screen and (max-width: 600px), (max-device-width: 500px) {
-				display:none;
-				float: left;
-				clear:both;
-				background-color:#222;
-				width:100%;
-				margin: 0;
-			}
-			a {
-				font-family: @museo;
-				font-size: 14px;
-				text-transform: uppercase;
-				color: @c;
-				font-style: normal;
-				font-weight: 100;
-				margin: 0 0 0 25px;
-				letter-spacing: 1px;
-
-				@media screen and (max-width: 600px), (max-device-width: 500px) {
-				float: left;
-				clear:both;
-				color:#999;
-				font-size:18px;
-				width:100%;
-				margin:0;
-				padding: 20px 0 20px 20px;
-				border-top:1px solid #333;
-			}
-			}
-			a:hover {
-				border-top: 1px solid @yellow;
-				color: @white;
-				font-weight: 100;
-				padding-top: 5px;
-			@media screen and (max-width: 600px), (max-device-width: 500px) {
-				border-top:1px solid #333;
-				padding: 20px 0 20px 20px;
-				font-style:oblique;
-			}
-
-			a.active {
-
-				@media screen and (max-width: 600px), (max-device-width: 500px) {
-							color: @white;
-					font-weight: 100;
-					padding: 20px 0 20px 20px;
-					border-top:1px solid #333;
-					font-style:oblique;
-				}
-			}
-		}
-
-
-		}
-	
-		.logoHome {
-			display: none;
-				}
-
-	} /* --- end header --- */
 
 	/*************************** Portfolio ***************************/
 
@@ -401,7 +311,7 @@ header {
 
 		.intro-vid{
 
-			@media screen and (max-width: 600px), (max-device-width: 500px) {
+			@media screen and (max-width: 828px), (max-device-width: 500px) {
 				display:none;
 			}
 
@@ -429,7 +339,7 @@ header {
 					width:30%;
 				}
 
-				@media screen and (max-width: 600px), (max-device-width: 500px) {
+				@media screen and (max-width: 828px), (max-device-width: 500px){
 					padding: 0;
 					min-width: 100%;
 					margin:0;
@@ -1144,48 +1054,57 @@ header {
 				} /* ---end contact--- */
 	
 				#strip {
-					height: 30px;
-					background-color: @two;
-					padding: 0 35px;
+				height: 30px;
+				background-color: @two;
+				padding: 0 35px;
+				@media screen and (max-width: 600px), (max-device-width: 500px){
+						padding:0 20px;
+					}
 				
-					#copyright {
-						width: 50%;
-						float: left;
-						margin: 2px 0 0 0;
+				#copyright {
+					width: 76%;
+					float: left;
+					margin: 2px 0 0 0;
 					
-						p {
-							font-size: 12px;
-							color:@nine;
-							letter-spacing: 0;
-							float: left;
-							margin-right: 20px;
-
-							#reel {
-								border-left: 1x solid @nine;
-								float: left;
-							}
-
-							@media screen and (max-width: 700px) {
-								font-size: 10px;
-							}
-						} 
-					}/* ---end copyright--- */
+					p {
+						font-size: 12px;
+						color:@nine;
+						letter-spacing: 0;
+						float: left;
+						margin-right: 20px;
+						@media screen and (max-width: 600px), (max-device-width: 500px){
+								margin-right: 8px;
+						}
+					} 
+					#reel a{
+					font-size: 12px;
+						color:@nine;
+						letter-spacing: 0;
+						float: left;
+						margin-right: 20px;
+						@media screen and (max-width: 600px), (max-device-width: 500px){
+								margin-right: 8px;
+						}							
+						color: @yellow;
+					}
+				}/* ---end copyright--- */
 				
-					#social-btns {
+				#social-btns {
 						float: right;
 						padding-top: 1px;
 						
 						i {
 							margin-left: 10px;
-							@media screen and (max-width: 700px) {
-								font-size: 14px;
+							@media screen and (max-width: 600px), (max-device-width: 500px){
+								margin-left: 2px;
 							}
 						}
+						
 						i:hover {
 							color: @white;
 						}
 					} /* ---end social-btns --- */
-				} /* ---end strip--- */	
+			} /* ---end strip--- */	
 			} /* ---end footer--- */
 		} /*---end footer-pg-wrap --- */	
 	} /*---end footer-bg-wrap --- */	
@@ -1528,7 +1447,7 @@ header {
 				text-align: center;
 				color: @yellow;
 				margin: 130px 0 30px 0;
-				line-height: 30px;
+				line-height: 50px;
 			}
 			
 			#client-list{
@@ -1740,9 +1659,10 @@ header {
 			float: left;
 			border-bottom: 1px solid @white;
 			width: 100%;
-			padding:30px 0 20px 5%;
+			padding:30px 0 20px 0;
 
 			.column {
+				padding-left:5%;
 
 
 				.title {
@@ -1907,9 +1827,12 @@ header {
 				height: 30px;
 				background-color: @two;
 				padding: 0 35px;
+				@media screen and (max-width: 600px), (max-device-width: 500px){
+						padding:0 20px;
+					}
 				
 				#copyright {
-					width: 50%;
+					width: 76%;
 					float: left;
 					margin: 2px 0 0 0;
 					
@@ -1919,8 +1842,19 @@ header {
 						letter-spacing: 0;
 						float: left;
 						margin-right: 20px;
+						@media screen and (max-width: 600px), (max-device-width: 500px){
+								margin-right: 8px;
+						}
 					} 
-					#reel {							
+					#reel a{
+					font-size: 12px;
+						color:@nine;
+						letter-spacing: 0;
+						float: left;
+						margin-right: 20px;
+						@media screen and (max-width: 600px), (max-device-width: 500px){
+								margin-right: 8px;
+						}							
 						color: @yellow;
 					}
 				}/* ---end copyright--- */
@@ -1931,6 +1865,9 @@ header {
 						
 						i {
 							margin-left: 10px;
+							@media screen and (max-width: 600px), (max-device-width: 500px){
+								margin-left: 2px;
+							}
 						}
 						
 						i:hover {

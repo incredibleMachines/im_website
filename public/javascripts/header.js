@@ -25,7 +25,6 @@ if($('.logoMobile').css('display')=='none'){
         });
 
 headerResize= function(){
-        console.log($('nav').css('display'));
         if($('.logoMobile').css('display')=='none'){
                 $('nav').css('display','block');
                 $('.buttonMobile').removeClass('active');
