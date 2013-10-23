@@ -21,7 +21,7 @@ if($('.intro-vid').css('display')=='none'){
 	});
 	$('nav a:contains("Featured Work")').addClass('active');
 	// $('.logoHome').show();
-	$('#portfolio').css('padding-top',$('header').height()).css('margin-top',0);
+	$('#portfolio').css('padding-top',$('header').height()).	css('margin-top',0);
 }
 
 else{
@@ -169,6 +169,7 @@ function playNext(){
   		{ type: "video/mp4", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 },
  		{ type: "video/ogg", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 }
 	]);
+	$('.video-project').attr('href',"/projects/"+videoPlay[videoIndex].link);
 }
 
 
