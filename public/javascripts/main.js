@@ -72,6 +72,7 @@ $(document).ready(function(){
                 //obj.find('input').attr("name", 'project_image_block['+imageBlockNum+'][]').removeClass().addClass('project-image-'+imageBlockNum);
                 var inputs = obj.find('input');
                 //for loop
+                obj.find('img').remove();                
                 var counter=0;
                 $.each(inputs,function(index,val){
 
@@ -86,8 +87,12 @@ $(document).ready(function(){
         $('.less-images').click(function(e){
                 var imageBlocks = $('.project-image-block');
                 if(imageBlocks.length >1) imageBlocks[imageBlocks.length-1].remove();
-                else alert('Hey, stop picking your nose and pay attention - you need at least one image block!');
-        });
+                else{ 
+                        alert('Hey, stop picking your nose and pay attention - you need at least one image block!');
+                        
+                        $('.image-blocks').find('img').remove();
+                }
+        });     
 
 
         $('.more-info').click(function(e){

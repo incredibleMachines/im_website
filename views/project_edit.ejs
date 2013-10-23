@@ -7,11 +7,11 @@
 			
 			<section id="main">
 				<h3>Title, Slug, and Video Info</h3>
-				<p>Title<br/><input type="text" name="project_title" class="project_title field" placeholder="Project Title" value=" <%= data.project.title %>"/></p>
-				<p>Slug<br/><input type="text" name="project_slug" class="project_slug field" value=" <%= data.project.slug %>"/></p>
+				<p>Title<br/><input type="text" name="project_title" class="project_title field" placeholder="Project Title" value="<%= data.project.title %>"/></p>
+				<p>Slug<br/><input type="text" name="project_slug" class="project_slug field" value="<%= data.project.slug %>"/></p>
 				<p>Location<br/><input type="text" name="project_location" class="field" value="<%= data.project.location %>"/></p>
 
-				<p>Vimeo URL <br/><input type="text" name="project_video"  class="field" value=" <%= data.project.video_url %>"/></p>
+				<p>Vimeo URL <br/><input type="text" name="project_video"  class="field" value="<%= data.project.video_url %>"/></p>
 				<p>Back-up URL <br/><input type="text" name="project_video_backup" class="field" value="<%= data.project.video_backup%>"/></p>
 				<p>Thumbnail <br/>
 					<input type="file" name="project_thumbnail" class="browse" placeholder="Project Thumbnail"/>
@@ -22,6 +22,20 @@
 				</p>
 
 			</section>
+				<section id="clients">
+				<h3>Client(s)</h3>   
+				<a href="/clients/edit">or edit master list ›</a>
+
+				<% for(var i =0; i< data.clients.length; i++){ %>
+
+					<% 	var client_enabled = false;
+						for(var j =0; j< data.project.clients.length; j++ ){ 
+						if(data.project.clients[j]._id == data.clients[i]._id) client_enabled = true;
+					}%>
+
+					<p><input type="checkbox" name="clients[<%= i %>]" <% if(client_enabled===true){ %> checked <% } %> value="<%= data.clients[i]._id %>"> <%= data.clients[i].name %></p>
+				<% } %>
+			</section><!-- #clients -->
 
 			<section id="text">
 				<h3>White Paragraph Text Row</h3>
@@ -42,6 +56,8 @@
 			<section id="images">
 				<h3>Project Image Block</h3>
 				<section class="image-blocks">
+				<p>Want to edit and image?</p>
+				<p>Remove all image blocks and reupload.</p>
 				<% for (var i = 0; i<data.project.imageBlocks.length; i++){ %>
 					<article class="project-image-block image-block-<%=i%>">
 						<p>
@@ -69,30 +85,36 @@
 				<h3>Technologies List</h3>
 				<a href="/technologies/edit">or edit master list ›</a>
 				<% for(var i =0; i< data.technology.length; i++){ %>
-					<p><input type="checkbox" name="technology[<%= i %>]" value="<%= data.technology[i]._id %>"> 
+					<% 	var technology_enabled = false;
+						for(var j = 0; j< data.project.technologies.length; j++){
+							if(data.project.technologies[j]._id == data.technology[i]._id ){ technology_enabled = true};
+						} %>
+					<p><input type="checkbox" name="technology[<%= i %>]" <% if(technology_enabled === true){ %> checked <% }%> value="<%= data.technology[i]._id %>"> 
 						<%= data.technology[i].name %>
 					</p>
 				<% } %>
-				<p id="new-technology"></p>
-				<button type="button" class="new-technology" >Add a New Technology</button>
 			</section><!-- technology -->
 			<section id="capabilities">
 				<h3>Capabilities List</h3>
 				<a href="/capabilities/edit">or edit master list ›</a>
 				<% for(var i =0; i< data.capabilities.length; i++){ %>
-				<p><input type="checkbox" name="capabilities[<%=  i %>]" value="<%= data.capabilities[i]._id %>"><%= data.capabilities[i].name %></p>
+					<% 	var capability_enabled = false;
+						for(var j = 0; j< data.project.capabilities.length; j++){
+							if(data.project.capabilities[j]._id == data.capabilities[i]._id ){ capability_enabled = true};
+						} %>
+				<p><input type="checkbox" name="capabilities[<%=  i %>]" <% if(capability_enabled === true){ %> checked <% } %> value="<%= data.capabilities[i]._id %>"><%= data.capabilities[i].name %></p>
 				<% } %>
-				<p id="new-capabilities"></p>
-				<button type="button" class="new-capabilities" >Add a New Capabilities</button>
 			</section><!-- capabilities -->
 			<section id="partners">
 				<h3>Partner(s)</h3>
 				<a href="/partners/edit">or edit master list ›</a>
-				<% for(var i =0; i< data.partners.length; i++){ %>
-				<p><input type="checkbox" name="partners[<%= i %>]" value="<%= data.partners[i]._id %>"> <%= data.partners[i].name %></p>
+				<% for(var i =0; i< data.partners.length; i++){ 
+					var partner_enabled = false;
+					for(var j = 0; j<data.project.partners.length; j++){
+						if(data.project.partners[j]._id == data.partners[i]._id){partner_enabled=true;}
+						}%>
+				<p><input type="checkbox" name="partners[<%= i %>]" <% if(partner_enabled === true){ %> checked <% } %>  value="<%= data.partners[i]._id %>"> <%= data.partners[i].name %></p>
 				<% } %>
-				<p id="new-partners"></p>
-				<button type="button" class="new-partners" >Add a New Partner</button>
 			</section><!-- #partners -->
 			<section id="more-info">
 				<h3>More Info</h3>
@@ -120,8 +142,8 @@
 				<p>Status: <%if(data.project.password == null){ %> No Password <% }else{ %> Password Protected <% } %></p>
 				<p><em>Change or Add A Project Password </em></p>
 				<p>
-					<input type="password" name="project_password" class="field" placeholder="Enter Password"/>
-					<input type="password" name="project_password_confirm" class="field" placeholder="Confirm Password"/>
+					<input type="password" name="project_password" class="field" <%if(data.project.password == null){ %> placeholder="Enter Password" <% }else{ %> value="<%= data.project.password %>" <% } %> />
+					<input type="password" name="project_password_confirm" class="field" <%if(data.project.password == null){ %> placeholder="Confirm Password" <% }else{ %> value="<%= data.project.password %>" <% } %>/>
 				</p>
 			</section><!-- #privacy -->
 			

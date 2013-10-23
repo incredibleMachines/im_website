@@ -1991,20 +1991,25 @@ header nav a.active {
 /*-------------------------------------------------------------------------------*/
 /*--------------------------- BACK END EDIT MODE SHIZ ---------------------------*/
 /*-------------------------------------------------------------------------------*/
-.edit-projects h1 {
+.edit-projects h1,
+.edit-project h1 {
   line-height: 50px;
 }
-.edit-projects h3 {
+.edit-projects h3,
+.edit-project h3 {
   border-bottom: 1px solid #333333;
   margin-bottom: 20px;
 }
-.edit-projects a {
+.edit-projects a,
+.edit-project a {
   font-style: normal;
 }
-.edit-projects a:hover {
+.edit-projects a:hover,
+.edit-project a:hover {
   font-style: oblique;
 }
-.edit-projects button {
+.edit-projects button,
+.edit-project button {
   width: auto;
   height: 40px;
   background-color: #333333;
@@ -2013,73 +2018,87 @@ header nav a.active {
   padding: 0 20px;
   color: #cccccc;
 }
-.edit-projects button:hover {
+.edit-projects button:hover,
+.edit-project button:hover {
   background-color: #ffd24f;
   color: #333333;
 }
-.edit-projects .field {
+.edit-projects .field,
+.edit-project .field {
   height: 25px;
   width: 400px;
   margin-bottom: 10px;
   padding: 5px;
 }
-.edit-projects .project-form-wrap {
+.edit-projects .project-form-wrap,
+.edit-project .project-form-wrap {
   border: 6px solid #e7e7e7;
   width: 70%;
   height: 100%;
   float: left;
 }
-.edit-projects .project-form-wrap .current-proj {
+.edit-projects .project-form-wrap .current-proj,
+.edit-project .project-form-wrap .current-proj {
   background: #e7e7e7;
   padding: 40px;
   margin-top: 64px;
 }
-.edit-projects .project-form-wrap .current-proj ul li {
+.edit-projects .project-form-wrap .current-proj ul li,
+.edit-project .project-form-wrap .current-proj ul li {
   height: 40px;
   margin-bottom: 10px;
 }
-.edit-projects .project-form-wrap .add-proj {
+.edit-projects .project-form-wrap .add-proj,
+.edit-project .project-form-wrap .add-proj {
   padding: 40px;
   float: left;
   clear: both;
   width: 90%;
 }
-.edit-projects .project-form-wrap .add-proj #main {
+.edit-projects .project-form-wrap .add-proj #main,
+.edit-project .project-form-wrap .add-proj #main {
   margin-bottom: 30px;
   float: left;
   clear: both;
   width: 90%;
 }
-.edit-projects .project-form-wrap .add-proj #text {
+.edit-projects .project-form-wrap .add-proj #text,
+.edit-project .project-form-wrap .add-proj #text {
   margin-bottom: 30px;
   height: auto;
   float: left;
   clear: both;
   width: 90%;
 }
-.edit-projects .project-form-wrap .add-proj #text .text-blocks {
+.edit-projects .project-form-wrap .add-proj #text .text-blocks,
+.edit-project .project-form-wrap .add-proj #text .text-blocks {
   height: 490px;
 }
-.edit-projects .project-form-wrap .add-proj #text .text-blocks .project-text-block {
+.edit-projects .project-form-wrap .add-proj #text .text-blocks .project-text-block,
+.edit-project .project-form-wrap .add-proj #text .text-blocks .project-text-block {
   height: 490px;
 }
-.edit-projects .project-form-wrap .add-proj #text .text-blocks .project-text-block .title {
+.edit-projects .project-form-wrap .add-proj #text .text-blocks .project-text-block .title,
+.edit-project .project-form-wrap .add-proj #text .text-blocks .project-text-block .title {
   margin: 0 0 20px 0;
   border: 1px solid #999999;
 }
-.edit-projects .project-form-wrap .add-proj #text .text-blocks .project-text-block .text-box {
+.edit-projects .project-form-wrap .add-proj #text .text-blocks .project-text-block .text-box,
+.edit-project .project-form-wrap .add-proj #text .text-blocks .project-text-block .text-box {
   width: 99%;
   height: 400px;
   float: left;
   clear: both;
   padding: 5px;
 }
-.edit-projects .project-form-wrap .add-proj #text .btns {
+.edit-projects .project-form-wrap .add-proj #text .btns,
+.edit-project .project-form-wrap .add-proj #text .btns {
   float: left;
   clear: both;
   margin-top: 20px;
 }
-.edit-projects .project-form-wrap .add-proj #images {
+.edit-projects .project-form-wrap .add-proj #images,
+.edit-project .project-form-wrap .add-proj #images {
   float: left;
   clear: both;
   width: 90%;
@@ -2088,25 +2107,30 @@ header nav a.active {
   padding: 30px;
   margin-bottom: 30px;
 }
-.edit-projects .project-form-wrap .add-proj #images .project-image-block {
+.edit-projects .project-form-wrap .add-proj #images .project-image-block,
+.edit-project .project-form-wrap .add-proj #images .project-image-block {
   height: auto;
   float: left;
   clear: both;
 }
-.edit-projects .project-form-wrap .add-proj #images .project-image-block select {
+.edit-projects .project-form-wrap .add-proj #images .project-image-block select,
+.edit-project .project-form-wrap .add-proj #images .project-image-block select {
   margin-bottom: 20px;
 }
-.edit-projects .project-form-wrap .add-proj #images .project-image-block .browse {
+.edit-projects .project-form-wrap .add-proj #images .project-image-block input[type="file"],
+.edit-project .project-form-wrap .add-proj #images .project-image-block input[type="file"] {
   float: left;
   clear: both;
   margin-bottom: 20px;
 }
-.edit-projects .project-form-wrap .add-proj #images .btns {
+.edit-projects .project-form-wrap .add-proj #images .btns,
+.edit-project .project-form-wrap .add-proj #images .btns {
   float: left;
   clear: both;
   margin-top: 20px;
 }
-.edit-projects .project-form-wrap .add-proj #technology {
+.edit-projects .project-form-wrap .add-proj #technology,
+.edit-project .project-form-wrap .add-proj #technology {
   float: left;
   clear: both;
   width: 90%;
@@ -2115,45 +2139,55 @@ header nav a.active {
   padding: 30px;
   margin-bottom: 30px;
 }
-.edit-projects .project-form-wrap .add-proj #technology h3 {
+.edit-projects .project-form-wrap .add-proj #technology h3,
+.edit-project .project-form-wrap .add-proj #technology h3 {
   color: #ffd24f;
   border-bottom: 1px solid #ffd24f;
 }
-.edit-projects .project-form-wrap .add-proj #technology a {
+.edit-projects .project-form-wrap .add-proj #technology a,
+.edit-project .project-form-wrap .add-proj #technology a {
   color: #999999;
 }
-.edit-projects .project-form-wrap .add-proj #technology p {
+.edit-projects .project-form-wrap .add-proj #technology p,
+.edit-project .project-form-wrap .add-proj #technology p {
   color: white;
   margin-top: 20px;
 }
-.edit-projects .project-form-wrap .add-proj #technology button {
+.edit-projects .project-form-wrap .add-proj #technology button,
+.edit-project .project-form-wrap .add-proj #technology button {
   background-color: #666666;
 }
-.edit-projects .project-form-wrap .add-proj #technology button:hover {
+.edit-projects .project-form-wrap .add-proj #technology button:hover,
+.edit-project .project-form-wrap .add-proj #technology button:hover {
   background-color: #ffd24f;
 }
-.edit-projects .project-form-wrap .add-proj #technology p#new-technology input {
+.edit-projects .project-form-wrap .add-proj #technology p#new-technology input,
+.edit-project .project-form-wrap .add-proj #technology p#new-technology input {
   height: 30px;
   width: 300px;
   padding: 5px;
   margin-bottom: 20px;
 }
-.edit-projects .project-form-wrap .add-proj #clients {
+.edit-projects .project-form-wrap .add-proj #clients,
+.edit-project .project-form-wrap .add-proj #clients {
   float: left;
   clear: both;
   width: 90%;
   height: auto;
   margin-bottom: 60px;
 }
-.edit-projects .project-form-wrap .add-proj #clients p {
+.edit-projects .project-form-wrap .add-proj #clients p,
+.edit-project .project-form-wrap .add-proj #clients p {
   margin: 20px 0 20px 0;
 }
-.edit-projects .project-form-wrap .add-proj #clients p#new-clients input {
+.edit-projects .project-form-wrap .add-proj #clients p#new-clients input,
+.edit-project .project-form-wrap .add-proj #clients p#new-clients input {
   height: 30px;
   width: 300px;
   padding: 5px;
 }
-.edit-projects .project-form-wrap .add-proj #partners {
+.edit-projects .project-form-wrap .add-proj #partners,
+.edit-project .project-form-wrap .add-proj #partners {
   float: left;
   clear: both;
   width: 90%;
@@ -2162,18 +2196,22 @@ header nav a.active {
   padding: 30px;
   margin-bottom: 30px;
 }
-.edit-projects .project-form-wrap .add-proj #partners button:hover {
+.edit-projects .project-form-wrap .add-proj #partners button:hover,
+.edit-project .project-form-wrap .add-proj #partners button:hover {
   background-color: white;
 }
-.edit-projects .project-form-wrap .add-proj #partners p {
+.edit-projects .project-form-wrap .add-proj #partners p,
+.edit-project .project-form-wrap .add-proj #partners p {
   margin: 20px 0 20px 0;
 }
-.edit-projects .project-form-wrap .add-proj #partners p#new-partners input {
+.edit-projects .project-form-wrap .add-proj #partners p#new-partners input,
+.edit-project .project-form-wrap .add-proj #partners p#new-partners input {
   height: 30px;
   width: 300px;
   padding: 5px;
 }
-.edit-projects .project-form-wrap .add-proj #capabilities {
+.edit-projects .project-form-wrap .add-proj #capabilities,
+.edit-project .project-form-wrap .add-proj #capabilities {
   float: left;
   clear: both;
   width: 90%;
@@ -2182,30 +2220,37 @@ header nav a.active {
   padding: 30px;
   margin-bottom: 30px;
 }
-.edit-projects .project-form-wrap .add-proj #capabilities h3 {
+.edit-projects .project-form-wrap .add-proj #capabilities h3,
+.edit-project .project-form-wrap .add-proj #capabilities h3 {
   color: #ffd24f;
   border-bottom: 1px solid #ffd24f;
 }
-.edit-projects .project-form-wrap .add-proj #capabilities a {
+.edit-projects .project-form-wrap .add-proj #capabilities a,
+.edit-project .project-form-wrap .add-proj #capabilities a {
   color: #999999;
 }
-.edit-projects .project-form-wrap .add-proj #capabilities p {
+.edit-projects .project-form-wrap .add-proj #capabilities p,
+.edit-project .project-form-wrap .add-proj #capabilities p {
   color: white;
   margin: 20px 0 20px 0;
 }
-.edit-projects .project-form-wrap .add-proj #capabilities button {
+.edit-projects .project-form-wrap .add-proj #capabilities button,
+.edit-project .project-form-wrap .add-proj #capabilities button {
   background-color: #666666;
 }
-.edit-projects .project-form-wrap .add-proj #capabilities button:hover {
+.edit-projects .project-form-wrap .add-proj #capabilities button:hover,
+.edit-project .project-form-wrap .add-proj #capabilities button:hover {
   background-color: #ffd24f;
 }
-.edit-projects .project-form-wrap .add-proj #capabilities p#new-technology input {
+.edit-projects .project-form-wrap .add-proj #capabilities p#new-technology input,
+.edit-project .project-form-wrap .add-proj #capabilities p#new-technology input {
   height: 30px;
   width: 300px;
   padding: 5px;
   margin-bottom: 20px;
 }
-.edit-projects .project-form-wrap .add-proj #more-info {
+.edit-projects .project-form-wrap .add-proj #more-info,
+.edit-project .project-form-wrap .add-proj #more-info {
   float: left;
   clear: both;
   width: 90%;
@@ -2214,41 +2259,50 @@ header nav a.active {
   padding: 30px;
   margin-bottom: 30px;
 }
-.edit-projects .project-form-wrap .add-proj #more-info .info-blocks {
+.edit-projects .project-form-wrap .add-proj #more-info .info-blocks,
+.edit-project .project-form-wrap .add-proj #more-info .info-blocks {
   height: auto;
   width: 100%;
   float: left;
   clear: both;
 }
-.edit-projects .project-form-wrap .add-proj #more-info .info-blocks .project-info-block {
+.edit-projects .project-form-wrap .add-proj #more-info .info-blocks .project-info-block,
+.edit-project .project-form-wrap .add-proj #more-info .info-blocks .project-info-block {
   float: left;
   clear: both;
   margin-bottom: 20px;
 }
-.edit-projects .project-form-wrap .add-proj #more-info .info-blocks .project-info-block .title {
+.edit-projects .project-form-wrap .add-proj #more-info .info-blocks .project-info-block .title,
+.edit-project .project-form-wrap .add-proj #more-info .info-blocks .project-info-block .title {
   margin: 0 0 10px 0;
   border: 1px solid #999999;
 }
-.edit-projects .project-form-wrap .add-proj #more-info .info-btns {
+.edit-projects .project-form-wrap .add-proj #more-info .info-btns,
+.edit-project .project-form-wrap .add-proj #more-info .info-btns {
   float: left;
   clear: both;
 }
-.edit-projects .project-form-wrap .add-proj #more-info .info-btns button:hover {
+.edit-projects .project-form-wrap .add-proj #more-info .info-btns button:hover,
+.edit-project .project-form-wrap .add-proj #more-info .info-btns button:hover {
   background-color: white;
 }
-.edit-projects .project-form-wrap .add-proj #privacy {
+.edit-projects .project-form-wrap .add-proj #privacy,
+.edit-project .project-form-wrap .add-proj #privacy {
   float: left;
   clear: both;
   width: 90%;
   height: auto;
 }
-.edit-projects .project-form-wrap .add-proj #privacy h3 {
+.edit-projects .project-form-wrap .add-proj #privacy h3,
+.edit-project .project-form-wrap .add-proj #privacy h3 {
   margin: 40px 0 10px 0;
 }
-.edit-projects .project-form-wrap .add-proj #privacy p {
+.edit-projects .project-form-wrap .add-proj #privacy p,
+.edit-project .project-form-wrap .add-proj #privacy p {
   margin-bottom: 20px;
 }
-.edit-projects .project-form-wrap .add-proj .bottom-btn {
+.edit-projects .project-form-wrap .add-proj .bottom-btn,
+.edit-project .project-form-wrap .add-proj .bottom-btn {
   float: left;
   clear: both;
 }
