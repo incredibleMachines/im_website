@@ -53,6 +53,7 @@
 			<!-- RELATED PROJECTS -->
 
 					<article class="detail-col">
+						<%if(clients[i].projects.length>0){%>
 						<div class="title">
 							<h3>Projects</h3>
 						</div>
@@ -63,6 +64,7 @@
 								<% } %>
 							</ul>
 						</div>
+					<% } %>
 					</article>
 				</section>	
 
