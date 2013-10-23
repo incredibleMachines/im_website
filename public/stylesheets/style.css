@@ -235,6 +235,7 @@ header nav {
   float: right;
   margin: 29px 0 0 0;
   display: block;
+  padding-right: 35px;
 }
 @media screen and (max-width: 828px), (max-device-width: 500px) {
   header nav {
@@ -244,6 +245,7 @@ header nav {
     background-color: #222;
     width: 100%;
     margin: 0;
+    padding-right: 0;
   }
 }
 header nav a {
