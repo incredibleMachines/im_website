@@ -149,7 +149,7 @@ header {
 	z-index: 999;
 	height:70px;
 
-	@media screen (max-device-width: 500px) {
+	@media screen and (max-device-width: 500px) {
 			padding:0;
 	}
 
@@ -1530,6 +1530,7 @@ header {
 				height:auto;
 				margin-bottom: 2px;
 				height: auto;
+				position:absolute;
 
 				@media screen and (max-width: 600px), (max-device-width: 500px) {
 					margin-bottom: 0;
@@ -1622,6 +1623,7 @@ header {
 			width:92.5%;
 			margin-left: 2.5%;
 			padding:40px 0 20px 2.5%;
+			z-index:20;
 
 			@media screen and (max-width: 600px), (max-device-width: 500px) {
 				width:95%;
@@ -1808,6 +1810,7 @@ header {
 
 	.cap-tech {
 		background-color: @three;
+		position:absolute;
 	}
 		
 	.yellow-header {
@@ -2915,6 +2918,7 @@ header {
 	}
 
 	.login-form-wrap{
+		border: 6px solid #e7e7e7;
 		width: 40%;
 		height: 400px;
 		padding: 200px 40px 0 40px;

@@ -181,7 +181,7 @@ header {
   z-index: 999;
   height: 70px;
 }
-@media screen (max-device-width: 500px) {
+@media screen and (max-device-width: 500px) {
   header {
     padding: 0;
   }
@@ -1585,6 +1585,7 @@ header nav a.active {
   float: left;
   margin-bottom: 2px;
   height: auto;
+  position: absolute;
   /* ---end client--- */
 
 }
@@ -1669,6 +1670,7 @@ header nav a.active {
   width: 92.5%;
   margin-left: 2.5%;
   padding: 40px 0 20px 2.5%;
+  z-index: 20;
   /*--- end corner ---*/
 
 }
@@ -1853,6 +1855,7 @@ header nav a.active {
 }
 .clients .cap-tech {
   background-color: #333333;
+  position: absolute;
 }
 .clients .yellow-header {
   border-top: 3px solid #ffd24f;
@@ -2775,6 +2778,7 @@ header nav a.active {
   clear: both;
 }
 .login .login-form-wrap {
+  border: 6px solid #e7e7e7;
   width: 40%;
   height: 400px;
   padding: 200px 40px 0 40px;
