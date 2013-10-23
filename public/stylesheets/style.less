@@ -1144,48 +1144,57 @@ header {
 				} /* ---end contact--- */
 	
 				#strip {
-					height: 30px;
-					background-color: @two;
-					padding: 0 35px;
+				height: 30px;
+				background-color: @two;
+				padding: 0 35px;
+				@media screen and (max-width: 600px), (max-device-width: 500px){
+						padding:0 20px;
+					}
 				
-					#copyright {
-						width: 50%;
-						float: left;
-						margin: 2px 0 0 0;
+				#copyright {
+					width: 76%;
+					float: left;
+					margin: 2px 0 0 0;
 					
-						p {
-							font-size: 12px;
-							color:@nine;
-							letter-spacing: 0;
-							float: left;
-							margin-right: 20px;
-
-							#reel {
-								border-left: 1x solid @nine;
-								float: left;
-							}
-
-							@media screen and (max-width: 700px) {
-								font-size: 10px;
-							}
-						} 
-					}/* ---end copyright--- */
+					p {
+						font-size: 12px;
+						color:@nine;
+						letter-spacing: 0;
+						float: left;
+						margin-right: 20px;
+						@media screen and (max-width: 600px), (max-device-width: 500px){
+								margin-right: 8px;
+						}
+					} 
+					#reel a{
+					font-size: 12px;
+						color:@nine;
+						letter-spacing: 0;
+						float: left;
+						margin-right: 20px;
+						@media screen and (max-width: 600px), (max-device-width: 500px){
+								margin-right: 8px;
+						}							
+						color: @yellow;
+					}
+				}/* ---end copyright--- */
 				
-					#social-btns {
+				#social-btns {
 						float: right;
 						padding-top: 1px;
 						
 						i {
 							margin-left: 10px;
-							@media screen and (max-width: 700px) {
-								font-size: 14px;
+							@media screen and (max-width: 600px), (max-device-width: 500px){
+								margin-left: 2px;
 							}
 						}
+						
 						i:hover {
 							color: @white;
 						}
 					} /* ---end social-btns --- */
-				} /* ---end strip--- */	
+			} /* ---end strip--- */	
 			} /* ---end footer--- */
 		} /*---end footer-pg-wrap --- */	
 	} /*---end footer-bg-wrap --- */	
@@ -1908,9 +1917,12 @@ header {
 				height: 30px;
 				background-color: @two;
 				padding: 0 35px;
+				@media screen and (max-width: 600px), (max-device-width: 500px){
+						padding:0 20px;
+					}
 				
 				#copyright {
-					width: 50%;
+					width: 76%;
 					float: left;
 					margin: 2px 0 0 0;
 					
@@ -1920,8 +1932,19 @@ header {
 						letter-spacing: 0;
 						float: left;
 						margin-right: 20px;
+						@media screen and (max-width: 600px), (max-device-width: 500px){
+								margin-right: 8px;
+						}
 					} 
-					#reel {							
+					#reel a{
+					font-size: 12px;
+						color:@nine;
+						letter-spacing: 0;
+						float: left;
+						margin-right: 20px;
+						@media screen and (max-width: 600px), (max-device-width: 500px){
+								margin-right: 8px;
+						}							
 						color: @yellow;
 					}
 				}/* ---end copyright--- */
@@ -1932,6 +1955,9 @@ header {
 						
 						i {
 							margin-left: 10px;
+							@media screen and (max-width: 600px), (max-device-width: 500px){
+								margin-left: 2px;
+							}
 						}
 						
 						i:hover {

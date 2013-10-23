@@ -1198,8 +1198,13 @@ header nav a.active {
   /* ---end social-btns --- */
 
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .single-project .footer-bg-wrap .footer-pg-wrap footer #strip {
+    padding: 0 20px;
+  }
+}
 .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #copyright {
-  width: 50%;
+  width: 76%;
   float: left;
   margin: 2px 0 0 0;
 }
@@ -1210,13 +1215,22 @@ header nav a.active {
   float: left;
   margin-right: 20px;
 }
-.single-project .footer-bg-wrap .footer-pg-wrap footer #strip #copyright p #reel {
-  border-left: 1x solid #999999;
-  float: left;
-}
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #copyright p {
-    font-size: 10px;
+    margin-right: 8px;
+  }
+}
+.single-project .footer-bg-wrap .footer-pg-wrap footer #strip #copyright #reel a {
+  font-size: 12px;
+  color: #999999;
+  letter-spacing: 0;
+  float: left;
+  margin-right: 20px;
+  color: #ffd24f;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #copyright #reel a {
+    margin-right: 8px;
   }
 }
 .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #social-btns {
@@ -1226,9 +1240,9 @@ header nav a.active {
 .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #social-btns i {
   margin-left: 10px;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #social-btns i {
-    font-size: 14px;
+    margin-left: 2px;
   }
 }
 .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #social-btns i:hover {
@@ -1963,8 +1977,13 @@ header nav a.active {
   /* ---end social-btns --- */
 
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .footer-bg-wrap footer #strip {
+    padding: 0 20px;
+  }
+}
 .footer-bg-wrap footer #strip #copyright {
-  width: 50%;
+  width: 76%;
   float: left;
   margin: 2px 0 0 0;
 }
@@ -1975,8 +1994,23 @@ header nav a.active {
   float: left;
   margin-right: 20px;
 }
-.footer-bg-wrap footer #strip #copyright #reel {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .footer-bg-wrap footer #strip #copyright p {
+    margin-right: 8px;
+  }
+}
+.footer-bg-wrap footer #strip #copyright #reel a {
+  font-size: 12px;
+  color: #999999;
+  letter-spacing: 0;
+  float: left;
+  margin-right: 20px;
   color: #ffd24f;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .footer-bg-wrap footer #strip #copyright #reel a {
+    margin-right: 8px;
+  }
 }
 .footer-bg-wrap footer #strip #social-btns {
   float: right;
@@ -1984,6 +2018,11 @@ header nav a.active {
 }
 .footer-bg-wrap footer #strip #social-btns i {
   margin-left: 10px;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .footer-bg-wrap footer #strip #social-btns i {
+    margin-left: 2px;
+  }
 }
 .footer-bg-wrap footer #strip #social-btns i:hover {
   color: #ffffff;

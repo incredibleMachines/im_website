@@ -112,7 +112,7 @@ $(document).ready(function(){
 				}
 				else {
 					adjustedTop=clientTop;
-					$(this).css({'top':adjustedTop});
+					$(this).animate({top:adjustedTop},200);
 				}
 				$('.cap-tech').css({'top':adjustedTop+$(this).outerHeight()});
 				$('.footer-bg-wrap').css({'top':adjustedTop+$(this).outerHeight()+$('.cap-tech').outerHeight()});
@@ -131,7 +131,7 @@ $(document).ready(function(){
 	function contractDetail(){
 		// $('.footer-bg-wrap').css('transition','top .5s');
 		// $('.cap-tech').css('transition','top .5s');
-$('.client-detail').animate({top:-1000},1000);
+	$('.client-detail').animate({top:-1000},1000);
 	
 	$('#client-list').delay(200).queue(function(){
 		$(this).css('top',clientTop);
