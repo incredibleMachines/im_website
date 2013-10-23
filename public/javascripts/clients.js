@@ -20,7 +20,6 @@ $(document).ready(function(){
 			expandDetail(target.find('h2').text(), target.attr('id'), $('#client-list').height()-2*parseInt($('.cap-tech').css('margin-top')));
 		}
 
-
 		else if(target.parents('.client').length>0){
 			expandDetail(target.parents('.client').find('h2').text(), target.parents('.client').attr('id'), $('#client-list').height()-2*parseInt($('.cap-tech').css('margin-top')));
 		}
@@ -40,10 +39,9 @@ $(document).ready(function(){
 	
 		$('.client-detail').each(function(){
 			var adjustedTop=clientTop;
-			if($(this).position().top!=-1000){
+			if($(this).position().top>0){
 				detail=true;
 				var hSize=parseInt($('#client-grid h1').css('font-size'));
-				console.log(hSize);
 				if($('#client-grid h1').height()>3*hSize){
 					adjustedTop=clientTop+(2*parseInt($('#client-grid h1').css('line-height')));
 					$(this).animate({top:adjustedTop},200);
@@ -89,6 +87,7 @@ $(document).ready(function(){
 			$(this).css({'top':clientTop+$('#'+clientSlug).outerHeight()});
 			$(this).dequeue();
 		});
+
 		$('.footer-bg-wrap').delay(500).queue(function(){
 			$(this).css({'top':clientTop+$('#'+clientSlug).outerHeight()+$('.cap-tech').outerHeight()});
 			$(this).dequeue();
@@ -99,7 +98,7 @@ $(document).ready(function(){
 		$('#'+clientSlug).animate({top:clientTop},1000, function(){
 			$('#client-list').css('top',-2000);	
 			$('.client-detail').each(function(){
-			if($(this).position().top!=-1000){
+			if($(this).position().top>0){
 				detail=true;
 				var hSize=parseInt($('#client-grid h1').css('font-size'));
 				if($('#client-grid h1').height()>3*hSize){
