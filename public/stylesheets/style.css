@@ -1181,11 +1181,7 @@ header nav a.active {
 
 }
 .capabilities #about {
-<<<<<<< HEAD
-=======
-  height: auto;
   padding: 150px 0 100px 0;
->>>>>>> 4b082de34903dbec22a670b8c271d55f5d5fc992
   background: url('../images/yellow_pattern.png');
   background-color: #ffd24f;
   background-attachment: fixed;
@@ -1197,6 +1193,8 @@ header nav a.active {
   width: 100%;
 }
 .capabilities #about .about-block {
+  width: 100%;
+  margin: 0px auto;
   position: fixed;
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
@@ -1205,13 +1203,8 @@ header nav a.active {
     height: auto;
   }
 }
-<<<<<<< HEAD
 .capabilities #about .about-block p {
-  width: 50%;
-=======
-.capabilities #about .about-text {
-  width: 60%;
->>>>>>> 4b082de34903dbec22a670b8c271d55f5d5fc992
+  width: 80%;
   margin: 0px auto;
   font-family: "museo-slab", "Museo Slab", courier, serif;
   font-size: 28px;
@@ -1219,48 +1212,9 @@ header nav a.active {
   padding-top: 20px;
   padding-bottom: 50px;
 }
-@media screen and (max-width: 1375px) {
-  .capabilities #about .about-block p {
-    width: 60%;
-  }
-}
-@media screen and (max-width: 1175px) {
-  .capabilities #about .about-block p {
-    width: 70%;
-  }
-}
 @media screen and (max-width: 1000px) {
   .capabilities #about .about-block p {
     width: 80%;
-  }
-}
-<<<<<<< HEAD
-=======
-.capabilities #about .about-text .bold {
-  font-weight: 500;
-  margin: 20px 0;
-}
-.capabilities #about .about-text h1 {
-  line-height: 50px;
-  margin-bottom: 20px;
-}
-.capabilities #about .about-text p {
-  font-size: 28px;
-  line-height: 34px;
-  margin: 30px 0;
-  color: #000;
-}
->>>>>>> 4b082de34903dbec22a670b8c271d55f5d5fc992
-@media screen and (max-width: 900px) {
-  .capabilities #about .about-block p {
-    font-size: 22px;
-    line-height: 34px;
-  }
-}
-@media screen and (max-width: 600px), (max-device-width: 500px) {
-  .capabilities #about .about-block p {
-    font-size: 22px;
-    line-height: 34px;
   }
 }
 .capabilities #about #about-intro {
