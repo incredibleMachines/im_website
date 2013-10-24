@@ -309,8 +309,6 @@ header nav a.active {
 /*--------------------------- PROJECTS (Featured Work) ---------------------------*/
 .projects {
   width: 100%;
-  /*************************** Projects-Specific Header ***************************/
-
   /*************************** Portfolio ***************************/
 
   /* ---end portfolio-wrap --- */
@@ -466,6 +464,15 @@ header nav a.active {
   .single-project .project-vid {
     line-height: 10px;
   }
+}
+.single-project .project-vid .poster-wrap {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+}
+.single-project .project-vid .poster-wrap .poster-image {
+  width: 100%;
+  z-index: 50;
 }
 .single-project .project-vid .play-btn {
   position: relative;
