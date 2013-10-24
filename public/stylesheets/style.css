@@ -1181,61 +1181,75 @@ header nav a.active {
 
 }
 .capabilities #about {
-  height: auto;
-  padding: 200px 0 100px 0;
   background: url('../images/yellow_pattern.png');
   background-color: #ffd24f;
-  position: fixed;
-  top: 100;
+  background-attachment: fixed;
   z-index: -100;
-  /* ---end about-text--- */
+  /* ---end about-block--- */
 
 }
+.capabilities #about img {
+  width: 100%;
+}
+.capabilities #about .about-block {
+  position: fixed;
+}
 @media screen and (max-width: 600px), (max-device-width: 500px) {
-  .capabilities #about {
+  .capabilities #about .about-block {
     position: relative;
-    padding-top: 140px;
-    padding-bottom: 70px;
+    height: auto;
   }
 }
-.capabilities #about .about-text {
+.capabilities #about .about-block p {
   width: 50%;
   margin: 0px auto;
+  font-family: "museo-slab", "Museo Slab", courier, serif;
+  font-size: 28px;
+  line-height: 40px;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 @media screen and (max-width: 1375px) {
-  .capabilities #about .about-text {
+  .capabilities #about .about-block p {
     width: 60%;
   }
 }
 @media screen and (max-width: 1175px) {
-  .capabilities #about .about-text {
+  .capabilities #about .about-block p {
     width: 70%;
   }
 }
 @media screen and (max-width: 1000px) {
-  .capabilities #about .about-text {
+  .capabilities #about .about-block p {
     width: 80%;
   }
 }
-.capabilities #about .about-text .bold {
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-.capabilities #about .about-text p {
-  font-size: 28px;
-  line-height: 40px;
-}
 @media screen and (max-width: 900px) {
-  .capabilities #about .about-text p {
+  .capabilities #about .about-block p {
     font-size: 22px;
     line-height: 34px;
   }
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
-  .capabilities #about .about-text p {
+  .capabilities #about .about-block p {
     font-size: 22px;
     line-height: 34px;
   }
+}
+.capabilities #about #about-intro {
+  top: 300px;
+}
+.capabilities #about #about-transport,
+.capabilities #about #about-produce {
+  background-color: #000000;
+}
+.capabilities #about #about-transport p,
+.capabilities #about #about-produce p {
+  color: #ffd24f;
+}
+.capabilities #about #about-obsessed {
+  background: url('../images/yellow_pattern.png');
+  background-color: #ffd24f;
 }
 .capabilities #skills-section {
   position: absolute;

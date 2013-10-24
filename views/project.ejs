@@ -74,7 +74,7 @@
 			<article class="list light">
 				<ul>
 					<% for(var j = 0; j< project.capabilities.length; j++){ %>
-						<li><a href="/capabilities#<%= makeSlug(project.capabilities[j].name)%>"><%= project.capabilities[j].name%></a></li>
+						<li><a href="/capabilities#<%= makeSlug(project.capabilities[j].name)%>"><%= project.capabilities[j].name%> ›</a></li>
 					<% } %>
 				</ul>
 			</article>
@@ -132,7 +132,7 @@
 			<article class="list">
 				<ul>
 					<% for(var j = 0; j< project.infoBlocks.length; j++){ %>
-						<li><a href="<%= project.infoBlocks[j].text%>"><%= project.infoBlocks[j].title%></a></li>
+						<li><a href="<%= project.infoBlocks[j].title%>"><%= project.infoBlocks[j].text%> › </a></li>
 					<% } %>
 				</ul>
 			</article>								
