@@ -271,7 +271,7 @@ exports.edit = function(db){
 
 							});
 
-							var update_obj = {$addToSet: {projects: {_id:post.project_id, slug: post.project_slug, title: project_obj.title }}}
+							var update_obj = {$addToSet: {projects: {_id:post.project_id, slug: post.project_slug, title: post.project_title }}}
 							clientsDB.update({_id:v},update_obj,function(err){
 								if(err) throw err;
 							});
@@ -291,7 +291,7 @@ exports.edit = function(db){
 									if(err) throw err;
 								});
 							});
-							var update_obj = {$addToSet: {projects: {_id:post.project_id, slug: post.project_slug, title: project_obj.title }}};
+							var update_obj = {$addToSet: {projects: {_id:post.project_id, slug: post.project_slug, title: post.project_title }}};
 							capabilitiesDB.update({_id:v},update_obj,function(err){
 								if(err) throw err;
 							});
@@ -310,7 +310,7 @@ exports.edit = function(db){
 									if(err) throw err;
 								});
 							});
-							var update_obj = {$addToSet: {projects: {_id:post.project_id, slug: post.project_slug, title: project_obj.title }}};
+							var update_obj = {$addToSet: {projects: {_id:post.project_id, slug: post.project_slug, title: post.project_title }}};
 							techologiesDB.update({_id:v},update_obj,function(err){
 								if(err) throw err;
 							});
@@ -332,7 +332,7 @@ exports.edit = function(db){
 								});
 							});
 
-							var update_obj = {$addToSet: {projects: {_id:post.project_id, slug: post.project_slug, title: project_obj.title }}};
+							var update_obj = {$addToSet: {projects: {_id:post.project_id, slug: post.project_slug, title: post.project_title }}};
 							partnersDB.update({_id:v},update_obj,function(err){
 								if(err) throw err;
 							});
