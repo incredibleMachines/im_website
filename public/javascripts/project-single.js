@@ -55,6 +55,7 @@ $('.photo-block-multi').each(function(){
   
 /* setup initial video height and width */
 		var aspect=16/9;
+		var aspectPoster=1920/740;
 		myPlayer.height(window.innerHeight-$('.title-nav').height());
 		userResize();
 
@@ -63,17 +64,17 @@ $('.photo-block-multi').each(function(){
 			console.log(window.innerWidth);
 		  	if(window.innerHeight-$('.title-nav').height()<window.innerWidth*(1/aspect)){
 			  	myPlayer.dimensions(myPlayer.height()*aspect,window.innerHeight-$('.title-nav').height());
-			  	$('.poster-image').width(window.innerWidth).height(window.innerWidth*(1/aspect));
+			  	$('.poster-image').width(window.innerWidth).height('auto');
 	  			console.log('uno');
 		  	}
 		  	else if(window.innerHeight<window.innerWidth*(1/aspect)){
 			  	myPlayer.dimensions(window.innerHeight*aspect,window.innerHeight);
-		  		$('.poster-image').width(window.innerWidth).height(window.innerWidth*(1/aspect));
+		  		$('.poster-image').width(window.innerWidth).height('auto');
 	  			console.log('dos');
 		  	}
 		  	else{
 				 myPlayer.dimensions(window.innerWidth,window.innerWidth*(1/aspect));
-				 $('.poster-image').width(window.innerWidth).height(window.innerWidth*(1/aspect));
+				 $('.poster-image').width('auto').height(myPlayer.height());
 				 $('.poster-image').css("top",500);
 	  			console.log('tres');
 			}
