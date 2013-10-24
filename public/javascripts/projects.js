@@ -1,8 +1,10 @@
 $(document).ready(function(){
 
 $('nav a').removeClass('active');
+$('nav a:first-child').attr("href",'#portfolio');
 $('.video-js').css('position','absolute');
 $('.introLogo').find('img').attr('src','../images/im_logo_white.png');
+$('.logoHome').hide();
 
 var videoArray = [{mp4:'Cannes.mp4',ogv:'Cannes.ogv',link:'twitter-cannes'},{mp4:'Lincoln.mp4',ogv:'Lincoln.ogv',link:'lincoln-mkz-launch'},{mp4:'Naked.mp4',ogv:'Naked.ogv',link:'power-garden'},{mp4:'PaintOut.mp4',ogv:'PaintOut.ogv',link:'paintout'},{mp4:'Tones_Samsung.mp4',ogv:'Tones_Samsung.ogv',link:'make-it-mega'},{mp4:'Tones_sxsw.mp4',ogv:'Tones_sxsw.ogv',link:'tones'},{mp4:'VFA.mp4',ogv:'VFA.ogv',link:'vfa'}];
 
@@ -25,11 +27,10 @@ if($('.intro-vid').css('display')=='none'){
 }
 
 else{
-	$('header.home').css({
+	$('header').css({
 				background: 'transparent',
 				top: '',
-				bottom: 0,
-				transition: 'background 0.4s ease-in'
+				bottom: 0
 			});
 }
 
@@ -124,7 +125,7 @@ else{
 function userScroll() {
 
 		if($('.intro-vid').css('display')=='none'){
-			$('header.home').css({
+			$('header').css({
 				top: 0,
 				background: 'rgb(0,0,0)',
 			});
@@ -135,7 +136,7 @@ function userScroll() {
 		else{
 		var amtScroll = $(window).scrollTop();
 		if (amtScroll >= sH-70) {
-			$('header.home').css({
+			$('header').css({
 				top: 0,
 				background: 'rgb(0,0,0)',
 				transition: 'background 0.4s ease-in'
@@ -146,7 +147,7 @@ function userScroll() {
 		else {
 			console.log('scrolling up');
 			// remove top:0
-			$('header.home').css({
+			$('header').css({
 				background: 'transparent',
 				top: '',
 				bottom: amtScroll,
@@ -203,5 +204,20 @@ function shuffle(array) {
 
   return array;
 }
+
+	$('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 500);
+	        return false;
+	      }
+	    }
+	  });
+
 
 });

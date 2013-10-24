@@ -1,11 +1,17 @@
-<% include includes/header %>
+	<% include includes/header %>
 
     <!-- VIDEO -->
-		<section class="project-vid">
-			<video id="project-video-1" class="video-js vjs-project-page" poster="<%= project.poster.path %>" controls>
+		<section class="project-vid" name="top">
+			<div class="poster-wrap">
+				<img src="<%= project.poster.path %>" class="poster-image">
+			</div>
+			<video id="project-video-1" class="video-js vjs-project-page"  controls>
 				  <source src="<%= project.video_url%>" type='video/mp4' />
 				  <source src="<%= project.video_backup%>" type='video/ogg' />
 			</video> 
+			<div class="poster-wrap">
+				<img src="<%= project.poster.path %>" class="poster-image">
+			</div>
 		</section>
 		
 <!-- TITLE / PAGINATION -->
@@ -31,26 +37,33 @@
 		
 <!-- TEXT BLOCKS-->
 	<% 
-		var cap=false;
-		var partners=false;
-		var textCount=0;
+	var imgCount=0;
 		
-	for(var i = 0; i< project.imageBlocks.length; i++){ 
-		if(textCount<project.textBlocks.length){%>
+	for(var i = 0; i< project.textBlocks.length; i++){ %>
 			<section class="project-text-titled">
 				<article class="title">
-					<h3><%= project.textBlocks[textCount].title %></h3>
+					<h3><%= project.textBlocks[i].title %></h3>
 				</article>
 			<article class="text-body">
-			<p><%= project.textBlocks[textCount].text %></p>
+			<p><%= project.textBlocks[i].text %></p>
 			</article>
 			</section>
-			
 		<%
-		textCount++;
-		}	 
-		
-		else if(cap==false){%>
+		if(imgCount<project.imageBlocks.length){ %>
+		<section class="photo-block-multi">
+		<% 
+			for(var j= 0; j<project.imageBlocks[imgCount].length; j++){ %>
+			<div class="img-wrap" data-image-size="<%= project.imageBlocks[imgCount][j].size  %>">
+			<img src="<%= project.imageBlocks[imgCount][j].path  %>" alt="alt text" />
+			</div>
+		<% 
+			} %>
+		</section>
+		<%
+		imgCount++; 
+		}
+	}
+		%>
 		
 		<!-- CAPABILITIES, TOOLS + TECH BLOCK -->
 	<section class="list-block cap-tech">
@@ -80,24 +93,22 @@
 		</article>
 	</section>
 
-		
+		<%
+		if(imgCount<project.imageBlocks.length){ %>
+		<section class="photo-block-multi">
 		<% 
-		cap=true;
-		
+			for(var j= 0; j<project.imageBlocks[imgCount].length; j++){ %>
+			<div class="img-wrap" data-image-size="<%= project.imageBlocks[imgCount][j].size  %>">
+			<img src="<%= project.imageBlocks[imgCount][j].path  %>" alt="alt text" />
+			</div>
+		<% 
+			} %>
+		</section>
+		<%
+		imgCount++; 
 		}
-		
-		%>		
-		
-	<!-- PHOTO BLOCK-->
-	<section class="photo-block-multi">
-	<% for(var j= 0; j<project.imageBlocks[i].length; j++){ %>
-		<div class="img-wrap" data-image-size="<%= project.imageBlocks[i][j].size  %>">
-				<img src="<%= project.imageBlocks[i][j].path  %>" alt="alt text" />
-		</div>
-	<% } %>
-	</section>
-	<%if(cap==true&&partners==false){ 
 		%>
+		
 		
 		<!-- PARTNERS, MORE INFO -->
 	
@@ -128,16 +139,28 @@
 		</article>
 	</section>
 
-		
-		<%partners=true;} %>
-	
-<% 
-} %>
+			<%
+		if(imgCount<project.imageBlocks.length){ %>
+		<section class="photo-block-multi">
+		<% 
+			for(var j= 0; j<project.imageBlocks[imgCount].length; j++){ %>
+			<div class="img-wrap" data-image-size="<%= project.imageBlocks[imgCount][j].size  %>">
+			<img src="<%= project.imageBlocks[imgCount][j].path  %>" alt="alt text" />
+			</div>
+		<% 
+			} %>
+		</section>
+		<%
+		imgCount++; 
+		}
+		%>
+
 		
 	<% function makeSlug(Text)
 {
     return Text.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
 }
+
 %>
 		
 	<% include includes/footer-project %>
