@@ -50,60 +50,32 @@ $('.photo-block-multi').each(function(){
 
 /* video.js scaling and play functionality */
 	videojs("project-video-1").ready(function(){
-
 		var myPlayer = this;
 		var amtScroll = 0;
   
 /* setup initial video height and width */
 		var aspect=16/9;
-		if(window.innerHeight-$('.title-nav').height()<window.innerWidth*(1/aspect)){
-		  	myPlayer.dimensions(100,window.innerHeight-$('.title-nav').height());
-		  	myPlayer.width(myPlayer.height()*aspect);
-		  	$('.poster-image').css("top",(myPlayer.height()-$('.poster-image').height())/2);
-	  		$('.poster-wrap').height(myPlayer.height());
-	  		console.log('uno');
-		  	}
-		else if(window.innerHeight<window.innerWidth*(1/aspect)){
-		  	myPlayer.dimensions(window.innerHeight*aspect,window.innerHeight-$('.title-nav').height());
-		  	$('.poster-image').css("top",(myPlayer.height()-$('.poster-image').height())/2);
-	  		$('.poster-wrap').height(myPlayer.height());
-	  		console.log('one');
-		  	}
-		else{
-		  	myPlayer.dimensions(window.innerWidth,window.innerWidth*(1/aspect));
-		  		$('.poster-image').css("top",0);
-	  			$('.poster-image').css("left",myPlayer.width()-$('.poster-image').width()/2);
-		  	}
-
-
-/* position play button and center player */
-		$('.project-vid').css("height",myPlayer.height());
-		$('.vjs-big-play-button').css("position","absolute").css("top",(myPlayer.height()/2)-135/2).css("right",(myPlayer.width()/2)-135/2);
-		if($('.project-vid').css('line-height')=='10px'){
-			$('.project-vid').css('padding-top',$('header').height());
-		}
-		$('#project-video-1').css("margin-left",(window.innerWidth-myPlayer.width())/2);
-
-		
-	$('.intro-vid').css("height",myPlayer.height());
-	
+		myPlayer.height(window.innerHeight-$('.title-nav').height());
+		userResize();
 
 /* resize player + buttons when window changes size */	
-		userResize = function() {
+		function userResize() {
+			console.log(window.innerWidth);
 		  	if(window.innerHeight-$('.title-nav').height()<window.innerWidth*(1/aspect)){
 			  	myPlayer.dimensions(myPlayer.height()*aspect,window.innerHeight-$('.title-nav').height());
-		  		$('.poster-image').css("top",(myPlayer.height()-$('.poster-image').height())/2);
-	  		$('.poster-wrap').height(myPlayer.height());
+			  	$('.poster-image').width(window.innerWidth).height(window.innerWidth*(1/aspect));
+	  			console.log('uno');
 		  	}
 		  	else if(window.innerHeight<window.innerWidth*(1/aspect)){
-			  	myPlayer.dimensions(window.innerHeight*aspect,window.innerHeight-$('.title-nav').height());
-		  		$('.poster-image').css("top",(myPlayer.height()-$('.poster-image').height())/2);
-	  			$('.poster-wrap').height(myPlayer.height());
+			  	myPlayer.dimensions(window.innerHeight*aspect,window.innerHeight);
+		  		$('.poster-image').width(window.innerWidth).height(window.innerWidth*(1/aspect));
+	  			console.log('dos');
 		  	}
 		  	else{
 				 myPlayer.dimensions(window.innerWidth,window.innerWidth*(1/aspect));
-				 $('.poster-image').css("top",0);
-	  			$('.poster-image').css("left",myPlayer.width()-$('.poster-image').width()/2);
+				 $('.poster-image').width(window.innerWidth).height(window.innerWidth*(1/aspect));
+				 $('.poster-image').css("top",500);
+	  			console.log('tres');
 			}
 			// $('.vjs-big-play-button').height(myPlayer.height()/4).width(myPlayer.height()/4);
 			// $('.vjs-big-play-button').css("margin-top",$('header').height()-((myPlayer.height()/2)+135/2));
@@ -120,8 +92,20 @@ $('.photo-block-multi').each(function(){
 					$('header').css("top",-100);
 				}
 			}
+
+					$('.project-vid').css("height",myPlayer.height());
+		$('.vjs-big-play-button').css("position","absolute").css("top",(myPlayer.height()/2)-135/2).css("right",(myPlayer.width()/2)-135/2);
+		if($('.project-vid').css('line-height')=='10px'){
+			$('.project-vid').css('padding-top',$('header').height());
+		}
+		$('#project-video-1').css("margin-left",(window.innerWidth-myPlayer.width())/2);
+
+		
+		$('.intro-vid').css("height",myPlayer.height());
 			$('#project-video-1').css("margin-left",(window.innerWidth-myPlayer.width())/2);
 			$('.poster-wrap').height(myPlayer.height());
+
+
 		};
 		
 /* stop playback when scroll passes player bottom */	
@@ -136,8 +120,8 @@ $('.photo-block-multi').each(function(){
 		function navOut(){	
 			if($('.project-vid').css('line-height')!='10px'){
 				$('header').css("top",-100);
-				$('.poster-wrap').fadeOut(200);
 			}
+			$('.poster-wrap').fadeOut(200);
 		}
 		function navIn() {
 			if($('.project-vid').css('line-height')!='10px'){

@@ -459,6 +459,7 @@ header nav a.active {
   height: 100px;
   background-color: #000000;
   line-height: 1px;
+  border-bottom: 1px solid #000000;
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .single-project .project-vid {
@@ -471,8 +472,14 @@ header nav a.active {
   overflow: hidden;
 }
 .single-project .project-vid .poster-wrap .poster-image {
-  width: 100%;
-  z-index: 50;
+  z-index: 1;
+  padding-top: 70px;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .single-project .project-vid .poster-wrap .poster-image {
+    line-height: 10px;
+    padding-top: 0;
+  }
 }
 .single-project .project-vid .play-btn {
   position: relative;
