@@ -15,6 +15,7 @@ exports.view = function(db){
 			//iterate through each capability and find out which projects are linked
 			//console.log(docs.length)
 			if(docs.length==0) res.render('capabilities', { title: 'No Capabilities', slug: 'capabilities', capabilities:docs });
+			var confirmed = 0;
 			docs.forEach(function(v,i){
 
 				//find associated projects where capabilities id is in project capability array
@@ -23,8 +24,8 @@ exports.view = function(db){
 					console.log(i+": "+JSON.stringify(project_docs));
 
 					docs[i].projects = project_docs;
-
-					if(i == docs.length-1){
+					confirmed++;
+					if(confirmed == docs.length){
 						console.log(JSON.stringify(docs));
 						res.render('capabilities', { title: 'Capabilities', slug: 'capabilities', capabilities:docs });
 
