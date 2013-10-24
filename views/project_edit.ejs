@@ -1,6 +1,6 @@
 <% include includes/header %>   
-
 	<section class="project-form-wrap">
+		<section class="edit-proj">
 		<h1>Update <%= data.project.title %></h1>
 		<form class="edit_project" enctype="multipart/form-data" action="/projects/<%=data.project.slug %>/update" method="post">
 			<input type="hidden" value="<%= data.project._id %>" name="project_id">
@@ -20,9 +20,8 @@
 				<p>Poster Image <br/><input type="file" name="project_poster_image" class="browse"/>
 					<img src="<%= data.project.poster.path %>">
 				</p>
-
 			</section>
-				<section id="clients">
+			<section id="clients">
 				<h3>Client(s)</h3>   
 				<a href="/clients/edit">or edit master list ›</a>
 
@@ -152,5 +151,6 @@
 			</section><!-- .bottom-btn -->
 
 		</form>
+		</section> <!-- end edit-proj -->
 	</section><!-- project-form-wrapper-->
 <% include includes/footer %>   

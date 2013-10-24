@@ -1181,6 +1181,11 @@ header nav a.active {
 
 }
 .capabilities #about {
+<<<<<<< HEAD
+=======
+  height: auto;
+  padding: 150px 0 100px 0;
+>>>>>>> 4b082de34903dbec22a670b8c271d55f5d5fc992
   background: url('../images/yellow_pattern.png');
   background-color: #ffd24f;
   background-attachment: fixed;
@@ -1200,8 +1205,13 @@ header nav a.active {
     height: auto;
   }
 }
+<<<<<<< HEAD
 .capabilities #about .about-block p {
   width: 50%;
+=======
+.capabilities #about .about-text {
+  width: 60%;
+>>>>>>> 4b082de34903dbec22a670b8c271d55f5d5fc992
   margin: 0px auto;
   font-family: "museo-slab", "Museo Slab", courier, serif;
   font-size: 28px;
@@ -1224,6 +1234,23 @@ header nav a.active {
     width: 80%;
   }
 }
+<<<<<<< HEAD
+=======
+.capabilities #about .about-text .bold {
+  font-weight: 500;
+  margin: 20px 0;
+}
+.capabilities #about .about-text h1 {
+  line-height: 50px;
+  margin-bottom: 20px;
+}
+.capabilities #about .about-text p {
+  font-size: 28px;
+  line-height: 34px;
+  margin: 30px 0;
+  color: #000;
+}
+>>>>>>> 4b082de34903dbec22a670b8c271d55f5d5fc992
 @media screen and (max-width: 900px) {
   .capabilities #about .about-block p {
     font-size: 22px;
@@ -2770,4 +2797,276 @@ header nav a.active {
   height: 400px;
   padding: 200px 40px 0 40px;
   margin: 0px auto;
+}
+.edit-project h1 {
+  line-height: 50px;
+}
+.edit-project h3 {
+  border-bottom: 1px solid #333333;
+  margin-bottom: 20px;
+}
+.edit-project a {
+  font-style: normal;
+}
+.edit-project a:hover {
+  font-style: oblique;
+}
+.edit-project button {
+  width: auto;
+  height: 40px;
+  background-color: #333333;
+  text-align: center;
+  font-size: 13px;
+  padding: 0 20px;
+  color: #cccccc;
+}
+.edit-project button:hover {
+  background-color: #ffd24f;
+  color: #333333;
+}
+.edit-project .field {
+  height: 25px;
+  width: 400px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.edit-project .project-form-wrap {
+  border: 6px solid #e7e7e7;
+  width: 70%;
+  height: 100%;
+  float: left;
+}
+.edit-project .project-form-wrap .edit-proj {
+  padding: 40px;
+  padding: 100px 40px 0 40px;
+  float: left;
+  clear: both;
+  width: 90%;
+}
+.edit-project .project-form-wrap .edit-proj #main {
+  margin-bottom: 30px;
+  float: left;
+  clear: both;
+  width: 90%;
+}
+.edit-project .project-form-wrap .edit-proj #main p {
+  float: left;
+  clear: both;
+}
+.edit-project .project-form-wrap .edit-proj #main p input {
+  float: left;
+  clear: both;
+  margin-bottom: 10px;
+}
+.edit-project .project-form-wrap .edit-proj #main p img {
+  float: left;
+  clear: both;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #999;
+}
+.edit-project .project-form-wrap .edit-proj #text {
+  margin-bottom: 30px;
+  height: auto;
+  float: left;
+  clear: both;
+  width: 90%;
+}
+.edit-project .project-form-wrap .edit-proj #text .text-blocks {
+  height: 490px;
+}
+.edit-project .project-form-wrap .edit-proj #text .text-blocks .project-text-block {
+  height: 490px;
+}
+.edit-project .project-form-wrap .edit-proj #text .text-blocks .project-text-block .title {
+  margin: 0 0 20px 0;
+  border: 1px solid #999999;
+}
+.edit-project .project-form-wrap .edit-proj #text .text-blocks .project-text-block .text-box {
+  width: 99%;
+  height: 400px;
+  float: left;
+  clear: both;
+  padding: 5px;
+}
+.edit-project .project-form-wrap .edit-proj #text .btns {
+  float: left;
+  clear: both;
+  margin-top: 20px;
+}
+.edit-project .project-form-wrap .edit-proj #images {
+  float: left;
+  clear: both;
+  width: 90%;
+  height: auto;
+  background-color: #e7e7e7;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.edit-project .project-form-wrap .edit-proj #images .project-image-block {
+  height: auto;
+  float: left;
+  clear: both;
+}
+.edit-project .project-form-wrap .edit-proj #images .project-image-block select {
+  margin-bottom: 20px;
+}
+.edit-project .project-form-wrap .edit-proj #images .project-image-block .browse {
+  float: left;
+  clear: both;
+  margin-bottom: 20px;
+}
+.edit-project .project-form-wrap .edit-proj #images .project-image-block img {
+  width: 100%;
+}
+.edit-project .project-form-wrap .edit-proj #images .btns {
+  float: left;
+  clear: both;
+  margin-top: 20px;
+}
+.edit-project .project-form-wrap .edit-proj #technology {
+  float: left;
+  clear: both;
+  width: 90%;
+  height: auto;
+  background-color: #333333;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.edit-project .project-form-wrap .edit-proj #technology h3 {
+  color: #ffd24f;
+  border-bottom: 1px solid #ffd24f;
+}
+.edit-project .project-form-wrap .edit-proj #technology a {
+  color: #999999;
+}
+.edit-project .project-form-wrap .edit-proj #technology p {
+  color: white;
+  margin-top: 20px;
+}
+.edit-project .project-form-wrap .edit-proj #technology button {
+  background-color: #666666;
+}
+.edit-project .project-form-wrap .edit-proj #technology button:hover {
+  background-color: #ffd24f;
+}
+.edit-project .project-form-wrap .edit-proj #technology p#new-technology input {
+  height: 30px;
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+.edit-project .project-form-wrap .edit-proj #clients {
+  float: left;
+  clear: both;
+  width: 90%;
+  height: auto;
+  margin-bottom: 60px;
+}
+.edit-project .project-form-wrap .edit-proj #clients p {
+  margin: 20px 0 20px 0;
+}
+.edit-project .project-form-wrap .edit-proj #clients p#new-clients input {
+  height: 30px;
+  width: 300px;
+  padding: 5px;
+}
+.edit-project .project-form-wrap .edit-proj #partners {
+  float: left;
+  clear: both;
+  width: 90%;
+  height: auto;
+  background-color: #ffd24f;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.edit-project .project-form-wrap .edit-proj #partners button:hover {
+  background-color: white;
+}
+.edit-project .project-form-wrap .edit-proj #partners p {
+  margin: 20px 0 20px 0;
+}
+.edit-project .project-form-wrap .edit-proj #partners p#new-partners input {
+  height: 30px;
+  width: 300px;
+  padding: 5px;
+}
+.edit-project .project-form-wrap .edit-proj #capabilities {
+  float: left;
+  clear: both;
+  width: 90%;
+  height: auto;
+  background-color: #333333;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.edit-project .project-form-wrap .edit-proj #capabilities h3 {
+  color: #ffd24f;
+  border-bottom: 1px solid #ffd24f;
+}
+.edit-project .project-form-wrap .edit-proj #capabilities a {
+  color: #999999;
+}
+.edit-project .project-form-wrap .edit-proj #capabilities p {
+  color: white;
+  margin: 20px 0 20px 0;
+}
+.edit-project .project-form-wrap .edit-proj #capabilities button {
+  background-color: #666666;
+}
+.edit-project .project-form-wrap .edit-proj #capabilities button:hover {
+  background-color: #ffd24f;
+}
+.edit-project .project-form-wrap .edit-proj #capabilities p#new-technology input {
+  height: 30px;
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+.edit-project .project-form-wrap .edit-proj #more-info {
+  float: left;
+  clear: both;
+  width: 90%;
+  height: auto;
+  background-color: #ffd24f;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.edit-project .project-form-wrap .edit-proj #more-info .info-blocks {
+  height: auto;
+  width: 100%;
+  float: left;
+  clear: both;
+}
+.edit-project .project-form-wrap .edit-proj #more-info .info-blocks .project-info-block {
+  float: left;
+  clear: both;
+  margin-bottom: 20px;
+}
+.edit-project .project-form-wrap .edit-proj #more-info .info-blocks .project-info-block .title {
+  margin: 0 0 10px 0;
+  border: 1px solid #999999;
+}
+.edit-project .project-form-wrap .edit-proj #more-info .info-btns {
+  float: left;
+  clear: both;
+}
+.edit-project .project-form-wrap .edit-proj #more-info .info-btns button:hover {
+  background-color: white;
+}
+.edit-project .project-form-wrap .edit-proj #privacy {
+  float: left;
+  clear: both;
+  width: 90%;
+  height: auto;
+}
+.edit-project .project-form-wrap .edit-proj #privacy h3 {
+  margin: 40px 0 10px 0;
+}
+.edit-project .project-form-wrap .edit-proj #privacy p {
+  margin-bottom: 20px;
+}
+.edit-project .project-form-wrap .edit-proj .bottom-btn {
+  float: left;
+  clear: both;
 }
