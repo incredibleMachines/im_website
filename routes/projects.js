@@ -96,7 +96,7 @@ exports.single_edit = function(db){
 						projectsDB.findOne({slug:name},function(err, project_doc){
 							
 							if(!project_doc){
-								res.render('404', {title: 'Project Not Found', slug:'project-not-found'});
+								res.status(404).render('404', {title: 'Project Not Found', slug:'project-not-found'});
 							}else{
 								if(project_doc.password != null){
 									var decipher = crypto.createDecipher('aes-256-cbc', project_doc.timestamp.toString());

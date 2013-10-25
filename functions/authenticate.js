@@ -27,10 +27,11 @@ exports.project = function(db){
 
 		projects.findOne({slug:name}, 'password',function(err,doc){
 			if(err) throw err;
-			if(!doc) next();  //must ensure we call next to continue processes
-			//console.log(doc.password)
-
-			if(doc.password===null || doc.password == null){ next(); //no password
+			console.log(doc)
+			if(doc === null ){ 
+				console.log('doc==null')
+				next();  //must ensure we call next to continue processes
+			}else if(doc.password===null || doc.password == null){ next(); //no password
 			
 			}else{
 
