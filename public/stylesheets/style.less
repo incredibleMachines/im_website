@@ -1145,6 +1145,7 @@ header {
 		.about-block {
 			width: 100%;
 			margin: 0px auto;
+			overflow:hidden;
 
 			position:fixed;
 			@media screen and (max-width: 600px), (max-device-width: 500px) {
@@ -1152,37 +1153,59 @@ header {
 				height:auto;
 
 			}
+			img{
+				position:relative;
+			}
+
+		} /* ---end about-block--- */
+
+		.about-text{
+			position:absolute;
+			width:100%;
+			background:@black;
+			color:@yellow;
+			height:100%;
+
 			p{
 				width: 80%;
-				margin: 0px auto;
+				padding-top: 12%;
+				margin: 0 auto;
 				font-family:@museo;
-				font-size: 28px;
-				line-height: 40px;
-				padding-top:20px;
-				padding-bottom:50px;
+				color:@yellow;
+				font-size: 60px;
+				line-height: 70px;
+				vertical-align:middle;
 
 				@media screen and (max-width: 1000px) {
 					width: 80%;
 				}
 			}
-
-
-		} /* ---end about-block--- */
+			}
 		#about-intro{
-			top:300px;
+			background-color:@black;
+			top:0;
+			color:yellow
+			p{
+				color:@black;
+				padding-top:10%;
+			}
 		}
 
-		#about-transport, #about-produce{
+		#about-transport{
 			background-color: @black;
 			p{
 				color: @yellow;
 			}
 		}
 
-		#about-obsessed{
-			background:url('../images/yellow_pattern.png');
+		 #produce-text{
+		 	background:url('../images/yellow_pattern.png');
 			background-color: @yellow;
-		}
+			p{
+			color:@black;
+			}
+		 }
+
 
 	} /* ---end about--- */
 	

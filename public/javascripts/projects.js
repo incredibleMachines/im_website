@@ -10,6 +10,7 @@ var videoArray = [{mp4:'Cannes.mp4',ogv:'Cannes.ogv',link:'twitter-cannes'},{mp4
 
 var videoPlay = shuffle(videoArray);
 var videoIndex = 0;
+var aspect=1200/530;
 
 var topPadding=20;
 $('#portfolio').css('padding-top',$('header').height()+topPadding).css('margin-top',-$('header').height());

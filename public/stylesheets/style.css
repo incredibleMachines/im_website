@@ -1195,6 +1195,7 @@ header nav a.active {
 .capabilities #about .about-block {
   width: 100%;
   margin: 0px auto;
+  overflow: hidden;
   position: fixed;
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
@@ -1203,34 +1204,51 @@ header nav a.active {
     height: auto;
   }
 }
-.capabilities #about .about-block p {
+.capabilities #about .about-block img {
+  position: relative;
+}
+.capabilities #about .about-text {
+  position: absolute;
+  width: 100%;
+  background: #000000;
+  color: #ffd24f;
+  height: 100%;
+}
+.capabilities #about .about-text p {
   width: 80%;
-  margin: 0px auto;
+  padding-top: 12%;
+  margin: 0 auto;
   font-family: "museo-slab", "Museo Slab", courier, serif;
-  font-size: 28px;
-  line-height: 40px;
-  padding-top: 20px;
-  padding-bottom: 50px;
+  color: #ffd24f;
+  font-size: 60px;
+  line-height: 70px;
+  vertical-align: middle;
 }
 @media screen and (max-width: 1000px) {
-  .capabilities #about .about-block p {
+  .capabilities #about .about-text p {
     width: 80%;
   }
 }
 .capabilities #about #about-intro {
-  top: 300px;
+  background-color: #000000;
+  top: 0;
 }
-.capabilities #about #about-transport,
-.capabilities #about #about-produce {
+.capabilities #about #about-intro color:yellow p {
+  color: #000000;
+  padding-top: 10%;
+}
+.capabilities #about #about-transport {
   background-color: #000000;
 }
-.capabilities #about #about-transport p,
-.capabilities #about #about-produce p {
+.capabilities #about #about-transport p {
   color: #ffd24f;
 }
-.capabilities #about #about-obsessed {
+.capabilities #about #produce-text {
   background: url('../images/yellow_pattern.png');
   background-color: #ffd24f;
+}
+.capabilities #about #produce-text p {
+  color: #000000;
 }
 .capabilities #skills-section {
   position: absolute;
