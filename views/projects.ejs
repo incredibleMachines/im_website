@@ -14,7 +14,10 @@
 				</a>
 				<p><% for (var j=0; j<projects[i].clients.length; j++){ %>
 					<%= projects[i].clients[j].name %><% if (j<projects[i].clients.length-1) { %>, <% } %>
-			<% 	} %>
+			<% 	} if(projects[i].clients.length==0){%>
+			<%= projects[i].location %><%
+
+			} %>
 				</p>
 			</article>
 		<% 	} %>

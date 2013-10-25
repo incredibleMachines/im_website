@@ -5,7 +5,9 @@
 		
 			<h1>Clients</h1>
 			
-			<% for(var i = 0; i< clients.length; i++){ %>
+			<% for(var i = 0; i< clients.length; i++){ 
+
+				if(clients[i].name!='various'){%>
 
 			<!-- CLIENT INFO -->
 				<section class="client-detail" id="<%= makeSlug(clients[i].name) %>">
@@ -68,10 +70,12 @@
 					</article>
 				</section>	
 
-										<% } %>
+										<% } }%>
 
 			<div id="client-list">		
-				<% for(var i = 0; i< clients.length; i++){ %>
+				<% for(var i = 0; i< clients.length; i++){
+
+					if(clients[i].name!='various'){%>
 
 					<article class="client" id="<%= makeSlug(clients[i].name) %>">
 						<div class="corner">
@@ -80,7 +84,7 @@
 						<h2><%=clients[i].name%></h2>
 					</article>
 
-		<% } %>
+		<% } }%>
 	</section>
 	</div> <!-- end client-wrap -->
 	
