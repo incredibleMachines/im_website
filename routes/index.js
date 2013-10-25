@@ -17,10 +17,16 @@ exports.index = function(db){
 		//array push each project 
 	}
 };
+/*
+ *	GET reel page
+ */
 
 exports.reel = function(req,res){
 	res.render('reel', {title: 'The Reel', slug: 'reel'});
 }
+/* 
+ *  GET 404 page
+ */
 exports.forohfor = function(req,res){
 	res.render('404',{title:'Page Not Found',slug:'404'})
 }
