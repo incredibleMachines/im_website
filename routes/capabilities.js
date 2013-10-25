@@ -9,6 +9,7 @@ exports.view = function(db){
 		var capabilities = db.get('capabilities');
 		var projects = db.get('projects');
 		var clients = db.get('clients');
+		res.setHeader('location','/capabilities#produce-text');
 
 
 		capabilities.find({order:{$gte:0}}, function(err,docs){
@@ -28,13 +29,16 @@ exports.view = function(db){
 					confirmed++;
 					if(confirmed == docs.length){
 						console.log(JSON.stringify(docs));
+						
+						var session = false;
 						if(req.session.capabilities){
-							res.location('/capabilities#produce-text');
+							console.log('session');
+							session = true;
 						}else{
 							req.session.capabilities = new Date();
 						}
-						
-						res.render('capabilities', { title: 'Capabilities', slug: 'capabilities', capabilities:docs });
+
+						res.render('capabilities', { title: 'Capabilities', slug: 'capabilities', capabilities:docs, session: session });
 
 					}
 				});

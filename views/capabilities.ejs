@@ -119,6 +119,20 @@
 %>
 
     <script src="/javascripts/capabilities.js"></script>
-
+    <% if(session===true){ %>
+    	<script>
+    		//script to change browser location if there is a capability session
+    		//only runs if session === true
+    		//get current window location
+    		var currentLocation = window.location;
+	    	
+	    	//checks if location.hash is populated
+	    	//if its not populate
+	    	if(!currentLocation.hash){
+	    		//send users to the produce text location
+    			window.location = currentLocation+"#produce-text";
+    		}
+    	</script>
+    <% } %>
 </body>
 </html>
