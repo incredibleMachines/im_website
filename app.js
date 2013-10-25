@@ -94,6 +94,8 @@ app.post('/technologies/:action',technologies.action(db));
 app.post('/login', admin.auth(db));
 app.post('/create',admin.create(db));
 
+app.get('/*',routes.forohfor);
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

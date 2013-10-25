@@ -21,3 +21,6 @@ exports.index = function(db){
 exports.reel = function(req,res){
 	res.render('reel', {title: 'The Reel', slug: 'reel'});
 }
+exports.forohfor = function(req,res){
+	res.render('404',{title:'FourohFour',slug:'404'})
+}
