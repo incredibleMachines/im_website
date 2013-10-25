@@ -10,6 +10,7 @@ exports.view = function(db){
 		var projects = db.get('projects');
 		var clients = db.get('clients');
 
+
 		capabilities.find({order:{$gte:0}}, function(err,docs){
 
 			//iterate through each capability and find out which projects are linked
@@ -27,6 +28,12 @@ exports.view = function(db){
 					confirmed++;
 					if(confirmed == docs.length){
 						console.log(JSON.stringify(docs));
+						if(req.session.capabilities){
+							res.location('/capabilities#produce-text');
+						}else{
+							req.session.capabilities = new Date();
+						}
+						
 						res.render('capabilities', { title: 'Capabilities', slug: 'capabilities', capabilities:docs });
 
 					}
