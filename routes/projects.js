@@ -359,7 +359,7 @@ exports.update_order = function(db){
 
 					}
 					//check project password
-					if(post.project_password){
+					if(post.project_password && post.project_password != '' ){
 						// console.log('Password');
 						
 						var cipher = crypto.createCipher('aes-256-cbc', doc.timestamp.toString());
