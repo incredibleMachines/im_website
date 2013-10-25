@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
 $('nav a').removeClass('active');
-$('nav a:first-child').attr("href",'#portfolio');
-$('#portfolio-wrap').css('padding-top',$('header').height())
+$('nav a:contains("Featured Work")').addClass('active');
+$('#portfolio-wrap').css('padding-top',$('header').height());
 
 	$('a[href*=#]:not([href=#])').click(function() {
 	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
