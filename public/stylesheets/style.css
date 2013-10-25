@@ -1215,14 +1215,15 @@ header nav a.active {
   height: 100%;
 }
 .capabilities #about .about-text p {
-  width: 80%;
-  padding-top: 12%;
+  width: 75%;
+  padding-top: 18%;
   margin: 0 auto;
   font-family: "museo-slab", "Museo Slab", courier, serif;
   color: #ffd24f;
   font-size: 60px;
   line-height: 70px;
   vertical-align: middle;
+  text-align: center;
 }
 @media screen and (max-width: 1000px) {
   .capabilities #about .about-text p {
@@ -1291,6 +1292,8 @@ header nav a.active {
 }
 .capabilities #skills-section #skills ul li {
   border-bottom: 1px solid #999999;
+  height: 50px;
+  margin-top: 10px;
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #skills-section #skills ul li {
@@ -1309,7 +1312,7 @@ header nav a.active {
   text-transform: uppercase;
   font-style: normal;
   font-size: 40px;
-  line-height: 86px;
+  line-height: 60px;
 }
 @media screen and (max-width: 1220px) {
   .capabilities #skills-section #skills ul li a {
@@ -1963,6 +1966,10 @@ header nav a.active {
   color: #ffffff;
 }
 /*--- end footer-bg-wrap---*/
+/*--------------------------- Reel ---------------------------*/
+.reel {
+  background-color: #000;
+}
 /*-------------------------------------------------------------------------------*/
 /*--------------------------- BACK END EDIT MODE SHIZ ---------------------------*/
 /*-------------------------------------------------------------------------------*/
