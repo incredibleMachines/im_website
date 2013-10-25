@@ -33,17 +33,17 @@ $(document).ready(function(){
 		var amtScroll = $('body').scrollTop();
 
 		if($('.about-block').css('position')!='relative'){
-			if(amtScroll>8.5*aboutHeight+$('#about-skills').height()-$('#skills').height()){
+			if(amtScroll>7.7*aboutHeight+$('#about-skills').height()-$('#skills').height()){
 				$('#skills').css('position','absolute').css('top',$('#about-skills').height()-$('#skills').height()+parseInt($('#about-skills').css('margin-bottom')));
 				scrollLock=false;
 			}
 			
-			else if(amtScroll>8.5*aboutHeight-$('header').height()){
+			else if(amtScroll>7.7*aboutHeight-$('header').height()){
 				if(scrollLock==false){
 					$('#skills').css('position','fixed').css('top',headerHeight);
 					scrollLock=true;
 				}
-				var currentHeight=8.5*aboutHeight+headerHeight;
+				var currentHeight=7.7*aboutHeight+headerHeight;
 				var navHeight=$('#skills ul li').height();
 				var skillCount=0;
 				var offset=250;
@@ -136,7 +136,7 @@ $(document).ready(function(){
 			scrollLock=false;
 			userScroll();
 
-			$('#skills-section').css('top',8.5*aboutHeight);
+			$('#skills-section').css('top',7.7*aboutHeight);
 
 			$("#about-transport, #about-obsessed, #about-produce").css('position','absolute');
 			$('#about-transport').css('top',aboutHeight);

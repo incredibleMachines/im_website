@@ -1216,7 +1216,7 @@ header nav a.active {
 }
 .capabilities #about .about-text p {
   width: 80%;
-  padding-top: 20%;
+  padding-top: 12%;
   margin: 0 auto;
   font-family: "museo-slab", "Museo Slab", courier, serif;
   color: #ffd24f;
@@ -1230,25 +1230,25 @@ header nav a.active {
   }
 }
 .capabilities #about #about-intro {
-  top: 300px;
-  background: url('../images/yellow_pattern.png');
-  background-color: #ffd24f;
+  background-color: #000000;
+  top: 0;
 }
-.capabilities #about #about-intro p {
+.capabilities #about #about-intro color:yellow p {
   color: #000000;
-  padding-top: 0;
+  padding-top: 10%;
 }
-.capabilities #about #about-transport,
-.capabilities #about #about-produce {
+.capabilities #about #about-transport {
   background-color: #000000;
 }
-.capabilities #about #about-transport p,
-.capabilities #about #about-produce p {
+.capabilities #about #about-transport p {
   color: #ffd24f;
 }
-.capabilities #about #about-obsessed {
+.capabilities #about #produce-text {
   background: url('../images/yellow_pattern.png');
   background-color: #ffd24f;
+}
+.capabilities #about #produce-text p {
+  color: #000000;
 }
 .capabilities #skills-section {
   position: absolute;
