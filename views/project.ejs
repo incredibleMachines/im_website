@@ -38,6 +38,7 @@
 <!-- TEXT BLOCKS-->
 	<% 
 	var imgCount=0;
+	var projectCount=0;
 		
 	for(var i = 0; i< project.textBlocks.length; i++){ %>
 			<section class="project-text-titled">
@@ -49,6 +50,24 @@
 			</article>
 			</section>
 		<%
+		if(imgCount<project.imageBlocks.length){ %>
+		<section class="photo-block-multi">
+		<% 
+			for(var j= 0; j<project.imageBlocks[imgCount].length; j++){ %>
+			<div class="img-wrap" data-image-size="<%= project.imageBlocks[imgCount][j].size  %>">
+			<img src="<%= project.imageBlocks[imgCount][j].path  %>" alt="alt text" />
+			</div>
+		<% 
+			} %>
+		</section>
+		<%
+		imgCount++; 
+		}
+	}
+		%>
+
+		<% if(project.imageBlocks.length-project.textBlocks.length>2){
+
 		if(imgCount<project.imageBlocks.length){ %>
 		<section class="photo-block-multi">
 		<% 
@@ -108,6 +127,9 @@
 		imgCount++; 
 		}
 		%>
+
+
+		
 		
 		
 		<!-- PARTNERS, MORE INFO -->
@@ -139,19 +161,18 @@
 		</article>
 	</section>
 
-			<%
-		if(imgCount<project.imageBlocks.length){ %>
+		<%
+		for(var i=imgCount; i<project.imageBlocks.length;i++){ %>
 		<section class="photo-block-multi">
 		<% 
-			for(var j= 0; j<project.imageBlocks[imgCount].length; j++){ %>
-			<div class="img-wrap" data-image-size="<%= project.imageBlocks[imgCount][j].size  %>">
-			<img src="<%= project.imageBlocks[imgCount][j].path  %>" alt="alt text" />
+			for(var j= 0; j<project.imageBlocks[i].length; j++){ %>
+			<div class="img-wrap" data-image-size="<%= project.imageBlocks[i][j].size  %>">
+			<img src="<%= project.imageBlocks[i][j].path  %>" alt="alt text" />
 			</div>
 		<% 
 			} %>
 		</section>
 		<%
-		imgCount++; 
 		}
 		%>
 
