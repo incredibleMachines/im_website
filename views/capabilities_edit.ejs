@@ -4,8 +4,9 @@
 	<section class="new-cap">
 		<form enctype="multipart/form-data" action="/capabilities/submit" method="post">
 			<h3>Add New Capabilities</h3>
-			<input name="name" class="field" placeholder="Enter Title">
+			<input type="text" name="name" class="field" placeholder="Enter Title">
 			<textarea name="text" class="text-box" placeholder="Enter Description"></textarea>
+			<input type="number" name="order" class="field" placeholder="Enter Order Number">
 			<button type="submit">Add</button>
 		</form>
 	</section>
@@ -17,6 +18,7 @@
 				<input type="text" class="field" name="name" value="<%= capabilities[i].name %>">
 				<textarea name="text" class="text-box"><%= capabilities[i].text %></textarea>
 				<input type="hidden" class="field" name="_id" value="<%= capabilities[i]._id %>">
+				<input type="number" name="order" class="field" value="<%=capabilities[i].order %>"/>
 				<article class="btns">
 					<button type="submit">Update</button>
 					<button type="button" class="delete">Delete</button>

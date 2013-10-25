@@ -18,7 +18,7 @@ exports.featured = function(db){
 
 		var projects = db.get('projects');
 
-		projects.find({featured: true},function(err,docs){
+		projects.find({featured: true,order:{$gte: 0}},function(err,docs){
 			console.log(docs);
 			res.render('projects', { title: 'Featured Projects' , slug: 'projects', projects: docs});
 
@@ -36,7 +36,7 @@ exports.single = function(db) {
 		var name = req.params.name;
 		//query the database and load all the info
 		var projects = db.get('projects');
-		projects.find({featured: true},'_id slug title',function(err,project_docs){
+		projects.find({featured: true,order:{$gte: 0}},'_id slug title',function(err,project_docs){
 			
 
 			projects.findOne({slug:name},function(err,doc){
@@ -140,7 +140,7 @@ exports.action = function(db) {
 }
 
 /*
- * GET project/:name/:action
+ * GET projects/edit
  */
 
 exports.edit = function(db){
@@ -164,7 +164,7 @@ exports.edit = function(db){
 					techologiesDB.find({},function(err,technology_docs){
 						data.technology = technology_docs;
 
-						projectsDB.find({},function(err, project_docs){
+						projectsDB.find({order:{$gte:0}},function(err, project_docs){
 							data.projects = project_docs;
 							//console.log(data)
 							res.render('projects_edit', { title: 'Edit Projects', slug: 'edit-projects', data: data});
@@ -213,6 +213,23 @@ exports.edit = function(db){
  	}
  }
 
+
+exports.update_order = function(db){
+
+	return function(req,res){
+		var post = req.body; //this is our form data
+		console.log(post)
+		var projects = db.get('projects');
+
+		var update_obj = {$set: {order: parseInt(post.order)}};
+		projects.update({_id: post._id},update_obj,function(err){
+
+				res.redirect('/projects/edit');
+	 			res.location('/projects/edit');
+		})
+	}
+}
+
 /* 
  *
  * POST project/:name/update
@@ -239,6 +256,7 @@ exports.edit = function(db){
 		//update base
 		var model = {	title: post.project_title, 
 						slug: post.project_slug,
+						order: parseInt(post.project_order),
 						video_url: post.project_video,
 						video_backup: post.project_video_backup,
 						featured: (post.project_featured === 'true')? true : false,
@@ -484,6 +502,7 @@ exports.store = function(db){
 		var project_obj = {
 						title: post.project_title,
 						slug: post.project_slug,
+						order: parseInt(post.project_order),
 						location: post.project_location,
 						video_url: post.project_video,
 						video_backup: post.project_video_backup,

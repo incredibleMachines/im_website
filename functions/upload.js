@@ -87,7 +87,7 @@ exports.clientImage = function(files, callback){
 	var path = "./public/uploads/clients/"+image.originalFilename;
 
 	fs.rename("./"+image.path, path, function(err){
-
+			
 			image.path = path.substring(8);
 			image.type = image.headers['content-type'];
 			image.name = image.originalFilename;

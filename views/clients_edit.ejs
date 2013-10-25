@@ -7,6 +7,7 @@
 	    	<h3>Add A New Client</h3>
 	    	<input name="name" class="field" placeholder="Client Name">
 	    	<textarea name="caption" class="text-box" placeholder="Caption for client photo"></textarea>
+	    	<input type="number" name="order" class='field' placeholder="Enter Order"/>
 	    	<input type="file" name="image" class="field" >
 	    	<button type="submit">Add</button>
 	    </form>
@@ -18,6 +19,7 @@
 			<form enctype="multipart/form-data" action="/clients/update" method="post">
 				<input type="text" name="name" class="field" value="<%= clients[i].name %>">
 				<textarea class="text-box" name="caption"><%= clients[i].caption%></textarea>
+				<input type="number" name="order" class='field' value="<%= clients[i].order%>"/>
 				<img src="<%= clients[i].image.path %>">
 				<input type="file" name="image" class="field" >
 				<input type="hidden" name="_id" class="field" value="<%= clients[i]._id %>">

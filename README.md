@@ -46,7 +46,15 @@ Make sure mongod is running
 
 Ensure DB indexes
 	
-	$ mongo im_site	
+	$ mongo 
+
+	$ use im_site
+
+	$ db.projects.ensureIndex({order:1})
+
+	$ db.capabilities.ensureIndex({order:1})
+
+	$ db.clients.ensureIndex({order:1})	
 	
 	$ db.projects.ensureIndex({timestamp: -1})	
 

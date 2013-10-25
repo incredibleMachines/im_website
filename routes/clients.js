@@ -10,7 +10,7 @@ exports.view = function(db){
 		var partners = db.get('partners');
 		var projects = db.get('projects');
 
-		clients.find({},function(err,client_docs){
+		clients.find({order:{$gte:0}},function(err,client_docs){
 			console.log(client_docs);
 			if(client_docs.length==0) res.render('clients', { title: 'No Clients', slug: 'clients', clients: [], partners: []})
 			//iterate through the clients and find projects that are associated
@@ -71,10 +71,10 @@ exports.action = function(db){
 			if(req.files.image.name===''){
 
 				console.log('no files');
-				var update_obj = { $set: { name: post.name, caption: post.caption}}
+				var update_obj = { $set: { name: post.name, caption: post.caption, order: parseInt(post.order)}}
 				clients.update({_id:post._id},update_obj,function(err,doc){
 	
-					clients.find({}, function(err,docs){
+					clients.find({order:{$gte:0}}, function(err,docs){
 						//console.log(docs)
 						res.render('clients_edit', { title: 'Client Updated',slug: 'edit-clients', clients: docs });
 
@@ -87,13 +87,13 @@ exports.action = function(db){
 					console.log(image);
 
 					post.image = image;
-					var update_obj = { $set: { name: post.name, caption: post.caption, image: post.image}}
+					var update_obj = { $set: { name: post.name, caption: post.caption, image: post.image, order: parseInt(post.order)}}
 
 					clients.update({_id:post._id}, update_obj , function(err,doc){
 
 						//console.log(post);
 
-						clients.find({}, function(err,docs){
+						clients.find({order:{$gte:0}}, function(err,docs){
 							//console.log(docs)
 							res.render('clients_edit', { title: 'Client Updated',slug: 'edit-clients', clients: docs });
 
@@ -108,7 +108,7 @@ exports.action = function(db){
 
 			clients.remove({_id:post._id},function(err,doc){
 
-				clients.find({}, function(err,docs){
+				clients.find({order:{$gte:0}}, function(err,docs){
 					//console.log(docs)
 					res.render('clients_edit', { title: 'Client Deleted',slug: 'edit-clients', clients: docs });
 
@@ -127,12 +127,13 @@ exports.action = function(db){
 				post.image = image;
 				post.projects =[];
 				post.capabilities = [];
+				post.order = parseInt(post.order);
 
 				clients.insert(post, function(err,doc){
 
 					//console.log(post);
 
-					clients.find({}, function(err,docs){
+					clients.find({order:{$gte:0}}, function(err,docs){
 						//console.log(docs)
 						res.render('clients_edit', { title: 'Client Added',slug: 'edit-clients', clients: docs });
 

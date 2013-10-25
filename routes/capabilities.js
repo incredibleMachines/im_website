@@ -10,7 +10,7 @@ exports.view = function(db){
 		var projects = db.get('projects');
 		var clients = db.get('clients');
 
-		capabilities.find({}, function(err,docs){
+		capabilities.find({order:{$gte:0}}, function(err,docs){
 
 			//iterate through each capability and find out which projects are linked
 			//console.log(docs.length)
@@ -21,7 +21,7 @@ exports.view = function(db){
 				//find associated projects where capabilities id is in project capability array
 				var find_obj = {capabilities: {$elemMatch: { _id: v._id.toString() } } };
 				projects.find(find_obj,'thumbnail title slug clients', function(err, project_docs){
-					console.log(i+": "+JSON.stringify(project_docs));
+					//console.log(i+": "+JSON.stringify(project_docs));
 
 					docs[i].projects = project_docs;
 					confirmed++;
@@ -43,7 +43,7 @@ exports.edit = function(db){
 	return function(req, res){
 
 		var capabilities = db.get('capabilities');
-		capabilities.find({}, function(err,docs){
+		capabilities.find({order: {$gte:0}}, function(err,docs){
 			//console.log(docs)
   			res.render('capabilities_edit', { title: 'Edit Capabilities', slug: 'edit-capabilities', capabilities: docs });
   		});
@@ -62,12 +62,13 @@ exports.action = function(db){
 		console.log(post);
 		
 		if(action == 'update'){
-			var update_obj = {$set: {name: post.name, text: post.text}};
+			var update_obj = {$set: {name: post.name, text: post.text, order: parseInt(post.order)}};
 			capabilities.update({_id:post._id},update_obj, function(err, doc){
 				if(err) throw err;
 				//console.log(doc);
-				capabilities.find({}, function(err,docs){
-					//console.log(docs)
+				capabilities.find({order: {$gte:0}}, function(err,docs){
+					console.log(docs)
+
 		  			res.render('capabilities_edit', { title: 'Capabilities Updated', slug: 'edit-capabilities', capabilities: docs });
 		  		});
 
@@ -81,7 +82,7 @@ exports.action = function(db){
 			capabilities.remove({_id:post._id},function(err,doc){
 				if(err) throw err;
 				//console.log('removed');
-				capabilities.find({}, function(err,docs){
+				capabilities.find({order: {$gte:0}}, function(err,docs){
 					//console.log(docs)
 		  			res.render('capabilities_edit', { title: 'Capability Deleted', slug: 'edit-capabilities', capabilities: docs });
 		  		});
@@ -92,11 +93,12 @@ exports.action = function(db){
 			post.slug = post.name.toLowerCase().replace(/ /g,'-');
 			post.projects = [];
 			post.clients = [];
+			post.order = parseInt(post.order);
 			capabilities.insert(post, function(err,doc){
 
 				if(err) throw err;
 
-				capabilities.find({}, function(err,docs){
+				capabilities.find({order: {$gte:0}}, function(err,docs){
 					//console.log(docs)
 		  			res.render('capabilities_edit', { title: 'Capability Added', slug: 'edit-capabilities', capabilities: docs });
 		  		});
