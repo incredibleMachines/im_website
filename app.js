@@ -79,6 +79,7 @@ app.get('/admin/index',authenticate.admin,admin.index); //index??
 //post routes
 app.post('/projects', projects.store(db));
 app.post('/projects/login', projects.login(db));
+app.post('/projects/order', projects.update_order(db));
 
 app.post('/projects/:name/update',projects.single_update(db) );
 

@@ -9,6 +9,7 @@
 				<h3>Title, Slug, and Video Info</h3>
 				<p>Title<br/><input type="text" name="project_title" class="project_title field" placeholder="Project Title" value="<%= data.project.title %>"/></p>
 				<p>Slug<br/><input type="text" name="project_slug" class="project_slug field" value="<%= data.project.slug %>"/></p>
+				<p><input type="number" name="project_order" class="field" value="<%= data.project.order %>"/></p>
 				<p>Location<br/><input type="text" name="project_location" class="field" value="<%= data.project.location %>"/></p>
 
 				<p>Vimeo URL <br/><input type="text" name="project_video"  class="field" value="<%= data.project.video_url %>"/></p>
