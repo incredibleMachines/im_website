@@ -3042,3 +3042,18 @@ header nav a.active {
   float: left;
   clear: both;
 }
+.page404,
+.page500 {
+  padding: 10%;
+  padding-top: 22%;
+  background: #000;
+  min-height: 400px;
+}
+.page404 p,
+.page500 p {
+  font-family: "museo-slab", "Museo Slab", courier, serif;
+  color: #ffd24f;
+  font-size: 60px;
+  line-height: 70px;
+  vertical-align: middle;
+}
