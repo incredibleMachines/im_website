@@ -28,5 +28,9 @@ exports.reel = function(req,res){
  *  GET 404 page
  */
 exports.forohfor = function(req,res){
-	res.render('404',{title:'Page Not Found',slug:'404'})
+	res.status(404).render('404',{title:'Oops - we don\'t have that page',slug:'page-not-found'})
+}
+
+exports.fivehundred = function(req,res){
+	res.status(500).render('500',{title:'Internal Service Error', slug:'internal-error' });
 }

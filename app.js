@@ -42,7 +42,8 @@ app.use(express.session());//sessions!
 app.use(app.router);
 app.use( less( {src: __dirname+ '/public', force: true } ) );
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(routes.forohfor);
+app.use(routes.fivehundred);
 
 //development only
 if ('development' == app.get('env')) {
@@ -94,7 +95,7 @@ app.post('/technologies/:action',technologies.action(db));
 app.post('/login', admin.auth(db));
 app.post('/create',admin.create(db));
 
-app.get('/*',routes.forohfor);
+//app.get('*',routes.forohfor);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
