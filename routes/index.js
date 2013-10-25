@@ -11,7 +11,7 @@ exports.index = function(db){
 
 		projects.find({featured: true},function(err,docs){
 			console.log(docs);
-			res.render('projects', { title: 'Incredible Machines' , slug: 'projects', projects: docs});
+			res.render('index', { title: 'Incredible Machines' , slug: 'projects', projects: docs});
 
 		});
 		//array push each project 

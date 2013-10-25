@@ -1,5 +1,39 @@
 <% include includes/header %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= slug %></p>
-    <li>stuff</li>
-<% include includes/footer %>
+	<!-- PORTFOLIO WRAP -->
+	<div id="portfolio-wrap">
+	
+		<!-- INTRO VIDEO -->
+		<section class="intro-vid">
+			<a href="" class="vid-project">
+				<video id="intro-video-1" class="video-js vjs-project-page" autoplay muted>
+                       Your browser does not support the video tag. </video>
+            </a>
+			<div class="introLogo">
+				<a href="/projects">
+					<img src="/images/im_logo.png" alt="Incredible Machines"/>
+				</a>
+			</div>
+		</section> <!-- end "video" -->
+		
+		<!-- PORTFOLIO -->
+		<section id="portfolio">
+			<% for (var i=0; i<projects.length; i++){ %>
+			<article class="port-item">
+				<a href="/projects/<%= projects[i].slug %>">
+					<div class="poster-image">	
+						<img src="<%= projects[i].thumbnail.path %>" alt="project title" />
+					</div>
+					<h2><%= projects[i].title %></h2>
+				</a>
+				<p><% for (var j=0; j<projects[i].clients.length; j++){ %>
+					<%= projects[i].clients[j].name %><% if (j<projects[i].clients.length-1) { %>, <% } %>
+			<% 	} %>
+				</p>
+			</article>
+		<% 	} %>
+		</section> <!-- end "portfolio" -->
+	</div> <!-- end "portfolio wrap" -->
+	<% include includes/footer %>
+	<script src="/javascripts/projects.js"></script>
+</body>
+</html>
