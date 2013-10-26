@@ -275,6 +275,7 @@ header nav a:hover {
   color: #ffffff;
   font-weight: 100;
   padding-top: 5px;
+  font-style: oblique;
 }
 @media screen and (max-width: 828px), (max-device-width: 500px) {
   header nav a:hover {
@@ -288,6 +289,7 @@ header nav a.active {
   color: #ffffff;
   font-weight: 100;
   padding-top: 5px;
+  font-style: oblique;
 }
 @media screen and (max-width: 828px), (max-device-width: 500px) {
   header nav a.active {
@@ -333,10 +335,18 @@ header nav a.active {
   top: 0;
   left: 0;
 }
+.projects #portfolio-wrap .intro-vid {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
 @media screen and (max-width: 828px), (max-device-width: 500px) {
   .projects #portfolio-wrap .intro-vid {
     display: none;
   }
+}
+.projects #portfolio-wrap .intro-vid #intro-video-1 {
+  overflow: hidden;
 }
 .projects #portfolio-wrap .introLogo {
   position: absolute;
@@ -350,14 +360,15 @@ header nav a.active {
   width: 100%;
 }
 .projects #portfolio-wrap #portfolio .port-item {
-  margin: 0 0 2% 3.3%;
-  width: 45%;
+  margin: 0 0 2% 2.5%;
+  width: 30%;
   float: left;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1200px) {
   .projects #portfolio-wrap #portfolio .port-item {
+    margin-left: 3.3%;
     padding: 0;
-    width: 30%;
+    width: 45%;
   }
 }
 @media screen and (max-width: 828px), (max-device-width: 500px) {
@@ -388,7 +399,7 @@ header nav a.active {
   clear: both;
   width: 95%;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 500px) {
   .projects #portfolio-wrap #portfolio .port-item a h2 {
     text-align: center;
     margin: 0 10px;
@@ -406,7 +417,7 @@ header nav a.active {
   clear: both;
   line-height: 20px;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 500px) {
   .projects #portfolio-wrap #portfolio .port-item p {
     text-align: center;
     margin: 0 10px;
@@ -502,7 +513,6 @@ header nav a.active {
   height: 148px;
   float: left;
   clear: both;
-  padding-bottom: 18px;
   /* --- end previous-proj --- */
 
   /* --- end project-meta --- */
@@ -515,7 +525,7 @@ header nav a.active {
   height: 100%;
   float: left;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .single-project .title-nav .previous-proj {
     width: 9%;
   }
@@ -525,8 +535,9 @@ header nav a.active {
   float: left;
   text-align: left;
   font-size: 16px;
+  display: none;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .single-project .title-nav .previous-proj .nav-label-prev {
     display: none;
   }
@@ -576,7 +587,7 @@ header nav a.active {
   height: 100%;
   float: right;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .single-project .title-nav .next-proj {
     width: 9%;
   }
@@ -586,8 +597,9 @@ header nav a.active {
   float: right;
   text-align: right;
   font-size: 16px;
+  display: none;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px), (max-device-width: 500px) {
   .single-project .title-nav .next-proj .nav-label-next {
     display: none;
   }
@@ -658,7 +670,6 @@ header nav a.active {
 .single-project .list-block {
   clear: both;
   float: left;
-  border-bottom: 1px solid #ffffff;
   width: 100%;
   padding: 30px 0;
 }
@@ -702,7 +713,7 @@ header nav a.active {
   padding-left: 2.5%;
   float: left;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1300px) {
   .single-project .list-block .column-left .list {
     width: 100%;
     padding-left: 0;
@@ -810,7 +821,7 @@ header nav a.active {
 @media screen and (max-width: 900px), (max-device-width: 500px) {
   .single-project .list-block .column-right .list ul li {
     clear: none;
-    padding-right: 5px;
+    padding-right: 14px;
   }
 }
 .single-project .cap-tech {
@@ -894,7 +905,7 @@ header nav a.active {
 @media screen and (max-width: 900px), (max-device-width: 500px) {
   .single-project .partner-info .column-left .list ul li {
     clear: none;
-    padding-right: 5px;
+    padding-right: 14px;
   }
 }
 .single-project .partner-info .column-right {
@@ -1146,7 +1157,11 @@ header nav a.active {
   letter-spacing: 0;
   float: left;
   margin-right: 20px;
+  font-style: normal;
   color: #ffd24f;
+}
+.single-project .footer-bg-wrap .footer-pg-wrap footer #strip #copyright #reel a a:hover {
+  font-style: oblique;
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #copyright #reel a {
@@ -1189,6 +1204,12 @@ header nav a.active {
   /* ---end about-block--- */
 
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #about {
+    padding: 0;
+    height: auto;
+  }
+}
 .capabilities #about img {
   width: 100%;
 }
@@ -1196,12 +1217,14 @@ header nav a.active {
   width: 100%;
   margin: 0px auto;
   overflow: hidden;
+  line-height: 20px;
   position: fixed;
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #about .about-block {
     position: relative;
     height: auto;
+    line-height: 10px;
   }
 }
 .capabilities #about .about-block img {
@@ -1213,6 +1236,12 @@ header nav a.active {
   background: #000000;
   color: #ffd24f;
   height: 100%;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #about .about-text {
+    position: relative;
+    height: auto;
+  }
 }
 .capabilities #about .about-text p {
   width: 75%;
@@ -1230,13 +1259,27 @@ header nav a.active {
     width: 80%;
   }
 }
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #about .about-text p {
+    font-size: 30px;
+    line-height: 40px;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    text-align: left;
+  }
+}
 .capabilities #about #about-intro {
   background-color: #000000;
   top: 0;
+  color: #ffd24f;
 }
-.capabilities #about #about-intro color:yellow p {
-  color: #000000;
+.capabilities #about #about-intro p {
   padding-top: 10%;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #about #about-intro p {
+    padding-top: 20%;
+  }
 }
 .capabilities #about #about-transport {
   background-color: #000000;
@@ -1247,10 +1290,16 @@ header nav a.active {
 .capabilities #about #produce-text {
   background: url('../images/yellow_pattern.png');
   background-color: #ffd24f;
-  padding-top: 13%;
+  padding-top: 0;
 }
 .capabilities #about #produce-text p {
   color: #000000;
+}
+@media screen and (max-width: 600px), (max-device-width: 500px) {
+  .capabilities #about #produce-text p {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
 }
 .capabilities #skills-section {
   position: absolute;
@@ -1627,7 +1676,7 @@ header nav a.active {
   position: absolute;
   width: 92.5%;
   margin-left: 2.5%;
-  padding: 40px 0 20px 2.5%;
+  padding: 40px 0 40px 2.5%;
   z-index: 20;
   /*--- end corner ---*/
 
@@ -1678,7 +1727,7 @@ header nav a.active {
 @media screen and (max-width: 960px) {
   .clients #client-wrap .client-detail .detail-col {
     width: 45%;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-left: 0;
     margin-right: 4%;
   }
@@ -1686,7 +1735,7 @@ header nav a.active {
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .clients #client-wrap .client-detail .detail-col {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-left: 0;
     margin-right: 0;
   }
@@ -1697,6 +1746,7 @@ header nav a.active {
 }
 .clients #client-wrap .client-detail .detail-col .detail-list {
   clear: both;
+  padding-top: 20px;
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .clients #client-wrap .client-detail .detail-col .detail-list {
@@ -1736,7 +1786,7 @@ header nav a.active {
   padding: 80px 0;
 }
 .clients .list-block .column {
-  padding-left: 5%;
+  padding-left: 2.5%;
   float: left;
   width: 95%;
 }
@@ -1809,7 +1859,7 @@ header nav a.active {
 @media screen and (max-width: 900px), (max-device-width: 500px) {
   .clients .list-block .column .list ul li {
     clear: none;
-    padding-right: 5px;
+    padding-right: 15px;
   }
 }
 .clients .cap-tech {
@@ -1970,6 +2020,22 @@ header nav a.active {
 /*--------------------------- Reel ---------------------------*/
 .reel {
   background-color: #000;
+}
+/*--------------------------- 404 ERROR, 500 ERROR ---------------------------*/
+.page404,
+.page500 {
+  padding: 10%;
+  padding-top: 22%;
+  background: #000;
+  min-height: 400px;
+}
+.page404 p,
+.page500 p {
+  font-family: "museo-slab", "Museo Slab", courier, serif;
+  color: #ffd24f;
+  font-size: 60px;
+  line-height: 70px;
+  vertical-align: middle;
 }
 /*-------------------------------------------------------------------------------*/
 /*--------------------------- BACK END EDIT MODE SHIZ ---------------------------*/
@@ -3049,19 +3115,4 @@ header nav a.active {
 .edit-project .project-form-wrap .edit-proj .bottom-btn {
   float: left;
   clear: both;
-}
-.page404,
-.page500 {
-  padding: 10%;
-  padding-top: 22%;
-  background: #000;
-  min-height: 400px;
-}
-.page404 p,
-.page500 p {
-  font-family: "museo-slab", "Museo Slab", courier, serif;
-  color: #ffd24f;
-  font-size: 60px;
-  line-height: 70px;
-  vertical-align: middle;
 }

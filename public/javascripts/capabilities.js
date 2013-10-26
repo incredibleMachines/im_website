@@ -6,17 +6,9 @@ $(document).ready(function(){
 	var scrollLock=false;
 	var aspect=1200/530;
 
-
-
 	var aboutHeight;
 
 	userResize();
-
-
-	if($('.about-block').css('position')!='relative'){
-		$('#skills ul li:nth-child(1) a').addClass('active');
-		$('.about-skill').css('padding-top',headerHeight).css('margin-top',-headerHeight);
-	}
 
 	$('#about-skills').find('.about-skill:last-child').find('.skill-border').css('display','none');
 
@@ -32,7 +24,7 @@ $(document).ready(function(){
 	function userScroll() {
 		var amtScroll = $('body').scrollTop();
 
-		if($('.about-block').css('position')!='relative'){
+		if($('.about-block').css('line-height')=='20px'){
 			if(amtScroll>7.7*aboutHeight+$('#about-skills').height()-$('#skills').height()){
 				$('#skills').css('position','absolute').css('top',$('#about-skills').height()-$('#skills').height()+parseInt($('#about-skills').css('margin-bottom')));
 				scrollLock=false;
@@ -126,7 +118,7 @@ $(document).ready(function(){
 
 	function userResize(){
 			
-		if($('.about-block').css('position')!='relative'){
+		if($('.about-block').css('line-height')=='20px'){
 			aboutHeight=(window.innerHeight);
 
 
@@ -136,9 +128,13 @@ $(document).ready(function(){
 			scrollLock=false;
 			userScroll();
 
+
+			$('#skills-section').css('position','absolute');
 			$('#skills-section').css('top',7.7*aboutHeight);
 
+
 			$("#about-transport, #about-obsessed, #about-produce").css('position','absolute');
+			$('#about-intro').css('position','fixed');
 			$('#about-transport').css('top',aboutHeight);
 			$('#transport-text').css('top',2*aboutHeight);
 			$('#about-obsessed').css('top',3.5*aboutHeight);
@@ -167,9 +163,13 @@ $(document).ready(function(){
 		}
 
 		else{
+				$('.about-text').css('position','relative').css('height','auto').css('top','').css('left','');
+				$('#about-transport').css('position','relative').css('height','auto').css('top','').css('left','');
+				$('.about-block').css('position','relative').css('top','').css('left','').css('width','100%');
+				$('.about-block img').css('width','100%').css('height','auto').css('top','').css('left','');
 				$('#skills-section').css('position','relative').css('top','');
 				$('#skills ul li a').removeClass('active');
-				$('#skills').css('position','relative').css('top','');
+				$('#about').css('height','100%');
 				scrollLock=true;
 		}
 
