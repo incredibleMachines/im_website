@@ -18,7 +18,7 @@ $('.photo-block-multi').each(function(){
 	/*Two Images */
 	else if($(this).find('.img-wrap').length==2){
 		$(this).find('.img-wrap').width( '49.75%');
-		$(this).find('.img-wrap:first-child').css('padding-right', '.5%');
+		$(this).find('.img-wrap:first-child').css('padding-right', '.25%');
 	}
 
 	/*Three Images */
@@ -39,14 +39,14 @@ $('.photo-block-multi').each(function(){
 				$(this).width( '49.66%');
 			}
 		});
-		$(this).find('.img-wrap:first-child').css('padding-right', '.5%');
-		$(this).find('.img-wrap:last-child').css('padding-left', '.5%');	
+		$(this).find('.img-wrap:first-child').css('padding-right', '.25%');
+		$(this).find('.img-wrap:last-child').css('padding-left', '.25%');	
 	}
 
 	/*Four Images */
 	else if($(this).find('.img-wrap').length==4){
 		$(this).find('.img-wrap').width( '24.61%');
-		$(this).find('.img-wrap').css('padding-right', '.5%');
+		$(this).find('.img-wrap').css('padding-right', '.25%');
 		$(this).find('.img-wrap:last-child').css('padding-right', '0');
 	}
 	/*Vertical Spacing for ImageBlocks */
