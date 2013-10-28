@@ -957,7 +957,7 @@ header {
 	
 	
 /*************************** Single Project Footer ***************************/
-	.footer-bg-wrap {
+		.footer-bg-wrap {
 		clear: both;
 		height: 274px;
 		background: #222222; /* Old browsers */
@@ -1093,7 +1093,7 @@ header {
 					}
 				
 				#copyright {
-					width:auto;
+
 					float: left;
 					margin: 2px 0 0 0;
 					
@@ -1113,20 +1113,14 @@ header {
 						letter-spacing: 0;
 						float: left;
 						margin-right: 20px;
-						font-style: normal;
-
-						a:hover {
-							font-style: oblique;
-						}
-
 						@media screen and (max-width: 600px), (max-device-width: 500px){
-								margin-right: 2px;
+								margin-right: 6px;
 						}							
 						color: @yellow;
 					}
 				}/* ---end copyright--- */
 				
-				#social-btns {
+#social-btns {
 						float: right;
 						padding-top: 1px;
 
@@ -1149,11 +1143,11 @@ header {
 								color: @white;
 							}
 						}
-					} /* ---end social-btns --- */
+					} /* ---end social-btns --- */	
 			} /* ---end strip--- */	 
 			} /* ---end footer--- */
 		} /*---end footer-pg-wrap --- */	
-	} /*---end footer-bg-wrap --- */	
+	} /*---end footer-bg-wrap --- */
 } /* --- end projects-single --- */
 
 /*--------------------------- CAPABILITIES ---------------------------*/
@@ -1944,7 +1938,6 @@ header {
 					}
 				
 				#copyright {
-					width: 76%;
 					float: left;
 					margin: 2px 0 0 0;
 					
@@ -1971,22 +1964,34 @@ header {
 					}
 				}/* ---end copyright--- */
 				
-				#social-btns {
+#social-btns {
 						float: right;
 						padding-top: 1px;
-						
-						i {
-							margin-left: 10px;
+
+						a{
+							font-size:16px;
 							@media screen and (max-width: 600px), (max-device-width: 500px){
-								margin-left: 0;
-								margin-right:0;
+									margin-left: 0;
+									margin-right:0;
+								}
+					
+							i {
+								margin-left: 10px;
+								@media screen and (max-width: 600px), (max-device-width: 500px){
+									margin-left: 0;
+									margin-right:0;
+								}
+							}
+
+							i.icon-vimeo-sign{
+								font-size:1.36em;
+							}
+							
+							i:hover {
+								color: @white;
 							}
 						}
-						
-						i:hover {
-							color: @white;
-						}
-					} /* ---end social-btns --- */
+					} /* ---end social-btns --- */	
 			} /* ---end strip--- */	
 		} /* ---end footer--- */
 	} /*--- end footer-bg-wrap---*/
