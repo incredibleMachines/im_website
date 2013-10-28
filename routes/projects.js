@@ -259,6 +259,7 @@ exports.update_order = function(db){
 						order: parseInt(post.project_order),
 						video_url: post.project_video,
 						video_backup: post.project_video_backup,
+						location: post.project_location,
 						featured: (post.project_featured === 'true')? true : false,
 						textBlocks: post.project_text,
 						infoBlocks: post.project_info,
