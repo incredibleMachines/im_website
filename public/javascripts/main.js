@@ -133,6 +133,7 @@ $(document).ready(function(){
 
                 //count how many file upload are there in that set 
                 var inputs = $(this).parent().siblings('input[type=file]'); 
+                var selects = $(this).parent().siblings('select');
                 var len = inputs.length;
                 var inputClass = $(inputs[0]).attr('class');
                 var blockNum = inputClass.substr(inputClass.length - 1);
@@ -149,14 +150,18 @@ $(document).ready(function(){
                         
                         for(var i =0; i< numImages; i++){
                                 var obj = $(inputs[0]).clone();
+                                var sel = $(selects[0]).clone();
                                 $(obj).attr('name', "project_image_block["+blockNum+"]["+counter+"]");
+                                $(sel).attr('name', "project_image_type["+blockNum+"]["+counter+"]");
                                 $(this).parent().parent().append(obj);
+                                $(this).parent().parent().append(sel);
                                 counter++;
                         }
                 }else if(numImages < 0){
 
                         for(var i=len; i >= len+numImages; i--){
                                 $(inputs[i]).remove();
+                                $(selects[i]).remove();
                         }
                 }
 

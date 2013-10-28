@@ -72,6 +72,11 @@
 					<% for(var j= 0; j<data.project.imageBlocks[i].length; j++){ %>
 						<img src="<%= data.project.imageBlocks[i][j].path  %>">
 						<input type="file" name="project_image_block[<%=i%>][<%=j%>]" class="project-image-<%=i%>" placeholder="Project Text Title">
+						<select class='image-type' name="project_image_type[<%=i%>][<%=j%>]">
+							<option <% if(data.project.imageType[i][j]==='1'){%> selected <% } %> value="1">Vertical</option>
+							<option <% if(data.project.imageType[i][j]==='2'){%> selected <% } %>value="2">Horizontal</option>
+							<option <% if(data.project.imageType[i][j]==='3'){%> selected <% } %>value="3">Full Width</option>						
+						</select>
 					<% } %>
 					</article>
 				<% } %>
