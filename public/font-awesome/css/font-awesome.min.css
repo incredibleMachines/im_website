@@ -162,6 +162,7 @@ a .icon-rotate-90:before,a .icon-rotate-180:before,a .icon-rotate-270:before,a .
 .icon-resize-horizontal:before{content:"\f07e";}
 .icon-bar-chart:before{content:"\f080";}
 .icon-twitter-sign:before{content:"\f081";}
+.icon-vimeo-sign:before {content: "\e600";}
 .icon-facebook-sign:before{content:"\f082";}
 .icon-camera-retro:before{content:"\f083";}
 .icon-key:before{content:"\f084";}

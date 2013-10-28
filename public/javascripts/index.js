@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 $('nav a').removeClass('active');
-$('nav a:first-child').attr("href",'#portfolio');
+$('nav a:first-child').attr("href",'#portfolio-nav');
 $('.video-js').css('position','absolute');
 $('.introLogo').find('img').attr('src','../images/im_logo_white.png');
 $('.logoHome').hide();
@@ -13,6 +13,7 @@ var videoIndex = 0;
 var aspect=1200/530;
 var topPadding=20;
 var navOffset=70;
+$('#portfolio-nav').css('padding-top',$('header').height()+topPadding).css('margin-top',-$('header').height());
 $('#portfolio').css('padding-top',$('header').height()+topPadding).css('margin-top',-$('header').height());
 
 if($('.intro-vid').css('display')=='none'){
