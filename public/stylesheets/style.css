@@ -1137,11 +1137,12 @@ header nav a.active {
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .single-project .footer-bg-wrap .footer-pg-wrap footer #strip {
-    padding: 0 10px;
+    padding: 0 6px;
+    margin: 0;
   }
 }
 .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #copyright {
-  width: 76%;
+  width: auto;
   float: left;
   margin: 2px 0 0 0;
 }
@@ -1171,23 +1172,29 @@ header nav a.active {
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #copyright #reel a {
-    margin-right: 6px;
+    margin-right: 2px;
   }
 }
 .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #social-btns {
   float: right;
   padding-top: 1px;
 }
-.single-project .footer-bg-wrap .footer-pg-wrap footer #strip #social-btns i {
+.single-project .footer-bg-wrap .footer-pg-wrap footer #strip #social-btns a {
+  font-size: 16px;
+}
+.single-project .footer-bg-wrap .footer-pg-wrap footer #strip #social-btns a i {
   margin-left: 10px;
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
-  .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #social-btns i {
+  .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #social-btns a i {
     margin-left: 0;
     margin-right: 0;
   }
 }
-.single-project .footer-bg-wrap .footer-pg-wrap footer #strip #social-btns i:hover {
+.single-project .footer-bg-wrap .footer-pg-wrap footer #strip #social-btns a i.icon-vimeo-sign {
+  font-size: 1.36em;
+}
+.single-project .footer-bg-wrap .footer-pg-wrap footer #strip #social-btns a i:hover {
   color: #ffffff;
 }
 /* --- end projects-single --- */

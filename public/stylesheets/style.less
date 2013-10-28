@@ -1088,11 +1088,12 @@ header {
 				background-color: @two;
 				padding: 0 35px;
 				@media screen and (max-width: 600px), (max-device-width: 500px){
-						padding:0 10px;
+						padding:0 6px;
+						margin:0;
 					}
 				
 				#copyright {
-					width: 76%;
+					width:auto;
 					float: left;
 					margin: 2px 0 0 0;
 					
@@ -1119,7 +1120,7 @@ header {
 						}
 
 						@media screen and (max-width: 600px), (max-device-width: 500px){
-								margin-right: 6px;
+								margin-right: 2px;
 						}							
 						color: @yellow;
 					}
@@ -1128,17 +1129,25 @@ header {
 				#social-btns {
 						float: right;
 						padding-top: 1px;
-						
-						i {
-							margin-left: 10px;
-							@media screen and (max-width: 600px), (max-device-width: 500px){
-								margin-left: 0;
-								margin-right:0;
+
+						a{
+							font-size:16px;
+					
+							i {
+								margin-left: 10px;
+								@media screen and (max-width: 600px), (max-device-width: 500px){
+									margin-left: 0;
+									margin-right:0;
+								}
 							}
-						}
-						
-						i:hover {
-							color: @white;
+
+							i.icon-vimeo-sign{
+								font-size:1.36em;
+							}
+							
+							i:hover {
+								color: @white;
+							}
 						}
 					} /* ---end social-btns --- */
 			} /* ---end strip--- */	 
