@@ -189,8 +189,8 @@ header .logoHome {
   float: left;
 }
 header .logoHome img {
-  width: 250px;
-  height: 60px;
+  width: 264px;
+  height: 55px;
 }
 @media screen and (max-width: 828px), (max-device-width: 500px) {
   header .logoHome {
@@ -528,7 +528,7 @@ header nav a.active {
   height: 100%;
   float: left;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 800px), (max-device-width: 500px) {
   .single-project .title-nav .previous-proj {
     width: 9%;
   }
@@ -540,7 +540,7 @@ header nav a.active {
   font-size: 16px;
   display: none;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 800px), (max-device-width: 500px) {
   .single-project .title-nav .previous-proj .nav-label-prev {
     display: none;
   }
@@ -562,7 +562,7 @@ header nav a.active {
   padding: 28px 0;
   width: 50%;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .single-project .title-nav .project-meta {
     width: 80%;
     height: 60%;
@@ -574,7 +574,7 @@ header nav a.active {
   margin: 0 auto;
   display: table;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   .single-project .title-nav .project-meta h1 {
     font-size: 30px;
     line-height: 40px;
@@ -590,7 +590,7 @@ header nav a.active {
   height: 100%;
   float: right;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 800px), (max-device-width: 500px) {
   .single-project .title-nav .next-proj {
     width: 9%;
   }
@@ -602,7 +602,7 @@ header nav a.active {
   font-size: 16px;
   display: none;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 800px), (max-device-width: 500px) {
   .single-project .title-nav .next-proj .nav-label-next {
     display: none;
   }
@@ -677,7 +677,7 @@ header nav a.active {
   float: left;
   width: 100%;
   padding: 3% 0 7% 0;
-  margin: 0.25% 0;
+  margin-bottom: 0.25%;
 }
 .single-project .list-block .column-left {
   margin-left: 2.5%;

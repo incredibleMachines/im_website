@@ -82,11 +82,13 @@
 									}
 								}
 								if(isUsed==false){
+									if(capabilities[i].projects[j].clients[k].name!='various'&&capabilities[i].projects[j].clients[k].name!='Various'){
 									ids.push(capabilities[i].projects[j].clients[k].name);%>
 					<li>
 						<%= capabilities[i].projects[j].clients[k].name %>
 					</li>
 					<% 			}
+				}
 							}		
 						}%>
 					</ul>
