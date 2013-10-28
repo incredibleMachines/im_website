@@ -23,11 +23,6 @@ $('.photo-block-multi').each(function(){
 
 	/*Three Images */
 	else if($(this).find('.img-wrap').length==3){
-		var averageW=0;
-		$(this).find('.img-wrap').each(function(){
-			averageW+=parseInt($(this).attr('data-image-size'));
-		});
-		averageW=averageW/3;
 
 	 $(this).find('.img-wrap').each(function(){
 			if($(this).attr('data-image-size')=='1'){

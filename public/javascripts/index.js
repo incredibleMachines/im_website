@@ -46,7 +46,7 @@ videojs("intro-video-1").ready(function(){
 	if($('.header').css('padding')!='0'){
 		myPlayer.src([
 	  		{ type: "video/mp4", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 },
-	 		{ type: "video/ogg", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 }
+	 		{ type: "video/ogg", src: "/videos/homepage/"+videoPlay[videoIndex].ogv }
 		]);
 	}
 
@@ -184,7 +184,7 @@ function playNext(){
 	}
 	myPlayer.src([
   		{ type: "video/mp4", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 },
- 		{ type: "video/ogg", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 }
+ 		{ type: "video/ogg", src: "/videos/homepage/"+videoPlay[videoIndex].ogv }
 	]);
 	$('.video-project').attr('href',"/projects/"+videoPlay[videoIndex].link);
 }

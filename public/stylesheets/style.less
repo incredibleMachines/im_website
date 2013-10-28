@@ -632,7 +632,7 @@ header {
 			columns:2;
 
 			-webkit-column-gap: 30px; /* Safari and Chrome */
-			-moz-columns: 30px; /* Firefox */
+			-moz-column-gap: 30px; /* Firefox */
 			columns:30px;
 
 
@@ -758,33 +758,39 @@ header {
 					-webkit-columns: 4; /* Safari and Chrome */
 					-moz-columns: 4; /* Firefox */
 					columns:4;
+
+					-moz-column-gap:10px;
 					
 					@media screen and (max-width: 1700px) {
 						-webkit-columns: 3; /* Safari and Chrome */
 						-moz-columns: 3; /* Firefox */
 						columns:3;
+						-moz-column-gap:10px;
 					}
 
 					@media screen and (max-width: 1300px) {
-						-moz-columns:2;
 						-webkit-columns:2;
+						-moz-columns:2;
 						columns:2;
 						width:70%;
+						-moz-column-gap:10px;
 					}
 
 					@media screen and (max-width: 1100px) {
-						-moz-columns:3;
 						-webkit-columns:3;
+						-moz-columns:2;
 						columns:3;
 						width:100%;
 						padding-left:0;
+						-moz-column-gap:10px;
 					}
 
 					@media screen and (max-width: 900px), (max-device-width: 500px)	 {
-						-moz-columns:1;
 						-webkit-columns:1;
+						-moz-columns:1;
 						columns:1;
 						width:100%;
+						-moz-column-gap:10px;
 					}
 
 					ul {
@@ -848,12 +854,14 @@ header {
 					-webkit-columns: 3; /* Safari and Chrome */
 					-moz-columns: 3; /* Firefox */
 					columns:3;
+					-moz-column-gap:10px;
 
 					@media screen and (max-width: 1700px) {
 						-moz-columns:2;
 						-webkit-columns:2;
 						columns:2;
-						width:65%
+						width:65%;
+						-moz-column-gap:10px;
 					}
 
 					@media screen and (max-width: 1300px) {
@@ -862,6 +870,7 @@ header {
 						columns:3;
 						width:100%;
 						padding-left:0;
+						-moz-column-gap:10px;
 					}
 
 					@media screen and (max-width: 1150px) {
@@ -870,6 +879,7 @@ header {
 						columns:2;
 						width:100%;
 						padding-left:0;
+						-moz-column-gap:10px;
 					}
 
 					@media screen and (max-width: 900px), (max-device-width: 500px)	 {
@@ -877,6 +887,7 @@ header {
 						-webkit-columns:1;
 						columns:1;
 						width:100%;
+						-moz-column-gap:10px;
 					}
 						ul {
 						float: left;
