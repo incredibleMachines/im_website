@@ -677,7 +677,7 @@ header nav a.active {
   float: left;
   width: 100%;
   padding: 3% 0 7% 0;
-  margin: 0.25% 0;
+  margin-bottom: 0.25%;
 }
 .single-project .list-block .column-left {
   margin-left: 2.5%;
