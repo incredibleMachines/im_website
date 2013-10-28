@@ -28,19 +28,17 @@ $('.photo-block-multi').each(function(){
 			averageW+=parseInt($(this).attr('data-image-size'));
 		});
 		averageW=averageW/3;
-		console.log(averageW);
 
 	 $(this).find('.img-wrap').each(function(){
-	  	console.log($(this).attr('data-image-size'));
 			if($(this).attr('data-image-size')=='1'){
-				$(this).width('24.66%');
+				$(this).width('24.85%');
 			}
 			else{
-				$(this).width( '49.66%');
+				$(this).width( '49.7%');
 			}
 		});
-		$(this).find('.img-wrap:first-child').css('padding-right', '.25%');
-		$(this).find('.img-wrap:last-child').css('padding-left', '.25%');	
+		$(this).find('.img-wrap:first-child').css('padding-right', '.3%');
+		$(this).find('.img-wrap:last-child').css('padding-left', '.3%');	
 	}
 
 	/*Four Images */
@@ -69,17 +67,25 @@ $('.photo-block-multi').each(function(){
 		
 		  	if(window.innerHeight-$('.title-nav').height()<window.innerWidth*(1/aspect)){
 			  	myPlayer.dimensions(myPlayer.height()*aspect,window.innerHeight-$('.title-nav').height());
-			  	$('.poster-image').width(window.innerWidth).height('auto');
+			  	if(myPlayer.height()>window.innerWidth*(1/aspectPoster)){
+			  		$('.poster-image').width('auto').height(myPlayer.height());
+			  		console.log('one');
+			  	}
+			  	else{
+			  		$('.poster-image').width(window.innerWidth).height('auto');
+			  		console.log('two');
+			  	}
 	  			
 		  	}
 		  	else if(window.innerHeight<window.innerWidth*(1/aspect)){
 			  	myPlayer.dimensions(window.innerHeight*aspect,window.innerHeight);
-		  		$('.poster-image').width(window.innerWidth).height('auto');
+		  		$('.poster-image').width('auto').height(myPlayer.height());
 	  			
 		  	}
 		  	else{
 				 myPlayer.dimensions(window.innerWidth,window.innerWidth*(1/aspect));
-				 $('.poster-image').width('auto').height(myPlayer.height());	  			
+				 $('.poster-image').width('auto').height(myPlayer.height());
+				 console.log('three');	  			
 			}
 			// $('.vjs-big-play-button').height(myPlayer.height()/4).width(myPlayer.height()/4);
 			// $('.vjs-big-play-button').css("margin-top",$('header').height()-((myPlayer.height()/2)+135/2));

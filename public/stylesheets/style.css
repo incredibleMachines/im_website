@@ -623,6 +623,7 @@ header nav a.active {
 }
 .single-project .photo-block-multi .img-wrap {
   float: left;
+  padding-bottom: .3%;
 }
 .single-project .photo-block-multi .img-wrap img {
   width: 100%;
