@@ -18,7 +18,7 @@
 		<section class="title-nav">
 			<div class="previous-proj">
 				<a href="/projects/<%= previous %>"><button class="left"></button></a>
-				<p class="nav-label-prev">Previous Project</p>
+				<p class="nav-label-prev"><%= previous_title%></p>
 			</div>
 			<article class="project-meta">
 				<h1><%= project.title %></h1>
@@ -31,7 +31,7 @@
 			</article>
 			<div class="next-proj">
 				<a href="/projects/<%= next %>"><button class="right"></button></a>
-				<p class="nav-label-next">Next Project</p>
+				<p class="nav-label-next"><%= next_title%></p>
 			</div>
 		</section>
 		
