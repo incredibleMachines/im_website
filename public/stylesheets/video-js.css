@@ -429,7 +429,7 @@ background: url('../images/play_btn_sprite.png') -120px 0 no-repeat;
   animation: spin 1.5s infinite linear;
 }
 .vjs-project-page .vjs-loading-spinner:before {
-  content:  "\e00a";
+  content:  "\e600";
   font-family: VideoJS;
   position: absolute;
   top: 0;
