@@ -189,8 +189,8 @@ header .logoHome {
   float: left;
 }
 header .logoHome img {
-  width: 250px;
-  height: 60px;
+  width: 264px;
+  height: 55px;
 }
 @media screen and (max-width: 828px), (max-device-width: 500px) {
   header .logoHome {
