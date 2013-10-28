@@ -84,18 +84,14 @@ app.post('/projects/order', projects.update_order(db));
 
 app.post('/projects/:name/update',projects.single_update(db) );
 
-
 app.post('/capabilities/:action', capabilities.action(db));
 app.post('/clients/:action',clients.action(db));
 app.post('/partners/:action',partners.action(db));
 app.post('/technologies/:action',technologies.action(db));
 
-
-
 app.post('/login', admin.auth(db));
 app.post('/create',admin.create(db));
 
-//app.get('*',routes.forohfor);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
