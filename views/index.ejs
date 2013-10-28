@@ -14,9 +14,10 @@
 				</a>
 			</div>
 		</section> <!-- end "video" -->
-		
+
 		<!-- PORTFOLIO -->
 		<section id="portfolio">
+			<div id="portfolio-nav"></div>
 			<% for (var i=0; i<projects.length; i++){ %>
 			<article class="port-item">
 				<a href="/projects/<%= projects[i].slug %>">
@@ -27,7 +28,10 @@
 				</a>
 				<p><% for (var j=0; j<projects[i].clients.length; j++){ %>
 					<%= projects[i].clients[j].name %><% if (j<projects[i].clients.length-1) { %>, <% } %>
-			<% 	} %>
+			<% 	} if(projects[i].clients.length==0){%>
+			<%= projects[i].location %><%
+
+			} %>
 				</p>
 			</article>
 		<% 	} %>

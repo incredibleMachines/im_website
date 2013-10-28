@@ -747,6 +747,9 @@ a .icon-flip-vertical:before {
 .icon-twitter-sign:before {
   content: "\f081";
 }
+.icon-vimeo-sign:before {
+  content: "\e600";
+}
 .icon-facebook-sign:before {
   content: "\f082";
 }

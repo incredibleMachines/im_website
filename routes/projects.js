@@ -54,7 +54,7 @@ exports.single = function(db) {
 					var next_project = (project_index == project_docs.length-1) ? 0 : project_index+1;
 					var previous_project = (project_index == 0 )? project_docs.length-1 : project_index-1;
 
-					res.render('project', {title: doc.title , slug: 'single-project '+doc.slug, project: doc, next: project_docs[next_project].slug, previous: project_docs[previous_project].slug });
+					res.render('project', {title: doc.title , slug: 'single-project '+doc.slug, project: doc, next: project_docs[next_project].slug, next_title:project_docs[next_project].title, previous: project_docs[previous_project].slug, previous_title: project_docs[previous_project].title});
 				}
 			});
 

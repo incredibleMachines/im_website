@@ -80,7 +80,7 @@ h1 {
 	font-family: @museo;
 	font-size: 46px;
 	line-height: 0px;
-	font-weight: 100;
+	font-weight: 300;
 	font-style: italic;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -120,7 +120,7 @@ a {
 	font-size: 18px;
 	font-style: oblique;
 	/*line-height: 28px;*/
-	font-weight: 200;
+	font-weight: 100;
 	color: @three;
 	text-decoration: none;
 }
@@ -957,7 +957,7 @@ header {
 	
 	
 /*************************** Single Project Footer ***************************/
-	.footer-bg-wrap {
+		.footer-bg-wrap {
 		clear: both;
 		height: 274px;
 		background: #222222; /* Old browsers */
@@ -1088,11 +1088,12 @@ header {
 				background-color: @two;
 				padding: 0 35px;
 				@media screen and (max-width: 600px), (max-device-width: 500px){
-						padding:0 10px;
+						padding:0 6px;
+						margin:0;
 					}
 				
 				#copyright {
-					width: 76%;
+
 					float: left;
 					margin: 2px 0 0 0;
 					
@@ -1112,12 +1113,6 @@ header {
 						letter-spacing: 0;
 						float: left;
 						margin-right: 20px;
-						font-style: normal;
-
-						a:hover {
-							font-style: oblique;
-						}
-
 						@media screen and (max-width: 600px), (max-device-width: 500px){
 								margin-right: 6px;
 						}							
@@ -1125,26 +1120,34 @@ header {
 					}
 				}/* ---end copyright--- */
 				
-				#social-btns {
+#social-btns {
 						float: right;
 						padding-top: 1px;
-						
-						i {
-							margin-left: 10px;
-							@media screen and (max-width: 600px), (max-device-width: 500px){
-								margin-left: 0;
-								margin-right:0;
+
+						a{
+							font-size:16px;
+					
+							i {
+								margin-left: 10px;
+								@media screen and (max-width: 600px), (max-device-width: 500px){
+									margin-left: 0;
+									margin-right:0;
+								}
+							}
+
+							i.icon-vimeo-sign{
+								font-size:1.36em;
+							}
+							
+							i:hover {
+								color: @white;
 							}
 						}
-						
-						i:hover {
-							color: @white;
-						}
-					} /* ---end social-btns --- */
+					} /* ---end social-btns --- */	
 			} /* ---end strip--- */	 
 			} /* ---end footer--- */
 		} /*---end footer-pg-wrap --- */	
-	} /*---end footer-bg-wrap --- */	
+	} /*---end footer-bg-wrap --- */
 } /* --- end projects-single --- */
 
 /*--------------------------- CAPABILITIES ---------------------------*/
@@ -1935,7 +1938,6 @@ header {
 					}
 				
 				#copyright {
-					width: 76%;
 					float: left;
 					margin: 2px 0 0 0;
 					
@@ -1962,22 +1964,34 @@ header {
 					}
 				}/* ---end copyright--- */
 				
-				#social-btns {
+#social-btns {
 						float: right;
 						padding-top: 1px;
-						
-						i {
-							margin-left: 10px;
+
+						a{
+							font-size:16px;
 							@media screen and (max-width: 600px), (max-device-width: 500px){
-								margin-left: 0;
-								margin-right:0;
+									margin-left: 0;
+									margin-right:0;
+								}
+					
+							i {
+								margin-left: 10px;
+								@media screen and (max-width: 600px), (max-device-width: 500px){
+									margin-left: 0;
+									margin-right:0;
+								}
+							}
+
+							i.icon-vimeo-sign{
+								font-size:1.36em;
+							}
+							
+							i:hover {
+								color: @white;
 							}
 						}
-						
-						i:hover {
-							color: @white;
-						}
-					} /* ---end social-btns --- */
+					} /* ---end social-btns --- */	
 			} /* ---end strip--- */	
 		} /* ---end footer--- */
 	} /*--- end footer-bg-wrap---*/
