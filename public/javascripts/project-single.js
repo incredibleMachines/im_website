@@ -17,8 +17,8 @@ $('.photo-block-multi').each(function(){
 
 	/*Two Images */
 	else if($(this).find('.img-wrap').length==2){
-		$(this).find('.img-wrap').width( '49.75%');
-		$(this).find('.img-wrap:first-child').css('padding-right', '.25%');
+		$(this).find('.img-wrap').width( '49.85%');
+		$(this).find('.img-wrap:first-child').css('padding-right', '.3%');
 	}
 
 	/*Three Images */
