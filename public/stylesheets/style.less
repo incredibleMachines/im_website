@@ -1194,6 +1194,7 @@ header {
 			margin: 0px auto;
 			overflow:hidden;
 			line-height:20px;
+			min-width:100%;	
 
 			position:fixed;
 			@media screen and (max-width: 600px), (max-device-width: 500px) {
@@ -1211,9 +1212,12 @@ header {
 		.about-text{
 			position:absolute;
 			width:100%;
+			min-width:100%;
 			background:@black;
 			color:@yellow;
 			height:100%;
+			left:0;
+			top:0;
 
 			@media screen and (max-width: 600px), (max-device-width: 500px) {
 				position:relative;
@@ -1295,6 +1299,7 @@ header {
 		}	
 		background-color:@white;
 		width: inherit;
+		min-width:100%;
 		
 		#skills {
 			padding-left: 5%;

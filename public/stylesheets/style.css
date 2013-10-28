@@ -527,6 +527,7 @@ header nav a.active {
   width: 25%;
   height: 100%;
   float: left;
+  padding: 0.5% 0;
 }
 @media screen and (max-width: 800px), (max-device-width: 500px) {
   .single-project .title-nav .previous-proj {
@@ -589,6 +590,7 @@ header nav a.active {
   width: 25%;
   height: 100%;
   float: right;
+  padding: 0.5% 0;
 }
 @media screen and (max-width: 800px), (max-device-width: 500px) {
   .single-project .title-nav .next-proj {
@@ -1237,6 +1239,7 @@ header nav a.active {
   margin: 0px auto;
   overflow: hidden;
   line-height: 20px;
+  min-width: 100%;
   position: fixed;
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
@@ -1252,9 +1255,12 @@ header nav a.active {
 .capabilities #about .about-text {
   position: absolute;
   width: 100%;
+  min-width: 100%;
   background: #000000;
   color: #ffd24f;
   height: 100%;
+  left: 0;
+  top: 0;
 }
 @media screen and (max-width: 600px), (max-device-width: 500px) {
   .capabilities #about .about-text {
@@ -1325,6 +1331,7 @@ header nav a.active {
   position: absolute;
   background-color: #ffffff;
   width: inherit;
+  min-width: 100%;
   /* ---end skills--- */
 
   /* --- end about-skills div --- */
