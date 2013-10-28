@@ -75,7 +75,7 @@
 			<div id="client-list">		
 				<% for(var i = 0; i< clients.length; i++){
 
-					if(clients[i].name!='various'){%>
+					if(clients[i].name!='Various'&&clients[i].name!='various'){%>
 
 					<article class="client" id="<%= makeSlug(clients[i].name) %>">
 						<div class="corner">
