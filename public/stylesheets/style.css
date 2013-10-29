@@ -1524,7 +1524,7 @@ header nav a.active {
     margin: 0 0 20px 0;
   }
 }
-@media screen and (max-width: 600px), (max-device-width: 800px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project {
     margin: 0 0 20px 0;
     width: 100%;
