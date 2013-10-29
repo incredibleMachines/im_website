@@ -44,6 +44,9 @@ exports.single = function(db) {
 				if(!doc){
 					res.render('404', {title: 'Project Not Found', slug:'project-not-found'});
 				}else{
+					if(!doc.featured){ //if its not a featured doc we don't have next/back projects
+						res.render('project', {title: doc.title , slug: 'single-project '+doc.slug, project: doc, next: '/', next_title:'Incredible Machines', previous: '/', previous_title: 'Incredible Machines'});	
+					}
 					var project_index;
 					project_docs.forEach(function(v,i){
 						if(v._id.toString() == doc._id.toString()){
@@ -53,7 +56,9 @@ exports.single = function(db) {
 							//this is sloppy!
 							//also needs to be callback function
 							//Should be next: {}
+							
 							res.render('project', {title: doc.title , slug: 'single-project '+doc.slug, project: doc, next: project_docs[next_project].slug, next_title:project_docs[next_project].title, previous: project_docs[previous_project].slug, previous_title: project_docs[previous_project].title});
+					
 						}
 					});
 
