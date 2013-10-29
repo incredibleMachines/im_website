@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	var videoPlay=true;
+
 $('nav a').removeClass('active');
 $('nav a:contains("Featured Work")').addClass('active');
 
@@ -54,6 +56,11 @@ $('.photo-block-multi').each(function(){
 /* setup initial video height and width */
 		var aspect=16/9;
 		var aspectPoster=1920/740;
+		if($('#project-video-1 video').attr('src')==undefined){
+			console.log('go');
+			videoPlay=false;
+			$('.vjs-big-play-button').hide();
+		}
 		myPlayer.height(window.innerHeight-$('.title-nav').height());
 		userResize();
 
@@ -109,8 +116,6 @@ $('.photo-block-multi').each(function(){
 		$('.intro-vid').css("height",myPlayer.height());
 			$('#project-video-1').css("margin-left",(window.innerWidth-myPlayer.width())/2);
 			$('.poster-wrap').height(myPlayer.height());
-
-
 		};
 		
 /* stop playback when scroll passes player bottom */	
@@ -123,10 +128,12 @@ $('.photo-block-multi').each(function(){
 		};
 		
 		function navOut(){	
-			if($('.project-vid').css('line-height')!='10px'){
-				$('header').css("top",-100);
+			if(videoPlay==true){
+				if($('.project-vid').css('line-height')!='10px'){
+					$('header').css("top",-100);
+				}
+				$('.poster-wrap').fadeOut(200);
 			}
-			$('.poster-wrap').fadeOut(200);
 		}
 		function navIn() {
 			if($('.project-vid').css('line-height')!='10px'){
