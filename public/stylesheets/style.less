@@ -157,6 +157,10 @@ header {
 	width:100%;
 
 	@media screen and (max-width: 828px), (max-device-width: 1024px) {
+		height: 100px;
+	}
+
+	@media screen and (max-width: 828px), (max-device-width: 800px) {
 		height: 140px;
 	}
 
@@ -186,6 +190,15 @@ header {
 			display:block;
 
 			img {
+				width: 58px;
+				height: 72px;
+			}
+		}
+
+		@media screen and (max-width: 828px), (max-device-width: 800px) {
+			display:block;
+
+			img {
 				width: 72px;
 				height: 104px;
 				margin: 5px 0 0 5px;
@@ -194,7 +207,7 @@ header {
 	}
 
 	.buttonMobile{
-	display:none;
+		display:none;
 		padding-top:20px;
 		padding-right:16px;
 		float:right;
@@ -203,12 +216,21 @@ header {
 
 		@media screen and (max-width: 828px), (max-device-width: 1024px) {
 			width: 66px;
+			padding-top: 28px;
+		}
+
+		@media screen and (max-width: 828px), (max-device-width: 800px){
+			width: 66px;
 			padding-top: 40px;
 		}
 
 		.buttonLine{
-			height:20px;
+			height:14px;
 			border-top:6px solid #666;
+
+			@media screen and (max-width: 828px), (max-device-width: 800px){
+				height: 20px;
+			}
 		}
 
 		@media screen and (max-width: 828px), (max-device-width: 1024px) {
@@ -219,8 +241,12 @@ header {
 
 	.buttonMobile.active{
 		.buttonLine{
-				height:8px;
-				border-top:3px solid #fff;
+				height:14px;
+				border-top:6px solid #fff;
+
+				@media screen and (max-width: 828px), (max-device-width: 800px){
+					height: 20px;
+				}
 			}
 	}
 
@@ -255,11 +281,16 @@ header {
 				float: left;
 				clear:both;
 				color:#999;
-				font-size:18px;
+				font-size:28px;
 				width:100%;
 				margin:0;
 				padding: 20px 0 20px 20px;
 				border-top:1px solid #333;
+			}
+
+			@media screen and (max-width: 828px), (max-device-width: 800px) {
+				font-size: 38px;
+				padding: 30px 0 30px 30px;
 			}
 
 		}
@@ -275,6 +306,12 @@ header {
 				padding: 20px 0 20px 20px;
 				font-style:oblique;
 			}
+
+			@media screen and (max-width: 828px), (max-device-width: 800px) {
+				border-top:1px solid #333;
+				padding: 30px 0 30px 30px;
+				font-style:oblique;
+			}
 		}
 
 		a.active {
@@ -285,8 +322,14 @@ header {
 			font-style:oblique;
 
 			@media screen and (max-width: 828px), (max-device-width: 1024px) {
-				padding: 20px 0 20px 20px;
 				border-top:1px solid #333;
+				padding: 20px 0 20px 20px;
+				font-style:oblique;
+			}
+
+			@media screen and (max-width: 828px), (max-device-width: 800px) {
+				border-top:1px solid #333;
+				padding: 30px 0 30px 30px;
 				font-style:oblique;
 			}
 		}
@@ -377,9 +420,9 @@ header {
 					float: none;
 					min-width:100%;
 					max-width:100%;
-					margin: 20px 0 40px 0;
-					padding-top: 31px;
+					margin: 12px 0 30px 0;
 				}
+
 
 				a {
 					font-family: @proxima;
@@ -415,8 +458,8 @@ header {
 						@media screen and (max-width: 828px), (max-device-width: 800px) {
 							text-align: center;
 							margin: 10px 0;
-							font-size: 92px;
-							line-height: 92px;
+							font-size: 80px;
+							line-height: 60px;
 						}
 					
 					}
@@ -448,8 +491,8 @@ header {
 					@media screen and (max-width: 828px), (max-device-width: 800px)  {
 						text-align: center;
 						margin: 0 10px;
-						font-size: 36px;
-						line-height: 40px;
+						font-size: 30px;
+						line-height: 16px;
 					}
 				}
 			}
