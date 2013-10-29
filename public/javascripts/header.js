@@ -1,11 +1,6 @@
 $(document).ready(function(){
 
 var navActive=false;
-var mobileCheck=false;
-
-if($('.logoMobile').css('display')=='none'){
-                mobileCheck=true;
-}
 
         $('header').click(function(){
                 if($('.logoMobile').css('display')=='block'){
@@ -35,6 +30,8 @@ headerResize= function(){
         }
         else{
                 $('nav').css('display','none');
+                $('.buttonMobile').removeClass('active');
+                navActive=false;
         }
 
 }
