@@ -1613,6 +1613,14 @@ header nav a.active {
   margin: 130px 0 30px 0;
   line-height: 50px;
 }
+.clients #client-wrap #client-grid .mobile-client {
+  display: none;
+}
+@media screen and (max-device-width: 1024px) {
+  .clients #client-wrap #client-grid .mobile-client {
+    display: block;
+  }
+}
 .clients #client-wrap #client-grid #client-list {
   padding-left: 2.5%;
   width: 97.5%;
