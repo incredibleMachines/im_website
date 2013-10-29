@@ -231,7 +231,8 @@ header {
 			height:8px;
 			border-top:3px solid #666;
 
-			@media screen and (max-device-width: 800px) (max-device-width: 1024px){
+			@media screen and (max-device-width: 1024px){
+				display:block;
 				height: 20px;
 				border-top:6px solid #666;
 			}
@@ -245,13 +246,15 @@ header {
 
 	.buttonMobile.active{
 		.buttonLine{
-				height:14px;
-				border-top:6px solid #fff;
+			height:8px;
+			border-top:3px solid #666;
 
-				@media screen and (max-device-width: 800px){
-					height: 20px;
-				}
+			@media screen and (max-device-width: 1024px){
+				display:block;
+				height: 20px;
+				border-top:6px solid #666;
 			}
+		}
 	}
 
 	nav {
@@ -285,7 +288,7 @@ header {
 				float: left;
 				clear:both;
 				color:#999;
-				font-size:18px;
+				font-size:28px;
 				width:100%;
 				margin:0;
 				padding: 20px 0 20px 20px;
@@ -317,6 +320,7 @@ header {
 			font-style:oblique;
 
 			@media screen and (max-width: 828px), (max-device-width: 1024px) {
+				font-size: 28px;
 				border-top:1px solid #333;
 				padding: 20px 0 20px 20px;
 				font-style:oblique;
@@ -2033,7 +2037,7 @@ header {
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 		
 		@media screen and (max-width: 828px), (max-device-width: 1024px) {
-			height: 320px;
+			height: 100%;
 		}
 
 
@@ -2043,7 +2047,7 @@ header {
 		background:url('../images/footer_pattern.png');
 
 		@media screen and (max-width: 828px), (max-device-width: 1024px) {
-			height: 320px;
+			height: 100%;
 		}
 	
 		#contact {
@@ -2052,7 +2056,7 @@ header {
 			text-align: center;
 
 			@media screen and (max-width: 828px), (max-device-width: 1024px) {
-				padding: 100px 0 50px 0;
+				padding: 80px 0 80px 0;
 			}	
 
 			h1 {
@@ -2087,7 +2091,7 @@ header {
 
 					@media screen and (max-width: 828px), (max-device-width: 1024px) {
 						font-size: 30px;
-						line-height: 40px;
+						line-height: 50px;
 					}
 				}
 			}	/* --- end email-phone ---- */
@@ -2100,6 +2104,7 @@ header {
 
 				@media screen and (max-width: 828px), (max-device-width: 1024px) {
 					width: 90%;
+					padding-top: 10px;
 				}
 			
 				p {
@@ -2108,17 +2113,23 @@ header {
 					letter-spacing: 0;
 
 					@media screen and (max-width: 828px), (max-device-width: 1024px) {
-						font-size: 22px;
+						font-size: 24px;
 						line-height: 40px;
 					}
 				}
 			} /* --- end address ---- */
 		} /* ---end contact--- */
 	
-#strip {
+			#strip {
 				height: 30px;
 				background-color: @two;
 				padding: 0 35px;
+
+				@media screen and (max-width: 828px), (max-device-width: 1024px) {
+					height: 80px;
+					padding: 10px 35px;
+				}
+
 				@media screen and (max-width: 600px), (max-device-width: 1024px){
 						padding:0 10px;
 					}
@@ -2127,14 +2138,25 @@ header {
 					float: left;
 					margin: 2px 0 0 0;
 					
+					@media screen and (max-width: 828px), (max-device-width: 1024px) {
+						float: none;
+						margin: 0px auto;
+						height: 30px;
+						width: 420px;
+						padding-bottom: 10px;
+					}
+				
+					
 					p {
 						font-size: 12px;
 						color:@nine;
 						letter-spacing: 0;
 						float: left;
 						margin-right: 20px;
-						@media screen and (max-width: 600px), (max-device-width: 1024px){
-								margin-right: 6px;
+
+						@media screen and (max-width: 828px), (max-device-width: 1024px){
+							font-size: 16px;
+							margin-right: 26px;
 						}
 					} 
 					#reel a{
@@ -2145,23 +2167,32 @@ header {
 						margin-right: 20px;
 						font-style: normal;
 
-						@media screen and (max-width: 600px), (max-device-width: 1024px){
-								margin-right: 6px;
+						@media screen and (max-width: 828px), (max-device-width: 1024px){
+							font-size: 16px;
+							margin-right: 6px;
 						}							
 						color: @yellow;
 					}
 				}/* ---end copyright--- */
 				
-			#social-btns {
+				#social-btns {
 						float: right;
 						padding-top: 1px;
 
+					@media screen and (max-width: 828px), (max-device-width: 1024px) {
+						text-align: center;
+						width: 100%;
+					}
+
 						a{
 							font-size:16px;
-							@media screen and (max-width: 600px), (max-device-width: 1024px){
-									margin-left: 0;
-									margin-right:0;
-								}
+							@media screen and (max-width: 600px), (max-width: 828px), (max-device-width: 1024px){
+								margin-left: 0;
+								margin-right:0;
+								font-size: 26px;
+							}
+
+
 					
 							i {
 								margin-left: 10px;
