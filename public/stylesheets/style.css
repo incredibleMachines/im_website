@@ -118,42 +118,56 @@ button:hover {
 /*************************** TYPE STYLES ***************************/
 h1 {
   font-family: "museo-slab", "Museo Slab", courier, serif;
-  font-size: 46px;
+  /*font-size: 46px;*/
+
+  font-size: 3.8em;
   line-height: 0px;
   font-weight: 300;
   font-style: italic;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.1em;
 }
 h2 {
   font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
-  font-size: 46px;
-  line-height: 46px;
+  /*font-size: 46px;*/
+
+  font-size: 3.8em;
+  /*line-height: 46px;*/
+
+  line-height: 3.8em;
   font-weight: 100;
   color: #333333;
   text-transform: uppercase;
 }
 h3 {
   font-family: "museo-slab", "Museo Slab", courier, serif;
-  font-size: 20px;
-  line-height: 22px;
+  /*font-size: 20px;
+	line-height: 22px;*/
+
+  font-size: 1.6em;
+  line-height: 1em;
   font-weight: 100;
   font-style: italic;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.1em;
   padding-top: 5px;
 }
 p {
   font-family: "jaf-facitweb", "Facit", arial, sans-serif;
-  font-size: 18px;
-  line-height: 28px;
+  /*font-size: 18px;
+	line-height: 28px;*/
+
+  font-size: 1.5em;
+  line-height: 1.8em;
   font-weight: 100;
   color: #333333;
-  letter-spacing: 1px;
+  letter-spacing: 0.1em;
 }
 a {
   font-family: "jaf-facitweb", "Facit", arial, sans-serif;
-  font-size: 18px;
+  /*font-size: 18px;*/
+
+  font-size: 1em;
   font-style: oblique;
   /*line-height: 28px;*/
 
@@ -167,8 +181,11 @@ a:hover {
 }
 ul li {
   font-family: "jaf-facitweb", "Facit", arial, sans-serif;
-  font-size: 18px;
-  line-height: 38px;
+  /*font-size: 18px;
+	line-height: 38px;*/
+
+  font-size: 1.5em;
+  line-height: 3.1em;
   font-weight: 100;
   color: #333333;
 }
@@ -247,6 +264,7 @@ header nav {
     width: 100%;
     margin: 0;
     padding-right: 0;
+    text-align: center;
   }
 }
 header nav a {
@@ -379,7 +397,7 @@ header nav a.active {
     float: none;
     min-width: 100%;
     max-width: 100%;
-    margin-top: 20px;
+    margin: 20px 0 40px 0;
   }
 }
 .projects #portfolio-wrap #portfolio .port-item a {
@@ -399,12 +417,12 @@ header nav a.active {
 }
 .projects #portfolio-wrap #portfolio .port-item a h2 {
   clear: both;
-  width: 95%;
+  width: 98%;
 }
 @media screen and (max-width: 828px), (max-device-width: 1024px) {
   .projects #portfolio-wrap #portfolio .port-item a h2 {
     text-align: center;
-    margin: 10px 10px 0 10px;
+    margin: 10px 0;
   }
 }
 .projects #portfolio-wrap #portfolio .port-item a:hover {
@@ -563,7 +581,7 @@ header nav a.active {
   padding: 28px 0;
   width: 50%;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 800px), (max-device-width: 1024px) {
   .single-project .title-nav .project-meta {
     width: 80%;
     height: 60%;
@@ -575,7 +593,7 @@ header nav a.active {
   margin: 0 auto;
   display: table;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 750px), (max-device-width: 1024px) {
   .single-project .title-nav .project-meta h1 {
     font-size: 30px;
     line-height: 40px;
@@ -686,17 +704,17 @@ header nav a.active {
   float: left;
   width: 30%;
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1300px), (max-device-width: 1024px) {
   .single-project .list-block .column-left {
     width: 35%;
   }
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px), (max-device-width: 1024px) {
   .single-project .list-block .column-left {
     width: 25%;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px), (max-device-width: 1024px) {
   .single-project .list-block .column-left {
     width: 35%;
   }
@@ -712,7 +730,7 @@ header nav a.active {
   padding-top: 0;
   margin: 0;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px), (max-device-width: 1024px) {
   .single-project .list-block .column-left .title {
     padding-bottom: 10px;
   }
@@ -721,7 +739,7 @@ header nav a.active {
   padding-left: 2.5%;
   float: left;
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1300px), (max-device-width: 1024px) {
   .single-project .list-block .column-left .list {
     width: 100%;
     padding-left: 0;
@@ -744,22 +762,22 @@ header nav a.active {
   padding-top: 0;
   margin: 0;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px), (max-device-width: 1024px) {
   .single-project .list-block .column-right .title {
     padding-bottom: 10px;
   }
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1300px), (max-device-width: 1024px) {
   .single-project .list-block .column-right {
     width: 60%;
   }
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px), (max-device-width: 1024px) {
   .single-project .list-block .column-right {
     width: 70%;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px), (max-device-width: 1024px) {
   .single-project .list-block .column-right {
     width: 60%;
   }
@@ -784,7 +802,7 @@ header nav a.active {
   columns: 4;
   -moz-column-gap: 10px;
 }
-@media screen and (max-width: 1700px) {
+@media screen and (max-width: 1700px), (max-device-width: 1024px) {
   .single-project .list-block .column-right .list {
     -webkit-columns: 3;
     /* Safari and Chrome */
@@ -796,7 +814,7 @@ header nav a.active {
     -moz-column-gap: 10px;
   }
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1300px), (max-device-width: 1024px) {
   .single-project .list-block .column-right .list {
     -webkit-columns: 2;
     -moz-columns: 2;
@@ -805,7 +823,7 @@ header nav a.active {
     -moz-column-gap: 10px;
   }
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px), (max-device-width: 1024px) {
   .single-project .list-block .column-right .list {
     -webkit-columns: 3;
     -moz-columns: 2;
@@ -875,7 +893,7 @@ header nav a.active {
   columns: 3;
   -moz-column-gap: 10px;
 }
-@media screen and (max-width: 1700px) {
+@media screen and (max-width: 1700px), (max-device-width: 1024px) {
   .single-project .partner-info .column-left .list {
     -moz-columns: 2;
     -webkit-columns: 2;
@@ -884,7 +902,7 @@ header nav a.active {
     -moz-column-gap: 10px;
   }
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1300px), (max-device-width: 1024px) {
   .single-project .partner-info .column-left .list {
     -moz-columns: 3;
     -webkit-columns: 3;
@@ -894,7 +912,7 @@ header nav a.active {
     -moz-column-gap: 10px;
   }
 }
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1150px), (max-device-width: 1024px) {
   .single-project .partner-info .column-left .list {
     -moz-columns: 2;
     -webkit-columns: 2;
@@ -1323,8 +1341,8 @@ header nav a.active {
 }
 @media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #about #produce-text p {
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 10%;
+    padding-bottom: 10%;
   }
 }
 .capabilities #skills-section {
@@ -1504,8 +1522,10 @@ header nav a.active {
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .title {
   margin-left: 0;
-  margin-bottom: 15px;
-  margin-top: 0;
+  margin: 30px 0;
+}
+.capabilities #skills-section #about-skills .about-skill .related-work .title h3 {
+  padding-top: 0;
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs {
   float: left;
@@ -1544,6 +1564,7 @@ header nav a.active {
   padding-bottom: 10px;
   heigth: auto;
   float: left;
+  margin-top: 30px;
 }
 .capabilities #skills-section #about-skills .about-skill .related-clients .title {
   margin-left: 0;

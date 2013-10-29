@@ -78,18 +78,21 @@ button:hover {
 
 h1 {
 	font-family: @museo;
-	font-size: 46px;
+	/*font-size: 46px;*/
+	font-size: 3.8em;
 	line-height: 0px;
 	font-weight: 300;
 	font-style: italic;
 	text-transform: uppercase;
-	letter-spacing: 1px;
+	letter-spacing: 0.1em;
 }
 
 h2 {
 	font-family: @proxima;
-	font-size: 46px;
-	line-height: 46px;
+	/*font-size: 46px;*/
+	font-size: 3.8em;
+	/*line-height: 46px;*/
+	line-height: 3.8em;
 	font-weight: 100;
 	color: @three;
 	text-transform: uppercase;
@@ -97,27 +100,32 @@ h2 {
 
 h3 {
 	font-family: @museo;
-	font-size: 20px;
-	line-height: 22px;
+	/*font-size: 20px;
+	line-height: 22px;*/
+	font-size: 1.6em;
+	line-height: 1em;
 	font-weight: 100;
 	font-style: italic;
 	text-transform: uppercase;
-	letter-spacing: 1px;
+	letter-spacing: 0.1em;
 	padding-top: 5px;
 }
 
 p {
 	font-family: @jaf;
-	font-size: 18px;
-	line-height: 28px;
+	/*font-size: 18px;
+	line-height: 28px;*/
+	font-size: 1.5em;
+	line-height: 1.8em;
 	font-weight: 100;
 	color: @three;
-	letter-spacing: 1px;
+	letter-spacing: 0.1em;
 }
 
 a {
 	font-family: @jaf;
-	font-size: 18px;
+	/*font-size: 18px;*/
+	font-size: 1em;
 	font-style: oblique;
 	/*line-height: 28px;*/
 	font-weight: 100;
@@ -132,8 +140,10 @@ a:hover {
 
 ul li {
 	font-family: @jaf;
-	font-size: 18px;
-	line-height: 38px;
+	/*font-size: 18px;
+	line-height: 38px;*/
+	font-size: 1.5em;
+	line-height: 3.1em;
 	font-weight: 100;
 	color: @three;
 }
@@ -216,11 +226,13 @@ header {
 			width:100%;
 			margin: 0;
 			padding-right:0;
+			text-align: center;
 		}
 
 		a {
 			font-family: @museo;
-			font-size: 14px;
+			/*font-size: 14px;*/
+			font-size: 1.1em;
 			text-transform: uppercase;
 			color: @c;
 			font-style: normal;
@@ -232,7 +244,8 @@ header {
 				float: left;
 				clear:both;
 				color:#999;
-				font-size:18px;
+				/*font-size:18px;*/
+				font-size: 1.5em;
 				width:100%;
 				margin:0;
 				padding: 20px 0 20px 20px;
@@ -354,13 +367,14 @@ header {
 					float: none;
 					min-width:100%;
 					max-width:100%;
-					margin-top: 20px;
+					margin: 20px 0 40px 0;
 
 				}
 
 				a {
 					font-family: @proxima;
-					font-size: 46px;
+					/*font-size: 46px;*/
+					font-size: 3.8em;
 					line-height: 0;
 					font-weight: 100;
 					color: @three;
@@ -378,11 +392,11 @@ header {
 					}
 					h2 {
 						clear: both;
-						width:95%;
+						width:98%;
 
 						@media screen and (max-width: 828px), (max-device-width: 1024px) {
 							text-align: center;
-							margin: 10px 10px 0 10px;
+							margin: 10px 0;
 						}
 					
 					}
@@ -502,7 +516,8 @@ header {
 				margin: 60px 0 0 10px;
 				float: left;
 				text-align: left;
-				font-size: 16px;
+				/*font-size: 16px;*/
+				font-size: 1.3em;
 				display:none;
 
 				@media screen and (max-width: 800px), (max-device-width: 1024px) {
@@ -530,7 +545,7 @@ header {
 			padding: 28px 0;
 			width: 50%;
 
-			@media screen and (max-width: 800px) {
+			@media screen and (max-width: 800px), (max-device-width: 1024px) {
 				width: 80%;
 				height: 60%;
 			}
@@ -541,8 +556,9 @@ header {
 				margin: 0 auto;
 				display: table;
 
-				@media screen and (max-width: 750px) {
-					font-size: 30px;
+				@media screen and (max-width: 750px),  (max-device-width: 1024px) {
+					/*font-size: 30px;*/
+					font-size: 2.5em;
 					line-height: 40px;
 				}
 			}
@@ -569,7 +585,8 @@ header {
 				margin: 60px 10px 0 0;
 				float: right;
 				text-align: right;
-				font-size: 16px;
+				/*font-size: 16px;*/
+				font-size: 1.3em;
 				display:none;
 
 				@media screen and (max-width: 800px), (max-device-width: 1024px) {
@@ -674,15 +691,15 @@ header {
 				float: left;
 				width:30%;
 
-				@media screen and (max-width: 1300px) {
+				@media screen and (max-width: 1300px), (max-device-width: 1024px)  {
 					width:35%;
 				}
 
-				@media screen and (max-width: 1100px) {
+				@media screen and (max-width: 1100px), (max-device-width: 1024px)  {
 					width: 25%;
 				}
 
-				@media screen and (max-width: 900px) {
+				@media screen and (max-width: 900px), (max-device-width: 1024px)  {
 					width: 35%;
 				}
 
@@ -696,7 +713,7 @@ header {
 					padding-top:0;
 					margin:0;
 
-					@media screen and (max-width: 1100px) {
+					@media screen and (max-width: 1100px), (max-device-width: 1024px)  {
 						padding-bottom:10px;
 					}
 				}
@@ -704,7 +721,7 @@ header {
 				.list { 
 					padding-left:2.5%;
 					float: left;
-					@media screen and (max-width: 1300px) {
+					@media screen and (max-width: 1300px), (max-device-width: 1024px)  {
 						width:100%;
 						padding-left:0;
 					}
@@ -727,22 +744,22 @@ header {
 					padding-top:0;
 					margin:0;
 
-					@media screen and (max-width: 1100px) {
+					@media screen and (max-width: 1100px), (max-device-width: 1024px)  {
 						padding-bottom:10px;
 					}
 				}
 				float: left;
 				width:65%;
 
-				@media screen and (max-width: 1300px) {
+				@media screen and (max-width: 1300px), (max-device-width: 1024px)  {
 					width:60%;
 				}
 
-				@media screen and (max-width: 1100px) {
+				@media screen and (max-width: 1100px), (max-device-width: 1024px)  {
 					width: 70%;
 				}
 
-				@media screen and (max-width: 900px) {
+				@media screen and (max-width: 900px), (max-device-width: 1024px)  {
 					width: 60%;
 				}
 
@@ -763,14 +780,14 @@ header {
 
 					-moz-column-gap:10px;
 					
-					@media screen and (max-width: 1700px) {
+					@media screen and (max-width: 1700px), (max-device-width: 1024px)  {
 						-webkit-columns: 3; /* Safari and Chrome */
 						-moz-columns: 3; /* Firefox */
 						columns:3;
 						-moz-column-gap:10px;
 					}
 
-					@media screen and (max-width: 1300px) {
+					@media screen and (max-width: 1300px), (max-device-width: 1024px)  {
 						-webkit-columns:2;
 						-moz-columns:2;
 						columns:2;
@@ -778,7 +795,7 @@ header {
 						-moz-column-gap:10px;
 					}
 
-					@media screen and (max-width: 1100px) {
+					@media screen and (max-width: 1100px), (max-device-width: 1024px)  {
 						-webkit-columns:3;
 						-moz-columns:2;
 						columns:3;
@@ -858,7 +875,7 @@ header {
 					columns:3;
 					-moz-column-gap:10px;
 
-					@media screen and (max-width: 1700px) {
+					@media screen and (max-width: 1700px), (max-device-width: 1024px)  {
 						-moz-columns:2;
 						-webkit-columns:2;
 						columns:2;
@@ -866,7 +883,7 @@ header {
 						-moz-column-gap:10px;
 					}
 
-					@media screen and (max-width: 1300px) {
+					@media screen and (max-width: 1300px), (max-device-width: 1024px)  {
 						-moz-columns:3;
 						-webkit-columns:3;
 						columns:3;
@@ -875,7 +892,7 @@ header {
 						-moz-column-gap:10px;
 					}
 
-					@media screen and (max-width: 1150px) {
+					@media screen and (max-width: 1150px), (max-device-width: 1024px)  {
 						-moz-columns:2;
 						-webkit-columns:2;
 						columns:2;
@@ -1030,7 +1047,8 @@ header {
 							text-align: center;
 							line-height: 33px;
 							height: 30px;
-							font-size: 14px;
+							/*font-size: 14px;*/
+							font-size: 1.1em;
 							width: 85px;
 							letter-spacing: 0;
 							font-style: normal;
@@ -1127,6 +1145,7 @@ header {
 						letter-spacing: 0;
 						float: left;
 						margin-right: 20px;
+						font-style: normal;
 						@media screen and (max-width: 600px), (max-device-width: 1024px){
 								margin-right: 6px;
 						}							
@@ -1281,8 +1300,8 @@ header {
 				padding-top: 14%;
 				color:@black;
 				@media screen and (max-width: 600px), (max-device-width: 1024px) {
-					padding-top:5%;
-					padding-bottom:5%;
+					padding-top:10%;
+					padding-bottom:10%;
 
 				}
 			}
@@ -1461,8 +1480,11 @@ header {
 				
 				.title {
 					margin-left: 0;
-					margin-bottom: 15px;
-					margin-top:0;
+					margin: 30px 0;
+
+					h3 {
+						padding-top: 0;
+					}
 				}
 
 				.work-thumbs {
@@ -1504,7 +1526,7 @@ header {
 			padding-bottom:10px;
 			heigth:auto;
 			float:left;
-			
+			margin-top: 30px;
 
 			.title {
 				margin-left: 0;
@@ -1572,13 +1594,17 @@ header {
 				color: @yellow;
 				margin: 130px 0 30px 0;
 				line-height: 50px;
+
+				@media screen and (max-device-width: 1024px) {
+					color: #fff;
+				}
 			}
 
 			.mobile-client {
 				display:none;
 				@media screen and (max-device-width: 1024px) {
 					display:block;
-					margin: 30px 0 30px 0;
+					margin: 60px 0 30px 0;
 				}
 
 			}
