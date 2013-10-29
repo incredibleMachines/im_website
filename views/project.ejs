@@ -166,7 +166,7 @@
 		<section class="photo-block-multi">
 		<% 
 			for(var j= 0; j<project.imageBlocks[i].length; j++){ %>
-			<div class="img-wrap" data-image-size="<%= project.imageBlocks[i][j].size  %>">
+			<div class="img-wrap" data-image-size="<%= project.imageType[imgCount][j]  %>">
 			<img src="<%= project.imageBlocks[i][j].path  %>" alt="alt text" />
 			</div>
 		<% 
