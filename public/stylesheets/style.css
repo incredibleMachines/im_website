@@ -71,6 +71,7 @@ td {
 }
 body {
   line-height: 1;
+  font-size: 12px;
 }
 ol,
 ul {
@@ -116,11 +117,12 @@ button:hover {
 }
 /*************************** FONTS ***************************/
 /*************************** TYPE STYLES ***************************/
+body {
+  font-size: 100%;
+}
 h1 {
   font-family: "museo-slab", "Museo Slab", courier, serif;
-  /*font-size: 46px;*/
-
-  font-size: 3.8em;
+  font-size: 46px;
   line-height: 0px;
   font-weight: 300;
   font-style: italic;
@@ -129,11 +131,8 @@ h1 {
 }
 h2 {
   font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
-  /*font-size: 46px;*/
-
+  font-size: 46px;
   font-size: 3.8em;
-  /*line-height: 46px;*/
-
   line-height: 3.8em;
   font-weight: 100;
   color: #333333;
@@ -141,11 +140,8 @@ h2 {
 }
 h3 {
   font-family: "museo-slab", "Museo Slab", courier, serif;
-  /*font-size: 20px;
-	line-height: 22px;*/
-
-  font-size: 1.6em;
-  line-height: 1em;
+  font-size: 20px;
+  line-height: 22px;
   font-weight: 100;
   font-style: italic;
   text-transform: uppercase;
@@ -154,23 +150,17 @@ h3 {
 }
 p {
   font-family: "jaf-facitweb", "Facit", arial, sans-serif;
-  /*font-size: 18px;
-	line-height: 28px;*/
-
-  font-size: 1.5em;
-  line-height: 1.8em;
+  font-size: 18px;
+  line-height: 28px;
   font-weight: 100;
   color: #333333;
   letter-spacing: 0.1em;
 }
 a {
   font-family: "jaf-facitweb", "Facit", arial, sans-serif;
-  /*font-size: 18px;*/
-
-  font-size: 1em;
+  font-size: 18px;
   font-style: oblique;
-  /*line-height: 28px;*/
-
+  line-height: 28px;
   font-weight: 100;
   color: #333333;
   text-decoration: none;
@@ -181,11 +171,8 @@ a:hover {
 }
 ul li {
   font-family: "jaf-facitweb", "Facit", arial, sans-serif;
-  /*font-size: 18px;
-	line-height: 38px;*/
-
-  font-size: 1.5em;
-  line-height: 3.1em;
+  font-size: 18px;
+  line-height: 38px;
   font-weight: 100;
   color: #333333;
 }
@@ -408,7 +395,7 @@ header nav a.active {
   font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
   /*font-size: 46px;*/
 
-  font-size: 3.8em;
+  font-size: 2em;
   line-height: 0;
   font-weight: 100;
   color: #333333;
