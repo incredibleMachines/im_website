@@ -192,7 +192,7 @@ header .logoHome img {
   width: 264px;
   height: 55px;
 }
-@media screen and (max-width: 828px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   header .logoHome {
     display: none;
   }
@@ -207,7 +207,7 @@ header .logoMobile img {
   width: 38px;
   height: 52px;
 }
-@media screen and (max-width: 828px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   header .logoMobile {
     display: block;
   }
@@ -223,7 +223,7 @@ header .buttonMobile .buttonLine {
   height: 8px;
   border-top: 3px solid #666;
 }
-@media screen and (max-width: 828px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   header .buttonMobile {
     display: block;
   }
@@ -238,7 +238,7 @@ header nav {
   display: block;
   padding-right: 35px;
 }
-@media screen and (max-width: 828px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   header nav {
     display: none;
     float: left;
@@ -259,7 +259,7 @@ header nav a {
   margin: 0 0 0 25px;
   letter-spacing: 1px;
 }
-@media screen and (max-width: 828px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   header nav a {
     float: left;
     clear: both;
@@ -278,7 +278,7 @@ header nav a:hover {
   padding-top: 5px;
   font-style: oblique;
 }
-@media screen and (max-width: 828px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   header nav a:hover {
     border-top: 1px solid #333;
     padding: 20px 0 20px 20px;
@@ -292,7 +292,7 @@ header nav a.active {
   padding-top: 5px;
   font-style: oblique;
 }
-@media screen and (max-width: 828px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   header nav a.active {
     padding: 20px 0 20px 20px;
     border-top: 1px solid #333;
@@ -341,7 +341,7 @@ header nav a.active {
   position: absolute;
   width: 100%;
 }
-@media screen and (max-width: 828px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .projects #portfolio-wrap .intro-vid {
     display: none;
   }
@@ -372,7 +372,7 @@ header nav a.active {
     width: 45%;
   }
 }
-@media screen and (max-width: 828px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .projects #portfolio-wrap #portfolio .port-item {
     padding: 0;
     margin: 0;
@@ -401,7 +401,7 @@ header nav a.active {
   clear: both;
   width: 95%;
 }
-@media screen and (max-width: 828px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .projects #portfolio-wrap #portfolio .port-item a h2 {
     text-align: center;
     margin: 10px 10px 0 10px;
@@ -419,7 +419,7 @@ header nav a.active {
   clear: both;
   line-height: 20px;
 }
-@media screen and (max-width: 828px), (max-device-width: 500px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .projects #portfolio-wrap #portfolio .port-item p {
     text-align: center;
     margin: 0 10px;
@@ -475,7 +475,7 @@ header nav a.active {
   line-height: 1px;
   border-bottom: 1px solid #000000;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .single-project .project-vid {
     line-height: 10px;
   }
@@ -489,7 +489,7 @@ header nav a.active {
   z-index: 1;
   padding-top: 70px;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .single-project .project-vid .poster-wrap .poster-image {
     line-height: 10px;
     padding-top: 0;
@@ -529,7 +529,7 @@ header nav a.active {
   float: left;
   padding: 0.5% 0;
 }
-@media screen and (max-width: 800px), (max-device-width: 500px) {
+@media screen and (max-width: 800px), (max-device-width: 1024px) {
   .single-project .title-nav .previous-proj {
     width: 9%;
   }
@@ -541,7 +541,7 @@ header nav a.active {
   font-size: 16px;
   display: none;
 }
-@media screen and (max-width: 800px), (max-device-width: 500px) {
+@media screen and (max-width: 800px), (max-device-width: 1024px) {
   .single-project .title-nav .previous-proj .nav-label-prev {
     display: none;
   }
@@ -592,7 +592,7 @@ header nav a.active {
   float: right;
   padding: 0.5% 0;
 }
-@media screen and (max-width: 800px), (max-device-width: 500px) {
+@media screen and (max-width: 800px), (max-device-width: 1024px) {
   .single-project .title-nav .next-proj {
     width: 9%;
   }
@@ -604,7 +604,7 @@ header nav a.active {
   font-size: 16px;
   display: none;
 }
-@media screen and (max-width: 800px), (max-device-width: 500px) {
+@media screen and (max-width: 800px), (max-device-width: 1024px) {
   .single-project .title-nav .next-proj .nav-label-next {
     display: none;
   }
@@ -667,7 +667,7 @@ header nav a.active {
     columns: 1;
   }
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .single-project .project-text-titled .text-body {
     -moz-columns: 1;
     -webkit-columns: 1;
@@ -701,7 +701,7 @@ header nav a.active {
     width: 35%;
   }
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .single-project .list-block .column-left {
     width: 95%;
   }
@@ -764,7 +764,7 @@ header nav a.active {
     width: 60%;
   }
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .single-project .list-block .column-right {
     width: 95%;
     margin-left: 2.5%;
@@ -815,7 +815,7 @@ header nav a.active {
     -moz-column-gap: 10px;
   }
 }
-@media screen and (max-width: 900px), (max-device-width: 500px) {
+@media screen and (max-width: 900px), (max-device-width: 1024px) {
   .single-project .list-block .column-right .list {
     -webkit-columns: 1;
     -moz-columns: 1;
@@ -831,7 +831,7 @@ header nav a.active {
   float: left;
   clear: both;
 }
-@media screen and (max-width: 900px), (max-device-width: 500px) {
+@media screen and (max-width: 900px), (max-device-width: 1024px) {
   .single-project .list-block .column-right .list ul li {
     clear: none;
     padding-right: 14px;
@@ -857,7 +857,7 @@ header nav a.active {
 .single-project .partner-info .column-left {
   width: 48%;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .single-project .partner-info .column-left {
     width: 95%;
   }
@@ -904,7 +904,7 @@ header nav a.active {
     -moz-column-gap: 10px;
   }
 }
-@media screen and (max-width: 900px), (max-device-width: 500px) {
+@media screen and (max-width: 900px), (max-device-width: 1024px) {
   .single-project .partner-info .column-left .list {
     -moz-columns: 1;
     -webkit-columns: 1;
@@ -920,7 +920,7 @@ header nav a.active {
   float: left;
   clear: both;
 }
-@media screen and (max-width: 900px), (max-device-width: 500px) {
+@media screen and (max-width: 900px), (max-device-width: 1024px) {
   .single-project .partner-info .column-left .list ul li {
     clear: none;
     padding-right: 14px;
@@ -929,7 +929,7 @@ header nav a.active {
 .single-project .partner-info .column-right {
   width: 49%;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .single-project .partner-info .column-right {
     width: 95%;
   }
@@ -972,7 +972,7 @@ header nav a.active {
     padding-left: 0;
   }
 }
-@media screen and (max-width: 900px), (max-device-width: 500px) {
+@media screen and (max-width: 900px), (max-device-width: 1024px) {
   .single-project .partner-info .column-right .list {
     -moz-columns: 1;
     -webkit-columns: 1;
@@ -987,7 +987,7 @@ header nav a.active {
   float: left;
   clear: both;
 }
-@media screen and (max-width: 900px), (max-device-width: 500px) {
+@media screen and (max-width: 900px), (max-device-width: 1024px) {
   .single-project .partner-info .column-right .list ul li {
     clear: none;
     padding-right: 5px;
@@ -1148,7 +1148,7 @@ header nav a.active {
 
   /* ---end social-btns --- */
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .single-project .footer-bg-wrap .footer-pg-wrap footer #strip {
     padding: 0 6px;
     margin: 0;
@@ -1165,7 +1165,7 @@ header nav a.active {
   float: left;
   margin-right: 20px;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #copyright p {
     margin-right: 6px;
   }
@@ -1178,7 +1178,7 @@ header nav a.active {
   margin-right: 20px;
   color: #ffd24f;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #copyright #reel a {
     margin-right: 6px;
   }
@@ -1193,7 +1193,7 @@ header nav a.active {
 .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #social-btns a i {
   margin-left: 10px;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #social-btns a i {
     margin-left: 0;
     margin-right: 0;
@@ -1225,7 +1225,7 @@ header nav a.active {
   /* ---end about-block--- */
 
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #about {
     padding: 0;
     height: auto;
@@ -1242,7 +1242,7 @@ header nav a.active {
   min-width: 100%;
   position: fixed;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #about .about-block {
     position: relative;
     height: auto;
@@ -1262,7 +1262,7 @@ header nav a.active {
   left: 0;
   top: 0;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #about .about-text {
     position: relative;
     height: auto;
@@ -1284,7 +1284,7 @@ header nav a.active {
     width: 80%;
   }
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #about .about-text p {
     font-size: 30px;
     line-height: 40px;
@@ -1301,7 +1301,7 @@ header nav a.active {
 .capabilities #about #about-intro p {
   padding-top: 18%;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #about #about-intro p {
     padding-top: 20%;
   }
@@ -1321,7 +1321,7 @@ header nav a.active {
   padding-top: 14%;
   color: #000000;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #about #produce-text p {
     padding-top: 5%;
     padding-bottom: 5%;
@@ -1337,7 +1337,7 @@ header nav a.active {
   /* --- end about-skills div --- */
 
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section {
     position: relative;
   }
@@ -1352,7 +1352,7 @@ header nav a.active {
   /* ---end ul--- */
 
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section #skills {
     width: 100%;
     background-color: #333;
@@ -1372,7 +1372,7 @@ header nav a.active {
   height: 50px;
   margin-top: 10px;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section #skills ul li {
     height: 100%;
     width: 95%;
@@ -1409,7 +1409,7 @@ header nav a.active {
     line-height: 34px;
   }
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section #skills ul li a {
     font-size: 32px;
     line-height: 46px;
@@ -1419,7 +1419,7 @@ header nav a.active {
   font-style: italic;
   color: #333333;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section #skills ul li a:hover {
     color: #ffffff;
   }
@@ -1431,7 +1431,7 @@ header nav a.active {
   font-style: italic;
   color: #333333;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section #skills ul li.active {
     border-bottom: 1px solid #000000;
   }
@@ -1440,7 +1440,7 @@ header nav a.active {
     color: #999999;
   }
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section #skills ul li:last-child {
     border: none;
   }
@@ -1453,7 +1453,7 @@ header nav a.active {
   /* ---end about-skill--- */
 
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section #about-skills {
     width: 90%;
     float: left;
@@ -1476,7 +1476,7 @@ header nav a.active {
   float: left;
   display: none;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section #about-skills .about-skill .skill-title {
     display: block;
     border-bottom: 4px solid #ffd24f;
@@ -1524,7 +1524,7 @@ header nav a.active {
     margin: 0 0 20px 0;
   }
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project {
     margin: 0 0 20px 0;
     width: 100%;
@@ -1569,7 +1569,7 @@ header nav a.active {
   float: left;
   width: 100%;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section #about-skills .about-skill .skill-border {
     border-top: none;
     display: none;
@@ -1578,7 +1578,7 @@ header nav a.active {
 .capabilities #skills-section .bottom-skills {
   display: none;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section .bottom-skills {
     display: block;
   }
@@ -1623,11 +1623,16 @@ header nav a.active {
   /* ---end client--- */
 
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px) {
   .clients #client-wrap #client-grid #client-list {
     margin-bottom: 0;
     padding-left: 0;
     width: 100%;
+  }
+}
+@media screen and (max-device-width: 1024px) {
+  .clients #client-wrap #client-grid #client-list {
+    display: none;
   }
 }
 .clients #client-wrap #client-grid #client-list .client {
@@ -1652,7 +1657,7 @@ header nav a.active {
     width: 48%;
   }
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .clients #client-wrap #client-grid #client-list .client {
     width: 100%;
     margin-bottom: 1%;
@@ -1708,7 +1713,7 @@ header nav a.active {
   /*--- end corner ---*/
 
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .clients #client-wrap .client-detail {
     width: 95%;
     margin-left: 0;
@@ -1724,7 +1729,7 @@ header nav a.active {
     width: 42%;
   }
 }
-@media screen and (max-width: 960px), (max-device-width: 500px) {
+@media screen and (max-width: 960px), (max-device-width: 1024px) {
   .clients #client-wrap .client-detail .client-img {
     width: 95%;
   }
@@ -1759,7 +1764,7 @@ header nav a.active {
     margin-right: 4%;
   }
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .clients #client-wrap .client-detail .detail-col {
     width: 100%;
     margin-top: 30px;
@@ -1775,7 +1780,7 @@ header nav a.active {
   clear: both;
   padding-top: 20px;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .clients #client-wrap .client-detail .detail-col .detail-list {
     margin-left: 0;
   }
@@ -1867,7 +1872,7 @@ header nav a.active {
     padding-left: 0;
   }
 }
-@media screen and (max-width: 900px), (max-device-width: 500px) {
+@media screen and (max-width: 900px), (max-device-width: 1024px) {
   .clients .list-block .column .list {
     -moz-columns: 1s;
     -webkit-columns: 1;
@@ -1883,7 +1888,7 @@ header nav a.active {
   float: left;
   clear: both;
 }
-@media screen and (max-width: 900px), (max-device-width: 500px) {
+@media screen and (max-width: 900px), (max-device-width: 1024px) {
   .clients .list-block .column .list ul li {
     clear: none;
     padding-right: 15px;
@@ -1991,7 +1996,7 @@ header nav a.active {
 
   /* ---end social-btns --- */
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .footer-bg-wrap footer #strip {
     padding: 0 10px;
   }
@@ -2007,7 +2012,7 @@ header nav a.active {
   float: left;
   margin-right: 20px;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .footer-bg-wrap footer #strip #copyright p {
     margin-right: 6px;
   }
@@ -2020,7 +2025,7 @@ header nav a.active {
   margin-right: 20px;
   color: #ffd24f;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .footer-bg-wrap footer #strip #copyright #reel a {
     margin-right: 6px;
   }
@@ -2032,7 +2037,7 @@ header nav a.active {
 .footer-bg-wrap footer #strip #social-btns a {
   font-size: 16px;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .footer-bg-wrap footer #strip #social-btns a {
     margin-left: 0;
     margin-right: 0;
@@ -2041,7 +2046,7 @@ header nav a.active {
 .footer-bg-wrap footer #strip #social-btns a i {
   margin-left: 10px;
 }
-@media screen and (max-width: 600px), (max-device-width: 500px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .footer-bg-wrap footer #strip #social-btns a i {
     margin-left: 0;
     margin-right: 0;
