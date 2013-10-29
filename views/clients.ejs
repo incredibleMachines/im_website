@@ -3,13 +3,14 @@
 	<div id="client-wrap">	
 		<section id="client-grid">
 		
-			<h1>Clients</h1>
+			<h1 class="browser-client">Clients</h1>
 			
 			<% for(var i = 0; i< clients.length; i++){ 
 
 				if(clients[i].name!='various'&&clients[i].name!='Various'){%>
 
 			<!-- CLIENT INFO -->
+			<h1 class="mobile-client"><%= clients[i].name %></h1>
 				<section class="client-detail" id="<%= makeSlug(clients[i].name) %>">
 					<div class="corner close">
 						<button><p>+</p></button>

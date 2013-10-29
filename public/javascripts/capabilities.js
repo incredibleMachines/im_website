@@ -20,9 +20,13 @@ $(document).ready(function(){
 
 	var lock=0;
 
+	
+
 /* scroll lock capabilities nav to top of screen */	
 	function userScroll() {
-		var amtScroll = $('body').scrollTop();
+		// var amtScroll = $('body').scrollTop();
+		var amtScroll = $(window).scrollTop();
+		console.log($(window).scrollTop());
 
 		if($('.about-block').css('line-height')=='20px'){
 			if(amtScroll>7.7*aboutHeight+$('#about-skills').height()-$('#skills').height()){
@@ -86,7 +90,6 @@ $(document).ready(function(){
 					$('#obsessed-text').css('position','absolute').css('top',4.5*aboutHeight);
 				}
 				lock=3;
-				console.log('go');
 			}
 
 			else if(amtScroll>2*aboutHeight){
@@ -195,5 +198,6 @@ $(document).ready(function(){
 /* event listener for scrolling */			  
 
 		window.addEventListener('scroll',userScroll,false);
+		$(window).scroll(userScroll());
 		window.addEventListener('resize',userResize,false);
 });

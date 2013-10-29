@@ -1,11 +1,6 @@
 $(document).ready(function(){
 
 var navActive=false;
-var mobileCheck=false;
-
-if($('.logoMobile').css('display')=='none'){
-                mobileCheck=true;
-}
 
         $('header').click(function(){
                 if($('.logoMobile').css('display')=='block'){
@@ -13,10 +8,12 @@ if($('.logoMobile').css('display')=='none'){
                 if(navActive==false){
                         $('nav').css('display','block');
                         $('.buttonMobile').addClass('active');
+                        $('.project-vid').css('padding-top',$('nav').height());
                         navActive=true;
                 }
                 else{
                         $('nav').css('display','none');
+                        $('.project-vid').css('padding-top',0);
                         $('.buttonMobile').removeClass('active');
                         navActive=false;
                 }
@@ -27,15 +24,14 @@ if($('.logoMobile').css('display')=='none'){
 headerResize= function(){
         if($('.logoMobile').css('display')=='none'){
                 $('nav').css('display','block');
+                $('.project-vid').css('padding-top',0);
                 $('.buttonMobile').removeClass('active');
-                switchCheck=false;
                 navActive=false;
         }
         else{
-                if(switchCheck==false){
-                        $('nav').css('display','none');
-                        switchCheck=true;
-                }
+                $('nav').css('display','none');
+                $('.buttonMobile').removeClass('active');
+                navActive=false;
         }
 
 }

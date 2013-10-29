@@ -6,7 +6,7 @@ $('.video-js').css('position','absolute');
 $('.introLogo').find('img').attr('src','../images/im_logo_white.png');
 $('.logoHome').hide();
 
-var videoArray = [{mp4:'Cannes.mp4',ogv:'Cannes.ogv',link:'twitter-cannes'},{mp4:'Lincoln.mp4',ogv:'Lincoln.ogv',link:'lincoln-mkz-launch'},{mp4:'Naked.mp4',ogv:'Naked.ogv',link:'power-garden'},{mp4:'PaintOut.mp4',ogv:'PaintOut.ogv',link:'paintout'},{mp4:'Tones_Samsung.mp4',ogv:'Tones_Samsung.ogv',link:'make-it-mega'},{mp4:'Tones_sxsw.mp4',ogv:'Tones_sxsw.ogv',link:'tones'},{mp4:'VFA.mp4',ogv:'VFA.ogv',link:'vfa'}];
+var videoArray = [{mp4:'Cannes.mp4',ogv:'Cannes.ogv',link:'living-billboard'},{mp4:'Lincoln.mp4',ogv:'Lincoln.ogv',link:'lincoln-mkz-launch'},{mp4:'Naked.mp4',ogv:'Naked.ogv',link:'the-power-garden'},{mp4:'PaintOut.mp4',ogv:'PaintOut.ogv',link:'paintout'},{mp4:'Tones_Samsung.mp4',ogv:'Tones_Samsung.ogv',link:'make-it-mega'},{mp4:'Tones_sxsw.mp4',ogv:'Tones_sxsw.ogv',link:'tones'},{mp4:'VFA.mp4',ogv:'VFA.ogv',link:'vfa-annual-party'}];
 
 var videoPlay = shuffle(videoArray);
 var videoIndex = 0;
@@ -46,7 +46,7 @@ videojs("intro-video-1").ready(function(){
 	if($('.header').css('padding')!='0'){
 		myPlayer.src([
 	  		{ type: "video/mp4", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 },
-	 		{ type: "video/ogg", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 }
+	 		{ type: "video/ogg", src: "/videos/homepage/"+videoPlay[videoIndex].ogv }
 		]);
 	}
 
@@ -184,9 +184,9 @@ function playNext(){
 	}
 	myPlayer.src([
   		{ type: "video/mp4", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 },
- 		{ type: "video/ogg", src: "/videos/homepage/"+videoPlay[videoIndex].mp4 }
+ 		{ type: "video/ogg", src: "/videos/homepage/"+videoPlay[videoIndex].ogv }
 	]);
-	$('.video-project').attr('href',"/projects/"+videoPlay[videoIndex].link);
+	$('.vid-project').attr('href',"/projects/"+videoPlay[videoIndex].link);
 }
 
 

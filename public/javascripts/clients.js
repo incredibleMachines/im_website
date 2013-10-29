@@ -5,17 +5,30 @@ $(document).ready(function(){
 	var clientSize=42;
 	var clientTop=$('.client-detail').position().top;
 	var expanded=false;
+	var mobile=false;
 
 	$('.cap-tech').css('z-index','10');
 	$('.footer-bg-wrap').css('z-index','10');
-	$('.footer-bg-wrap').css('position','absolute');
-	$('.footer-bg-wrap').css('width','100%');
-	$('.client-detail').offset({top: -1000});
+	
+
+
+	if($('#client-list').css('display')=='none'){
+		mobile=true;
+		$('.cap-tech').css('position','relative');
+		$('.cap-tech').css('padding-top',30);
+	}
+	else{
+		$('.client-detail').offset({top: -1000});
+		$('.footer-bg-wrap').css('position','absolute');
+		$('.footer-bg-wrap').css('width','100%');
+	}
 
 
 	userResize();
 	
 	$('body').click(function(e){
+
+		if(mobile==false){
 		var target=$(e.target);
 		if(!target.is('nav')){
 		if(target.is('.client')){
@@ -45,24 +58,25 @@ $(document).ready(function(){
 			}
 		}
 	}
+}
 
 	});
 	
 
 	function userResize(){
+		if(mobile==false){
 		var detail=false;
-	
 		$('.client-detail').each(function(){
 			var adjustedTop=clientTop;
 			if($(this).position().top>0){
 				detail=true;
-				var hSize=parseInt($('#client-grid h1').css('font-size'));
-				if($('#client-grid h1').height()>3*hSize){
-					adjustedTop=clientTop+(2*parseInt($('#client-grid h1').css('line-height')));
+				var hSize=parseInt($('.browser-client').css('font-size'));
+				if($('.browser-client').height()>3*hSize){
+					adjustedTop=clientTop+(2*parseInt($('.browser-client').css('line-height')));
 					$(this).animate({top:adjustedTop},200);
 				}
-				else if($('#client-grid h1').height()>hSize+10){
-					adjustedTop=clientTop+parseInt($('#client-grid h1').css('line-height'));
+				else if($('.browser-client').height()>hSize+10){
+					adjustedTop=clientTop+parseInt($('.browser-client').css('line-height'));
 					$(this).animate({top:adjustedTop},200);
 				}
 				else {
@@ -71,7 +85,7 @@ $(document).ready(function(){
 				}
 				$('.cap-tech').css({'top':adjustedTop+$(this).outerHeight()});
 				$('.footer-bg-wrap').css({'top':adjustedTop+$(this).outerHeight()+$('.cap-tech').outerHeight()});
-				console.log($('#client-grid h1').height());
+				console.log($('.browser-client').height());
 			}
 		});
 
@@ -98,8 +112,10 @@ $(document).ready(function(){
 			}
 		});
 	}
+	}
 
 	function expandDetail(clientName, clientSlug, gridHeight){
+		if(mobile==false){
 		$('.footer-bg-wrap').css('transition','top .5s');
 		$('.cap-tech').css('transition','top .5s');	
 
@@ -120,13 +136,13 @@ $(document).ready(function(){
 			$('.client-detail').each(function(){
 			if($(this).position().top>0){
 				detail=true;
-				var hSize=parseInt($('#client-grid h1').css('font-size'));
-				if($('#client-grid h1').height()>3*hSize){
-					adjustedTop=clientTop+(2*parseInt($('#client-grid h1').css('line-height')));
+				var hSize=parseInt($('.browser-client').css('font-size'));
+				if($('.browser-client').height()>3*hSize){
+					adjustedTop=clientTop+(2*parseInt($('.browser-client').css('line-height')));
 					$(this).animate({top:adjustedTop},200);
 				}
-				else if($('#client-grid h1').height()>hSize+20){
-					adjustedTop=clientTop+parseInt($('#client-grid h1').css('line-height'));
+				else if($('.browser-client').height()>hSize+20){
+					adjustedTop=clientTop+parseInt($('.browser-client').css('line-height'));
 					$(this).animate({top:adjustedTop},200);
 				}
 				else {
@@ -139,15 +155,18 @@ $(document).ready(function(){
 		});
 		});
 		
-		$('#client-grid h1').delay(500).fadeOut(100,function(){
-			$('#client-grid h1').text(clientName).fadeIn(100);
+		$('.browser-client').delay(500).fadeOut(100,function(){
+			$('.browser-client').text(clientName).fadeIn(100);
 		});
+
+		}
 
 
 		}
 
 
 	function contractDetail(){
+		if(mobile==false){
 		// $('.footer-bg-wrap').css('transition','top .5s');
 		// $('.cap-tech').css('transition','top .5s');
 	$('.client-detail').animate({top:-1000},1000);
@@ -156,8 +175,8 @@ $(document).ready(function(){
 		$(this).css('top',clientTop);
 		$(this).dequeue();
 	});	
-		$('#client-grid h1').fadeOut(function(){
-			$('#client-grid h1').text("Clients").fadeIn(0);
+		$('.browser-client').fadeOut(function(){
+			$('.browser-client').text("Clients").fadeIn(0);
 		});
 
 		$('.cap-tech').delay(100).queue(function(){
@@ -180,6 +199,7 @@ $(document).ready(function(){
 						}
 					}
 			});
+			}
 		}
 
 	  window.addEventListener('load',userResize, false);	
