@@ -1583,10 +1583,14 @@ header {
 				height: auto;
 				position:absolute;
 
-				@media screen and (max-width: 600px), (max-device-width: 1024px) {
+				@media screen and (max-width: 600px) {
 					margin-bottom: 0;
 					padding-left: 0;
 					width:100%;
+				}
+
+				@media screen and (max-device-width: 1024px) {
+					display:none;
 				}
 
 				.client {
@@ -1606,8 +1610,6 @@ header {
 					@media screen and (max-width: 900px) {
 						width:48%;
 					}
-
-
 
 					@media screen and (max-width: 600px), (max-device-width: 1024px) {
 						width: 100%;
@@ -1983,7 +1985,7 @@ header {
 					}
 				}/* ---end copyright--- */
 				
-#social-btns {
+			#social-btns {
 						float: right;
 						padding-top: 1px;
 
