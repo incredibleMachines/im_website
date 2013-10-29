@@ -1623,11 +1623,7 @@ header nav a.active {
   /* ---end client--- */
 
 }
-<<<<<<< HEAD
-@media screen and (max-width: 600px), (max-device-width: 1024px) {
-=======
 @media screen and (max-width: 600px) {
->>>>>>> 12f084408df864a921ff97380c525e6fee3ce566
   .clients #client-wrap #client-grid #client-list {
     margin-bottom: 0;
     padding-left: 0;
