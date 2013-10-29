@@ -132,7 +132,12 @@ h1 {
 h2 {
   font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
   font-size: 46px;
+<<<<<<< HEAD
   line-height: 46px;
+=======
+  font-size: 3.8em;
+  line-height: 3.8em;
+>>>>>>> c4e922f6a0302df53e67e5e1ef9644c3e0072079
   font-weight: 100;
   color: #333333;
   text-transform: uppercase;
