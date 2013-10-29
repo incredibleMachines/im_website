@@ -45,7 +45,7 @@ exports.single = function(db) {
 					res.render('404', {title: 'Project Not Found', slug:'project-not-found'});
 				}else{
 					if(!doc.featured){ //if its not a featured doc we don't have next/back projects
-						res.render('project', {title: doc.title , slug: 'single-project '+doc.slug, project: doc, next: '/', next_title:'Incredible Machines', previous: '/', previous_title: 'Incredible Machines'});	
+						res.render('project', {title: doc.title , slug: 'single-project '+doc.slug, project: doc, next: '', next_title:'Incredible Machines', previous: '', previous_title: 'Incredible Machines'});	
 					}
 					var project_index;
 					project_docs.forEach(function(v,i){
