@@ -64,8 +64,8 @@ $(document).ready(function(){
 	
 
 	function userResize(){
+		if(mobile==false){
 		var detail=false;
-	
 		$('.client-detail').each(function(){
 			var adjustedTop=clientTop;
 			if($(this).position().top>0){
@@ -111,6 +111,7 @@ $(document).ready(function(){
 				}
 			}
 		});
+	}
 	}
 
 	function expandDetail(clientName, clientSlug, gridHeight){
