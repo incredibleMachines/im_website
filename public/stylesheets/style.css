@@ -1894,11 +1894,6 @@ header nav a.active {
     width: 100%;
   }
 }
-@media screen and (max-device-width: 1024px) {
-  .clients .list-block .column .list {
-    position: relative;
-  }
-}
 .clients .list-block .column .list ul {
   float: left;
 }
