@@ -11,6 +11,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 body {
 	line-height: 1;
+	font-size: 12px;
 }
 ol, ul {
 	list-style: none;
@@ -76,6 +77,10 @@ button:hover {
 
 /*************************** TYPE STYLES ***************************/
 
+
+body{
+	font-size:100%;
+}
 h1 {
 	font-family: @museo;
 	font-size: 46px;
@@ -119,7 +124,7 @@ a {
 	font-family: @jaf;
 	font-size: 18px;
 	font-style: oblique;
-	/*line-height: 28px;*/
+	line-height: 28px;
 	font-weight: 100;
 	color: @three;
 	text-decoration: none;
@@ -151,6 +156,14 @@ header {
 	height:70px;
 	width:100%;
 
+	@media screen and (max-width: 828px), (max-device-width: 1024px) {
+		height: 100px;
+	}
+
+	@media screen and (max-width: 828px), (max-device-width: 800px) {
+		height: 140px;
+	}
+
 	.logoHome {
 		margin: 5px 0 0 0;
 		padding-left:35px;
@@ -175,30 +188,65 @@ header {
 		}
 		@media screen and (max-width: 828px), (max-device-width: 1024px) {
 			display:block;
+
+			img {
+				width: 58px;
+				height: 72px;
+			}
+		}
+
+		@media screen and (max-width: 828px), (max-device-width: 800px) {
+			display:block;
+
+			img {
+				width: 72px;
+				height: 104px;
+				margin: 5px 0 0 5px;
+			}
 		}
 	}
 
 	.buttonMobile{
-	display:none;
+		display:none;
 		padding-top:20px;
 		padding-right:16px;
 		float:right;
 		width:33px;
-			.buttonLine{
-				height:8px;
-				border-top:3px solid #666;
-			}
 
-			@media screen and (max-width: 828px), (max-device-width: 1024px) {
-				display:block;
+
+		@media screen and (max-width: 828px), (max-device-width: 1024px) {
+			width: 66px;
+			padding-top: 28px;
+		}
+
+		@media screen and (max-width: 828px), (max-device-width: 800px){
+			width: 66px;
+			padding-top: 40px;
+		}
+
+		.buttonLine{
+			height:14px;
+			border-top:6px solid #666;
+
+			@media screen and (max-width: 828px), (max-device-width: 800px){
+				height: 20px;
 			}
+		}
+
+		@media screen and (max-width: 828px), (max-device-width: 1024px) {
+			display:block;
+		}
 
 	}
 
 	.buttonMobile.active{
 		.buttonLine{
-				height:8px;
-				border-top:3px solid #fff;
+				height:14px;
+				border-top:6px solid #fff;
+
+				@media screen and (max-width: 828px), (max-device-width: 800px){
+					height: 20px;
+				}
 			}
 	}
 
@@ -216,6 +264,7 @@ header {
 			width:100%;
 			margin: 0;
 			padding-right:0;
+			text-align: center;
 		}
 
 		a {
@@ -232,11 +281,16 @@ header {
 				float: left;
 				clear:both;
 				color:#999;
-				font-size:18px;
+				font-size:28px;
 				width:100%;
 				margin:0;
 				padding: 20px 0 20px 20px;
 				border-top:1px solid #333;
+			}
+
+			@media screen and (max-width: 828px), (max-device-width: 800px) {
+				font-size: 38px;
+				padding: 30px 0 30px 30px;
 			}
 
 		}
@@ -252,6 +306,12 @@ header {
 				padding: 20px 0 20px 20px;
 				font-style:oblique;
 			}
+
+			@media screen and (max-width: 828px), (max-device-width: 800px) {
+				border-top:1px solid #333;
+				padding: 30px 0 30px 30px;
+				font-style:oblique;
+			}
 		}
 
 		a.active {
@@ -262,8 +322,14 @@ header {
 			font-style:oblique;
 
 			@media screen and (max-width: 828px), (max-device-width: 1024px) {
-				padding: 20px 0 20px 20px;
 				border-top:1px solid #333;
+				padding: 20px 0 20px 20px;
+				font-style:oblique;
+			}
+
+			@media screen and (max-width: 828px), (max-device-width: 800px) {
+				border-top:1px solid #333;
+				padding: 30px 0 30px 30px;
 				font-style:oblique;
 			}
 		}
@@ -354,13 +420,15 @@ header {
 					float: none;
 					min-width:100%;
 					max-width:100%;
-					margin-top: 20px;
-
+					margin: 12px 0 30px 0;
 				}
+
 
 				a {
 					font-family: @proxima;
+
 					font-size: 46px;
+
 					line-height: 0;
 					font-weight: 100;
 					color: @three;
@@ -378,11 +446,20 @@ header {
 					}
 					h2 {
 						clear: both;
-						width:95%;
+						width:98%;
 
 						@media screen and (max-width: 828px), (max-device-width: 1024px) {
 							text-align: center;
-							margin: 10px 10px 0 10px;
+							margin: 10px 0;
+							font-size: 60px;
+							line-height: 60px;
+						}
+
+						@media screen and (max-width: 828px), (max-device-width: 800px) {
+							text-align: center;
+							margin: 10px 0;
+							font-size: 80px;
+							line-height: 60px;
 						}
 					
 					}
@@ -407,6 +484,15 @@ header {
 					@media screen and (max-width: 828px), (max-device-width: 1024px)  {
 						text-align: center;
 						margin: 0 10px;
+						font-size: 30px;
+						line-height: 34px;
+					}
+
+					@media screen and (max-width: 828px), (max-device-width: 800px)  {
+						text-align: center;
+						margin: 0 10px;
+						font-size: 30px;
+						line-height: 16px;
 					}
 				}
 			}
@@ -530,7 +616,7 @@ header {
 			padding: 28px 0;
 			width: 50%;
 
-			@media screen and (max-width: 800px) {
+			@media screen and (max-width: 800px), (max-device-width: 1024px) {
 				width: 80%;
 				height: 60%;
 			}
@@ -541,7 +627,7 @@ header {
 				margin: 0 auto;
 				display: table;
 
-				@media screen and (max-width: 750px) {
+				@media screen and (max-width: 750px),  (max-device-width: 1024px) {
 					font-size: 30px;
 					line-height: 40px;
 				}
@@ -674,15 +760,15 @@ header {
 				float: left;
 				width:30%;
 
-				@media screen and (max-width: 1300px) {
+				@media screen and (max-width: 1300px), (max-device-width: 1024px)  {
 					width:35%;
 				}
 
-				@media screen and (max-width: 1100px) {
+				@media screen and (max-width: 1100px), (max-device-width: 1024px)  {
 					width: 25%;
 				}
 
-				@media screen and (max-width: 900px) {
+				@media screen and (max-width: 900px), (max-device-width: 1024px)  {
 					width: 35%;
 				}
 
@@ -696,7 +782,7 @@ header {
 					padding-top:0;
 					margin:0;
 
-					@media screen and (max-width: 1100px) {
+					@media screen and (max-width: 1100px), (max-device-width: 1024px)  {
 						padding-bottom:10px;
 					}
 				}
@@ -704,7 +790,7 @@ header {
 				.list { 
 					padding-left:2.5%;
 					float: left;
-					@media screen and (max-width: 1300px) {
+					@media screen and (max-width: 1300px), (max-device-width: 1024px)  {
 						width:100%;
 						padding-left:0;
 					}
@@ -727,22 +813,22 @@ header {
 					padding-top:0;
 					margin:0;
 
-					@media screen and (max-width: 1100px) {
+					@media screen and (max-width: 1100px), (max-device-width: 1024px)  {
 						padding-bottom:10px;
 					}
 				}
 				float: left;
 				width:65%;
 
-				@media screen and (max-width: 1300px) {
+				@media screen and (max-width: 1300px), (max-device-width: 1024px)  {
 					width:60%;
 				}
 
-				@media screen and (max-width: 1100px) {
+				@media screen and (max-width: 1100px), (max-device-width: 1024px)  {
 					width: 70%;
 				}
 
-				@media screen and (max-width: 900px) {
+				@media screen and (max-width: 900px), (max-device-width: 1024px)  {
 					width: 60%;
 				}
 
@@ -763,14 +849,14 @@ header {
 
 					-moz-column-gap:10px;
 					
-					@media screen and (max-width: 1700px) {
+					@media screen and (max-width: 1700px), (max-device-width: 1024px)  {
 						-webkit-columns: 3; /* Safari and Chrome */
 						-moz-columns: 3; /* Firefox */
 						columns:3;
 						-moz-column-gap:10px;
 					}
 
-					@media screen and (max-width: 1300px) {
+					@media screen and (max-width: 1300px), (max-device-width: 1024px)  {
 						-webkit-columns:2;
 						-moz-columns:2;
 						columns:2;
@@ -778,7 +864,7 @@ header {
 						-moz-column-gap:10px;
 					}
 
-					@media screen and (max-width: 1100px) {
+					@media screen and (max-width: 1100px), (max-device-width: 1024px)  {
 						-webkit-columns:3;
 						-moz-columns:2;
 						columns:3;
@@ -858,7 +944,7 @@ header {
 					columns:3;
 					-moz-column-gap:10px;
 
-					@media screen and (max-width: 1700px) {
+					@media screen and (max-width: 1700px), (max-device-width: 1024px)  {
 						-moz-columns:2;
 						-webkit-columns:2;
 						columns:2;
@@ -866,7 +952,7 @@ header {
 						-moz-column-gap:10px;
 					}
 
-					@media screen and (max-width: 1300px) {
+					@media screen and (max-width: 1300px), (max-device-width: 1024px)  {
 						-moz-columns:3;
 						-webkit-columns:3;
 						columns:3;
@@ -875,7 +961,7 @@ header {
 						-moz-column-gap:10px;
 					}
 
-					@media screen and (max-width: 1150px) {
+					@media screen and (max-width: 1150px), (max-device-width: 1024px)  {
 						-moz-columns:2;
 						-webkit-columns:2;
 						columns:2;
@@ -1127,6 +1213,7 @@ header {
 						letter-spacing: 0;
 						float: left;
 						margin-right: 20px;
+						font-style: normal;
 						@media screen and (max-width: 600px), (max-device-width: 1024px){
 								margin-right: 6px;
 						}							
@@ -1281,8 +1368,8 @@ header {
 				padding-top: 14%;
 				color:@black;
 				@media screen and (max-width: 600px), (max-device-width: 1024px) {
-					padding-top:5%;
-					padding-bottom:5%;
+					padding-top:10%;
+					padding-bottom:10%;
 
 				}
 			}
@@ -1461,8 +1548,11 @@ header {
 				
 				.title {
 					margin-left: 0;
-					margin-bottom: 15px;
-					margin-top:0;
+					margin: 30px 0;
+
+					h3 {
+						padding-top: 0;
+					}
 				}
 
 				.work-thumbs {
@@ -1504,7 +1594,7 @@ header {
 			padding-bottom:10px;
 			heigth:auto;
 			float:left;
-			
+			margin-top: 30px;
 
 			.title {
 				margin-left: 0;
@@ -1572,13 +1662,17 @@ header {
 				color: @yellow;
 				margin: 130px 0 30px 0;
 				line-height: 50px;
+
+				@media screen and (max-device-width: 1024px) {
+					color: #fff;
+				}
 			}
 
 			.mobile-client {
 				display:none;
 				@media screen and (max-device-width: 1024px) {
 					display:block;
-					margin: 30px 0 30px 0;
+					margin: 60px 0 30px 0;
 				}
 
 			}
