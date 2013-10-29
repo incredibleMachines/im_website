@@ -9,15 +9,17 @@ $(document).ready(function(){
 
 	$('.cap-tech').css('z-index','10');
 	$('.footer-bg-wrap').css('z-index','10');
-	$('.footer-bg-wrap').css('position','absolute');
-	$('.footer-bg-wrap').css('width','100%');
+	
 
 
 	if($('#client-list').css('display')=='none'){
 		mobile=true;
+		$('.cap-tech').css('position','relative');
 	}
 	else{
 		$('.client-detail').offset({top: -1000});
+		$('.footer-bg-wrap').css('position','absolute');
+		$('.footer-bg-wrap').css('width','100%');
 	}
 
 
