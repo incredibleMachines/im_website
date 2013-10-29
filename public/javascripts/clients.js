@@ -15,6 +15,7 @@ $(document).ready(function(){
 	if($('#client-list').css('display')=='none'){
 		mobile=true;
 		$('.cap-tech').css('position','relative');
+		$('.cap-tech').css('padding-top',0);
 	}
 	else{
 		$('.client-detail').offset({top: -1000});
