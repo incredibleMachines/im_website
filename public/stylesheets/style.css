@@ -71,6 +71,7 @@ td {
 }
 body {
   line-height: 1;
+  font-size: 12px;
 }
 ol,
 ul {
@@ -121,59 +122,44 @@ body {
 }
 h1 {
   font-family: "museo-slab", "Museo Slab", courier, serif;
-  /*font-size: 46px;*/
-
-  font-size: 3.8em;
+  font-size: 46px;
   line-height: 0px;
   font-weight: 300;
   font-style: italic;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 1px;
 }
 h2 {
   font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
-  /*font-size: 46px;*/
-
-  font-size: 3.8em;
-  /*line-height: 46px;*/
-
-  line-height: 3.8em;
+  font-size: 46px;
+  line-height: 46px;
   font-weight: 100;
   color: #333333;
   text-transform: uppercase;
 }
 h3 {
   font-family: "museo-slab", "Museo Slab", courier, serif;
-  /*font-size: 20px;
-	line-height: 22px;*/
-
-  font-size: 1.6em;
-  line-height: 1em;
+  font-size: 20px;
+  line-height: 22px;
   font-weight: 100;
   font-style: italic;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 1px;
   padding-top: 5px;
 }
 p {
   font-family: "jaf-facitweb", "Facit", arial, sans-serif;
-  /*font-size: 18px;
-	line-height: 28px;*/
-
-  font-size: 1.5em;
-  line-height: 1.8em;
+  font-size: 18px;
+  line-height: 28px;
   font-weight: 100;
   color: #333333;
-  letter-spacing: 0.1em;
+  letter-spacing: 1px;
 }
 a {
   font-family: "jaf-facitweb", "Facit", arial, sans-serif;
-  /*font-size: 18px;*/
-
-  font-size: 1em;
+  font-size: 18px;
   font-style: oblique;
-  /*line-height: 28px;*/
-
+  line-height: 28px;
   font-weight: 100;
   color: #333333;
   text-decoration: none;
@@ -184,11 +170,8 @@ a:hover {
 }
 ul li {
   font-family: "jaf-facitweb", "Facit", arial, sans-serif;
-  /*font-size: 18px;
-	line-height: 38px;*/
-
-  font-size: 1.5em;
-  line-height: 3.1em;
+  font-size: 18px;
+  line-height: 38px;
   font-weight: 100;
   color: #333333;
 }
@@ -202,6 +185,11 @@ header {
   z-index: 999;
   height: 70px;
   width: 100%;
+}
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
+  header {
+    height: 140px;
+  }
 }
 header .logoHome {
   margin: 5px 0 0 0;
@@ -231,6 +219,11 @@ header .logoMobile img {
   header .logoMobile {
     display: block;
   }
+  header .logoMobile img {
+    width: 72px;
+    height: 104px;
+    margin: 5px 0 0 5px;
+  }
 }
 header .buttonMobile {
   display: none;
@@ -239,9 +232,15 @@ header .buttonMobile {
   float: right;
   width: 33px;
 }
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
+  header .buttonMobile {
+    width: 66px;
+    padding-top: 40px;
+  }
+}
 header .buttonMobile .buttonLine {
-  height: 8px;
-  border-top: 3px solid #666;
+  height: 20px;
+  border-top: 6px solid #666;
 }
 @media screen and (max-width: 828px), (max-device-width: 1024px) {
   header .buttonMobile {
@@ -272,9 +271,7 @@ header nav {
 }
 header nav a {
   font-family: "museo-slab", "Museo Slab", courier, serif;
-  /*font-size: 14px;*/
-
-  font-size: 1.1em;
+  font-size: 14px;
   text-transform: uppercase;
   color: #cccccc;
   font-style: normal;
@@ -287,9 +284,7 @@ header nav a {
     float: left;
     clear: both;
     color: #999;
-    /*font-size:18px;*/
-  
-    font-size: 1.5em;
+    font-size: 18px;
     width: 100%;
     margin: 0;
     padding: 20px 0 20px 20px;
@@ -405,13 +400,12 @@ header nav a.active {
     min-width: 100%;
     max-width: 100%;
     margin: 20px 0 40px 0;
+    padding-top: 31px;
   }
 }
 .projects #portfolio-wrap #portfolio .port-item a {
   font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
-  /*font-size: 46px;*/
-
-  font-size: 2em;
+  font-size: 46px;
   line-height: 0;
   font-weight: 100;
   color: #333333;
@@ -432,6 +426,16 @@ header nav a.active {
   .projects #portfolio-wrap #portfolio .port-item a h2 {
     text-align: center;
     margin: 10px 0;
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+@media screen and (max-width: 828px), (max-device-width: 800px) {
+  .projects #portfolio-wrap #portfolio .port-item a h2 {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 92px;
+    line-height: 92px;
   }
 }
 .projects #portfolio-wrap #portfolio .port-item a:hover {
@@ -450,6 +454,16 @@ header nav a.active {
   .projects #portfolio-wrap #portfolio .port-item p {
     text-align: center;
     margin: 0 10px;
+    font-size: 30px;
+    line-height: 34px;
+  }
+}
+@media screen and (max-width: 828px), (max-device-width: 800px) {
+  .projects #portfolio-wrap #portfolio .port-item p {
+    text-align: center;
+    margin: 0 10px;
+    font-size: 36px;
+    line-height: 40px;
   }
 }
 .projects #portfolio-wrap #portfolio .work-thumb:first-child {
@@ -565,9 +579,7 @@ header nav a.active {
   margin: 60px 0 0 10px;
   float: left;
   text-align: left;
-  /*font-size: 16px;*/
-
-  font-size: 1.3em;
+  font-size: 16px;
   display: none;
 }
 @media screen and (max-width: 800px), (max-device-width: 1024px) {
@@ -606,9 +618,7 @@ header nav a.active {
 }
 @media screen and (max-width: 750px), (max-device-width: 1024px) {
   .single-project .title-nav .project-meta h1 {
-    /*font-size: 30px;*/
-  
-    font-size: 2.5em;
+    font-size: 30px;
     line-height: 40px;
   }
 }
@@ -632,9 +642,7 @@ header nav a.active {
   margin: 60px 10px 0 0;
   float: right;
   text-align: right;
-  /*font-size: 16px;*/
-
-  font-size: 1.3em;
+  font-size: 16px;
   display: none;
 }
 @media screen and (max-width: 800px), (max-device-width: 1024px) {
@@ -1108,9 +1116,7 @@ header nav a.active {
   text-align: center;
   line-height: 33px;
   height: 30px;
-  /*font-size: 14px;*/
-
-  font-size: 1.1em;
+  font-size: 14px;
   width: 85px;
   letter-spacing: 0;
   font-style: normal;
