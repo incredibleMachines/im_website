@@ -1720,6 +1720,11 @@ header nav a.active {
     padding: 40px 0 20px 5%;
   }
 }
+@media screen and (max-device-width: 1024px) {
+  .clients #client-wrap .client-detail {
+    position: relative;
+  }
+}
 .clients #client-wrap .client-detail .client-img {
   float: left;
   width: 50%;

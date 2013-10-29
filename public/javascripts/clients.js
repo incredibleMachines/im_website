@@ -5,17 +5,27 @@ $(document).ready(function(){
 	var clientSize=42;
 	var clientTop=$('.client-detail').position().top;
 	var expanded=false;
+	var mobile=false;
 
 	$('.cap-tech').css('z-index','10');
 	$('.footer-bg-wrap').css('z-index','10');
 	$('.footer-bg-wrap').css('position','absolute');
 	$('.footer-bg-wrap').css('width','100%');
-	$('.client-detail').offset({top: -1000});
+
+
+	if($('#client-list').css('display')=='none'){
+		mobile=true;
+	}
+	else{
+		$('.client-detail').offset({top: -1000});
+	}
 
 
 	userResize();
 	
 	$('body').click(function(e){
+
+		if(mobile==false){
 		var target=$(e.target);
 		if(!target.is('nav')){
 		if(target.is('.client')){
@@ -45,6 +55,7 @@ $(document).ready(function(){
 			}
 		}
 	}
+}
 
 	});
 	
@@ -100,6 +111,7 @@ $(document).ready(function(){
 	}
 
 	function expandDetail(clientName, clientSlug, gridHeight){
+		if(mobile==false){
 		$('.footer-bg-wrap').css('transition','top .5s');
 		$('.cap-tech').css('transition','top .5s');	
 
@@ -143,11 +155,14 @@ $(document).ready(function(){
 			$('#client-grid h1').text(clientName).fadeIn(100);
 		});
 
+		}
+
 
 		}
 
 
 	function contractDetail(){
+		if(mobile==false){
 		// $('.footer-bg-wrap').css('transition','top .5s');
 		// $('.cap-tech').css('transition','top .5s');
 	$('.client-detail').animate({top:-1000},1000);
@@ -180,6 +195,7 @@ $(document).ready(function(){
 						}
 					}
 			});
+			}
 		}
 
 	  window.addEventListener('load',userResize, false);	
