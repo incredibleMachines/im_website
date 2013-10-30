@@ -259,7 +259,7 @@ header {
 
 	nav {
 		float: right;
-		margin: 29px 0 0 0;
+		margin: 20px 0 0 0;
 		display:block;
 		padding-right:35px;
 
@@ -803,7 +803,7 @@ header {
 			margin-bottom: 0.25%;
 
 			.column-left {
-				margin-left:2.5%;
+				margin-left: 2.5%;
 				float: left;
 				width:35%;
 
@@ -811,6 +811,7 @@ header {
 					width:95%;
 					padding-top: 20px;
 					margin-bottom: 60px;
+					margin-left: 35px;
 				}
 
 				.title {
@@ -868,7 +869,7 @@ header {
 
 				@media screen and (max-width: 828px), (max-device-width: 800px){
 					width:95%;
-					margin-left: 2.5%;
+					margin-left: 35px;
 				}
 
 				.title {
@@ -980,7 +981,7 @@ header {
 
 			@media screen and (max-width: 828px), (max-device-width: 800px){
 				width:95%;
-				margin-left: 2.5%;
+				margin-left: 35px;
 			}
 
 			.list { 
@@ -1310,8 +1311,8 @@ header {
 			overflow:hidden;
 			line-height:20px;
 			min-width:100%;	
-
 			position:fixed;
+
 			@media screen and (max-width: 600px), (max-device-width: 1024px) {
 				position:relative;
 				height:auto;
@@ -1409,6 +1410,7 @@ header {
 	
 	#skills-section{
 		position:absolute;
+
 		@media screen and (max-width: 600px), (max-device-width: 1024px) {
 			position:relative;
 		}	
@@ -1417,7 +1419,7 @@ header {
 		min-width:100%;
 		
 		#skills {
-			padding-left: 5%;
+			padding-left: 35px;
 			width: 40%;
 			float: left;
 			clear: both;
@@ -1446,7 +1448,6 @@ header {
 					border-bottom: 1px solid @nine;
 					height: 50px;
 					margin-top: 10px;
-					
 
 					@media screen and (max-width: 600px), (max-device-width: 1024px)  {
 						height: 100%;
@@ -1457,6 +1458,11 @@ header {
 						padding-left: 5%;
 					}
 
+					@media screen and (max-width: 600px), (max-device-width: 800px)  {
+						height: 80px;
+					}
+					
+
 					a {
 						font-family: @proxima;
 						font-weight: 100;
@@ -1466,25 +1472,15 @@ header {
 						font-size:40px;
 						line-height: 60px;
 
-						@media screen and (max-width: 1220px)  {
-							font-size:30px;
-							line-height: 56px;
-						}
-
-						@media screen and (max-width: 920px)  {
-							font-size:24px;
-						line-height: 56px;
-						}
-
-						@media screen and (max-width: 720px)  {
-							font-size:19px;
-							line-height: 34px;
-						}
-
-						@media screen and (max-width: 600px), (max-device-width: 1024px)  {
+						@media screen and (max-width: 828px), (max-device-width: 1024px)  {
 							font-size:32px;
 							line-height: 46px;
 						
+						}
+
+						@media screen and (max-width: 600px), (max-device-width: 800px)  {
+							font-size: 58px;
+							line-height: 72px;
 						}
 
 					}
@@ -1543,14 +1539,20 @@ header {
 				float:left;
 				display:none;
 				
-				@media screen and (max-width: 600px), (max-device-width: 1024px) {
+				@media screen and (max-width: 828px), (max-device-width: 1024px) {
 					display:block;
 					border-bottom:4px solid @yellow;
+					width: 100%;
+					margin-top: 40px;
 				}
 
 				h2{
 					font-size:32px;
 
+					@media screen and (max-width: 600px), (max-device-width: 800px)  {
+						font-size: 58px;
+						line-height: 58px;
+					}
 				}
 			}
 
@@ -1565,6 +1567,11 @@ header {
 
 				p {
 					margin-bottom: 30px;
+
+					@media screen and (max-width: 600px), (max-device-width: 800px)  {
+						font-size: 30px;
+						line-height: 40px;
+					}
 				}
 			}
 		
@@ -1578,8 +1585,18 @@ header {
 					margin-left: 0;
 					margin: 30px 0;
 
+					@media screen and (max-width: 600px), (max-device-width: 800px)  {
+						width: 75%;
+					}
+
 					h3 {
 						padding-top: 0;
+
+						@media screen and (max-width: 600px), (max-device-width: 800px)  {
+							font-size: 40px;
+							line-height: 40px;
+							padding-top: 10px;
+						}
 					}
 				}
 
@@ -1611,6 +1628,11 @@ header {
 						
 						a {
 							font-size: 14px;
+
+							@media screen and (max-width: 600px), (max-device-width: 800px)  {
+								font-size: 30px;
+								line-height: 40px;
+							}
 						}
 					} /* ---end project--- */
 				} /* ---end work-thumbs--- */
@@ -1628,6 +1650,19 @@ header {
 				margin-left: 0;
 				margin-bottom: 5px;
 				margin-top:0;
+
+				@media screen and (max-width: 600px), (max-device-width: 800px)  {
+						width: 75%;
+					}
+
+				h3 {
+					@media screen and (max-width: 600px), (max-device-width: 800px)  {
+						font-size: 40px;
+						line-height: 40px;
+						padding-top: 10px;
+					}
+
+				}
 			}
 
 			.client-list {
@@ -1639,11 +1674,18 @@ header {
 					padding-right:2%;
 					font-size: 14px;
 					clear:both;
+
+					@media screen and (max-width: 600px), (max-device-width: 800px)  {
+						font-size: 30px;
+						line-height: 60px;
+					}
 				}
 				
 				a {
-						font-size: 14px;
-					}
+					font-size: 14px;
+
+
+				}
 			}	
 		} /* ---end related-clients--- */
 
