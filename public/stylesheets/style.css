@@ -471,7 +471,7 @@ header nav a.active {
 }
 @media screen and (max-width: 828px), (max-device-width: 1024px) {
   .projects #portfolio-wrap #portfolio .port-item {
-    padding: 0;
+    padding-bottom: 20px;
     margin: 0;
     float: none;
     min-width: 100%;
@@ -525,6 +525,7 @@ header nav a.active {
 .projects #portfolio-wrap #portfolio .port-item p {
   clear: both;
   line-height: 20px;
+  letter-spacing: 0;
 }
 @media screen and (max-width: 828px), (max-device-width: 1024px) {
   .projects #portfolio-wrap #portfolio .port-item p {
@@ -2114,7 +2115,8 @@ header nav a.active {
 }
 @media screen and (max-width: 828px), (max-device-width: 1024px) {
   .footer-bg-wrap footer #contact {
-    padding: 80px 0 80px 0;
+    padding: 80px 0 50px 0;
+    height: 100%;
   }
 }
 .footer-bg-wrap footer #contact h1 {
@@ -2186,8 +2188,11 @@ header nav a.active {
 }
 @media screen and (max-width: 828px), (max-device-width: 1024px) {
   .footer-bg-wrap footer #strip {
-    height: 80px;
-    padding: 10px 35px;
+    height: 100%;
+    padding: 20px 0;
+    float: left;
+    width: 100%;
+    clear: both;
   }
 }
 @media screen and (max-width: 600px), (max-device-width: 1024px) {
@@ -2253,7 +2258,7 @@ header nav a.active {
   .footer-bg-wrap footer #strip #social-btns a {
     margin-left: 0;
     margin-right: 0;
-    font-size: 26px;
+    font-size: 36px;
   }
 }
 .footer-bg-wrap footer #strip #social-btns a i {
@@ -2261,7 +2266,7 @@ header nav a.active {
 }
 @media screen and (max-width: 600px), (max-device-width: 1024px) {
   .footer-bg-wrap footer #strip #social-btns a i {
-    margin-left: 0;
+    margin-left: 30px;
     margin-right: 0;
   }
 }
