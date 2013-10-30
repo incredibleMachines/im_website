@@ -1737,6 +1737,8 @@ header nav a.active {
 
   /*************************** Capabilities, Tech + Tools Block ***************************/
 
+  /*************************** Clients Footer ***************************/
+
 }
 .clients #client-wrap {
   width: 100%;
@@ -1750,22 +1752,29 @@ header nav a.active {
 }
 .clients #client-wrap #client-grid h1 {
   text-align: center;
-  color: #ffd24f;
+  color: #ffffff;
   margin: 130px 0 30px 0;
   line-height: 50px;
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .clients #client-wrap #client-grid h1 {
-    color: #fff;
+    font-size: 66px;
+    line-height: 66px;
+    border-bottom: 1px solid #666666;
+    margin: 180px 0 0 0;
   }
 }
 .clients #client-wrap #client-grid .mobile-client {
   display: none;
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .clients #client-wrap #client-grid .mobile-client {
     display: block;
-    margin: 60px 0 30px 0;
+    margin: 70px 0 30px 0;
+    color: #ffd24f;
+    border-bottom: none;
+    font-size: 66px;
+    line-height: 66px;
   }
 }
 .clients #client-wrap #client-grid #client-list {
@@ -1785,7 +1794,7 @@ header nav a.active {
     width: 100%;
   }
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .clients #client-wrap #client-grid #client-list {
     display: none;
   }
@@ -1868,14 +1877,14 @@ header nav a.active {
   /*--- end corner ---*/
 
 }
-@media screen and (max-width: 600px), (max-device-width: 1024px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .clients #client-wrap .client-detail {
     width: 95%;
     margin-left: 0;
-    padding: 40px 0 20px 5%;
+    padding: 40px 0 60px 5%;
   }
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .clients #client-wrap .client-detail {
     position: relative;
   }
@@ -1889,7 +1898,7 @@ header nav a.active {
     width: 42%;
   }
 }
-@media screen and (max-width: 960px), (max-device-width: 1024px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .clients #client-wrap .client-detail .client-img {
     width: 95%;
   }
@@ -1903,6 +1912,12 @@ header nav a.active {
   font-size: 14px;
   line-height: 22px;
   margin-top: 10px;
+}
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
+  .clients #client-wrap .client-detail .client-img p {
+    font-size: 30px;
+    line-height: 40px;
+  }
 }
 .clients #client-wrap .client-detail .detail-col {
   float: left;
@@ -1924,7 +1939,7 @@ header nav a.active {
     margin-right: 4%;
   }
 }
-@media screen and (max-width: 600px), (max-device-width: 1024px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .clients #client-wrap .client-detail .detail-col {
     width: 100%;
     margin-top: 30px;
@@ -1936,13 +1951,32 @@ header nav a.active {
   clear: both;
   margin: 0;
 }
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
+  .clients #client-wrap .client-detail .detail-col .title {
+    width: 45%;
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
+  .clients #client-wrap .client-detail .detail-col .title h3 {
+    font-size: 40px;
+    line-height: 40px;
+    padding-top: 10px;
+  }
+}
 .clients #client-wrap .client-detail .detail-col .detail-list {
   clear: both;
   padding-top: 20px;
 }
-@media screen and (max-width: 600px), (max-device-width: 1024px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .clients #client-wrap .client-detail .detail-col .detail-list {
     margin-left: 0;
+  }
+}
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
+  .clients #client-wrap .client-detail .detail-col .detail-list ul li a {
+    font-size: 30px;
+    line-height: 60px;
   }
 }
 .clients #client-wrap .client-detail .corner {
@@ -1952,7 +1986,7 @@ header nav a.active {
   border: 1px solid #ffd24f;
   margin-top: -40px;
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .clients #client-wrap .client-detail .corner {
     display: none;
   }
@@ -2037,7 +2071,7 @@ header nav a.active {
     padding-left: 0;
   }
 }
-@media screen and (max-width: 900px), (max-device-width: 1024px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .clients .list-block .column .list {
     -moz-columns: 1s;
     -webkit-columns: 1;
@@ -2053,7 +2087,7 @@ header nav a.active {
   float: left;
   clear: both;
 }
-@media screen and (max-width: 900px), (max-device-width: 1024px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .clients .list-block .column .list ul li {
     clear: none;
     padding-right: 15px;
@@ -2072,6 +2106,9 @@ header nav a.active {
 }
 .clients .light ul li a {
   color: #cccccc;
+}
+.clients .footer-bg-wrap {
+  height: auto;
 }
 /* --- end clients --- */
 /*************************** (Global) Footer ***************************/
@@ -2299,7 +2336,7 @@ header nav a.active {
   color: #ffffff;
 }
 /*--- end footer-bg-wrap---*/
-/*--------------------------- Reel ---------------------------*/
+/**************************** Reel ****************************/
 .reel {
   background-color: #000;
 }

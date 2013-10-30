@@ -1729,20 +1729,28 @@ header {
 		
 			h1 {
 				text-align: center;
-				color: @yellow;
+				color: @white;
 				margin: 130px 0 30px 0;
 				line-height: 50px;
 
-				@media screen and (max-device-width: 1024px) {
-					color: #fff;
+				@media screen and (max-width: 828px), (max-device-width: 1024px) {
+					font-size: 66px;
+					line-height: 66px;
+					border-bottom: 1px solid @six;
+					margin: 180px 0 0 0;
 				}
 			}
 
 			.mobile-client {
 				display:none;
-				@media screen and (max-device-width: 1024px) {
+
+				@media screen and (max-width: 828px), (max-device-width: 1024px) {
 					display:block;
-					margin: 60px 0 30px 0;
+					margin: 70px 0 30px 0;
+					color: @yellow;
+					border-bottom: none;
+					font-size: 66px;
+					line-height: 66px;
 				}
 
 			}
@@ -1762,7 +1770,7 @@ header {
 					width:100%;
 				}
 
-				@media screen and (max-device-width: 1024px) {
+				@media screen and (max-width: 828px), (max-device-width: 1024px) {
 					display:none;
 				}
 
@@ -1851,14 +1859,14 @@ header {
 			padding:40px 0 40px 2.5%;
 			z-index:20;
 
-			@media screen and (max-width: 600px), (max-device-width: 1024px) {
+			@media screen and (max-width: 828px), (max-device-width: 1024px) {
 				width:95%;
 				margin-left: 0;
-				padding:40px 0 20px 5%;
+				padding:40px 0 60px 5%;
 
 			}
 
-			@media screen and (max-device-width: 1024px) {
+			@media screen and (max-width: 828px), (max-device-width: 1024px) {
 				position:relative;
 			}
 			
@@ -1870,7 +1878,7 @@ header {
 					width:42%;
 				}
 
-				@media screen and (max-width: 960px), (max-device-width: 1024px) {
+				@media screen and (max-width: 828px), (max-device-width: 1024px) {
 					width: 95%
 				}
 			
@@ -1884,6 +1892,11 @@ header {
 					font-size: 14px;
 					line-height: 22px;
 					margin-top: 10px;
+
+					@media screen and (max-width: 828px), (max-device-width: 1024px) {
+						font-size: 30px;
+						line-height: 40px;
+					}
 				}
 			}
 			
@@ -1907,7 +1920,7 @@ header {
 				}
 
 
-				@media screen and (max-width: 600px), (max-device-width: 1024px) {
+				@media screen and (max-width: 828px), (max-device-width: 1024px) {
 					width: 100%;
 					margin-top: 30px;
 					margin-left:0;
@@ -1919,21 +1932,41 @@ header {
 				.title {
 					clear:both;
 					margin:0;
+
+					@media screen and (max-width: 828px), (max-device-width: 1024px) {
+						width: 45%;
+						margin-top: 40px;
+					}
+
+					h3 {
+						@media screen and (max-width: 828px), (max-device-width: 1024px) {
+							font-size: 40px;
+							line-height: 40px;
+							padding-top: 10px;
+						}
+					}
 				}
 					
 				.detail-list {
 					clear: both;
 					padding-top: 20px;
 
-					@media screen and (max-width: 600px), (max-device-width: 1024px) {
+					@media screen and (max-width: 828px), (max-device-width: 1024px) {
 						margin-left: 0;
+					}
+
+					ul li a {
+						@media screen and (max-width: 828px), (max-device-width: 1024px) {
+							font-size: 30px;
+							line-height: 60px;
+						}
 					}
 				}
 			}
 
 			
 			.corner {
-				@media screen and (max-device-width: 1024px) {
+				@media screen and (max-width: 828px), (max-device-width: 1024px) {
 				display:none;
 			}	
 						width: 30px;
@@ -2015,7 +2048,7 @@ header {
 						padding-left:0;
 					}
 
-					@media screen and (max-width: 900px), (max-device-width: 1024px)	 {
+					@media screen and (max-width: 828px), (max-device-width: 1024px)	 {
 						-moz-columns:1s;
 						-webkit-columns:1;
 						columns:1;
@@ -2029,7 +2062,7 @@ header {
 						li {
 							float: left;
 							clear:both;
-							@media screen and (max-width: 900px), (max-device-width: 1024px)	 {
+							@media screen and (max-width: 828px), (max-device-width: 1024px)	 {
 								clear:none;
 								padding-right:15px;
 							}
@@ -2064,10 +2097,13 @@ header {
 			}
 		}
 	}
+
+	/*************************** Clients Footer ***************************/
+
+	.footer-bg-wrap {
+		height: auto;
+	}
 } /* --- end clients --- */
-
-
-
 
 /*************************** (Global) Footer ***************************/
 .footer-bg-wrap {
@@ -2271,7 +2307,7 @@ header {
 		} /* ---end footer--- */
 	} /*--- end footer-bg-wrap---*/
 
-/*--------------------------- Reel ---------------------------*/
+/**************************** Reel ****************************/
 
 .reel {
 	background-color: #000;
