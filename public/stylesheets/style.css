@@ -786,8 +786,8 @@ header nav a.active {
 }
 @media screen and (max-device-width: 568px) {
   .single-project .project-text-titled .title {
-    width: 75%;
     margin: 30px 0;
+    width: 320px;
   }
 }
 @media screen and (max-device-width: 568px) {
@@ -864,9 +864,9 @@ header nav a.active {
     padding-bottom: 10px;
   }
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .single-project .list-block .column-left .title {
-    width: 55%;
+    width: 320px;
   }
 }
 @media screen and (max-device-width: 568px) {
@@ -919,9 +919,9 @@ header nav a.active {
     padding-bottom: 10px;
   }
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .single-project .list-block .column-right .title {
-    width: 55%;
+    width: 320px;
   }
 }
 @media screen and (max-device-width: 568px) {
@@ -978,9 +978,9 @@ header nav a.active {
     width: 95%;
   }
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .single-project .partner-info .column-left .title {
-    width: 55%;
+    width: 320px;
   }
 }
 .single-project .partner-info .column-left .list {
@@ -1008,9 +1008,9 @@ header nav a.active {
     margin-left: 35px;
   }
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .single-project .partner-info .column-right .title {
-    width: 55%;
+    width: 320px;
   }
 }
 .single-project .partner-info .column-right .list {
