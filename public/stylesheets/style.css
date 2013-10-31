@@ -1206,11 +1206,6 @@ header nav a.active {
     padding-left: 5%;
   }
 }
-@media screen and (max-width: 600px), (max-device-width: 800px) {
-  .capabilities #skills-section #skills ul li {
-    height: 80px;
-  }
-}
 .capabilities #skills-section #skills ul li a {
   font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
   font-weight: 100;
@@ -1293,7 +1288,7 @@ header nav a.active {
   float: left;
   display: none;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section #about-skills .about-skill .skill-title {
     display: block;
     border-bottom: 4px solid #ffd24f;
@@ -1337,9 +1332,9 @@ header nav a.active {
   margin-left: 0;
   margin: 30px 0;
 }
-@media screen and (max-width: 600px), (max-device-width: 800px) {
+@media screen and (max-device-width: 568px) {
   .capabilities #skills-section #about-skills .about-skill .related-work .title {
-    width: 55%;
+    width: 320px;
   }
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .title h3 {
@@ -1402,9 +1397,9 @@ header nav a.active {
   margin-bottom: 5px;
   margin-top: 0;
 }
-@media screen and (max-width: 600px), (max-device-width: 568px) {
+@media screen and (max-device-width: 568px) {
   .capabilities #skills-section #about-skills .about-skill .related-clients .title {
-    width: 55%;
+    width: 320px;
   }
 }
 @media screen and (max-device-width: 568px) {
