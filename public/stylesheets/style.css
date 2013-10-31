@@ -1206,11 +1206,6 @@ header nav a.active {
     padding-left: 5%;
   }
 }
-@media screen and (max-width: 600px), (max-device-width: 800px) {
-  .capabilities #skills-section #skills ul li {
-    height: 80px;
-  }
-}
 .capabilities #skills-section #skills ul li a {
   font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
   font-weight: 100;
