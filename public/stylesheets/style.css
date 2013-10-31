@@ -893,7 +893,7 @@ header nav a.active {
   float: left;
   clear: both;
 }
-@media screen (max-device-width: 568px) {
+@media screen and (max-device-width: 568px) {
   .single-project .list-block .column-left .list ul li a {
     font-size: 30px;
     line-height: 60px;
