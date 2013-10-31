@@ -331,12 +331,18 @@ header nav a {
     font-size: 28px;
     width: 100%;
     margin: 0;
-    padding: 20px 0 20px 20px;
+    padding: 20px 0 20px 0;
     border-top: 1px solid #333;
   }
 }
-@media screen and (max-device-width: 800px) {
+@media screen and (max-device-width: 1024px) {
   header nav a {
+    float: left;
+    clear: both;
+    color: #999;
+    width: 100%;
+    margin: 0;
+    border-top: 1px solid #333;
     font-size: 38px;
     padding: 30px 0 30px 30px;
   }
@@ -352,14 +358,14 @@ header nav a:hover {
   header nav a:hover {
     font-size: 28px;
     border-top: 1px solid #333;
-    padding: 20px 0 20px 20px;
+    padding-top: 20px;
     font-style: oblique;
   }
 }
-@media screen and (max-device-width: 800px) {
+@media screen and (max-device-width: 1024px) {
   header nav a:hover {
     border-top: 1px solid #333;
-    padding: 30px 0 30px 30px;
+    padding-top: 30px;
     font-style: oblique;
   }
 }
@@ -373,8 +379,8 @@ header nav a.active {
 @media screen and (max-width: 828px), (max-device-width: 800px) {
   header nav a.active {
     border-top: 1px solid #333;
-    padding: 30px 0 30px 30px;
     font-style: oblique;
+    padding-top: 20px;
   }
 }
 /* --- end header --- */
