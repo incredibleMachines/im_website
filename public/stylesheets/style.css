@@ -193,7 +193,7 @@ header {
 }
 @media screen and (max-device-width: 1024px) {
   header {
-    height: 60px;
+    height: 70px;
   }
 }
 header .logoHome {
@@ -238,11 +238,11 @@ header .logoMobile img {
 @media screen and (max-device-width: 1024px) {
   header .logoMobile {
     display: block;
-    margin-top: 0;
+    margin: 5px 0 0 5px;
   }
   header .logoMobile img {
-    width: 36px;
-    height: 48px;
+    width: 38px;
+    height: 52px;
   }
 }
 header .buttonMobile {
@@ -258,6 +258,12 @@ header .buttonMobile {
     padding-top: 40px;
   }
 }
+@media screen and (max-device-width: 1024px) {
+  header .buttonMobile {
+    width: 33px;
+    padding-top: 20px;
+  }
+}
 header .buttonMobile .buttonLine {
   height: 8px;
   border-top: 3px solid #666;
@@ -267,6 +273,13 @@ header .buttonMobile .buttonLine {
     display: block;
     height: 20px;
     border-top: 6px solid #666;
+  }
+}
+@media screen and (max-device-width: 800px) {
+  header .buttonMobile .buttonLine {
+    display: block;
+    height: 10px;
+    border-top: 3px solid #666;
   }
 }
 @media screen and (max-width: 828px), (max-device-width: 1024px) {
@@ -280,6 +293,11 @@ header .buttonMobile.active .buttonLine {
 @media screen and (max-device-width: 800px) {
   header .buttonMobile.active .buttonLine {
     border-top: 6px solid #fff;
+  }
+}
+@media screen and (max-device-width: 800px) {
+  header .buttonMobile.active .buttonLine {
+    border-top: 3px solid #fff;
   }
 }
 header nav {
