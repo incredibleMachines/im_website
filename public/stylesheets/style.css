@@ -1220,13 +1220,13 @@ header nav a.active {
   font-size: 40px;
   line-height: 60px;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section #skills ul li a {
     font-size: 32px;
     line-height: 46px;
   }
 }
-@media screen and (max-width: 600px), (max-device-width: 800px) {
+@media screen and (max-device-width: 568px) {
   .capabilities #skills-section #skills ul li a {
     font-size: 58px;
     line-height: 72px;
@@ -1304,7 +1304,7 @@ header nav a.active {
 .capabilities #skills-section #about-skills .about-skill .skill-title h2 {
   font-size: 32px;
 }
-@media screen and (max-width: 600px), (max-device-width: 800px) {
+@media screen and (max-device-width: 568px) {
   .capabilities #skills-section #about-skills .about-skill .skill-title h2 {
     font-size: 70px;
     line-height: 70px;
@@ -1320,7 +1320,7 @@ header nav a.active {
 .capabilities #skills-section #about-skills .about-skill .skill-blurb p {
   margin-bottom: 30px;
 }
-@media screen and (max-width: 600px), (max-device-width: 800px) {
+@media screen and (max-device-width: 568px) {
   .capabilities #skills-section #about-skills .about-skill .skill-blurb p {
     font-size: 30px;
     line-height: 40px;
@@ -1345,7 +1345,7 @@ header nav a.active {
 .capabilities #skills-section #about-skills .about-skill .related-work .title h3 {
   padding-top: 0;
 }
-@media screen and (max-width: 600px), (max-device-width: 800px) {
+@media screen and (max-device-width: 568px) {
   .capabilities #skills-section #about-skills .about-skill .related-work .title h3 {
     font-size: 40px;
     line-height: 40px;
@@ -1383,7 +1383,7 @@ header nav a.active {
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project a {
   font-size: 14px;
 }
-@media screen and (max-width: 600px), (max-device-width: 800px) {
+@media screen and (max-device-width: 568px) {
   .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project a {
     font-size: 30px;
     line-height: 40px;
@@ -1402,12 +1402,12 @@ header nav a.active {
   margin-bottom: 5px;
   margin-top: 0;
 }
-@media screen and (max-width: 600px), (max-device-width: 800px) {
+@media screen and (max-width: 600px), (max-device-width: 568px) {
   .capabilities #skills-section #about-skills .about-skill .related-clients .title {
     width: 55%;
   }
 }
-@media screen and (max-width: 600px), (max-device-width: 800px) {
+@media screen and (max-device-width: 568px) {
   .capabilities #skills-section #about-skills .about-skill .related-clients .title h3 {
     font-size: 40px;
     line-height: 40px;
@@ -1424,7 +1424,7 @@ header nav a.active {
   font-size: 14px;
   clear: both;
 }
-@media screen and (max-width: 600px), (max-device-width: 800px) {
+@media screen and (max-device-width: 568px) {
   .capabilities #skills-section #about-skills .about-skill .related-clients .client-list li {
     font-size: 30px;
     line-height: 60px;
