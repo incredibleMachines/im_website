@@ -211,7 +211,7 @@ header .logoHome img {
   }
 }
 header .logoMobile {
-  display: block;
+  display: none;
   padding-left: 10px;
   margin-top: 8px;
   float: left;
@@ -225,7 +225,7 @@ header .logoMobile img {
     display: block;
   }
 }
-@media screen and and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   header .logoMobile {
     display: block;
   }
@@ -253,7 +253,7 @@ header .buttonMobile {
     padding-top: 40px;
   }
 }
-@media screen and and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   header .buttonMobile {
     width: 33px;
     padding-top: 20px;
@@ -263,7 +263,7 @@ header .buttonMobile .buttonLine {
   height: 8px;
   border-top: 3px solid #666;
 }
-@media screen and and (min-device-width: 768px) (max-device-width: 1024px) {
+@media screen and (min-device-width: 768px) (max-device-width: 1024px) {
   header .buttonMobile .buttonLine {
     display: block;
     height: 10px;
@@ -285,7 +285,7 @@ header .buttonMobile .buttonLine {
 header .buttonMobile.active .buttonLine {
   border-top: 3px solid #fff;
 }
-@media screen and and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   header .buttonMobile.active .buttonLine {
     border-top: 3px solid #fff;
   }
