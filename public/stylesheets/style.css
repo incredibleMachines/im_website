@@ -191,6 +191,11 @@ header {
     height: 140px;
   }
 }
+@media screen and (max-device-width: 1024px) {
+  header {
+    height: 60px;
+  }
+}
 header .logoHome {
   margin: 5px 0 0 0;
   padding-left: 35px;
@@ -228,6 +233,16 @@ header .logoMobile img {
     width: 72px;
     height: 104px;
     margin: 5px 0 0 5px;
+  }
+}
+@media screen and (max-device-width: 1024px) {
+  header .logoMobile {
+    display: block;
+    margin-top: 0;
+  }
+  header .logoMobile img {
+    width: 36px;
+    height: 48px;
   }
 }
 header .buttonMobile {
