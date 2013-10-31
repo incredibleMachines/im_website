@@ -11,7 +11,7 @@ var videoArray = [{mp4:'Cannes.mp4',ogv:'Cannes.ogv',link:'living-billboard'},{m
 var videoPlay = shuffle(videoArray);
 var videoIndex = 0;
 var aspect=1200/530;
-var topPadding=20;
+var topPadding=0;
 var navOffset=70;
 $('#portfolio-nav').css('padding-top',$('header').height()+topPadding).css('margin-top',-$('header').height());
 $('#portfolio').css('padding-top',$('header').height()+topPadding).css('margin-top',-$('header').height());
@@ -24,7 +24,7 @@ if($('.intro-vid').css('display')=='none'){
 	});
 	$('nav a:contains("Featured Work")').addClass('active');
 	// $('.logoHome').show();
-	$('#portfolio').css('padding-top',$('header').height()).	css('margin-top',0);
+	$('#portfolio').css('padding-top',$('header').height()).css('margin-top',0);
 }
 
 else{

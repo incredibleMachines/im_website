@@ -422,7 +422,8 @@ header {
 			width: 100%;
 
 			@media screen and (max-width: 828px), (max-device-width: 1024px){
-				margin: 0 30px 0 0;
+				
+				margin:0;
 			}
 
 			.port-item {
@@ -449,11 +450,6 @@ header {
 
 				a {
 					font-family: @proxima;
-
-					font-size: 46px;
-
-					line-height: 0;
-					font-weight: 100;
 					color: @three;
 					text-transform: uppercase;
 					font-style: normal;
@@ -470,15 +466,23 @@ header {
 					h2 {
 						clear: both;
 						width:98%;
+						font-size: 46px;
+						line-height: 46px;
+						font-weight: 100;
 
-						@media screen and (max-width: 828px), (max-device-width: 1024px) {
+
+						@media screen and (max-width: 828px) {
+							text-align: center;
+						}
+
+						@media screen and (max-device-width: 1024px) {
 							text-align: center;
 							margin: 10px 0;
 							font-size: 60px;
 							line-height: 60px;
 						}
 
-						@media screen and (max-width: 828px), (max-device-width: 800px) {
+						@media screen and (max-device-width: 800px) {
 							text-align: center;
 							margin: 10px 0;
 							font-size: 80px;
@@ -505,14 +509,18 @@ header {
 					line-height: 20px;
 					letter-spacing: 0;
 
-					@media screen and (max-width: 828px), (max-device-width: 1024px)  {
+					@media screen and (max-width: 828px) {
+						text-align: center;
+					}
+
+					@media screen and (max-device-width: 1024px)  {
 						text-align: center;
 						margin: 0 10px;
 						font-size: 30px;
 						line-height: 34px;
 					}
 
-					@media screen and (max-width: 828px), (max-device-width: 800px)  {
+					@media screen and (max-device-width: 800px)  {
 						text-align: center;
 						margin: 0 10px;
 						font-size: 30px;
@@ -1203,10 +1211,6 @@ header {
 							width: 100%;
 							clear: both;
 						}
-
-						@media screen and (max-width: 600px), (max-device-width: 1024px){
-								padding:0 10px;
-							}
 						
 						#copyright {
 							float: left;
@@ -2252,10 +2256,6 @@ header {
 					width: 100%;
 					clear: both;
 				}
-
-				@media screen and (max-width: 600px), (max-device-width: 1024px){
-						padding:0 10px;
-					}
 				
 				#copyright {
 					float: left;

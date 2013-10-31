@@ -454,7 +454,7 @@ header nav a.active {
 }
 @media screen and (max-width: 828px), (max-device-width: 1024px) {
   .projects #portfolio-wrap #portfolio {
-    margin: 0 30px 0 0;
+    margin: 0;
   }
 }
 .projects #portfolio-wrap #portfolio .port-item {
@@ -481,9 +481,6 @@ header nav a.active {
 }
 .projects #portfolio-wrap #portfolio .port-item a {
   font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
-  font-size: 46px;
-  line-height: 0;
-  font-weight: 100;
   color: #333333;
   text-transform: uppercase;
   font-style: normal;
@@ -497,8 +494,16 @@ header nav a.active {
 .projects #portfolio-wrap #portfolio .port-item a h2 {
   clear: both;
   width: 98%;
+  font-size: 46px;
+  line-height: 46px;
+  font-weight: 100;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-width: 828px) {
+  .projects #portfolio-wrap #portfolio .port-item a h2 {
+    text-align: center;
+  }
+}
+@media screen and (max-device-width: 1024px) {
   .projects #portfolio-wrap #portfolio .port-item a h2 {
     text-align: center;
     margin: 10px 0;
@@ -506,7 +511,7 @@ header nav a.active {
     line-height: 60px;
   }
 }
-@media screen and (max-width: 828px), (max-device-width: 800px) {
+@media screen and (max-device-width: 800px) {
   .projects #portfolio-wrap #portfolio .port-item a h2 {
     text-align: center;
     margin: 10px 0;
@@ -527,7 +532,12 @@ header nav a.active {
   line-height: 20px;
   letter-spacing: 0;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-width: 828px) {
+  .projects #portfolio-wrap #portfolio .port-item p {
+    text-align: center;
+  }
+}
+@media screen and (max-device-width: 1024px) {
   .projects #portfolio-wrap #portfolio .port-item p {
     text-align: center;
     margin: 0 10px;
@@ -535,7 +545,7 @@ header nav a.active {
     line-height: 34px;
   }
 }
-@media screen and (max-width: 828px), (max-device-width: 800px) {
+@media screen and (max-device-width: 800px) {
   .projects #portfolio-wrap #portfolio .port-item p {
     text-align: center;
     margin: 0 10px;
@@ -1229,11 +1239,6 @@ header nav a.active {
     float: left;
     width: 100%;
     clear: both;
-  }
-}
-@media screen and (max-width: 600px), (max-device-width: 1024px) {
-  .single-project .footer-bg-wrap .footer-pg-wrap footer #strip {
-    padding: 0 10px;
   }
 }
 .single-project .footer-bg-wrap .footer-pg-wrap footer #strip #copyright {
@@ -2285,11 +2290,6 @@ header nav a.active {
     float: left;
     width: 100%;
     clear: both;
-  }
-}
-@media screen and (max-width: 600px), (max-device-width: 1024px) {
-  .footer-bg-wrap footer #strip {
-    padding: 0 10px;
   }
 }
 .footer-bg-wrap footer #strip #copyright {
