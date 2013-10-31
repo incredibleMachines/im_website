@@ -188,7 +188,7 @@ header {
 }
 @media screen and (max-device-width: 1024px) {
   header {
-    height: 100px;
+    height: 70px;
   }
 }
 @media screen and (max-device-width: 800px) {
