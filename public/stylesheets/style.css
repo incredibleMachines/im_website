@@ -347,6 +347,11 @@ header nav a {
     padding: 30px 0 30px 30px;
   }
 }
+@media screen and (max-device-width: 568px) {
+  header nav a {
+    font-size: 44px;
+  }
+}
 header nav a:hover {
   border-top: 1px solid #ffd24f;
   color: #ffffff;
@@ -376,11 +381,18 @@ header nav a.active {
   padding-top: 5px;
   font-style: oblique;
 }
-@media screen and (max-width: 828px), (max-device-width: 800px) {
+@media screen and (max-width: 828px) {
   header nav a.active {
     border-top: 1px solid #333;
     font-style: oblique;
     padding-top: 20px;
+  }
+}
+@media screen and (max-device-width: 828px) {
+  header nav a.active {
+    border-top: 1px solid #333;
+    font-style: oblique;
+    padding-top: 30px;
   }
 }
 /* --- end header --- */
@@ -2187,7 +2199,7 @@ header nav a.active {
 
   /* ---end strip--- */
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .footer-bg-wrap footer {
     height: 100%;
   }
@@ -2201,7 +2213,7 @@ header nav a.active {
   /* --- end address ---- */
 
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .footer-bg-wrap footer #contact {
     padding: 80px 0 50px 0;
     height: 100%;
@@ -2212,7 +2224,7 @@ header nav a.active {
   text-align: center;
   line-height: 46px;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .footer-bg-wrap footer #contact h1 {
     font-size: 66px;
     line-height: 66px;
@@ -2225,7 +2237,7 @@ header nav a.active {
   font-weight: 300;
   font-style: normal;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .footer-bg-wrap footer #contact #email-phone a {
     font-size: 30px;
   }
@@ -2238,7 +2250,7 @@ header nav a.active {
   line-height: 36px;
   letter-spacing: 0;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .footer-bg-wrap footer #contact #email-phone p {
     font-size: 30px;
     line-height: 50px;
@@ -2250,7 +2262,7 @@ header nav a.active {
   padding: 2px 0 0 0;
   margin: 0px auto;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .footer-bg-wrap footer #contact #address {
     width: 90%;
     padding-top: 10px;
@@ -2261,7 +2273,7 @@ header nav a.active {
   color: #999999;
   letter-spacing: 0;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .footer-bg-wrap footer #contact #address p {
     font-size: 24px;
     line-height: 40px;
@@ -2275,7 +2287,7 @@ header nav a.active {
 
   /* ---end social-btns --- */
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .footer-bg-wrap footer #strip {
     height: 100%;
     padding: 20px 0;
@@ -2285,16 +2297,22 @@ header nav a.active {
   }
 }
 .footer-bg-wrap footer #strip #copyright {
-  float: left;
   margin: 5px 0 0 0;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-width: 828px) {
   .footer-bg-wrap footer #strip #copyright {
-    float: none;
-    margin: 0px auto;
-    height: 30px;
-    width: 420px;
+    width: 280px;
     padding-bottom: 10px;
+    margin: 0 auto;
+    padding-top: 5px;
+  }
+}
+@media screen and (max-device-width: 1024px) {
+  .footer-bg-wrap footer #strip #copyright {
+    width: 510px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    padding-top: 5px;
   }
 }
 .footer-bg-wrap footer #strip #copyright p {
@@ -2302,27 +2320,25 @@ header nav a.active {
   color: #999999;
   letter-spacing: 0;
   float: left;
-  margin-right: 20px;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .footer-bg-wrap footer #strip #copyright p {
-    font-size: 16px;
-    margin-right: 26px;
+    float: none;
+    font-size: 24px;
   }
 }
-.footer-bg-wrap footer #strip #copyright #reel a {
+.footer-bg-wrap footer #strip #copyright p #reel {
   font-size: 12px;
-  color: #999999;
   letter-spacing: 0;
-  float: left;
+  padding-left: 16px;
   margin-right: 20px;
   font-style: normal;
   color: #ffd24f;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
-  .footer-bg-wrap footer #strip #copyright #reel a {
-    font-size: 16px;
-    margin-right: 6px;
+@media screen and (max-device-width: 1024px) {
+  .footer-bg-wrap footer #strip #copyright p #reel {
+    margin-right: 0;
+    font-size: 24px;
   }
 }
 .footer-bg-wrap footer #strip #social-btns {
@@ -2338,7 +2354,7 @@ header nav a.active {
 .footer-bg-wrap footer #strip #social-btns a {
   font-size: 16px;
 }
-@media screen and (max-width: 600px), (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .footer-bg-wrap footer #strip #social-btns a {
     margin-left: 0;
     margin-right: 0;
@@ -2348,7 +2364,7 @@ header nav a.active {
 .footer-bg-wrap footer #strip #social-btns a i {
   margin-left: 10px;
 }
-@media screen and (max-width: 600px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .footer-bg-wrap footer #strip #social-btns a i {
     margin-left: 30px;
     margin-right: 0;
