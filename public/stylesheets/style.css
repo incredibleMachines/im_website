@@ -784,13 +784,13 @@ header nav a.active {
   padding: 0;
   padding-bottom: 20px;
 }
-@media screen and (max-width: 828px), (max-device-width: 568px) {
+@media screen and (max-device-width: 568px) {
   .single-project .project-text-titled .title {
     width: 75%;
     margin: 30px 0;
   }
 }
-@media screen and (max-width: 828px), (max-device-width: 568px) {
+@media screen and (max-device-width: 568px) {
   .single-project .project-text-titled .title h3 {
     font-size: 40px;
     line-height: 40px;
@@ -869,7 +869,7 @@ header nav a.active {
     width: 55%;
   }
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .single-project .list-block .column-left .title h3 {
     font-size: 40px;
     line-height: 40px;
@@ -893,7 +893,7 @@ header nav a.active {
   float: left;
   clear: both;
 }
-@media screen (max-device-width: 1024px) {
+@media screen (max-device-width: 568px) {
   .single-project .list-block .column-left .list ul li a {
     font-size: 30px;
     line-height: 60px;
@@ -924,7 +924,7 @@ header nav a.active {
     width: 55%;
   }
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .single-project .list-block .column-right .title h3 {
     font-size: 40px;
     line-height: 40px;
@@ -942,7 +942,7 @@ header nav a.active {
   float: left;
   margin-right: 40px;
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .single-project .list-block .column-right .list ul li {
     font-size: 30px;
     line-height: 60px;
@@ -993,7 +993,7 @@ header nav a.active {
   float: left;
   clear: both;
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .single-project .partner-info .column-left .list ul li {
     font-size: 30px;
     line-height: 60px;
@@ -1023,7 +1023,7 @@ header nav a.active {
   float: left;
   clear: both;
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .single-project .partner-info .column-right .list ul li a {
     font-size: 30px;
     line-height: 60px;
