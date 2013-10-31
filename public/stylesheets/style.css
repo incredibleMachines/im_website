@@ -1639,7 +1639,7 @@ header nav a.active {
   line-height: 22px;
   margin-top: 10px;
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .clients #client-wrap .client-detail .client-img p {
     font-size: 30px;
     line-height: 40px;
@@ -1677,13 +1677,13 @@ header nav a.active {
   clear: both;
   margin: 0;
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .clients #client-wrap .client-detail .detail-col .title {
     width: 320px;
     margin-top: 40px;
   }
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .clients #client-wrap .client-detail .detail-col .title h3 {
     font-size: 40px;
     line-height: 40px;
@@ -1699,7 +1699,7 @@ header nav a.active {
     margin-left: 0;
   }
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .clients #client-wrap .client-detail .detail-col .detail-list ul li a {
     font-size: 30px;
     line-height: 60px;
@@ -1759,13 +1759,13 @@ header nav a.active {
     padding-bottom: 10px;
   }
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .clients .list-block .column .title {
     width: 320px;
     margin-top: 40px;
   }
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .clients .list-block .column .title h3 {
     font-size: 40px;
     line-height: 40px;
@@ -1791,7 +1791,7 @@ header nav a.active {
   padding-right: 30px;
   clear: none;
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 568px) {
   .clients .list-block .column .list ul li {
     font-size: 30px;
     line-height: 60px;
