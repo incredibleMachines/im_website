@@ -1476,23 +1476,24 @@ header nav a.active {
 }
 .clients #client-wrap #client-grid h1 {
   text-align: center;
-  color: #ffffff;
   margin: 130px 0 30px 0;
   line-height: 50px;
+  color: #ffd24f;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .clients #client-wrap #client-grid h1 {
     font-size: 66px;
     line-height: 66px;
     border-bottom: 3px solid #666666;
     margin: 180px 35px 0 35px;
     padding-bottom: 30px;
+    color: #ffffff;
   }
 }
 .clients #client-wrap #client-grid .mobile-client {
   display: none;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .clients #client-wrap #client-grid .mobile-client {
     display: block;
     margin: 70px 0 30px 0;
@@ -1519,7 +1520,7 @@ header nav a.active {
     width: 100%;
   }
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .clients #client-wrap #client-grid #client-list {
     display: none;
   }
@@ -1609,7 +1610,7 @@ header nav a.active {
     padding: 60px 0 100px 5%;
   }
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .clients #client-wrap .client-detail {
     position: relative;
   }
@@ -1638,7 +1639,7 @@ header nav a.active {
   line-height: 22px;
   margin-top: 10px;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .clients #client-wrap .client-detail .client-img p {
     font-size: 30px;
     line-height: 40px;
@@ -1682,7 +1683,7 @@ header nav a.active {
     margin-top: 40px;
   }
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .clients #client-wrap .client-detail .detail-col .title h3 {
     font-size: 40px;
     line-height: 40px;
@@ -1698,7 +1699,7 @@ header nav a.active {
     margin-left: 0;
   }
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .clients #client-wrap .client-detail .detail-col .detail-list ul li a {
     font-size: 30px;
     line-height: 60px;
@@ -1711,7 +1712,7 @@ header nav a.active {
   border: 1px solid #ffd24f;
   margin-top: -40px;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .clients #client-wrap .client-detail .corner {
     display: none;
   }
@@ -1738,18 +1739,14 @@ header nav a.active {
   clear: both;
   float: left;
   border-bottom: 1px solid #ffffff;
-  width: 100%;
-  padding: 80px 0;
+  width: 97.5%;
+  padding: 50px 0 80px 0;
+  padding-left: 2.5%;
 }
 @media screen and (max-width: 828px), (max-device-width: 1024px) {
   .clients .list-block {
-    padding-left: 5%;
+    padding-top: 30px;
   }
-}
-.clients .list-block .column {
-  padding-left: 2.5%;
-  float: left;
-  width: 95%;
 }
 .clients .list-block .column .title {
   float: left;
@@ -1768,7 +1765,7 @@ header nav a.active {
     margin-top: 40px;
   }
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .clients .list-block .column .title h3 {
     font-size: 40px;
     line-height: 40px;
@@ -1779,46 +1776,9 @@ header nav a.active {
   padding-left: 2.5%;
   float: left;
   width: 78%;
-  -webkit-columns: 5;
-  /* Safari and Chrome */
-
-  -moz-columns: 5;
-  /* Firefox */
-
-  columns: 5;
 }
-@media screen and (max-width: 1700px) {
+@media screen and (max-width: 870px), (max-device-width: 1024px) {
   .clients .list-block .column .list {
-    -webkit-columns: 4;
-    /* Safari and Chrome */
-  
-    -moz-columns: 4;
-    /* Firefox */
-  
-    columns: 4;
-  }
-}
-@media screen and (max-width: 1300px) {
-  .clients .list-block .column .list {
-    -moz-columns: 3;
-    -webkit-columns: 3;
-    columns: 3;
-  }
-}
-@media screen and (max-width: 1100px) {
-  .clients .list-block .column .list {
-    -moz-columns: 4;
-    -webkit-columns: 4;
-    columns: 4;
-    width: 100%;
-    padding-left: 0;
-  }
-}
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
-  .clients .list-block .column .list {
-    -moz-columns: 1s;
-    -webkit-columns: 1;
-    columns: 1;
     padding-left: 0;
     width: 100%;
   }
@@ -1828,12 +1788,11 @@ header nav a.active {
 }
 .clients .list-block .column .list ul li {
   float: left;
-  clear: both;
+  padding-right: 30px;
+  clear: none;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .clients .list-block .column .list ul li {
-    clear: none;
-    padding-right: 40px;
     font-size: 30px;
     line-height: 60px;
   }
