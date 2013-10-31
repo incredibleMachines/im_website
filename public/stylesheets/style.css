@@ -1677,9 +1677,9 @@ header nav a.active {
   clear: both;
   margin: 0;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .clients #client-wrap .client-detail .detail-col .title {
-    width: 55%;
+    width: 320px;
     margin-top: 40px;
   }
 }
@@ -1759,9 +1759,9 @@ header nav a.active {
     padding-bottom: 10px;
   }
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-device-width: 1024px) {
   .clients .list-block .column .title {
-    width: 55%;
+    width: 320px;
     margin-top: 40px;
   }
 }
