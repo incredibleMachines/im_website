@@ -375,7 +375,7 @@ easily in the skin designer. http://designer.videojs.com/
 */
 .vjs-project-page .vjs-big-play-button {
   display: block;
-  z-index: 2;
+  z-index: 99;
   position: relative;
   margin-left:auto;
   margin-right:auto;
@@ -396,9 +396,9 @@ easily in the skin designer. http://designer.videojs.com/
 }
 /* Hide on mobile devices. Remove when we stop using native controls
     by default on mobile  */
-.vjs-project-page.vjs-using-native-controls .vjs-big-play-button {
+/*.vjs-project-page.vjs-using-native-controls .vjs-big-play-button {
   display: none;
-}
+}*/
 .vjs-big-play-button:hover,
 .vjs-big-play-button:focus {
 background: url('../images/play_btn_sprite.png') -120px 0 no-repeat;
