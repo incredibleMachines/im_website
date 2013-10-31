@@ -2299,19 +2299,10 @@ header nav a.active {
 .footer-bg-wrap footer #strip #copyright {
   margin: 5px 0 0 0;
 }
-@media screen and (max-width: 828px) {
+@media screen and (max-width: 828px), (max-device-width: 1024px) {
   .footer-bg-wrap footer #strip #copyright {
-    width: 280px;
+    width: 100%;
     padding-bottom: 10px;
-    margin: 0 auto;
-    padding-top: 5px;
-  }
-}
-@media screen and (max-device-width: 1024px) {
-  .footer-bg-wrap footer #strip #copyright {
-    width: 510px;
-    padding-bottom: 10px;
-    margin: 0 auto;
     padding-top: 5px;
   }
 }
@@ -2321,17 +2312,23 @@ header nav a.active {
   letter-spacing: 0;
   float: left;
 }
+@media screen and (max-width: 828px) {
+  .footer-bg-wrap footer #strip #copyright p {
+    text-align: center;
+    float: none;
+  }
+}
 @media screen and (max-device-width: 1024px) {
   .footer-bg-wrap footer #strip #copyright p {
-    float: none;
+    text-align: center;
     font-size: 24px;
+    float: none;
   }
 }
 .footer-bg-wrap footer #strip #copyright p #reel {
   font-size: 12px;
   letter-spacing: 0;
   padding-left: 16px;
-  margin-right: 20px;
   font-style: normal;
   color: #ffd24f;
 }
