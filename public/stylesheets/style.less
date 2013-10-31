@@ -351,10 +351,16 @@ header {
 			font-style:oblique;
 
 
-			@media screen and (max-width: 828px), (max-device-width: 800px) {
+			@media screen and (max-width: 828px) {
 				border-top:1px solid #333;
 				font-style:oblique;
 				padding-top: 20px;
+			}
+
+			@media screen and (max-device-width: 828px) {
+				border-top:1px solid #333;
+				font-style:oblique;
+				padding-top: 30px;
 			}
 		}
 	}
@@ -2173,7 +2179,7 @@ header {
 		height: 100%;
 		background:url('../images/footer_pattern.png');
 
-		@media screen and (max-width: 828px), (max-device-width: 1024px) {
+		@media screen and (max-device-width: 1024px) {
 			height: 100%;
 		}
 	
@@ -2182,7 +2188,7 @@ header {
 			padding: 40px 0 30px 0px;	
 			text-align: center;
 
-			@media screen and (max-width: 828px), (max-device-width: 1024px) {
+			@media screen and (max-device-width: 1024px) {
 				padding: 80px 0 50px 0;
 				height: 100%;
 			}	
@@ -2192,7 +2198,7 @@ header {
 				text-align: center;
 				line-height: 46px;
 
-				@media screen and (max-width: 828px), (max-device-width: 1024px) {
+				@media screen and (max-device-width: 1024px) {
 					font-size: 66px;
 					line-height: 66px;
 				}
@@ -2204,7 +2210,7 @@ header {
 					font-weight: 300;
 					font-style: normal;
 
-					@media screen and (max-width: 828px), (max-device-width: 1024px) {
+					@media screen and (max-device-width: 1024px) {
 						font-size: 30px;
 					}
 				}
@@ -2218,7 +2224,7 @@ header {
 					line-height: 36px;
 					letter-spacing: 0;
 
-					@media screen and (max-width: 828px), (max-device-width: 1024px) {
+					@media screen and (max-device-width: 1024px) {
 						font-size: 30px;
 						line-height: 50px;
 					}
@@ -2231,7 +2237,7 @@ header {
 				padding: 2px 0 0 0;
 				margin: 0px auto;
 
-				@media screen and (max-width: 828px), (max-device-width: 1024px) {
+				@media screen and (max-device-width: 1024px) {
 					width: 90%;
 					padding-top: 10px;
 				}
@@ -2241,7 +2247,7 @@ header {
 					color: @nine;
 					letter-spacing: 0;
 
-					@media screen and (max-width: 828px), (max-device-width: 1024px) {
+					@media screen and (max-device-width: 1024px) {
 						font-size: 24px;
 						line-height: 40px;
 					}
@@ -2254,7 +2260,7 @@ header {
 				background-color: @two;
 				padding: 0 35px;
 
-				@media screen and (max-width: 828px), (max-device-width: 1024px) {
+				@media screen and (max-device-width: 1024px) {
 					height: 100%;
 					padding: 20px 0;
 					float: left;
@@ -2263,51 +2269,57 @@ header {
 				}
 				
 				#copyright {
-					float: left;
+					
 					margin: 5px 0 0 0;
 					
-					@media screen and (max-width: 828px), (max-device-width: 1024px) {
-						float: none;
-						margin: 0px auto;
-						height: 30px;
-						width: 420px;
+					@media screen and (max-width: 828px) {
+						width:280px;
 						padding-bottom: 10px;
+						margin:0 auto;
+						padding-top:5px;
 					}
+
+					@media screen and (max-device-width: 1024px) {
+						width:510px;
+						padding-bottom: 10px;
+						margin:0 auto;
+						padding-top:5px;
+					}
+
+
 				
-					
 					p {
 						font-size: 12px;
 						color:@nine;
 						letter-spacing: 0;
 						float: left;
-						margin-right: 20px;
 
-						@media screen and (max-width: 828px), (max-device-width: 1024px){
-							font-size: 16px;
-							margin-right: 26px;
+						@media screen and (max-device-width: 1024px){
+							float:none;
+							font-size: 24px;
 						}
-					} 
-					#reel a{
+						#reel{
 						font-size: 12px;
-						color:@nine;
 						letter-spacing: 0;
-						float: left;
+						padding-left:16px;
 						margin-right: 20px;
 						font-style: normal;
 
-						@media screen and (max-width: 828px), (max-device-width: 1024px){
-							font-size: 16px;
-							margin-right: 6px;
+						@media screen and (max-device-width: 1024px){
+							margin-right: 0;
+							font-size:24px;
 						}							
 						color: @yellow;
 					}
+					} 
+					
 				}/* ---end copyright--- */
 				
 				#social-btns {
 						float: right;
 						padding-top: 5px;
 
-					@media screen and (max-width: 828px), (max-device-width: 1024px) {
+					@media screen and (max-width:828px), (max-device-width: 1024px) {
 						text-align: center;
 						width: 100%;
 					}
@@ -2315,7 +2327,7 @@ header {
 						a{
 							font-size:16px;
 
-							@media screen and (max-width: 600px), (max-width: 828px), (max-device-width: 1024px){
+							@media screen and (max-device-width: 1024px){
 								margin-left: 0;
 								margin-right:0;
 								font-size: 36px;
@@ -2327,7 +2339,7 @@ header {
 							i {
 								margin-left: 10px;
 
-								@media screen and (max-width: 600px), (max-device-width: 1024px){
+								@media screen and (max-device-width: 1024px){
 									margin-left: 30px;
 									margin-right:0;
 								}
