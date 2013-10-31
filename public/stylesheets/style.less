@@ -156,9 +156,6 @@ header {
 	height:70px;
 	width:100%;
 
-	@media screen and (max-device-width: 1024px) {
-		height: 70px;
-	}
 
 	@media screen and (max-device-width: 800px) {
 		height: 140px;
@@ -172,7 +169,7 @@ header {
 			width: 264px;
 			height: 55px;
 		}
-		@media screen and (max-width: 828px), (max-device-width: 1024px) {
+		@media screen and (max-width: 828px), (max-device-width:1024px) {
 			display:none;
 		}
 	}
@@ -188,15 +185,6 @@ header {
 		}
 		@media screen and (max-width: 828px) {
 			display:block;
-		}
-
-		@media screen and (max-device-width: 1024px) {
-			display:block;
-
-			img {
-				width: 58px;
-				height: 72px;
-			}
 		}
 
 		@media screen and  (max-device-width: 800px) {
@@ -217,11 +205,6 @@ header {
 		float:right;
 		width:33px;
 
-		@media screen and (max-device-width: 1024px) {
-			width: 66px;
-			padding-top: 28px;
-		}
-
 		@media screen and (max-device-width: 800px){
 			width: 66px;
 			padding-top: 40px;
@@ -231,7 +214,7 @@ header {
 			height:8px;
 			border-top:3px solid #666;
 
-			@media screen and (max-device-width: 1024px){
+			@media screen and (max-device-width: 800px){
 				display:block;
 				height: 20px;
 				border-top:6px solid #666;
@@ -246,16 +229,17 @@ header {
 
 	.buttonMobile.active{
 		.buttonLine{
-			height:8px;
-			border-top:3px solid #666;
-
-			@media screen and (max-device-width: 1024px){
-				display:block;
-				height: 20px;
-				border-top:6px solid #666;
+			border-top:3px solid #fff;
+			@media screen and (max-device-width: 800px){
+				border-top:6px solid #fff;
 			}
+
 		}
 	}
+
+
+
+
 
 	nav {
 		float: right;
@@ -295,16 +279,6 @@ header {
 				border-top:1px solid #333;
 			}
 
-			@media screen and (max-device-width: 1024px) {
-				float: left;
-				clear:both;
-				color:#999;
-				font-size:28px;
-				width:100%;
-				margin:0;
-				padding: 20px 0 20px 20px;
-				border-top:1px solid #333;
-			}
 
 			@media screen and (max-device-width: 800px) {
 				font-size: 38px;
@@ -319,7 +293,7 @@ header {
 			padding-top: 5px;
 			font-style:oblique;
 
-			@media screen and (max-width: 828px), (max-device-width: 1024px) {
+			@media screen and (max-width: 828px) {
 				font-size: 28px;
 				border-top:1px solid #333;
 				padding: 20px 0 20px 20px;
@@ -340,11 +314,6 @@ header {
 			padding-top: 5px;
 			font-style:oblique;
 
-			@media screen and (max-width: 828px), (max-device-width: 1024px) {
-				border-top:1px solid #333;
-				padding: 20px 0 20px 20px;
-				font-style:oblique;
-			}
 
 			@media screen and (max-width: 828px), (max-device-width: 800px) {
 				border-top:1px solid #333;
