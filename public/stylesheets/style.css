@@ -186,14 +186,14 @@ header {
   height: 70px;
   width: 100%;
 }
-@media screen and (max-device-width: 1024px) {
-  header {
-    height: 70px;
-  }
-}
 @media screen and (max-device-width: 800px) {
   header {
     height: 140px;
+  }
+}
+@media screen and (max-device-width: 1024px) {
+  header {
+    height: 60px;
   }
 }
 header .logoHome {
@@ -225,15 +225,6 @@ header .logoMobile img {
     display: block;
   }
 }
-@media screen and (max-device-width: 1024px) {
-  header .logoMobile {
-    display: block;
-  }
-  header .logoMobile img {
-    width: 58px;
-    height: 72px;
-  }
-}
 @media screen and (max-device-width: 800px) {
   header .logoMobile {
     display: block;
@@ -244,18 +235,22 @@ header .logoMobile img {
     margin: 5px 0 0 5px;
   }
 }
+@media screen and (max-device-width: 1024px) {
+  header .logoMobile {
+    display: block;
+    margin-top: 0;
+  }
+  header .logoMobile img {
+    width: 36px;
+    height: 48px;
+  }
+}
 header .buttonMobile {
   display: none;
   padding-top: 24px;
   padding-right: 16px;
   float: right;
   width: 33px;
-}
-@media screen and (max-device-width: 1024px) {
-  header .buttonMobile {
-    width: 66px;
-    padding-top: 28px;
-  }
 }
 @media screen and (max-device-width: 800px) {
   header .buttonMobile {
@@ -267,7 +262,7 @@ header .buttonMobile .buttonLine {
   height: 8px;
   border-top: 3px solid #666;
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 800px) {
   header .buttonMobile .buttonLine {
     display: block;
     height: 20px;
@@ -280,14 +275,11 @@ header .buttonMobile .buttonLine {
   }
 }
 header .buttonMobile.active .buttonLine {
-  height: 8px;
-  border-top: 3px solid #666;
+  border-top: 3px solid #fff;
 }
-@media screen and (max-device-width: 1024px) {
+@media screen and (max-device-width: 800px) {
   header .buttonMobile.active .buttonLine {
-    display: block;
-    height: 20px;
-    border-top: 6px solid #666;
+    border-top: 6px solid #fff;
   }
 }
 header nav {
@@ -330,18 +322,6 @@ header nav a {
     border-top: 1px solid #333;
   }
 }
-@media screen and (max-device-width: 1024px) {
-  header nav a {
-    float: left;
-    clear: both;
-    color: #999;
-    font-size: 28px;
-    width: 100%;
-    margin: 0;
-    padding: 20px 0 20px 20px;
-    border-top: 1px solid #333;
-  }
-}
 @media screen and (max-device-width: 800px) {
   header nav a {
     font-size: 38px;
@@ -355,7 +335,7 @@ header nav a:hover {
   padding-top: 5px;
   font-style: oblique;
 }
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
+@media screen and (max-width: 828px) {
   header nav a:hover {
     font-size: 28px;
     border-top: 1px solid #333;
@@ -376,13 +356,6 @@ header nav a.active {
   font-weight: 100;
   padding-top: 5px;
   font-style: oblique;
-}
-@media screen and (max-width: 828px), (max-device-width: 1024px) {
-  header nav a.active {
-    border-top: 1px solid #333;
-    padding: 20px 0 20px 20px;
-    font-style: oblique;
-  }
 }
 @media screen and (max-width: 828px), (max-device-width: 800px) {
   header nav a.active {
