@@ -384,7 +384,7 @@ easily in the skin designer. http://designer.videojs.com/
   cursor: pointer;
   /* Need a slightly gray bg so it can be seen on black backgrounds */
   /* background-color-with-alpha */
-  background: url('../images/play_btn_sprite.png') 0 0  no-repeat;
+  background: url('../images/play_btn.png');
   }
 /* Hide if controls are disabled */
 .vjs-project-page.vjs-controls-disabled .vjs-big-play-button {
@@ -401,7 +401,7 @@ easily in the skin designer. http://designer.videojs.com/
 }*/
 .vjs-big-play-button:hover,
 .vjs-big-play-button:focus {
-background: url('../images/play_btn_sprite.png') -120px 0 no-repeat;
+background: url('../images/play_btn_active.png');
 
 }
 .vjs-project-page .vjs-big-play-button:before {
