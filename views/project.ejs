@@ -63,10 +63,8 @@
 		<%
 		imgCount++; 
 		}
-	}
-		%>
-
-		<% if(project.imageBlocks.length-project.textBlocks.length>2){
+	if(i==project.textBlocks.length-2){
+	if(project.imageBlocks.length-project.textBlocks.length>2){
 
 		if(imgCount<project.imageBlocks.length){ %>
 		<section class="photo-block-multi">
@@ -82,7 +80,12 @@
 		imgCount++; 
 		}
 	}
+}
+
+	}
 		%>
+
+		
 		
 		<!-- CAPABILITIES, TOOLS + TECH BLOCK -->
 	<section class="list-block cap-tech">
