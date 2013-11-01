@@ -71,14 +71,19 @@ $(document).ready(function(){
                 obj.removeClass().addClass('project-image-block image-block-'+imageBlockNum);
                 //obj.find('input').attr("name", 'project_image_block['+imageBlockNum+'][]').removeClass().addClass('project-image-'+imageBlockNum);
                 var inputs = obj.find('input');
+                var selects = obj.find('select.image-type'); //there is another type of select so we must specify selects with the class of image-type
+                console.log(selects)
                 //for loop
                 obj.find('img').remove();                
                 var counter=0;
+
                 $.each(inputs,function(index,val){
-
                         $(inputs[index]).attr("name", "project_image_block["+imageBlockNum+"]["+index+"]").removeClass().addClass('project-image-'+imageBlockNum);
-
                 });
+                $.each(selects,function(index,val){
+                        $(selects[index]).attr("name","project_image_type["+imageBlockNum+"]["+index+"]");
+
+                })
 
                 $(".image-blocks").append(obj);
 
@@ -92,7 +97,7 @@ $(document).ready(function(){
                         
                         $('.image-blocks').find('img').remove();
                 }
-        });     
+        }); //.less-images     
 
 
         $('.more-info').click(function(e){

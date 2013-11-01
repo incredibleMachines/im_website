@@ -21,7 +21,7 @@ exports.view = function(db){
 			docs.forEach(function(v,i){
 
 				//find associated projects where capabilities id is in project capability array
-				var find_obj = {capabilities: {$elemMatch: { _id: v._id.toString() } } };
+				var find_obj = {capabilities: {$elemMatch: { _id: v._id.toString() } }, featured: true };
 				projects.find(find_obj,'thumbnail title slug clients', function(err, project_docs){
 					//console.log(i+": "+JSON.stringify(project_docs));
 
