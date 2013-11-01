@@ -56,11 +56,12 @@ $('.photo-block-multi').each(function(){
 /* setup initial video height and width */
 		var aspect=16/9;
 		var aspectPoster=1920/740;
-		if($('#project-video-1 video').attr('src')==undefined){
-			console.log('go');
-			videoPlay=false;
-			$('.vjs-big-play-button').hide();
-		}
+		console.log($('#project-video-1 video').attr('data-video-file'));
+		// if($('#project-video-1 video').attr('data-video-file')=='none'){
+		// 	console.log('go');
+		// 	videoPlay=false;
+		// 	$('.vjs-big-play-button').hide();
+		// }
 		myPlayer.height(window.innerHeight-$('.title-nav').height());
 		userResize();
 
