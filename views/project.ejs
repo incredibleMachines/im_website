@@ -5,7 +5,7 @@
 			<div class="poster-wrap">
 				<img src="<%= project.poster.path %>" class="poster-image">
 			</div>
-			<video id="project-video-1" class="video-js vjs-project-page"  data-video-file=<% if(project.video_url==''){ %> "none" <% } else{ %> "loaded" <% } %> >
+			<video id="project-video-1" class="video-js vjs-project-page" data-video-file=<% if(project.video_url==undefined){ %> "none" <% } else{ %> "loaded" <% } %> controls>
 				  <source src="<%= project.video_url%>" type='video/mp4' />
 				  <source src="<%= project.video_backup%>" type='video/ogg' />
 			</video> 

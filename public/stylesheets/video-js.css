@@ -387,9 +387,9 @@ easily in the skin designer. http://designer.videojs.com/
   background: url('../images/play_btn.png');
   }
 /* Hide if controls are disabled */
-.vjs-project-page.vjs-controls-disabled .vjs-big-play-button {
+/*.vjs-project-page.vjs-controls-disabled .vjs-big-play-button {
   display: none;
-}
+}*/
 /* Hide when video starts playing */
 .vjs-project-page.vjs-has-started .vjs-big-play-button {
   display: none;
