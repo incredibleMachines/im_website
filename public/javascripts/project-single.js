@@ -56,10 +56,7 @@ $('.photo-block-multi').each(function(){
 /* setup initial video height and width */
 		var aspect=16/9;
 		var aspectPoster=1920/740;
-		console.log($('#project-video-1 video').attr('data-video-file'));
-		console.log($('#project-video-1 video').attr('src'));
 		if($('#project-video-1 video').attr('data-video-file')=='none'){
-			console.log('go');
 			videoPlay=false;
 			$('.vjs-big-play-button').hide();
 		}
