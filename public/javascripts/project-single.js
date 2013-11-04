@@ -153,7 +153,7 @@ $('.photo-block-multi').each(function(){
 		window.addEventListener('scroll',userScroll,false);
 	});
 
-$('.previous-proj button.left').hover(function(){
+$('.previous-proj a.left').hover(function(){
 	if($('.logoHome').css('display')=='block'){
 	$('.previous-proj .nav-label-prev').fadeIn(50);
 }
@@ -161,7 +161,7 @@ $('.previous-proj button.left').hover(function(){
 	$('.previous-proj .nav-label-prev').fadeOut(50);
 });
 
-$('.next-proj button.right').hover(function(){
+$('.next-proj a.right').hover(function(){
 	if($('.logoHome').css('display')=='block'){
 	$('.next-proj .nav-label-next').fadeIn(50);
 }

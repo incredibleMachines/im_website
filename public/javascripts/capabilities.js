@@ -29,26 +29,26 @@ $(document).ready(function(){
 		console.log($(window).scrollTop());
 
 		if($('.about-block').css('line-height')=='20px'){
-			if(amtScroll>7.7*aboutHeight+$('#about-skills').height()-$('#skills').height()){
-				$('#skills').css('position','absolute').css('top',$('#about-skills').height()-$('#skills').height()+parseInt($('#about-skills').css('margin-bottom')));
+			if(amtScroll>7.7*aboutHeight+$('#about-skills').height()-$('.skills').height()){
+				$('.skills').css('position','absolute').css('top',$('#about-skills').height()-$('.skills').height()+parseInt($('#about-skills').css('margin-bottom')));
 				scrollLock=false;
 			}
 			
 			else if(amtScroll>7.7*aboutHeight-$('header').height()){
 				if(scrollLock==false){
-					$('#skills').css('position','fixed').css('top',headerHeight);
+					$('.skills').css('position','fixed').css('top',headerHeight);
 					scrollLock=true;
 				}
 				var currentHeight=7.7*aboutHeight+headerHeight;
-				var navHeight=$('#skills ul li').height();
+				var navHeight=$('.skills ul li').height();
 				var skillCount=0;
 				var offset=250;
-				$('#skills ul li').each(function(){
+				$('.skills ul li').each(function(){
 					var skillNext=skillCount+1;
 					currentHeight+=$('#about-skills .about-skill:nth-child('+skillCount+')').height();
 					var nextHeight=currentHeight+$('#about-skills .about-skill:nth-child('+skillNext+')').height();
 					if(amtScroll>currentHeight-offset&&amtScroll<nextHeight-(offset+navHeight)){
-						$('#skills ul li.active').removeClass('active');
+						$('.skills ul li.active').removeClass('active');
 						$(this).addClass('active');
 						return false;
 					}
@@ -62,7 +62,7 @@ $(document).ready(function(){
 			else if(amtScroll>7*aboutHeight){
 				$('#produce-text').css('position','fixed').css('top',0);
 				if(scrollLock==true){
-					$('#skills').css('position','absolute').css('top',0);
+					$('.skills').css('position','absolute').css('top',0);
 					scrollLock=false;
 				}
 				lock=6;
@@ -126,7 +126,7 @@ $(document).ready(function(){
 
 
 			
-			$('#skills ul li:nth-child(1) a').addClass('active');
+			$('.skills ul li:nth-child(1) a').addClass('active');
 			$('.about-skill').css('padding-top',headerHeight).css('margin-top',-headerHeight);
 			scrollLock=false;
 			userScroll();
@@ -171,7 +171,8 @@ $(document).ready(function(){
 				$('.about-block').css('position','relative').css('top','').css('left','').css('width','100%');
 				$('.about-block img').css('width','100%').css('height','auto').css('top','').css('left','');
 				$('#skills-section').css('position','relative').css('top','');
-				$('#skills ul li a').removeClass('active');
+				$('.skills').css('position','relative').css('top','');
+				$('.skills ul li a').removeClass('active');
 				$('#about').css('height','100%');
 				scrollLock=true;
 		}

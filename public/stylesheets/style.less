@@ -639,7 +639,7 @@ header {
 				}
 			}
 
-			button.left {
+			a.left {
 				padding: 0;
 				background: url('../images/L_arrow_sprite.png') 0 0;
 				width: 36px;
@@ -647,7 +647,7 @@ header {
 				float: left;
 			}
 			
-			button.left:hover {
+			a.left:hover {
 				background: url('../images/L_arrow_sprite.png') -36px 0;
 			}		
 		}  /* --- end previous-proj --- */
@@ -717,14 +717,14 @@ header {
 				}
 			}
 			
-			button.right {
+			a.right {
 				background: url('../images/R_arrow_sprite.png') 36px 0;
 				float: right;
 				width: 36px;
 				height: 148px;
 			}
 			
-			button.right:hover {
+			a.right:hover {
 				background: url('../images/R_arrow_sprite.png') 0 0;
 			}			
 		}	 /* --- end next-proj --- */
@@ -1178,7 +1178,7 @@ header {
 		width: inherit;
 		min-width:100%;
 		
-		#skills {
+		.skills {
 			padding-left: 35px;
 			width: 40%;
 			float: left;
@@ -1565,23 +1565,21 @@ header {
 						}
 				
 					.corner {
+						float: right;
 						width: 30px;
 						height: 30px;
-						float: right;
-						border: 1px solid @nine;
-						
-						button {
-							width: 30px;
-							height: 30px;
-							background-color: @nine;
+						background-color:#bbb;
 							
-							p {
-								font-size: 33px;
+							button {
+								background-color:#bbb;
+								font-size: 26px;
+								line-height:26px;
+								padding-left:5px;
 								font-weight: 500;
-								margin: -4px 0 0 2px;
+								margin: 0;
 								color: @white;
 							}
-						}		
+								
 					} /*--- end corner ---*/
 				} /* ---end client--- */
 				
@@ -1593,10 +1591,10 @@ header {
 					}
 						
 					.corner {
+						background-color:@six;
 						button {
 							background-color: @six;
 						}	
-					border: 1px solid @six;
 					}
 				}
 				}
@@ -1733,19 +1731,16 @@ header {
 						margin-top: -40px;
 						
 						button {
-							width: 30px;
-							height: 30px;
+							width: 33px;
+							height: 33px;
 							background-color: @yellow;
+							font-size: 33px;
+							font-weight: 500;
+							margin: -4px 0 0 2px;
+							color: @three;
 							transform:rotate(45deg);
 							-ms-transform:rotate(45deg); /* IE 9 */
 							-webkit-transform:rotate(45deg); /* Safari and Chrome */
-							
-							p {
-								font-size: 33px;
-								font-weight: 500;
-								margin: -4px 0 0 2px;
-								color: @three;
-							}
 						}		
 					} /*--- end corner ---*/
 		} /* ---end client-detail--- */
@@ -1887,7 +1882,7 @@ header {
 			text-align: center;
 
 			@media screen and (max-device-width: 1024px) {
-				padding: 80px 0 50px 0;
+				padding: 120px 0 50px 0;
 				height: 100%;
 			}	
 
@@ -2071,24 +2066,31 @@ header {
 			width: 100%;
 			margin-top: -85px;
 
+
 			.pagination {
 				background-color: @yellow;
 				opacity: 0.85;
 				width: 155px;
-				height: 85px;
+				height: 75px;
+				margin-top:10px;
 				float: right;
+
+			@media screen and (max-device-width: 1024px){
+				display:none;
+			}
+
 				
 				.top-btn {
 					width: 100%;
 					float: left;
 				
-					button {
+					p.page-top {
 						background:url('../images/top_pg_sprite.png') 0 0;
 						width: 86px;
 						height: 27px;
 						margin-left: 38px;
 					}			
-					button:hover {
+					p.page-top:hover {
 						background:url('../images/top_pg_sprite.png') -86px 0;
 					}
 				}  /* --- end top-btn --- */
@@ -2098,13 +2100,13 @@ header {
 					float: left;
 					clear: both;
 				
-					button.prev-btn {
+					a.prev-btn {
 						float: left;
 						background:url('../images/L_pg_sprite.png') 0 0;
 						width: 34px;
 						height: 48px;
 					}
-					button.prev-btn:hover {
+					a.prev-btn:hover {
 						background:url('../images/L_pg_sprite.png') -34px 0;
 					}				
 					h3 {
@@ -2120,13 +2122,13 @@ header {
 						margin-left: 2px;
 						padding-top: 0;
 					}				
-					button.next-btn {
+					a.next-btn {
 						float: right;
 						background:url('../images/R_pg_sprite.png') 34px 0;
 						width: 34px;
 						height: 48px;
 					}
-					button.next-btn:hover {
+					a.next-btn:hover {
 						background:url('../images/R_pg_sprite.png') 0 0;
 					}	
 				}  /* --- end other-btns --- */	

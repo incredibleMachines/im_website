@@ -33,14 +33,14 @@ $(document).ready(function(){
 		if(!target.is('nav')){
 		if(target.is('.client')){
 			if(expanded==false){
-				expandDetail(target.find('h2').text(), target.attr('id'), $('#client-list').height()-2*parseInt($('.cap-tech').css('margin-top')));
+				expandDetail(target.find('h2').text(), target.attr('data-name'), $('#client-list').height()-2*parseInt($('.cap-tech').css('margin-top')));
 				expanded=true;
 			}
 		}
 
 		else if(target.parents('.client').length>0){
 			if(expanded==false){
-				expandDetail(target.parents('.client').find('h2').text(), target.parents('.client').attr('id'), $('#client-list').height()-2*parseInt($('.cap-tech').css('margin-top')));
+				expandDetail(target.parents('.client').find('h2').text(), target.parents('.client').attr('data-name'), $('#client-list').height()-2*parseInt($('.cap-tech').css('margin-top')));
 				expanded=true;
 			}
 		}
