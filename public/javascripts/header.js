@@ -38,5 +38,13 @@ headerResize= function(){
 
   window.addEventListener('resize', headerResize, false);
 
+  $('#email-phone a').click(function(e){
+    var obj = this;
+    $(obj).attr('href','mailto:hello@incrediblemachines.net')
+    setTimeout(function(){
+        $(obj).removeAttr('href');
+    },1);
+
+  });
 
 });
