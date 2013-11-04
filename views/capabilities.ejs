@@ -8,19 +8,19 @@
 		</article>
 
 		<article id="about-transport" class="about-block">
-			<img src="/images/cap_paint.jpg">
+			<img src="/images/cap_paint.jpg" alt="illustration image">
 		</article>
 
 		<article id="transport-text" class="about-text"><p>We are obsessed with innovation and passionate about creating genuinely meaningful experiences.</p></article>
 
 		<article id="about-obsessed" class="about-block">
-			<img src="/images/cap_veggie.png" >
+			<img src="/images/cap_veggie.png" alt="illustration image">
 		</article>
 
 		<article id="obsessed-text" class="about-text"><p>We transport audiences to new places using a unique blend of technology, storytelling, and social interaction.</p></article>
 
 		<article id="about-produce" class="about-block">
-			<img src="/images/cap_skeletons.png" >
+			<img src="/images/cap_skeletons.png" alt="illustration image">
 		</article>
 
 		<article id="produce-text" class="about-text"><p>We are an experiential agency that makes magic with creativity and code.</p></article>
@@ -29,7 +29,7 @@
 	
 <!-- CAPABILITIES -->
 <div id="skills-section">
-	<section id="skills">
+	<section class="skills">
 			<ul>
 				<% for(var i = 0; i< capabilities.length; i++){ %>
 					<li><a href="#<%=makeSlug(capabilities[i].name)%>"> <%= capabilities[i].name %></a></li>
@@ -101,7 +101,7 @@
 		<% } %>
 	</div>
 
-	<section id="skills" class="bottom-skills">
+	<section class="skills bottom-skills">
 			<ul>
 				<% for(var i = 0; i< capabilities.length; i++){ %>
 					<li><a href="#<%=makeSlug(capabilities[i].name)%>"> <%= capabilities[i].name %></a></li>

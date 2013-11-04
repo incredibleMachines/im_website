@@ -13,7 +13,7 @@
 			<h1 class="mobile-client"><%= clients[i].name %></h1>
 				<section class="client-detail" id="<%= makeSlug(clients[i].name) %>">
 					<div class="corner close">
-						<button><p>+</p></button>
+						<button>+</button>
 					</div>
 					<article class="client-img">
 							<img src="<%= clients[i].image.path %>" alt="need an image" />
@@ -78,16 +78,17 @@
 
 					if(clients[i].name!='Various Clients'&&clients[i].name!='various clients'){%>
 
-					<article class="client" id="<%= makeSlug(clients[i].name) %>">
+					<article class="client" name="<%= makeSlug(clients[i].name) %>">
 						<div class="corner">
-							<button><p>+</p></button>
+							<button>+</button>
 						</div>
 						<h2><%=clients[i].name%></h2>
 					</article>
 
 		<% } }%>
-	</section>
+
 	</div> <!-- end client-wrap -->
+		</section>
 	
 <!-- PARTNERS -->
 

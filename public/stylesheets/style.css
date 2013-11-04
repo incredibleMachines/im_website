@@ -674,14 +674,14 @@ header nav a.active {
     display: none;
   }
 }
-.single-project .title-nav .previous-proj button.left {
+.single-project .title-nav .previous-proj a.left {
   padding: 0;
   background: url('../images/L_arrow_sprite.png') 0 0;
   width: 36px;
   height: 148px;
   float: left;
 }
-.single-project .title-nav .previous-proj button.left:hover {
+.single-project .title-nav .previous-proj a.left:hover {
   background: url('../images/L_arrow_sprite.png') -36px 0;
 }
 .single-project .title-nav .project-meta {
@@ -750,13 +750,13 @@ header nav a.active {
     display: none;
   }
 }
-.single-project .title-nav .next-proj button.right {
+.single-project .title-nav .next-proj a.right {
   background: url('../images/R_arrow_sprite.png') 36px 0;
   float: right;
   width: 36px;
   height: 148px;
 }
-.single-project .title-nav .next-proj button.right:hover {
+.single-project .title-nav .next-proj a.right:hover {
   background: url('../images/R_arrow_sprite.png') 0 0;
 }
 .single-project .photo-block-multi {
@@ -1166,7 +1166,7 @@ header nav a.active {
     position: relative;
   }
 }
-.capabilities #skills-section #skills {
+.capabilities #skills-section .skills {
   padding-left: 35px;
   width: 40%;
   float: left;
@@ -1177,7 +1177,7 @@ header nav a.active {
 
 }
 @media screen and (max-width: 600px), (max-device-width: 1024px) {
-  .capabilities #skills-section #skills {
+  .capabilities #skills-section .skills {
     width: 100%;
     background-color: #333;
     padding-left: 0;
@@ -1187,17 +1187,17 @@ header nav a.active {
     border-bottom: 10px solid #000;
   }
 }
-.capabilities #skills-section #skills ul {
+.capabilities #skills-section .skills ul {
   float: left;
   width: 100%;
 }
-.capabilities #skills-section #skills ul li {
+.capabilities #skills-section .skills ul li {
   border-bottom: 1px solid #999999;
   height: 50px;
   margin-top: 10px;
 }
 @media screen and (max-width: 600px), (max-device-width: 1024px) {
-  .capabilities #skills-section #skills ul li {
+  .capabilities #skills-section .skills ul li {
     height: 100%;
     width: 95%;
     float: left;
@@ -1206,7 +1206,7 @@ header nav a.active {
     padding-left: 5%;
   }
 }
-.capabilities #skills-section #skills ul li a {
+.capabilities #skills-section .skills ul li a {
   font-family: "proxima-nova-sc-osf-ext-cond", "Proxima Nova Condensed", "Arial narrow", arial, sans-serif;
   font-weight: 100;
   color: #999999;
@@ -1216,44 +1216,44 @@ header nav a.active {
   line-height: 60px;
 }
 @media screen and (max-width: 600px), (max-device-width: 1024px) {
-  .capabilities #skills-section #skills ul li a {
+  .capabilities #skills-section .skills ul li a {
     font-size: 32px;
     line-height: 46px;
   }
 }
 @media screen and (max-device-width: 568px) {
-  .capabilities #skills-section #skills ul li a {
+  .capabilities #skills-section .skills ul li a {
     font-size: 58px;
     line-height: 72px;
   }
 }
-.capabilities #skills-section #skills ul li a:hover {
+.capabilities #skills-section .skills ul li a:hover {
   font-style: italic;
   color: #333333;
 }
 @media screen and (max-width: 600px), (max-device-width: 1024px) {
-  .capabilities #skills-section #skills ul li a:hover {
+  .capabilities #skills-section .skills ul li a:hover {
     color: #ffffff;
   }
 }
-.capabilities #skills-section #skills ul li.active {
+.capabilities #skills-section .skills ul li.active {
   border-bottom: 3px solid #ffd24f;
 }
-.capabilities #skills-section #skills ul li.active a {
+.capabilities #skills-section .skills ul li.active a {
   font-style: italic;
   color: #333333;
 }
 @media screen and (max-width: 600px), (max-device-width: 1024px) {
-  .capabilities #skills-section #skills ul li.active {
+  .capabilities #skills-section .skills ul li.active {
     border-bottom: 1px solid #000000;
   }
-  .capabilities #skills-section #skills ul li.active a {
+  .capabilities #skills-section .skills ul li.active a {
     font-style: normal;
     color: #999999;
   }
 }
 @media screen and (max-width: 600px), (max-device-width: 1024px) {
-  .capabilities #skills-section #skills ul li:last-child {
+  .capabilities #skills-section .skills ul li:last-child {
     border: none;
   }
 }
@@ -1563,20 +1563,18 @@ header nav a.active {
   margin: 0 10px;
 }
 .clients #client-wrap #client-grid #client-list .client .corner {
+  float: right;
   width: 30px;
   height: 30px;
-  float: right;
-  border: 1px solid #999999;
+  background-color: #bbb;
 }
 .clients #client-wrap #client-grid #client-list .client .corner button {
-  width: 30px;
-  height: 30px;
-  background-color: #999999;
-}
-.clients #client-wrap #client-grid #client-list .client .corner button p {
-  font-size: 33px;
+  background-color: #bbb;
+  font-size: 26px;
+  line-height: 26px;
+  padding-left: 5px;
   font-weight: 500;
-  margin: -4px 0 0 2px;
+  margin: 0;
   color: #ffffff;
 }
 .clients #client-wrap #client-grid #client-list .client:hover {
@@ -1586,7 +1584,7 @@ header nav a.active {
   font-style: italic;
 }
 .clients #client-wrap #client-grid #client-list .client:hover .corner {
-  border: 1px solid #666666;
+  background-color: #666666;
 }
 .clients #client-wrap #client-grid #client-list .client:hover .corner button {
   background-color: #666666;
@@ -1718,9 +1716,13 @@ header nav a.active {
   }
 }
 .clients #client-wrap .client-detail .corner button {
-  width: 30px;
-  height: 30px;
+  width: 33px;
+  height: 33px;
   background-color: #ffd24f;
+  font-size: 33px;
+  font-weight: 500;
+  margin: -4px 0 0 2px;
+  color: #333333;
   transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   /* IE 9 */
@@ -1728,12 +1730,6 @@ header nav a.active {
   -webkit-transform: rotate(45deg);
   /* Safari and Chrome */
 
-}
-.clients #client-wrap .client-detail .corner button p {
-  font-size: 33px;
-  font-weight: 500;
-  margin: -4px 0 0 2px;
-  color: #333333;
 }
 .clients .list-block {
   clear: both;
@@ -2063,7 +2059,8 @@ header nav a.active {
   background-color: #ffd24f;
   opacity: 0.85;
   width: 155px;
-  height: 85px;
+  height: 75px;
+  margin-top: 10px;
   float: right;
   /* --- end top-btn --- */
 
@@ -2073,13 +2070,13 @@ header nav a.active {
   width: 100%;
   float: left;
 }
-.footer-pg-wrap .pagination .top-btn button {
+.footer-pg-wrap .pagination .top-btn p.page-top {
   background: url('../images/top_pg_sprite.png') 0 0;
   width: 86px;
   height: 27px;
   margin-left: 38px;
 }
-.footer-pg-wrap .pagination .top-btn button:hover {
+.footer-pg-wrap .pagination .top-btn p.page-top:hover {
   background: url('../images/top_pg_sprite.png') -86px 0;
 }
 .footer-pg-wrap .pagination .other-btns {
@@ -2087,13 +2084,13 @@ header nav a.active {
   float: left;
   clear: both;
 }
-.footer-pg-wrap .pagination .other-btns button.prev-btn {
+.footer-pg-wrap .pagination .other-btns a.prev-btn {
   float: left;
   background: url('../images/L_pg_sprite.png') 0 0;
   width: 34px;
   height: 48px;
 }
-.footer-pg-wrap .pagination .other-btns button.prev-btn:hover {
+.footer-pg-wrap .pagination .other-btns a.prev-btn:hover {
   background: url('../images/L_pg_sprite.png') -34px 0;
 }
 .footer-pg-wrap .pagination .other-btns h3 {
@@ -2109,13 +2106,13 @@ header nav a.active {
   margin-left: 2px;
   padding-top: 0;
 }
-.footer-pg-wrap .pagination .other-btns button.next-btn {
+.footer-pg-wrap .pagination .other-btns a.next-btn {
   float: right;
   background: url('../images/R_pg_sprite.png') 34px 0;
   width: 34px;
   height: 48px;
 }
-.footer-pg-wrap .pagination .other-btns button.next-btn:hover {
+.footer-pg-wrap .pagination .other-btns a.next-btn:hover {
   background: url('../images/R_pg_sprite.png') 0 0;
 }
 /* --- end pg-wrap --- */

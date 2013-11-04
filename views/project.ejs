@@ -1,23 +1,21 @@
 	<% include includes/header %>
 
     <!-- VIDEO -->
-		<section class="project-vid" name="top">
-			<div class="poster-wrap">
-				<img src="<%= project.poster.path %>" class="poster-image">
-			</div>
-			<video id="project-video-1" class="video-js vjs-project-page" data-video-file=<% if(project.video_url==='') { %> "none" <% } else{ %> "loaded" <% } %> controls>
+		<section class="project-vid">
+			<video id="project-video-1" class="video-js vjs-project-page" data-video-file=<% if(project.video_url==='') { %> "none" controls> <% } else{ %> "loaded"  controls>
 				  <source src="<%= project.video_url%>" type='video/mp4' />
 				  <source src="<%= project.video_backup%>" type='video/ogg' />
+				  	<% } %>
 			</video> 
 			<div class="poster-wrap">
-				<img src="<%= project.poster.path %>" class="poster-image">
+				<img src="<%= project.poster.path %>" class="poster-image" alt="project video poster frame">
 			</div>
 		</section>
 		
 <!-- TITLE / PAGINATION -->
 		<section class="title-nav">
 			<div class="previous-proj">
-				<a href="/projects/<%= previous %>"><button class="left"></button></a>
+				<a href="/projects/<%= previous %>" class="left"></a>
 				<p class="nav-label-prev"><%= previous_title%></p>
 			</div>
 			<article class="project-meta">
@@ -30,7 +28,7 @@
 				<p><%= project.location %>
 			</article>
 			<div class="next-proj">
-				<a href="/projects/<%= next %>"><button class="right"></button></a>
+				<a href="/projects/<%= next %>" class="right"></a>
 				<p class="nav-label-next"><%= next_title%></p>
 			</div>
 		</section>
