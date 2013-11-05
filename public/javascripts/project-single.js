@@ -182,5 +182,8 @@ $('.next-proj a.right').hover(function(){
 	      }
 	    }
 	  });
-	$(window).load(userResize());
+});
+
+$(window).bind("load", function() {
+   userResize();
 });
