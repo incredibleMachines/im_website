@@ -182,5 +182,5 @@ $('.next-proj a.right').hover(function(){
 	      }
 	    }
 	  });
-	userResize();
+	$(window).load(userResize());
 });
