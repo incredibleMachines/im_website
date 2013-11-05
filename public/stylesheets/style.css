@@ -1871,12 +1871,6 @@ header nav a.active {
   /* --- end address ---- */
 
 }
-@media screen and (max-device-width: 1024px) {
-  .footer-bg-wrap footer #contact {
-    padding: 100px 0 50px 0;
-    height: 100%;
-  }
-}
 .footer-bg-wrap footer #contact h1 {
   color: #ffd24f;
   text-align: center;
@@ -2056,6 +2050,18 @@ header nav a.active {
   margin-top: -85px;
   /* --- end pagination --- */
 
+}
+@media screen and (max-device-width: 1024px) {
+  .footer-pg-wrap #contact {
+    padding: 100px 0 50px 0;
+    height: 100%;
+  }
+}
+@media screen and (max-device-width: 568px) {
+  .footer-pg-wrap #contact {
+    padding: 40px 0 50px 0;
+    height: 100%;
+  }
 }
 .footer-pg-wrap .pagination {
   background-color: #ffd24f;
