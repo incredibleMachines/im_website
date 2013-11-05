@@ -1877,6 +1877,12 @@ header nav a.active {
     height: 100%;
   }
 }
+@media screen and (max-device-width: 568px) {
+  .footer-bg-wrap footer #contact {
+    padding: 40px 0 50px 0;
+    height: 100%;
+  }
+}
 .footer-bg-wrap footer #contact h1 {
   color: #ffd24f;
   text-align: center;
