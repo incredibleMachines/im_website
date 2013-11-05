@@ -65,11 +65,16 @@ $(document).ready(function(){
 					$('.skills').css('position','absolute').css('top',0);
 					scrollLock=false;
 				}
+				console.log('go');
 				lock=6;
 			}
 
 			else if(amtScroll>6*aboutHeight){
 				$('#about-produce').css('position','fixed').css('top',0);
+				if(scrollLock==true){
+					$('.skills').css('position','absolute').css('top',0);
+					scrollLock=false;
+				}
 				if(lock==6){
 					$('#produce-text').css('position','absolute').css('top',7*aboutHeight);
 				}
@@ -78,7 +83,15 @@ $(document).ready(function(){
 
 			else if(amtScroll>4.5*aboutHeight){
 				$('#obsessed-text').css('position','fixed').css('top',0);
-				if(lock==5){
+				if(scrollLock==true){
+					$('.skills').css('position','absolute').css('top',0);
+					scrollLock=false;
+				}
+				if(lock==6){
+					$('#produce-text').css('position','absolute').css('top',7*aboutHeight);
+					$('#about-produce').css('position','absolute').css('top',6*aboutHeight);
+				}
+				else if(lock==5){
 					$('#about-produce').css('position','absolute').css('top',6*aboutHeight);
 				}
 				lock=4;
@@ -86,7 +99,20 @@ $(document).ready(function(){
 
 			else if(amtScroll>3.5*aboutHeight){
 				$('#about-obsessed').css('position','fixed').css('top',0);
-				if(lock==4){
+				if(scrollLock==true){
+					$('.skills').css('position','absolute').css('top',0);
+					scrollLock=false;
+				}
+				if(lock==6){
+					$('#produce-text').css('position','absolute').css('top',7*aboutHeight);
+					$('#about-produce').css('position','absolute').css('top',6*aboutHeight);
+					$('#obsessed-text').css('position','absolute').css('top',4.5*aboutHeight);
+				}
+				else if(lock==5){
+					$('#about-produce').css('position','absolute').css('top',6*aboutHeight);
+					$('#obsessed-text').css('position','absolute').css('top',4.5*aboutHeight);
+				}
+				else if(lock==4){
 					$('#obsessed-text').css('position','absolute').css('top',4.5*aboutHeight);
 				}
 				lock=3;
@@ -94,7 +120,22 @@ $(document).ready(function(){
 
 			else if(amtScroll>2*aboutHeight){
 					$('#transport-text').css('position','fixed').css('top',0);
-					if(lock==3){
+				if(lock==6){
+					$('#produce-text').css('position','absolute').css('top',7*aboutHeight);
+					$('#about-produce').css('position','absolute').css('top',6*aboutHeight);
+					$('#obsessed-text').css('position','absolute').css('top',4.5*aboutHeight);
+					$('#about-obsessed').css('position','absolute').css('top',3.5*aboutHeight);
+				}
+				else if(lock==5){
+					$('#about-produce').css('position','absolute').css('top',6*aboutHeight);
+					$('#obsessed-text').css('position','absolute').css('top',4.5*aboutHeight);
+					$('#about-obsessed').css('position','absolute').css('top',3.5*aboutHeight);
+				}
+				else if(lock==4){
+					$('#obsessed-text').css('position','absolute').css('top',4.5*aboutHeight);
+					$('#about-obsessed').css('position','absolute').css('top',3.5*aboutHeight);
+				}
+					else if(lock==3){
 						$('#about-obsessed').css('position','absolute').css('top',3.5*aboutHeight);
 						
 					}
@@ -103,7 +144,30 @@ $(document).ready(function(){
 
 			else if(amtScroll>aboutHeight){
 					$('#about-transport').css('position','fixed').css('top',0);
-					if(lock==2){
+									if(lock==6){
+					$('#produce-text').css('position','absolute').css('top',7*aboutHeight);
+					$('#about-produce').css('position','absolute').css('top',6*aboutHeight);
+					$('#obsessed-text').css('position','absolute').css('top',4.5*aboutHeight);
+					$('#about-obsessed').css('position','absolute').css('top',3.5*aboutHeight);
+					$('#transport-text').css('position','absolute').css('top',2*aboutHeight);
+				}
+				else if(lock==5){
+					$('#about-produce').css('position','absolute').css('top',6*aboutHeight);
+					$('#obsessed-text').css('position','absolute').css('top',4.5*aboutHeight);
+					$('#about-obsessed').css('position','absolute').css('top',3.5*aboutHeight);
+					$('#transport-text').css('position','absolute').css('top',2*aboutHeight);
+				}
+				else if(lock==4){
+					$('#obsessed-text').css('position','absolute').css('top',4.5*aboutHeight);
+					$('#about-obsessed').css('position','absolute').css('top',3.5*aboutHeight);
+					$('#transport-text').css('position','absolute').css('top',2*aboutHeight);
+				}
+					else if(lock==3){
+						$('#about-obsessed').css('position','absolute').css('top',3.5*aboutHeight);
+						$('#transport-text').css('position','absolute').css('top',2*aboutHeight);
+						
+					}
+					else if(lock==2){
 						$('#transport-text').css('position','absolute').css('top',2*aboutHeight);
 						
 					}
@@ -111,10 +175,43 @@ $(document).ready(function(){
 			}
 			
 			else{
-				if(lock==1){
+				if(lock==6){
+					$('#produce-text').css('position','absolute').css('top',7*aboutHeight);
+					$('#about-produce').css('position','absolute').css('top',6*aboutHeight);
+					$('#obsessed-text').css('position','absolute').css('top',4.5*aboutHeight);
+					$('#about-obsessed').css('position','absolute').css('top',3.5*aboutHeight);
+					$('#transport-text').css('position','absolute').css('top',2*aboutHeight);
 					$('#about-transport').css('position','absolute').css('top',aboutHeight);
-					lock=0;
 				}
+				else if(lock==5){
+					$('#about-produce').css('position','absolute').css('top',6*aboutHeight);
+					$('#obsessed-text').css('position','absolute').css('top',4.5*aboutHeight);
+					$('#about-obsessed').css('position','absolute').css('top',3.5*aboutHeight);
+					$('#transport-text').css('position','absolute').css('top',2*aboutHeight);
+					$('#about-transport').css('position','absolute').css('top',aboutHeight);
+				}
+				else if(lock==4){
+					$('#obsessed-text').css('position','absolute').css('top',4.5*aboutHeight);
+					$('#about-obsessed').css('position','absolute').css('top',3.5*aboutHeight);
+					$('#transport-text').css('position','absolute').css('top',2*aboutHeight);
+					$('#about-transport').css('position','absolute').css('top',aboutHeight);
+				}
+					else if(lock==3){
+						$('#about-obsessed').css('position','absolute').css('top',3.5*aboutHeight);
+						$('#transport-text').css('position','absolute').css('top',2*aboutHeight);
+						$('#about-transport').css('position','absolute').css('top',aboutHeight);
+						
+					}
+					else if(lock==2){
+						$('#transport-text').css('position','absolute').css('top',2*aboutHeight);
+						$('#about-transport').css('position','absolute').css('top',aboutHeight);
+						
+					}
+				else if(lock==1){
+					$('#about-transport').css('position','absolute').css('top',aboutHeight);
+					
+				}
+				lock=0;
 			}
 		}
 	};
