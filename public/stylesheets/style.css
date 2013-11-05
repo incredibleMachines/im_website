@@ -1873,7 +1873,7 @@ header nav a.active {
 }
 @media screen and (max-device-width: 1024px) {
   .footer-bg-wrap footer #contact {
-    padding: 120px 0 50px 0;
+    padding: 100px 0 50px 0;
     height: 100%;
   }
 }
