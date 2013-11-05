@@ -6,7 +6,7 @@ $('.video-js').css('position','absolute');
 $('.introLogo').find('img').attr('src','../images/im_logo_white.png');
 $('.logoHome').hide();
 
-var videoArray = [{mp4:'Cannes.mp4',ogv:'Cannes.ogv',link:'living-billboard'},{mp4:'Lincoln.mp4',ogv:'Lincoln.ogv',link:'lincoln-mkz-launch'},{mp4:'Naked.mp4',ogv:'Naked.ogv',link:'the-power-garden'},{mp4:'PaintOut.mp4',ogv:'PaintOut.ogv',link:'paintout'},{mp4:'Tones_Samsung.mp4',ogv:'Tones_Samsung.ogv',link:'make-it-mega'},{mp4:'Tones_sxsw.mp4',ogv:'Tones_sxsw.ogv',link:'tones'},{mp4:'VFA.mp4',ogv:'VFA.ogv',link:'vfa-annual-party'}];
+var videoArray = [{mp4:'Cannes.mp4',ogv:'Cannes.ogv',link:'living-billboard'},{mp4:'Lincoln.mp4',ogv:'Lincoln.ogv',link:'lincoln-mkz-launch'},{mp4:'Naked.mp4',ogv:'Naked.ogv',link:'the-power-garden'},{mp4:'PaintOut.mp4',ogv:'PaintOut.ogv',link:'paintout'},{mp4:'Tones_Samsung.mp4',ogv:'Tones_Samsung.ogv',link:'tones'},{mp4:'Tones_sxsw.mp4',ogv:'Tones_sxsw.ogv',link:'tones'},{mp4:'VFA.mp4',ogv:'VFA.ogv',link:'vfa-annual-party'}];
 
 var videoPlay = shuffle(videoArray);
 var videoIndex = 0;
