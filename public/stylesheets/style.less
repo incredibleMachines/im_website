@@ -1881,16 +1881,6 @@ header {
 			padding: 40px 0 30px 0px;	
 			text-align: center;
 
-			@media screen and (max-device-width: 1024px) {
-				padding: 100px 0 50px 0;
-				height: 100%;
-			}	
-
-			@media screen and (max-device-width: 568px) {
-				padding: 40px 0 50px 0;
-				height: 100%;
-			}	
-
 			h1 {
 				color: @yellow;
 				text-align: center;
@@ -2071,6 +2061,18 @@ header {
 			width: 100%;
 			margin-top: -85px;
 
+			#contact{
+				@media screen and (max-device-width: 1024px) {
+					padding: 100px 0 50px 0;
+					height: 100%;
+				}
+			}	
+
+			@media screen and (max-device-width: 568px) {
+				padding: 40px 0 50px 0;
+				height: 100%;
+			}	
+			}
 
 			.pagination {
 				background-color: @yellow;
@@ -2083,6 +2085,7 @@ header {
 			@media screen and (max-device-width: 1024px){
 				display:none;
 			}
+
 
 				
 				.top-btn {
