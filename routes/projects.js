@@ -226,7 +226,7 @@ exports.update_order = function(db){
 
 	return function(req,res){
 		var post = req.body; //this is our form data
-		console.log(post)
+		//console.log(post)
 		var projects = db.get('projects');
 
 		var update_obj = {$set: {order: parseInt(post.order)}};
@@ -246,15 +246,15 @@ exports.update_order = function(db){
 
  exports.single_update = function(db){
  	return function(req,res){
- 		console.log("+++++++++++POST+++++++++++++");
 		var post = req.body; //this is our form data
-		//console.log(JSON.stringify(post)); //fixed arrays by adding indexs to items
-		console.log(post)
-		console.log("+++++++++++FILES+++++++++++++");
+        //console.log("+++++++++++POST+++++++++++++");
+		//console.log(post)
+		//console.log()
 		var files = req.files; //the incoming files from the server
-		//console.log(JSON.stringify(files)); //fixed arrays by adding indexs to items
+        //console.log("+++++++++++FILES+++++++++++++");
 		//console.log(files);
-
+		//console.log()
+		
 		//get our project collection
 		var projectsDB = db.get('projects');
 		var clientsDB = db.get('clients'); 
@@ -489,13 +489,16 @@ exports.update_order = function(db){
   */
 exports.store = function(db){
 	return function(req, res){
-		console.log("+++++++++++POST+++++++++++++");
 		var post = req.body; //this is our form data
-		console.log(post); //fixed arrays by adding indexs to items
+    	//console.log("+++++++++++POST+++++++++++++");
+		//console.log(post); //fixed arrays by adding indexs to items
+		//console.log()
 
 		var files = req.files; //the incoming files from the server
-		console.log(files); //fixed arrays by adding indexs to items
-
+        //console.log("+++++++++++FILES+++++++++++++");
+       	//console.log(files); //fixed arrays by adding indexs to items
+	   	//console.log()
+	   	
 		//first get a post id & object to store data
 
 		var projectsDB = db.get('projects');
@@ -545,11 +548,11 @@ exports.store = function(db){
 			delete files.project_poster_image;
 
 			var path = "/var/www/public/uploads/posters/"+poster.originalFilename;
-			console.log("POSTER PATH: "+ poster.path);
+			//console.log("POSTER PATH: "+ poster.path);
 			
 			fs.rename(poster.path, path, function(err){
 				if(err) console.error(err);
-				console.log(' moved : %s to %s',poster.path, path);
+				//console.log(' moved : %s to %s',poster.path, path);
 				poster.path = path.substring(15);
 				poster.type = poster.headers['content-type'];
 				poster.name = poster.originalFilename;
@@ -571,11 +574,11 @@ exports.store = function(db){
 			delete files.project_thumbnail;
 
 			var path = "/var/www/public/uploads/thumbnails/"+thumbnail.originalFilename;
-			console.log("THUMBNAIL PATH::"+path)
+			//console.log("THUMBNAIL PATH::"+path)
 			
 			fs.rename(thumbnail.path, path, function(err){
 				if(err) console.error(err)
-				console.log(' moved : %s to %s',thumbnail.path, path);
+				//console.log(' moved : %s to %s',thumbnail.path, path);
 				thumbnail.path = path.substring(15);
 				thumbnail.type = thumbnail.headers['content-type'];
 				thumbnail.name = thumbnail.originalFilename;
@@ -612,7 +615,7 @@ exports.store = function(db){
 				var path = "/var/www/public/uploads/clients/"+image.originalFilename;
 				fs.rename(image.path, path, function(err){
 					if(err) console.error(err);
-					console.log(' moved : %s to %s',image.path, path);
+					//console.log(' moved : %s to %s',image.path, path);
 					//console.log(image);
 					image.path = path.substring(15);;	//reset our path to root of server
 			 		image.type = image.headers['content-type']; //pull out content-type for mime data
