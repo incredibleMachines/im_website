@@ -32,14 +32,15 @@ exports.projectImages = function(files, callback){ //requires callback with imag
 				if(image.headers['content-type'].indexOf('image')>-1){
 					//check if its an image
 					//console.log('  uploaded : %s %skb : %s', image.originalFilename, image.size / 1024 | 0, image.path);
-				 	var path = "./public/uploads/"+image.originalFilename;
-				 	fs.rename("./"+image.path, path, function(err){
-				 		if(err) throw err; //need to change so that it doesn't break on upload
+				 	var path = "/var/www/public/uploads/"+image.originalFilename;
+				 	console.log("BODY IMAGE PATH :: "+path)
+				 	fs.rename(image.path, path, function(err){
+				 		if(err) console.error(err); //need to change so that it doesn't break on upload
 				 		
 				 		imageCount++;
 				 		console.log(' moved : %s to %s',image.path, path);
 
-				 		image.path = path.substring(8);	//reset our path to root of server
+				 		image.path = path.substring(15);	//reset our path to root of server
 				 		image.type = image.headers['content-type']; //pull out content-type for mime data
 				 		image.name = image.originalFilename; //generally the same - but ensure they are
 
@@ -59,7 +60,7 @@ exports.projectImages = function(files, callback){ //requires callback with imag
 			 		console.log(key+"["+counter+"] is not an image");
 			 		//remove it from our server
 			 		fs.unlink(image.path,function(err){
-			 			if(err) throw err;
+			 			if(err) console.error(err);
 			 			console.log('deleted file');
 			 			imageBlocks[key].splice(counter,1);//remove this element from the array its garbage and we can't use it
 			 			if(totalImages === imageCount){
@@ -84,11 +85,12 @@ exports.projectImages = function(files, callback){ //requires callback with imag
 
 exports.clientImage = function(files, callback){
 	var image = files.image;
-	var path = "./public/uploads/clients/"+image.originalFilename;
+	var path = "/var/www/public/uploads/clients/"+image.originalFilename;
 
-	fs.rename("./"+image.path, path, function(err){
+	fs.rename(image.path, path, function(err){
+			if(err) console.error(err);
 			
-			image.path = path.substring(8);
+			image.path = path.substring(15);
 			image.type = image.headers['content-type'];
 			image.name = image.originalFilename;
 

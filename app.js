@@ -35,7 +35,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon( path.join(__dirname, 'public/favicon/fav.ico') )); //change for favicon
 app.use(express.logger('dev'));
-app.use(express.bodyParser({uploadDir: './tmp', keepExtensions: true})); //temporary folder to store images
+app.use(express.bodyParser({uploadDir: '/var/www/tmp', keepExtensions: true})); //temporary folder to store images
 app.use(express.methodOverride());
 app.use(express.cookieParser('th3m4ch1n3s'));//cookies!
 app.use(express.session());//sessions!

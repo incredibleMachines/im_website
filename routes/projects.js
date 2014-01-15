@@ -19,7 +19,7 @@ exports.featured = function(db){
 		var projects = db.get('projects');
 
 		projects.find({featured: true,order:{$gte: 0}},function(err,docs){
-			console.log(docs);
+			//console.log(docs);
 			res.render('projects', { title: 'Featured Projects' , slug: 'projects', projects: docs});
 
 		});
@@ -112,7 +112,7 @@ exports.single_edit = function(db){
 									project_doc.password = decipher.final('utf8');
 								}
 								data.project = project_doc;
-								console.log(data)
+								//console.log(data)
 								res.render('project_edit', { title: 'Edit '+project_doc.title, slug: 'edit-project	 single-project '+project_doc.slug, data: data});
 							}
 						})
@@ -134,11 +134,11 @@ exports.action = function(db) {
 	return function(req,res) {
 		var action = req.params.action;
 		var name = req.params.name;
-		console.log(name);
+		//console.log(name);
 		var projects = db.get('projects');
 
 		projects.findOne({ slug: name}, function(err,doc){
-			console.log(doc);
+			//console.log(doc);
 			res.render('project_'+action, {title: 'Project Action', slug: 'project-'+action, project: doc});
 
 		});
@@ -199,9 +199,9 @@ exports.edit = function(db){
  		var projects = db.get('projects');
 
  		var post = req.body;
- 		console.log(post)
+ 		//console.log(post)
  		projects.findOne({slug:post.project_slug}, 'password timestamp', function(err,doc){
- 			if(err) throw err;
+ 			if(err) console.error(err);
  			//console.log(doc);
 
  			//create the authentication
@@ -283,17 +283,17 @@ exports.update_order = function(db){
 		projectsDB.update({_id:post.project_id},obj,function(err){
 				projectsDB.findOne({slug: post.project_slug},function(err,doc){
 					console.log('------------------------FOUND OBJECT---------------------------');
-					console.log(doc);
+					//console.log(doc);
 					if(post.clients){
 
 						post.clients.forEach(function(v,i){
 
 							clientsDB.findOne({_id:v},function(err,client_obj){
 
-								if(err) throw err;
+								if(err) console.error(err);
 								var update_obj = {$addToSet: {clients: {_id: client_obj._id.toString(), name: client_obj.name } }};
 								projectsDB.update({_id: post.project_id}, update_obj,function(err,doc){
-									if(err) throw err;
+									if(err) console.error(err);
 								});
 
 
@@ -301,7 +301,7 @@ exports.update_order = function(db){
 
 							var update_obj = {$addToSet: {projects: {_id:post.project_id, slug: post.project_slug, title: post.project_title }}}
 							clientsDB.update({_id:v},update_obj,function(err){
-								if(err) throw err;
+								if(err) console.error(err);
 							});
 						});
 
@@ -310,37 +310,37 @@ exports.update_order = function(db){
 					if(post.capabilities){
 						//console.log('capabilities');
 						post.capabilities.forEach(function(v,i){
-							console.log('capabilities: '+v);
+							//console.log('capabilities: '+v);
 
 							capabilitiesDB.findOne({_id:v},function(err,capability_obj){
-								if(err)throw err;
+								if(err)console.error(err);
 								var update_obj = {$addToSet:{capabilities: {_id:capability_obj._id.toString(), name: capability_obj.name, text: capability_obj.text } } };
 								projectsDB.update({_id: post.project_id },update_obj,function(err,doc){
-									if(err) throw err;
+									if(err) console.error(err);
 								});
 							});
 							var update_obj = {$addToSet: {projects: {_id:post.project_id, slug: post.project_slug, title: post.project_title }}};
 							capabilitiesDB.update({_id:v},update_obj,function(err){
-								if(err) throw err;
+								if(err) console.error(err);
 							});
 
 						});
 					}
 					//update each technology with project and vice versa
 					if(post.technology){
-						console.log(post.technology);
+						//console.log(post.technology);
 						post.technology.forEach(function(v,i){
 
 							techologiesDB.findOne({_id:v},function(err,technology_obj){
-								if(err)throw err;
+								if(err)console.error(err);
 								var update_obj = {$addToSet:{technologies: {_id:technology_obj._id.toString(), name: technology_obj.name } }};
 								projectsDB.update({_id: post.project_id },update_obj,function(err,doc){
-									if(err) throw err;
+									if(err) console.error(err);
 								});
 							});
 							var update_obj = {$addToSet: {projects: {_id:post.project_id, slug: post.project_slug, title: post.project_title }}};
 							techologiesDB.update({_id:v},update_obj,function(err){
-								if(err) throw err;
+								if(err) console.error(err);
 							});
 
 
@@ -353,16 +353,16 @@ exports.update_order = function(db){
 						post.partners.forEach(function(v,i){
 
 							partnersDB.findOne({_id:v},function(err,partner_obj){
-								if(err)throw err;
+								if(err)console.error(err);
 								var update_obj = {$addToSet: {partners: {_id:partner_obj._id.toString(), name: partner_obj.name  } } };
 								projectsDB.update({_id: post.project_id },update_obj,function(err,doc){
-									if(err) throw err;
+									if(err) console.error(err);
 								});
 							});
 
 							var update_obj = {$addToSet: {projects: {_id:post.project_id, slug: post.project_slug, title: post.project_title }}};
 							partnersDB.update({_id:v},update_obj,function(err){
-								if(err) throw err;
+								if(err) console.error(err);
 							});
 
 						});
@@ -377,14 +377,14 @@ exports.update_order = function(db){
 						var update_obj = {$set: {password: cipher.final('base64'),featured: false}} 
 						
 						projectsDB.update({_id:post.project_id},update_obj,function(err,doc){
-							if(err) throw err;
+							if(err) console.error(err);
 						})
 
 					}else{
 
 						var update_obj = {$set: {password: null, featured: (post.project_featured === 'true')? true : false }}
 						projectsDB.update({_id:post.project_id},update_obj,function(err,doc){
-							if(err) throw err;
+							if(err) console.error(err);
 						})
 					}
 
@@ -394,12 +394,12 @@ exports.update_order = function(db){
 						var thumbnail = files.project_thumbnail;
 						delete files.project_thumbnail;
 
-						var path = "./public/uploads/thumbnails/"+thumbnail.originalFilename;
-
-						fs.rename("./"+thumbnail.path, path, function(err){
-							if(err) throw err;
+						var path = "/var/www/public/uploads/thumbnails/"+thumbnail.originalFilename;
+						console.log("OUTPUT::"+path);
+						fs.rename(thumbnail.path, path, function(err){
+							if(err) console.error(err);
 							console.log(' moved : %s to %s',thumbnail.path, path);
-							thumbnail.path = path.substring(8);
+							thumbnail.path = path.substring(15);
 							thumbnail.type = thumbnail.headers['content-type'];
 							thumbnail.name = thumbnail.originalFilename;
 
@@ -410,7 +410,7 @@ exports.update_order = function(db){
 							var update_obj = {$set: {thumbnail: thumbnail}};
 
 							projectsDB.update({_id:post.project_id},update_obj,function(err,doc){
-								if(err) throw err;
+								if(err) console.error(err);
 							});
 
 						});
@@ -423,11 +423,11 @@ exports.update_order = function(db){
 						var poster = files.project_poster_image;
 						delete files.project_poster_image;
 
-						var path = "./public/uploads/posters/"+poster.originalFilename;
-						fs.rename("./"+poster.path, path, function(err){
-							if(err) throw err;
+						var path = "/var/www/public/uploads/posters/"+poster.originalFilename;
+						fs.rename(poster.path, path, function(err){
+							if(err) console.error(err);
 							console.log(' moved : %s to %s',thumbnail.path, path);
-							poster.path = path.substring(8);
+							poster.path = path.substring(15);
 							poster.type = poster.headers['content-type'];
 							poster.name = poster.originalFilename;
 
@@ -437,7 +437,7 @@ exports.update_order = function(db){
 
 							var update_obj = {$set:{poster:poster}};
 							projectsDB.update({_id: post.project_id},update_obj,function(err,doc){
-								if(err) throw err;
+								if(err) console.error(err);
 							})
 						});
 					}else{console.log('No Poster Images')}
@@ -463,7 +463,7 @@ exports.update_order = function(db){
 								//console.log(images);
 											var update_obj = {$set: {imageBlocks: images}};
 											projectsDB.update({_id:post.project_id}, update_obj,function(err,doc){
-												if(err) throw err;
+												if(err) console.error(err);
 											});
 
 								});
@@ -512,7 +512,7 @@ exports.store = function(db){
 		var project_obj = {
 						title: post.project_title,
 						slug: post.project_slug,
-						order: parseInt(post.project_order),
+						order: (post.project_order != '')? parseInt(post.project_order) : 100,
 						location: post.project_location,
 						video_url: post.project_video,
 						video_backup: post.project_video_backup,
@@ -533,22 +533,24 @@ exports.store = function(db){
 
 		projectsDB.insert(project_obj, function(err,doc){
 
-			if(err) throw err;
-			console.log(project_obj); //doc id automatically inserted into the obj
+			if(err) console.error(err);
+			//console.log(project_obj); //doc id automatically inserted into the obj
 			//create process function which adds all the information into our project 
 			//console.log(project_obj._id);
-			console.log(project_obj._id.toString());
+			//console.log(project_obj._id.toString());
 		});
 
 		if(files.project_poster_image){
 			var poster = files.project_poster_image;
 			delete files.project_poster_image;
 
-			var path = "./public/uploads/posters/"+poster.originalFilename;
-			fs.rename("./"+poster.path, path, function(err){
-				if(err) throw err;
-				console.log(' moved : %s to %s',thumbnail.path, path);
-				poster.path = path.substring(8);
+			var path = "/var/www/public/uploads/posters/"+poster.originalFilename;
+			console.log("POSTER PATH: "+ poster.path);
+			
+			fs.rename(poster.path, path, function(err){
+				if(err) console.error(err);
+				console.log(' moved : %s to %s',poster.path, path);
+				poster.path = path.substring(15);
 				poster.type = poster.headers['content-type'];
 				poster.name = poster.originalFilename;
 
@@ -558,7 +560,7 @@ exports.store = function(db){
 
 				var update_obj = {$set:{poster:poster}};
 				projectsDB.update(project_obj._id,update_obj,function(err,doc){
-					if(err) throw err;
+					if(err) console.error(err);
 				})
 			});
 
@@ -568,12 +570,13 @@ exports.store = function(db){
 			var thumbnail = files.project_thumbnail;
 			delete files.project_thumbnail;
 
-			var path = "./public/uploads/thumbnails/"+thumbnail.originalFilename;
-
-			fs.rename("./"+thumbnail.path, path, function(err){
-				if(err) throw err;
+			var path = "/var/www/public/uploads/thumbnails/"+thumbnail.originalFilename;
+			console.log("THUMBNAIL PATH::"+path)
+			
+			fs.rename(thumbnail.path, path, function(err){
+				if(err) console.error(err)
 				console.log(' moved : %s to %s',thumbnail.path, path);
-				thumbnail.path = path.substring(8);
+				thumbnail.path = path.substring(15);
 				thumbnail.type = thumbnail.headers['content-type'];
 				thumbnail.name = thumbnail.originalFilename;
 
@@ -584,7 +587,7 @@ exports.store = function(db){
 				var update_obj = {$set: {thumbnail: thumbnail}};
 
 				projectsDB.update(project_obj._id,update_obj,function(err,doc){
-					if(err) throw err;
+					if(err) console.error(err);
 				});
 
 			});
@@ -606,12 +609,12 @@ exports.store = function(db){
 				//console.log(image);
 				var client = post.new_client_name[i];
 				var caption =post.new_client_caption[i];
-				var path = "./public/uploads/clients/"+image.originalFilename;
-				fs.rename("./"+image.path, path, function(err){
-					if(err) throw err;
+				var path = "/var/www/public/uploads/clients/"+image.originalFilename;
+				fs.rename(image.path, path, function(err){
+					if(err) console.error(err);
 					console.log(' moved : %s to %s',image.path, path);
 					//console.log(image);
-					image.path = path.substring(8);;	//reset our path to root of server
+					image.path = path.substring(15);;	//reset our path to root of server
 			 		image.type = image.headers['content-type']; //pull out content-type for mime data
 			 		image.name = image.originalFilename; //generally the same - but ensure they are
 
@@ -624,7 +627,7 @@ exports.store = function(db){
 
 					clientsDB.insert(client_obj, function(err,doc){
 
-						if(err) throw err;
+						if(err) console.error(err);
 						//console.log(client_obj); //doc id automatically inserted into the obj
 						//storedClients.push(client_obj);
 
@@ -632,7 +635,7 @@ exports.store = function(db){
 
 						var update_obj = {$push: {clients: {_id: client_obj._id.toString(), name: client_obj.name } }};
 						projectsDB.update(project_obj._id, update_obj,function(err,doc){
-							if(err) throw err;
+							if(err) console.error(err);
 						});
 					});
 
@@ -649,10 +652,10 @@ exports.store = function(db){
 
 				var partner_obj = {name: val, projects:[{_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }]};
 				partnersDB.insert(partner_obj,function(err,doc){
-					if(err) throw err;
+					if(err) console.error(err);
 					var update_obj = {$push: {partners: {_id:partner_obj._id.toString(), name: partner_obj.name  } } };
 					projectsDB.update(project_obj._id,update_obj,function(err,doc){
-						if(err) throw err;
+						if(err) console.error(err);
 					})
 
 				});
@@ -670,10 +673,10 @@ exports.store = function(db){
 				capability_obj.projects = [{_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }];
 
 				capabilitiesDB.insert(capability_obj,function(err,doc){
-					if(err) throw err;
+					if(err) console.error(err);
 					var update_obj = {$push:{capabilities: {_id:capability_obj._id.toString(), name: capability_obj.name, text: capability_obj.text } } };
 					projectsDB.update(project_obj._id,update_obj,function(err,doc){
-						if(err) throw err;
+						if(err) console.error(err);
 					});
 				});
 
@@ -686,10 +689,10 @@ exports.store = function(db){
 				
 				var technology_obj = {name:v, projects:[{_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }]};
 				techologiesDB.insert(technology_obj,function(err,doc){
-					if(err) throw err;
+					if(err) console.error(err);
 					var update_obj = {$push:{technologies: {_id:technology_obj._id.toString(), name: technology_obj.name } }}
 					projectsDB.update(project_obj._id,update_obj,function(err,doc){
-						if(err) throw err;
+						if(err) console.error(err);
 					});
 
 				});
@@ -700,37 +703,37 @@ exports.store = function(db){
 		if(post.capabilities){
 			//console.log('capabilities');
 			post.capabilities.forEach(function(v,i){
-				console.log('capabilities: '+v);
+				//console.log('capabilities: '+v);
 
 				capabilitiesDB.findOne({_id:v},function(err,capability_obj){
-					if(err)throw err;
+					if(err)console.error(err);
 					var update_obj = {$push:{capabilities: {_id:capability_obj._id.toString(), name: capability_obj.name, text: capability_obj.text } } };
 					projectsDB.update(project_obj._id,update_obj,function(err,doc){
-						if(err) throw err;
+						if(err) console.error(err);
 					});
 				});
 				var update_obj = {$push: {projects: {_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }}};
 				capabilitiesDB.update({_id:v},update_obj,function(err){
-					if(err) throw err;
+					if(err) console.error(err);
 				});
 
 			});
 		}
 		//update each technology with project and vice versa
 		if(post.technology){
-			console.log(post.technology);
+			//console.log(post.technology);
 			post.technology.forEach(function(v,i){
 
 				techologiesDB.findOne({_id:v},function(err,technology_obj){
-					if(err)throw err;
+					if(err)console.error(err);
 					var update_obj = {$push:{technologies: {_id:technology_obj._id.toString(), name: technology_obj.name } }};
 					projectsDB.update(project_obj._id,update_obj,function(err,doc){
-						if(err) throw err;
+						if(err) console.error(err);
 					});
 				});
 				var update_obj = {$push: {projects: {_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }}};
 				techologiesDB.update({_id:v},update_obj,function(err){
-					if(err) throw err;
+					if(err) console.error(err);
 				});
 
 
@@ -743,16 +746,16 @@ exports.store = function(db){
 			post.partners.forEach(function(v,i){
 
 				partnersDB.findOne({_id:v},function(err,partner_obj){
-					if(err)throw err;
+					if(err)console.error(err);
 					var update_obj = {$push: {partners: {_id:partner_obj._id.toString(), name: partner_obj.name  } } };
 					projectsDB.update(project_obj._id,update_obj,function(err,doc){
-						if(err) throw err;
+						if(err) console.error(err);
 					});
 				});
 
 				var update_obj = {$push: {projects: {_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }}};
 				partnersDB.update({_id:v},update_obj,function(err){
-					if(err) throw err;
+					if(err) console.error(err);
 				});
 
 			});
@@ -765,10 +768,10 @@ exports.store = function(db){
 
 				clientsDB.findOne({_id:v},function(err,client_obj){
 
-					if(err) throw err;
+					if(err) console.error(err);
 					var update_obj = {$push: {clients: {_id: client_obj._id.toString(), name: client_obj.name } }};
 						projectsDB.update(project_obj._id, update_obj,function(err,doc){
-							if(err) throw err;
+							if(err) console.error(err);
 					});
 
 
@@ -776,7 +779,7 @@ exports.store = function(db){
 
 				var update_obj = {$push: {projects: {_id:project_obj._id.toString(), slug: project_obj.slug, title: project_obj.title }}}
 				clientsDB.update({_id:v},update_obj,function(err){
-					if(err) throw err;
+					if(err) console.error(err);
 				});
 			});
 
@@ -787,7 +790,7 @@ exports.store = function(db){
 			cipher.update(post.project_password, 'utf-8','base64');
 			var update_obj = {$set: {password: cipher.final('base64')}} 
 			projectsDB.update(project_obj._id,update_obj,function(err,doc){
-				if(err) throw err;
+				if(err) console.error(err);
 			})
 		}
 		//custom image uploader 
@@ -795,7 +798,7 @@ exports.store = function(db){
 			//console.log(images);
 			var update_obj = {$set: {imageBlocks: images}};
 						projectsDB.update(project_obj._id, update_obj,function(err,doc){
-							if(err) throw err;
+							if(err) console.error(err);
 						});
 
 		});
