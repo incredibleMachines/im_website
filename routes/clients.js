@@ -11,7 +11,7 @@ exports.view = function(db){
 		var projects = db.get('projects');
 
 		clients.find({order:{$gte:0}},function(err,client_docs){
-			console.log(client_docs);
+			//console.log(client_docs);
 			if(client_docs.length==0) res.render('clients', { title: 'No Clients', slug: 'clients', clients: [], partners: []})
 			//iterate through the clients and find projects that are associated
 			client_docs.forEach(function(v,i){
@@ -25,8 +25,8 @@ exports.view = function(db){
 					if(i==client_docs.length-1){
 
 						partners.find({}, function(err,partner_docs){
-							console.log('clients: '+JSON.stringify(client_docs));	//for debug only
-							console.log('partners: '+ JSON.stringify(partner_docs)); //for debug only
+							//console.log('clients: '+JSON.stringify(client_docs));	//for debug only
+							//console.log('partners: '+ JSON.stringify(partner_docs)); //for debug only
 							res.render('clients', { title: 'Clients', slug: 'clients', clients: client_docs, partners: partner_docs });
 
 						});
@@ -46,7 +46,7 @@ exports.edit = function(db){
 
 		var clients = db.get('clients');
 		clients.find({}, function(err,docs){
-				console.log(docs)
+				//console.log(docs)
 		  		res.render('clients_edit', { title: 'Edit Clients',slug: 'edit-clients', clients: docs });
 
 	  	});
@@ -60,7 +60,7 @@ exports.action = function(db){
 		var post = req.body;
 
 		console.log(action);
-		console.log(post);
+		//console.log(post);
 
 		var clients = db.get('clients');
 
@@ -84,7 +84,7 @@ exports.action = function(db){
 			}else{
 				console.log('files');
 				upload.clientImage(req.files,function(image){
-					console.log(image);
+					//console.log(image);
 
 					post.image = image;
 					var update_obj = { $set: { name: post.name, caption: post.caption, image: post.image, order: parseInt(post.order)}}
@@ -122,7 +122,7 @@ exports.action = function(db){
 			var files = req.files;
 
 			upload.clientImage(files,function(image){
-				console.log(image);
+				//console.log(image);
 
 				post.image = image;
 				post.projects =[];
@@ -158,8 +158,8 @@ exports.store = function(db){
 		var action = req.params.action;
 		var post = req.body;
 
-		console.log(action);
-		console.log(post);
+		//console.log(action);
+		//console.log(post);
 
   		res.render('clients', { title: 'Store Clients', slug: 'store-clients' });
 	}

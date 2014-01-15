@@ -34,7 +34,7 @@ exports.auth = function(db){
 			var users = db.get('internal');
 
 			var post = req.body;
-			console.log(post);
+			//console.log(post);
 			//make db check in collection for admins/users
 			//var internal = db.get('internal');
 			var path = (post.path)? post.path : '/admin/index';
@@ -53,7 +53,7 @@ exports.auth = function(db){
 
 				var encrypted = cipher.final('base64');
 				if(encrypted == doc.sum){
-					console.log('Authenitcated');
+					console.log('Authenitcated User');
 					//store values in session
 					req.session.admin_user = post.user;
 					req.session.key = new Date();

@@ -28,7 +28,7 @@ exports.view = function(db){
 					docs[i].projects = project_docs;
 					confirmed++;
 					if(confirmed == docs.length){
-						console.log(JSON.stringify(docs));
+						//console.log(JSON.stringify(docs));
 						
 						var session = false;
 						if(req.session.capabilities){
@@ -70,7 +70,7 @@ exports.action = function(db){
 		var post = req.body;
 
 		console.log(action);
-		console.log(post);
+		//console.log(post);
 		
 		if(action == 'update'){
 			var update_obj = {$set: {name: post.name, text: post.text, order: parseInt(post.order)}};
@@ -78,7 +78,7 @@ exports.action = function(db){
 				if(err) throw err;
 				//console.log(doc);
 				capabilities.find({order: {$gte:0}}, function(err,docs){
-					console.log(docs)
+					//console.log(docs)
 
 		  			res.render('capabilities_edit', { title: 'Capabilities Updated', slug: 'edit-capabilities', capabilities: docs });
 		  		});

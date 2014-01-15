@@ -10,7 +10,7 @@ exports.index = function(db){
 		var projects = db.get('projects');
 
 		projects.find({featured: true, order:{$gte: 0}},function(err,docs){
-			console.log(docs);
+			//console.log(docs);
 			res.render('index', { title: 'Incredible Machines' , slug: 'projects', projects: docs});
 
 		});

@@ -19,7 +19,7 @@ exports.action = function(db){
 		var post = req.body;
 
 		console.log(action);
-		console.log(post);
+		//console.log(post);
 
 		if(action === 'submit'){
 			post.projects = [];
