@@ -75,7 +75,7 @@ exports.action = function(db){
 		if(action == 'update'){
 			var update_obj = {$set: {name: post.name, text: post.text, order: parseInt(post.order)}};
 			capabilities.update({_id:post._id},update_obj, function(err, doc){
-				if(err) throw err;
+				if(err) console.error(err);
 				//console.log(doc);
 				capabilities.find({order: {$gte:0}}, function(err,docs){
 					//console.log(docs)
@@ -91,7 +91,7 @@ exports.action = function(db){
 
 
 			capabilities.remove({_id:post._id},function(err,doc){
-				if(err) throw err;
+				if(err) console.error(err);
 				//console.log('removed');
 				capabilities.find({order: {$gte:0}}, function(err,docs){
 					//console.log(docs)
@@ -107,7 +107,7 @@ exports.action = function(db){
 			post.order = parseInt(post.order);
 			capabilities.insert(post, function(err,doc){
 
-				if(err) throw err;
+				if(err) console.error(err);
 
 				capabilities.find({order: {$gte:0}}, function(err,docs){
 					//console.log(docs)

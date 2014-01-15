@@ -26,7 +26,7 @@ exports.project = function(db){
 		console.log("AUTHENTICATE PROJECTS");
 
 		projects.findOne({slug:name}, 'password',function(err,doc){
-			if(err) throw err;
+			if(err) console.error(err);
 			console.log(doc)
 			if(doc === null ){ 
 				console.log('doc==null')
