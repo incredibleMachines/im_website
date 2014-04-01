@@ -409,16 +409,13 @@ header nav a.active {
 .projects {
   width: 100%;
   /*************************** Portfolio ***************************/
-
   /* ---end portfolio-wrap --- */
-
 }
 .projects #portfolio-wrap {
   width: 100%;
   float: left;
   clear: both;
   /* ---end portfolio --- */
-
 }
 .projects #portfolio-wrap #intro {
   position: relative;
@@ -559,7 +556,6 @@ header nav a.active {
 }
 .projects #portfolio-wrap #portfolio .work-thumb:first-child {
   /*margin-left: 0px;*/
-
   border: 1px solid blue;
 }
 /* --- end projects --- */
@@ -567,31 +563,18 @@ header nav a.active {
 .single-project {
   width: 100%;
   /*************************** Single Project Specific Header ***************************/
-
   /*************************** Video ***************************/
-
   /* --- end project-vid --- */
-
   /*************************** Project Title and Pagination ***************************/
-
   /* --- end title-nav --- */
-
   /*************************** Photo Block: Multi-Size ***************************/
-
   /* --- end photo-block-multi --- */
-
   /*************************** Project Text: Text With Title ***************************/
-
   /* --- end project-text-titled --- */
-
   /***************************General for blocks with lists (Capabilities/Tech+Tools/Partners/More Info) ***************************/
-
   /* --- end list-block --- */
-
   /*************************** Capabilities, Tech + Tools Block ***************************/
-
   /*************************** Partners/More Info Block ***************************/
-
 }
 .single-project header {
   background-color: #000000;
@@ -645,11 +628,8 @@ header nav a.active {
   float: left;
   clear: both;
   /* --- end previous-proj --- */
-
   /* --- end project-meta --- */
-
   /* --- end next-proj --- */
-
 }
 .single-project .title-nav .previous-proj {
   width: 25%;
@@ -801,17 +781,13 @@ header nav a.active {
   width: 100%;
   -webkit-columns: 2;
   /* Safari and Chrome */
-
   -moz-columns: 2;
   /* Firefox */
-
   columns: 2;
   -webkit-column-gap: 30px;
   /* Safari and Chrome */
-
   -moz-column-gap: 30px;
   /* Firefox */
-
   columns: 30px;
 }
 @media screen and (max-width: 900px) {
@@ -1034,11 +1010,8 @@ header nav a.active {
 .capabilities {
   width: 100%;
   /*************************** About Us ***************************/
-
   /* ---end about--- */
-
   /* ---end skills section--- */
-
 }
 .capabilities #about {
   padding: 150px 0 100px 0;
@@ -1047,7 +1020,6 @@ header nav a.active {
   background-attachment: fixed;
   z-index: -100;
   /* ---end about-block--- */
-
 }
 @media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #about {
@@ -1157,9 +1129,7 @@ header nav a.active {
   width: inherit;
   min-width: 100%;
   /* ---end skills--- */
-
   /* --- end about-skills div --- */
-
 }
 @media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section {
@@ -1174,7 +1144,6 @@ header nav a.active {
   padding-top: 20px;
   padding-bottom: 20px;
   /* ---end ul--- */
-
 }
 @media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section .skills {
@@ -1263,7 +1232,6 @@ header nav a.active {
   padding-right: 3%;
   margin: 30px 0 60px 0;
   /* ---end about-skill--- */
-
 }
 @media screen and (max-width: 600px), (max-device-width: 1024px) {
   .capabilities #skills-section #about-skills {
@@ -1280,9 +1248,7 @@ header nav a.active {
   float: left;
   height: auto;
   /* ---end related-work--- */
-
   /* ---end related-clients--- */
-
 }
 .capabilities #skills-section #about-skills .about-skill .skill-title {
   float: left;
@@ -1326,7 +1292,6 @@ header nav a.active {
   float: left;
   clear: both;
   /* ---end work-thumbs--- */
-
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .title {
   margin-left: 0;
@@ -1351,7 +1316,6 @@ header nav a.active {
   float: left;
   width: 100%;
   /* ---end project--- */
-
 }
 .capabilities #skills-section #about-skills .about-skill .related-work .work-thumbs .project {
   float: left;
@@ -1454,25 +1418,17 @@ header nav a.active {
   width: 100%;
   background-color: #333333;
   /*************************** Grid ***************************/
-
   /* --- end client-wrap ---*/
-
   /* --- end list-block --- */
-
   /*************************** Capabilities, Tech + Tools Block ***************************/
-
   /*************************** Clients Footer ***************************/
-
 }
 .clients #client-wrap {
   width: 100%;
   float: left;
   /* ---end client-grid--- */
-
   /*************************** Client Detail Overlay ***************************/
-
   /* ---end client-detail--- */
-
 }
 .clients #client-wrap #client-grid h1 {
   text-align: center;
@@ -1511,7 +1467,6 @@ header nav a.active {
   height: auto;
   position: absolute;
   /* ---end client--- */
-
 }
 @media screen and (max-width: 600px) {
   .clients #client-wrap #client-grid #client-list {
@@ -1535,7 +1490,6 @@ header nav a.active {
   margin-right: .5%;
   margin-bottom: .5%;
   /*--- end corner ---*/
-
 }
 @media screen and (max-width: 1300px) {
   .clients #client-wrap #client-grid #client-list .client {
@@ -1599,7 +1553,6 @@ header nav a.active {
   padding: 40px 0 40px 2.5%;
   z-index: 20;
   /*--- end corner ---*/
-
 }
 @media screen and (max-width: 828px), (max-device-width: 1024px) {
   .clients #client-wrap .client-detail {
@@ -1726,10 +1679,8 @@ header nav a.active {
   transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   /* IE 9 */
-
   -webkit-transform: rotate(45deg);
   /* Safari and Chrome */
-
 }
 .clients .list-block {
   clear: both;
@@ -1819,30 +1770,21 @@ header nav a.active {
   width: 100%;
   background: #222222;
   /* Old browsers */
-
   background: -moz-linear-gradient(top, #222222 0%, #000000 100%);
   /* FF3.6+ */
-
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #222222), color-stop(100%, #000000));
   /* Chrome,Safari4+ */
-
   background: -webkit-linear-gradient(top, #222222 0%, #000000 100%);
   /* Chrome10+,Safari5.1+ */
-
   background: -o-linear-gradient(top, #222222 0%, #000000 100%);
   /* Opera 11.10+ */
-
   background: -ms-linear-gradient(top, #222222 0%, #000000 100%);
   /* IE10+ */
-
   background: linear-gradient(to bottom, #222222 0%, #000000 100%);
   /* W3C */
-
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#222222', endColorstr='#000000', GradientType=0);
   /* IE6-9 */
-
   /* ---end footer--- */
-
 }
 @media screen and (max-width: 828px), (max-device-width: 1024px) {
   .footer-bg-wrap {
@@ -1854,7 +1796,6 @@ header nav a.active {
   height: 100%;
   background: url('../images/footer_pattern.png');
   /* ---end contact--- */
-
   /* ---end strip--- */
 }
 @media screen and (max-device-width: 1024px) {
@@ -1867,9 +1808,7 @@ header nav a.active {
   padding: 40px 0 30px 0px;
   text-align: center;
   /* --- end email-phone ---- */
-
   /* --- end address ---- */
-
 }
 .footer-bg-wrap footer #contact h1 {
   color: #ffd24f;
@@ -1936,7 +1875,6 @@ header nav a.active {
   background-color: #222222;
   padding: 0 35px;
   /* ---end copyright--- */
-
   /* ---end social-btns --- */
 }
 @media screen and (max-width: 828px) {
@@ -2049,7 +1987,6 @@ header nav a.active {
   width: 100%;
   margin-top: -85px;
   /* --- end pagination --- */
-
 }
 @media screen and (max-device-width: 1024px) {
   .footer-pg-wrap footer #contact {
@@ -2065,7 +2002,6 @@ header nav a.active {
   margin-top: 10px;
   float: right;
   /* --- end top-btn --- */
-
   /* --- end other-btns --- */
 }
 @media screen and (max-device-width: 1024px) {
