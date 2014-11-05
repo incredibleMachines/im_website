@@ -426,7 +426,7 @@ exports.update_order = function(db){
 						var path = "/var/www/public/uploads/posters/"+poster.originalFilename;
 						fs.rename(poster.path, path, function(err){
 							if(err) console.error(err);
-							console.log(' moved : %s to %s',thumbnail.path, path);
+							console.log(' moved : %s to %s',poster.path, path);
 							poster.path = path.substring(15);
 							poster.type = poster.headers['content-type'];
 							poster.name = poster.originalFilename;
